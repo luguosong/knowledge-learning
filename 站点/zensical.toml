@@ -9,6 +9,7 @@ extra_css = [
   "stylesheets/lxgw.css",
   "stylesheets/diagrams.css",
 ]
+extra_javascript = ["javascripts/diagrams.js"]
 
 plugins = ["awesome-nav"]
 

@@ -1,5 +1,6 @@
 /* Mermaid 使用技能规定的浅色配色，画布在两种站点主题下保持一致。 */
-.md-typeset .mermaid {
+.md-typeset .mermaid,
+.diagram-preview .mermaid {
   --md-mermaid-font-family: var(--md-text-font-family);
   --md-mermaid-node-bg-color: #e7f5ff;
   --md-mermaid-node-fg-color: #1971c2;
@@ -24,4 +25,126 @@
   background: #ffffff;
   color-scheme: light;
   text-align: center;
+}
+
+.md-typeset .diagram-frame {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  max-height: 60vh;
+  margin: 1.5em 0;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  cursor: zoom-in;
+}
+
+.diagram-frame > .mermaid,
+.diagram-preview__stage > .mermaid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  transform-origin: 0 0;
+}
+
+.diagram-frame:focus-visible,
+.diagram-preview button:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+body.diagram-preview-open {
+  overflow: hidden;
+}
+
+.diagram-preview {
+  box-sizing: border-box;
+  width: calc(100vw - 2rem);
+  max-width: none;
+  height: calc(100dvh - 2rem);
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.75rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-family: var(--md-text-font-family);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.diagram-preview[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.diagram-preview::backdrop {
+  background: rgb(0 0 0 / 65%);
+}
+
+.diagram-preview__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+}
+
+.diagram-preview__toolbar strong {
+  margin-right: auto;
+}
+
+.diagram-preview button {
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.diagram-preview button:hover {
+  background: var(--md-default-fg-color--lightest);
+}
+
+.diagram-preview output {
+  min-width: 3.5em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.diagram-preview__stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.diagram-preview__stage.is-dragging {
+  cursor: grabbing;
+}
+
+.diagram-preview__hint {
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.7rem;
 }

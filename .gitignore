@@ -1,6 +1,7 @@
 # 工具生成
 .mimosa/
 .video_agent/
+__pycache__/
 
 # AI 工作目录
 .scratch/

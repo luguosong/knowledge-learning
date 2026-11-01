@@ -1,0 +1,22 @@
+{
+  "title": "MCP 2026-07-28 official type definitions and generated JSON Schema",
+  "author": "Model Context Protocol maintainers",
+  "protocolVersion": "2026-07-28",
+  "collectedAtUtc": "2026-10-27T08:15:26.859476+00:00",
+  "revisionNote": "Fetched main; exact collected content preserved and identified by SHA-256. GitHub API rate limit prevented commit lookup.",
+  "questionIds": [
+    "q-20261027-005"
+  ],
+  "files": [
+    {
+      "file": "schema.ts",
+      "originalUrl": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts",
+      "sha256": "742750af0bb8c716e7030c4977c992b55d1adc4407e9e66997db5846baedc2cd"
+    },
+    {
+      "file": "schema.json",
+      "originalUrl": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.json",
+      "sha256": "ef70b61f99b6d2e5e3b46863822eab08dff6a45bedc7a08914e0e5b133f40203"
+    }
+  ]
+}

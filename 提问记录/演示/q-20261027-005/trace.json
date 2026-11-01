@@ -1,0 +1,79 @@
+{
+  "capturedAtUtc": "2026-10-29T00:47:23.236793+00:00",
+  "protocolVersion": "2026-07-28",
+  "transport": "stdio",
+  "scope": "Real local subprocess IO; synthetic addition server; no model or external API call.",
+  "steps": [
+    {
+      "kind": "request",
+      "title": "发现服务器",
+      "note": "每次请求都携带 protocolVersion 和 clientCapabilities；空对象表示未声明可选客户端能力。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"server/discover\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"
+    },
+    {
+      "kind": "response",
+      "title": "发现服务器：返回",
+      "note": "服务器返回所支持的版本与工具能力；发现操作没有建立协议会话。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"resultType\":\"complete\",\"supportedVersions\":[\"2026-07-28\"],\"capabilities\":{\"tools\":{}},\"ttlMs\":300000,\"cacheScope\":\"public\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"
+    },
+    {
+      "kind": "request",
+      "title": "读取工具定义",
+      "note": "此请求再次携带 _meta；服务器不需要读取上一条请求中的协议版本和能力。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"
+    },
+    {
+      "kind": "response",
+      "title": "读取工具定义：返回",
+      "note": "inputSchema 定义 a、b 必填；add 是本演示定义的业务工具。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"resultType\":\"complete\",\"tools\":[{\"name\":\"add\",\"description\":\"Return the sum of two integers.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"a\":{\"type\":\"integer\"},\"b\":{\"type\":\"integer\"}},\"required\":[\"a\",\"b\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"sum\":{\"type\":\"integer\"}},\"required\":[\"sum\"]}}],\"ttlMs\":300000,\"cacheScope\":\"public\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"
+    },
+    {
+      "kind": "request",
+      "title": "计算 2 + 3",
+      "note": "name 选择 add；arguments 带齐本次计算的两个输入。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"add\",\"arguments\":{\"a\":2,\"b\":3},\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"
+    },
+    {
+      "kind": "response",
+      "title": "计算 2 + 3：返回",
+      "note": "id=3 对应刚才的调用；宿主可以保存 sum=5，供后续请求使用。",
+      "generation": 1,
+      "pid": 14904,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"resultType\":\"complete\",\"content\":[{\"type\":\"text\",\"text\":\"5\"}],\"structuredContent\":{\"sum\":5},\"isError\":false,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"
+    },
+    {
+      "kind": "restart",
+      "title": "关闭旧进程，启动新进程",
+      "note": "客户端在内存中保留 5；服务器进程内存已释放。",
+      "generation": 2,
+      "wire": ""
+    },
+    {
+      "kind": "request",
+      "title": "直接调用：用上一结果再加 10",
+      "note": "宿主把上一结果明确填入 a=5；新服务器只需读取本条请求。",
+      "generation": 2,
+      "pid": 13588,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"add\",\"arguments\":{\"a\":5,\"b\":10},\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"
+    },
+    {
+      "kind": "response",
+      "title": "直接调用：用上一结果再加 10：返回",
+      "note": "新进程直接返回 15；它没有收到先前的发现、列表和计算请求。",
+      "generation": 2,
+      "pid": 13588,
+      "wire": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"resultType\":\"complete\",\"content\":[{\"type\":\"text\",\"text\":\"15\"}],\"structuredContent\":{\"sum\":15},\"isError\":false,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"
+    }
+  ]
+}

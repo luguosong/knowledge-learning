@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-27",
+  "archive": "2026-10-27-维护改造前.zip",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0aee094725a56d9086d569c70e9a5c38b960b81b0a23853b9bc55c2e335d2638"
+    },
+    {
+      "path": "提问记录/AI 模型.md",
+      "sha256": "779c090f852903b821f6a8d625796ada870d84c692726914d5232f584c162dc8"
+    },
+    {
+      "path": "提问记录/AI 编程.md",
+      "sha256": "b2a709768798c7a9a062398caa81b7121893516d312cd2dbdf03664a198e28c0"
+    },
+    {
+      "path": "提问记录/AutoCAD.md",
+      "sha256": "150beeffd37c320d07eb3c8df65a0aebd7dd3aaf7729293302e92b6f4ae82df1"
+    },
+    {
+      "path": "提问记录/C 语言.md",
+      "sha256": "370e1c22b27bb636712cfa07ff79110f6382d54eb704fcdb807ee2be19d4e172"
+    },
+    {
+      "path": "提问记录/Claude Code.md",
+      "sha256": "a4ddb10bf659eb0a6808945583cda728706e586b27e0357a133a10088987208b"
+    },
+    {
+      "path": "提问记录/GIS.md",
+      "sha256": "ad3104e5853784afeb340c48f1753a2cdbbf796cd0e49774b7be991d72468130"
+    },
+    {
+      "path": "提问记录/Git.md",
+      "sha256": "036a68f7d8b6a7a97bd467a8021be8107af91541a183e127150c2ae14bb523f2"
+    },
+    {
+      "path": "提问记录/Java SE.md",
+      "sha256": "d52855279e4f640d8287bc064ab09bc95d0d3956c12c2ae9d93f4e652697831d"
+    },
+    {
+      "path": "提问记录/Java.md",
+      "sha256": "9521fd4351777f526f1348bb6ff442b97d7c9cbfbcd3324e877a0aa761b7b16f"
+    },
+    {
+      "path": "提问记录/Linux.md",
+      "sha256": "c3ea16fc8090cc9567db555388878a15deff5211342a6fe07398d775bbbd1df1"
+    },
+    {
+      "path": "提问记录/MCP.md",
+      "sha256": "ad165e3a3310e93bb83ca12ff4a7be9a46d79990d696e0dd355019bd2380f336"
+    },
+    {
+      "path": "提问记录/Navicat.md",
+      "sha256": "b5fa7b6fdb22592ab1da61f052fd8fce60bfe93a971c72837804a9b044f92016"
+    },
+    {
+      "path": "提问记录/OAuth.md",
+      "sha256": "bc9e2fa97771a32fb029ae6ba56fcb33a6e20b25197e8dede5adef7e385f9f8e"
+    },
+    {
+      "path": "提问记录/Obsidian.md",
+      "sha256": "357585565a3001618a19013fd4d5d0baaa1820f9fcdef869f4b407d73a65b5d4"
+    },
+    {
+      "path": "提问记录/RPC.md",
+      "sha256": "ae3887a9a0741aa332028fd4b3a4098c9d1543f3d93296cb6a47af2345e96590"
+    },
+    {
+      "path": "提问记录/Spring.md",
+      "sha256": "db455c2f066d132e3a2a6a7fb38bbebb33ed47638f1f27ff12ddba084bbbdcba"
+    },
+    {
+      "path": "提问记录/VPS.md",
+      "sha256": "f26c28a9c0d12b778f20637b73e29a3b5b7ff13e7316ad85e9885945c5e46f6a"
+    },
+    {
+      "path": "提问记录/Windows.md",
+      "sha256": "9fb008085ceea6f3a76e5af356667e1bf889ab330bf9491b6a6f58956743f761"
+    },
+    {
+      "path": "提问记录/Zotero.md",
+      "sha256": "e420a9b7c8c3ba6cc2b14113fbcd895acb6b49f19c522a4f3b7fe8ca53169b73"
+    },
+    {
+      "path": "提问记录/三维建模.md",
+      "sha256": "844626b1201140785e84808bd79208816f7d7ffd46686f86082c156bdb5c670e"
+    },
+    {
+      "path": "提问记录/云存储.md",
+      "sha256": "01e5a103b559d97228793e102cf7fd8da40e259bd4dbf465fe7316e0d25141ef"
+    },
+    {
+      "path": "提问记录/人工智能.md",
+      "sha256": "4d5eab06e8564853f2fb0639a06ad6a9f12fb845c744eb8301206d9a48efd34c"
+    },
+    {
+      "path": "提问记录/传染病.md",
+      "sha256": "a68d57425292aa70475102fd482e6aeb37ee09743c5156ee74577bef6e6ed9e6"
+    },
+    {
+      "path": "提问记录/公司调研.md",
+      "sha256": "44307d6ac068761f1906821da8e8b7638a551401f5ce79c2cd9d6279f83e2683"
+    },
+    {
+      "path": "提问记录/兵役与退役保障.md",
+      "sha256": "a26672c612de545bb59dc864870394260eba92ebcd64d885d2521e6f0e9cdab6"
+    },
+    {
+      "path": "提问记录/前端开发.md",
+      "sha256": "76511a9958af6d987f5801dc17662b5da26002e7a8401e30524bed04cf0b6099"
+    },
+    {
+      "path": "提问记录/城乡规划.md",
+      "sha256": "3912cfed6941e399b960f99963c58d1b24b9903dce50694a505f9f60f22f8318"
+    },
+    {
+      "path": "提问记录/大数据.md",
+      "sha256": "b5ccb1efcc6ac667468d56f8594d9749d30ec3914c64f022f4f93de6d71201ed"
+    },
+    {
+      "path": "提问记录/宠物食品.md",
+      "sha256": "9c326cf7d7ba760a3eaf0b5f8c524e4a00a248fa6f0aecc2036e22346874ec19"
+    },
+    {
+      "path": "提问记录/容器编排.md",
+      "sha256": "ae6c2c8654f34465de5215f71b2cd3054111255ff9e67a765e4ad96e9708ee84"
+    },
+    {
+      "path": "提问记录/密码学.md",
+      "sha256": "ab4313ecfb3d77192583fa98e19c5ae43fc808c9ec205cf449faee2a76c9f8cb"
+    },
+    {
+      "path": "提问记录/对象存储.md",
+      "sha256": "e7a133e3f9c3b3b1d70249384e7d80b4c505037f6447efacd9da264ef03aa3c3"
+    },
+    {
+      "path": "提问记录/平面设计.md",
+      "sha256": "39ae753295a496c67541f29046940dcb3a40faab70a2d52d303b02d152a921c3"
+    },
+    {
+      "path": "提问记录/扫地机器人.md",
+      "sha256": "a06842f29dd3ae6f794429abbca5d2998c8e6da23fb5dbeb287d6bc2e8d023f0"
+    },
+    {
+      "path": "提问记录/技术写作.md",
+      "sha256": "d02aebdb5ff8ad4c73249fe36d939caf41013ad0d64e1ed3a55c9ad1845f6bba"
+    },
+    {
+      "path": "提问记录/数字使用与自控.md",
+      "sha256": "808a7d9cc7ae6165f0bc818eaaed4479e06c601f37f0ccbec1ad6f2f0a26ed5c"
+    },
+    {
+      "path": "提问记录/数学.md",
+      "sha256": "159f7a6f2a8518d2a6b1d7c2b157a5f2bf7b57d25a8578eddeba1a2e88097d3f"
+    },
+    {
+      "path": "提问记录/数据结构与算法.md",
+      "sha256": "c9bff1f40763b8bd20873924c1631525095449b728c311a4bde3c18193163df7"
+    },
+    {
+      "path": "提问记录/文本编辑器.md",
+      "sha256": "c253cd03d30194156f062e91bfbc573ed89cd2645ed05a146ed0ce64151336fd"
+    },
+    {
+      "path": "提问记录/机器翻译.md",
+      "sha256": "86b92de56e7e3b9593b34831acf8f788163ad965013c33ef72e0afd13a6f7677"
+    },
+    {
+      "path": "提问记录/浏览器扩展.md",
+      "sha256": "c592a0dafd586e1818e3a7eff45a857276fbfdf33468a37e8da862febeb458c3"
+    },
+    {
+      "path": "提问记录/独立开发.md",
+      "sha256": "018f3b0fb8bc9916e24d76aa2d965f249f2a317c45611514b854424905799a5b"
+    },
+    {
+      "path": "提问记录/电脑供电.md",
+      "sha256": "f5ef6d3c1d83ad87e3891851b2ba7cd213d94b5870a547728a6cf946b4da7fbd"
+    },
+    {
+      "path": "提问记录/电脑性能测试.md",
+      "sha256": "99a456683b1e60159336af713360be10103c2f1115626b9cc63d1f9c42d053a2"
+    },
+    {
+      "path": "提问记录/研究生考试.md",
+      "sha256": "c707f3d7208a5ce110b96f7745d137cea03a51d9c8071f55292ea09c6b73252b"
+    },
+    {
+      "path": "提问记录/笔记本电脑.md",
+      "sha256": "a0b3b847b60cab9b2b5c5c58e05bed39a8c6529d2b9a8bbf5b4b1915915fafe6"
+    },
+    {
+      "path": "提问记录/索引.md",
+      "sha256": "76dff4e5034a16fff365a699f9b2c2d9fbfa3b20f4b51d302154de0914b236a6"
+    },
+    {
+      "path": "提问记录/编程学习.md",
+      "sha256": "28c88727da55024844a99c05e4e34f921e8bf3cc4c27d69df7fb10400e61fbb2"
+    },
+    {
+      "path": "提问记录/英语学习.md",
+      "sha256": "41901e9bfecbd106e031b10c7676f460809ddc4fe69b2e7c5c2d0599d8e0bb70"
+    },
+    {
+      "path": "提问记录/药物制剂.md",
+      "sha256": "de8e1197c4d1c07dbde08594ce2365fab356f10ad9ad4506d9f0e9b226db0d25"
+    },
+    {
+      "path": "提问记录/视频技术.md",
+      "sha256": "3d3562b8ca2d8c5771ea9696a8f1d5f0e62827aa0662ba65cdc087cdb626add4"
+    },
+    {
+      "path": "提问记录/身份认证.md",
+      "sha256": "80a73af79ef342b6dd059d43886b3ab63885ac8aa2f6b69e7053e251e391fc66"
+    },
+    {
+      "path": "提问记录/远程办公.md",
+      "sha256": "3efbebdc0fa76a48fea2bba6ca930653b30f36da00e2f78f48ef5d9a8605e093"
+    },
+    {
+      "path": "提问记录/销售学.md",
+      "sha256": "64a9ccde5a2dbce724fdbae1566653876e80d85a16f3b9a22281746e49abb300"
+    },
+    {
+      "path": "提问记录/音乐.md",
+      "sha256": "ac4e6ec60804cbf6be0cde98a5623100be890dd1b43df0588b0ef76e9d9aeaf0"
+    },
+    {
+      "path": "提问记录/工具/开发服务.ps1",
+      "sha256": "0de44e82cc3b3decd6a595b855013745240a3349c9a3ed2b3abf43cbe98e6b28"
+    },
+    {
+      "path": "提问记录/附件/Get-ClaudeCodeDocs.ps1",
+      "sha256": "bfaa95c0c0923342862ebb32a63fc32288528dec8ab8b0b93c4ea3ca9cb4568d"
+    }
+  ]
+}

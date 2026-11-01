@@ -1,0 +1,83 @@
+<div id="mcp-stateless-observer">
+  <div class="viz-row text-small text-muted">MCP 2026-07-28 · stdio · 本机实传／模拟加法服务器</div>
+  <div class="viz-controls" style="margin-top:12px">
+    <button type="button" class="btn" id="mcp-prev">上一条</button>
+    <button type="button" class="btn btn-primary" id="mcp-next">下一条</button>
+    <span class="tabular-nums" id="mcp-position"></span>
+  </div>
+  <div class="mcp-route" role="img" id="mcp-route" aria-label="客户端与服务器之间的报文方向">
+    <div>客户端<span class="text-small text-muted">宿主内的组件</span></div>
+    <div id="mcp-direction"></div>
+    <div>服务器<span class="text-small text-muted" id="mcp-process"></span></div>
+  </div>
+  <div class="viz-row"><strong id="mcp-title"></strong><span class="text-small text-muted" id="mcp-wire-label"></span></div>
+  <pre id="mcp-message"><code id="mcp-code"></code></pre>
+  <div id="mcp-detail" aria-live="polite"></div>
+  <script type="application/json" id="mcp-trace-data">{"capturedAtUtc": "2026-10-29T00:47:23.236793+00:00", "protocolVersion": "2026-07-28", "transport": "stdio", "scope": "Real local subprocess IO; synthetic addition server; no model or external API call.", "steps": [{"kind": "request", "title": "发现服务器", "note": "每次请求都携带 protocolVersion 和 clientCapabilities；空对象表示未声明可选客户端能力。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"server/discover\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"}, {"kind": "response", "title": "发现服务器：返回", "note": "服务器返回所支持的版本与工具能力；发现操作没有建立协议会话。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"resultType\":\"complete\",\"supportedVersions\":[\"2026-07-28\"],\"capabilities\":{\"tools\":{}},\"ttlMs\":300000,\"cacheScope\":\"public\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"}, {"kind": "request", "title": "读取工具定义", "note": "此请求再次携带 _meta；服务器不需要读取上一条请求中的协议版本和能力。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"}, {"kind": "response", "title": "读取工具定义：返回", "note": "inputSchema 定义 a、b 必填；add 是本演示定义的业务工具。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"resultType\":\"complete\",\"tools\":[{\"name\":\"add\",\"description\":\"Return the sum of two integers.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"a\":{\"type\":\"integer\"},\"b\":{\"type\":\"integer\"}},\"required\":[\"a\",\"b\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"sum\":{\"type\":\"integer\"}},\"required\":[\"sum\"]}}],\"ttlMs\":300000,\"cacheScope\":\"public\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"}, {"kind": "request", "title": "计算 2 + 3", "note": "name 选择 add；arguments 带齐本次计算的两个输入。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"add\",\"arguments\":{\"a\":2,\"b\":3},\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"}, {"kind": "response", "title": "计算 2 + 3：返回", "note": "id=3 对应刚才的调用；宿主可以保存 sum=5，供后续请求使用。", "generation": 1, "pid": 14904, "wire": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"resultType\":\"complete\",\"content\":[{\"type\":\"text\",\"text\":\"5\"}],\"structuredContent\":{\"sum\":5},\"isError\":false,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"}, {"kind": "restart", "title": "关闭旧进程，启动新进程", "note": "客户端在内存中保留 5；服务器进程内存已释放。", "generation": 2, "wire": ""}, {"kind": "request", "title": "直接调用：用上一结果再加 10", "note": "宿主把上一结果明确填入 a=5；新服务器只需读取本条请求。", "generation": 2, "pid": 13588, "wire": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"add\",\"arguments\":{\"a\":5,\"b\":10},\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientInfo\":{\"name\":\"learning-client\",\"version\":\"1.0.0\"},\"io.modelcontextprotocol/clientCapabilities\":{}}}}"}, {"kind": "response", "title": "直接调用：用上一结果再加 10：返回", "note": "新进程直接返回 15；它没有收到先前的发现、列表和计算请求。", "generation": 2, "pid": 13588, "wire": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"resultType\":\"complete\",\"content\":[{\"type\":\"text\",\"text\":\"15\"}],\"structuredContent\":{\"sum\":15},\"isError\":false,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"addition-demo\",\"version\":\"1.0.0\"}}}}"}]}</script>
+</div>
+<style>
+#mcp-stateless-observer { color:var(--foreground); }
+#mcp-stateless-observer .mcp-route { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:12px; margin:20px 0; }
+#mcp-stateless-observer .mcp-route > div:first-child { text-align:left; }
+#mcp-stateless-observer .mcp-route > div:last-child { text-align:right; }
+#mcp-stateless-observer .mcp-route span { display:block; }
+#mcp-stateless-observer strong { font-weight:500; }
+#mcp-stateless-observer pre { white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; max-width:100%; margin:14px 0; }
+#mcp-stateless-observer #mcp-direction { color:var(--viz-series-1); font-weight:500; }
+#mcp-stateless-observer #mcp-detail { margin-top:10px; }
+#mcp-stateless-observer .mcp-meta { background:color-mix(in srgb,var(--viz-series-1) 10%,transparent); }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('mcp-stateless-observer');
+  const trace = JSON.parse(root.querySelector('#mcp-trace-data').textContent);
+  const steps = trace.steps;
+  const find = selector => root.querySelector(selector);
+  const savedIndex = state => {
+    const value = state?.privateContent?.step;
+    return Number.isInteger(value) ? Math.max(0, Math.min(value, steps.length - 1)) : 0;
+  };
+  let index = savedIndex(window.openai?.widgetState);
+  const code = find('#mcp-code');
+  function render() {
+    const step = steps[index];
+    find('#mcp-position').textContent = `${index + 1} / ${steps.length}`;
+    find('#mcp-title').textContent = step.title;
+    find('#mcp-process').textContent = step.pid ? `进程 ${step.generation} · PID ${step.pid}` : '进程 1 已退出';
+    find('#mcp-direction').textContent = step.kind === 'request' ? '请求 →' : step.kind === 'response' ? '← 响应' : '重启';
+    find('#mcp-route').setAttribute('aria-label', step.kind === 'request' ? '客户端发送请求到服务器' : step.kind === 'response' ? '服务器返回响应到客户端' : '原服务器退出，随后启动全新服务器');
+    find('#mcp-wire-label').textContent = step.kind === 'restart' ? '进程事件／不属于 MCP 报文' : 'JSON 格式化展示／线上每条为一行，以换行符结束';
+    find('#mcp-detail').textContent = step.note;
+    find('#mcp-prev').disabled = index === 0;
+    find('#mcp-next').disabled = index === steps.length - 1;
+    code.replaceChildren();
+    if (step.kind === 'restart') {
+      code.textContent = '客户端保存的上一结果：5\n旧服务器：已退出\n新服务器：未收到任何历史请求\n下一条：直接 tools/call(a=5, b=10)';
+      return;
+    }
+    const pretty = JSON.stringify(JSON.parse(step.wire), null, 2);
+    const lines = pretty.split('\n');
+    lines.forEach((line, lineIndex) => {
+      const span = document.createElement('span');
+      if (line.includes('io.modelcontextprotocol/protocolVersion') || line.includes('io.modelcontextprotocol/clientCapabilities')) span.className = 'mcp-meta';
+      span.textContent = line + (lineIndex === lines.length - 1 ? '' : '\n');
+      code.append(span);
+    });
+  }
+  function move(delta) {
+    index = Math.max(0, Math.min(index + delta, steps.length - 1));
+    render();
+    const step = steps[index];
+    if (window.openai?.setWidgetState) window.openai.setWidgetState({
+      modelContent:{protocolVersion:trace.protocolVersion, transport:'stdio', selectedStep:step.title, serverGeneration:step.generation},
+      privateContent:{step:index}
+    }).catch(() => {});
+  }
+  find('#mcp-prev').addEventListener('click', () => move(-1));
+  find('#mcp-next').addEventListener('click', () => move(1));
+  window.addEventListener('openai:set_globals', event => {
+    if (event.detail?.globals?.widgetState) { index = savedIndex(event.detail.globals.widgetState); render(); }
+  });
+  render();
+})();
+</script>

@@ -1,0 +1,1051 @@
+{
+  "date": "2026-10-27",
+  "domains": 54,
+  "entries": 116,
+  "rewritten_summaries": [
+    "AI 模型",
+    "AI 编程",
+    "AutoCAD",
+    "Claude Code",
+    "VPS",
+    "机器翻译",
+    "MCP",
+    "前端开发",
+    "Java SE",
+    "Java",
+    "Linux",
+    "Obsidian",
+    "Windows",
+    "密码学",
+    "数学",
+    "独立开发",
+    "笔记本电脑",
+    "编程学习",
+    "身份认证"
+  ],
+  "entries_audit": [
+    {
+      "id": "q-20261012-001",
+      "domain": "身份认证",
+      "title": "2026-10-12 · in Action 系列中服务器认证与鉴权的成书盘点",
+      "original_body_sha256": "3106dc864f1b8367bef358eb0d0d441299c14a90a542628916fbae8136dc54e0",
+      "migrated_body_sha256": "1fd5ab7a732ef6067f5458353b9397b30ddcfe9bdefbc1f058c9ec600c9e1d65",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260921-001",
+      "domain": "身份认证",
+      "title": "2026-09-21 · 用户身份认证技术的演化过程",
+      "original_body_sha256": "1e1807a424922c1c206df31277f7bcca6fd609b028f6bdffae76e497b02ecbd1",
+      "migrated_body_sha256": "9691bc29d8c1447c4e2321e829e88eb50023ad66ec1b99d65805b949afb4d8c6",
+      "original_updates": [
+        "2026-09-22（核实 OAuth／OIDC 边界并关联学习路线；其余演化史结论未在本次重新核实）"
+      ]
+    },
+    {
+      "id": "q-20260921-002",
+      "domain": "身份认证",
+      "title": "2026-09-21 · Cookie/Session/JWT 算不算认证技术",
+      "original_body_sha256": "431a5055e45f5223bef0323f1feb95c4ed80b9228549629d83080a69b57057d3",
+      "migrated_body_sha256": "0cd1f6df8c35c92afc75207f252d7090c38124f159fa3368223a1d08da31b514",
+      "original_updates": [
+        "2026-09-22（修正 JWT／Bearer 分类与 DPoP 防护边界，补充 OAuth 学习路线关联）"
+      ]
+    },
+    {
+      "id": "q-20260921-003",
+      "domain": "容器编排",
+      "title": "2026-09-21 · 什么是 Kubernetes",
+      "original_body_sha256": "8b1a72b2bfdceaa16b0d749f7c02833bddd64bfb1c6d0a0c2f9f3917ae469db6",
+      "migrated_body_sha256": "8b1a72b2bfdceaa16b0d749f7c02833bddd64bfb1c6d0a0c2f9f3917ae469db6",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260921-004",
+      "domain": "容器编排",
+      "title": "2026-09-21 · k8s 和 Docker 的关系（承接上条）",
+      "original_body_sha256": "92aaab32e2fe8ee2a658c1c751aa59c8f1c08268c62aac0fae0b3beed47025bf",
+      "migrated_body_sha256": "0d1798acca04c0d52cc5c1b2c2f7f7301bcca4cd3c27aab5090372b983d954dc",
+      "original_updates": [
+        "2026-09-23（补充 Linux 学习路线关联；原问答结论未在本次重新核实）"
+      ]
+    },
+    {
+      "id": "q-20261002-001",
+      "domain": "容器编排",
+      "title": "2026-10-02 · Docker 存储目录与系统盘、数据盘合并的关系",
+      "original_body_sha256": "5ba39606dbe8e3cf477cf6e39717b6fc5e80ef4bcc0d1796097881a71015c717",
+      "migrated_body_sha256": "188cf5053c1b61e428d8535b005f35ec7821d2d0f970d319fa9e0e5bbf9ecff8",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260921-005",
+      "domain": "Claude Code",
+      "title": "2026-09-21 · Claude Code subagent 的使用、配置与执行原理",
+      "original_body_sha256": "43cb85517adfae7a7575e2838f95165a9cf985d624ba01ac97d0f62a7e87c86a",
+      "migrated_body_sha256": "43cb85517adfae7a7575e2838f95165a9cf985d624ba01ac97d0f62a7e87c86a",
+      "original_updates": [
+        "2026-10-07（深入用法；重新核实版本规则，校正启动、恢复、权限与扫描边界）"
+      ]
+    },
+    {
+      "id": "q-20260921-006",
+      "domain": "Claude Code",
+      "title": "2026-09-21 · 系统学习 Claude Code 与 Agent 原理的学习地图",
+      "original_body_sha256": "0148970907ced065a448426529ea2cfff9efe801a099cb2c71c91ee00dbd3305",
+      "migrated_body_sha256": "50bc9f201759861b6509fbfccc1934855ba18097ec04a70c73bcddd76e07c443",
+      "original_updates": [
+        "2026-09-24（扩展为可执行路线；补充量化调优与 Windows 限制）"
+      ]
+    },
+    {
+      "id": "q-20261012-002",
+      "domain": "Claude Code",
+      "title": "2026-10-12 · Claude Code 高质量编程插件的选择与组合",
+      "original_body_sha256": "e84f2457b966a4819200160666cd3b86d0aa10b5dfab9366ca0da147eff52617",
+      "migrated_body_sha256": "e84f2457b966a4819200160666cd3b86d0aa10b5dfab9366ca0da147eff52617",
+      "original_updates": [
+        "2026-10-12（补充必装边界、按需加载、最小够用配置与成本检查）"
+      ]
+    },
+    {
+      "id": "q-20261015-001",
+      "domain": "Claude Code",
+      "title": "2026-10-15 · 用 Claude Code 与 Agent SDK 自建 PDF 翻译流程",
+      "original_body_sha256": "6f279c68c73cb8f6f1450f589d91170dec93d9568c2b3f1e659ba0ae452bbb94",
+      "migrated_body_sha256": "72a5fd6dfac92de5464db6dc6fd3884f9be5a7a9253cca7aea381237ba41bc61",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261018-001",
+      "domain": "Claude Code",
+      "title": "2026-10-18 · 2026 年 3 月 31 日 Claude Code 源码泄露相关项目",
+      "original_body_sha256": "5e4f33ca54b3b547e3d00b2bf3b88e5e19c2d5d23ffaf15b24075983a4fcf5b2",
+      "migrated_body_sha256": "5e4f33ca54b3b547e3d00b2bf3b88e5e19c2d5d23ffaf15b24075983a4fcf5b2",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261018-002",
+      "domain": "Claude Code",
+      "title": "2026-10-18 · Claude Code 文档站源码与全部页面批量获取",
+      "original_body_sha256": "136af29807221f2839f58e1eeea860cde491bc0b643181f97e4e1fe01d700713",
+      "migrated_body_sha256": "136af29807221f2839f58e1eeea860cde491bc0b643181f97e4e1fe01d700713",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260922-001",
+      "domain": "Java",
+      "title": "2026-09-22 · 成为 Java 专家的完整学习路线",
+      "original_body_sha256": "11dbc41116ca11575df8aa757394fa0fef689d3972fa7874219c676e0cedf045",
+      "migrated_body_sha256": "63646b10b99a5fef61d6918fde79f973bc735cae8e103d36b8e4b749a3b0b4cb",
+      "original_updates": [
+        "2026-09-23（将 Java SE 细化路线拆分为专题）"
+      ]
+    },
+    {
+      "id": "q-20260923-001",
+      "domain": "Java",
+      "title": "2026-09-23 · Java 日志的系统学习路线与知识地图",
+      "original_body_sha256": "e9e1ec6e9f71f646079857e1880af86fd1f570fd2738e59c332027cba9b1045d",
+      "migrated_body_sha256": "e9e1ec6e9f71f646079857e1880af86fd1f570fd2738e59c332027cba9b1045d",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-002",
+      "domain": "Java",
+      "title": "2026-09-23 · JVM 的系统学习路线与知识地图",
+      "original_body_sha256": "a0cbd1ad8c07e4acc544e8bdece327e6d008c71f50c0516cbab97eb51fd70f1e",
+      "migrated_body_sha256": "a0cbd1ad8c07e4acc544e8bdece327e6d008c71f50c0516cbab97eb51fd70f1e",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-001",
+      "domain": "Java",
+      "title": "2026-10-14 · Java EE 与 Tomcat 的关系及名称演变",
+      "original_body_sha256": "2c67d37914e5c0e86fec88553832b269680af6deca64d3d32446c51b3d1358d9",
+      "migrated_body_sha256": "b090ef0b9caca9f2d6d9f64d367066de7572890f8627bddc096a4d0e4bbd97b7",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-003",
+      "domain": "Java SE",
+      "title": "2026-09-23 · Java SE 的学习路线与完整知识点",
+      "original_body_sha256": "b9cef949bee723a0a91dc7d65fd435376a9315321752224c390e220c225eae49",
+      "migrated_body_sha256": "494b10db9e16b6a1f089854f10d3f28b3bd619936792a40ba6d599f0e48b0953",
+      "original_updates": [
+        "2026-10-15（追问练习基线选 21 还是 25，见文末修正）"
+      ]
+    },
+    {
+      "id": "q-20261014-002",
+      "domain": "Java SE",
+      "title": "2026-10-14 · Java SE 经典学习书籍与网站",
+      "original_body_sha256": "90a409a4fddfcb228c501c1cb67eb58805406a76e202749124154f67ea773deb",
+      "migrated_body_sha256": "bd9faa9e266e2c2bb84ceea8384c0bf359806f5df905402f956d1600cc54afaf",
+      "original_updates": [
+        "2026-10-14"
+      ]
+    },
+    {
+      "id": "q-20261015-002",
+      "domain": "Java SE",
+      "title": "2026-10-15 · JDK 8 与 JDK 25 差别有多大",
+      "original_body_sha256": "86de25cc796fc701025cd87855addddcea911308adefdd0146477628e42578cc",
+      "migrated_body_sha256": "fa39fc40e1062f75d552f56d79f2deef56135a228b0034b72aeff12f21386051",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261015-003",
+      "domain": "Java SE",
+      "title": "2026-10-15 · JDK 自身类库体系的宏观概览",
+      "original_body_sha256": "1e157ee419b9d0740e74ec5cd8821957077ca50c07d3422210e962171e630f01",
+      "migrated_body_sha256": "79fadc30a95482df9768d3b4c62785e4f85001b36ac7873345abcfc0ced92703",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-004",
+      "domain": "Spring",
+      "title": "2026-09-23 · Spring 框架的完整学习路径与知识地图",
+      "original_body_sha256": "dc9b8c0404f52e9941ffdc2fe9bbc7971558242c116e64f88ad63f2db4ca57fa",
+      "migrated_body_sha256": "5ce5401cd49027aa3ac2f3f727e0eac6704d61adaed7054ddd623fbb990c5e6d",
+      "original_updates": [],
+      "appendix": "附录/q-20260923-004.md",
+      "final_entry_sha256": "b8eaa066117301801c0b47118bce13498483507c086326e5b6d7f8b5bc2897e0",
+      "final_appendix_sha256": "962e7b1bb3a45c7b9faec0d9c98b8f9f32aeb3bae113be4ffb2f697fccb96779"
+    },
+    {
+      "id": "q-20261015-004",
+      "domain": "Spring",
+      "title": "2026-10-15 · JDK 25 支持现状（Spring 各线）",
+      "original_body_sha256": "f34d3f25ff95d89f16ea9130fc073f2e55d79620389baad399cdf267fd167c64",
+      "migrated_body_sha256": "e068ab56f94748a3941d3e4f3ca3e063f4ffed5a8c30e70e65c6af5e87d18dfb",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260922-002",
+      "domain": "密码学",
+      "title": "2026-09-22 · 成为密码学专家的系统性学习路线",
+      "original_body_sha256": "cb4c9a34779eb0719bda7c6a3a516794db86055571b4f2ef11833da8f375372e",
+      "migrated_body_sha256": "cc52f83ea9a29832eef915179f6d4347669cfa9e1f08c5c3a92e543196a80d11",
+      "original_updates": [
+        "2026-09-22（补充数学学习路线关联；原自评与原规划保留为历史条件；补充数据结构与算法路线关联）"
+      ]
+    },
+    {
+      "id": "q-20261009-001",
+      "domain": "密码学",
+      "title": "2026-10-09 · 加密锁中签名证书与加密证书的存放和使用规范",
+      "original_body_sha256": "601a51ce83cddac2099e6e0e9b7ca81fc306d31cbbbbfd1babea3ccbe4031693",
+      "migrated_body_sha256": "601a51ce83cddac2099e6e0e9b7ca81fc306d31cbbbbfd1babea3ccbe4031693",
+      "original_updates": [
+        "2026-10-09（补充锁内逻辑目录结构；区分普通文件、容器及权限数据）"
+      ]
+    },
+    {
+      "id": "q-20260922-003",
+      "domain": "数学",
+      "title": "2026-09-22 · 从小学算术到数学研究的完整学习路线与领域关系",
+      "original_body_sha256": "827e159ee7ad14ba58808e00c444a0533e9cc0e1c2b57f22041365cde2d1c2db",
+      "migrated_body_sha256": "fb09f8b8aa7e1d8197b69353bd27dfc53b862c5a83523441f3e3f8585698227d",
+      "original_updates": [
+        "2026-09-22（补充数据结构与算法路线关联）"
+      ],
+      "appendix": "附录/q-20260922-003.md",
+      "final_entry_sha256": "1de80211d232356237df3b6ac70cb8bd024f77f3f7fca8d8788f8496a6dd4c14",
+      "final_appendix_sha256": "8764a79005e6448e9f75b471e8a00ea56323ad7ef0a8b85ebfdff6d466f5c46b"
+    },
+    {
+      "id": "q-20260923-005",
+      "domain": "数学",
+      "title": "2026-09-23 · 苏州中考与江苏高考数学考试范围及官方公开入口",
+      "original_body_sha256": "32a16ce7f9609c456bc40ff3046f2bc66e1fda43e7a500e4deb0bc77811d4849",
+      "migrated_body_sha256": "32a16ce7f9609c456bc40ff3046f2bc66e1fda43e7a500e4deb0bc77811d4849",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260928-001",
+      "domain": "数学",
+      "title": "2026-09-28 · YouTube 数学频道推荐",
+      "original_body_sha256": "b38eddc2d022e1263f4a65109b6a62612c9b4839154857c3623a2a7bd5a3b936",
+      "migrated_body_sha256": "b38eddc2d022e1263f4a65109b6a62612c9b4839154857c3623a2a7bd5a3b936",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260922-004",
+      "domain": "AI 编程",
+      "title": "2026-09-22 · 国内外 AI Agent 编程工具概览",
+      "original_body_sha256": "b78704714b49f07a5868644980d8fb60cc289173e757a46bcae6945bfbdf03bd",
+      "migrated_body_sha256": "dd7436f45043be5045ad36e17a53f0c3f74627718ce0dc5dc27ebdaa206e6b4e",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-006",
+      "domain": "AI 编程",
+      "title": "2026-09-23 · Grok Bot 是什么：常驻智能体队友产品",
+      "original_body_sha256": "dafe5bf6e6fbe51125092daf4659e4c88c309573f12e173f852fe53cc7917606",
+      "migrated_body_sha256": "dafe5bf6e6fbe51125092daf4659e4c88c309573f12e173f852fe53cc7917606",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260928-002",
+      "domain": "AI 编程",
+      "title": "2026-09-28 · OpenCode 可以使用哪些模型",
+      "original_body_sha256": "1534848283a856a68702d5d5615c6ac976432acbc3457f93e753583dd1f2275e",
+      "migrated_body_sha256": "1534848283a856a68702d5d5615c6ac976432acbc3457f93e753583dd1f2275e",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261019-001",
+      "domain": "AI 编程",
+      "title": "2026-10-19 · ZCode 桌面版基于什么技术打包 JS",
+      "original_body_sha256": "c707e5bdb126a119c5a51c50e1b605419f3eb3218a9cd0ec6b60a8d08d8779f4",
+      "migrated_body_sha256": "c707e5bdb126a119c5a51c50e1b605419f3eb3218a9cd0ec6b60a8d08d8779f4",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261020-001",
+      "domain": "AI 编程",
+      "title": "2026-10-20 · 将 WASM 封装为 MCP 供 Agent 调用的可行性与形态",
+      "original_body_sha256": "a659b9393d013fb52dff506e6e1126d62edfd1f1b6d40b7019c90131b4e48419",
+      "migrated_body_sha256": "a8bdd89fe765dc54afa3bddafa70699220a2d489c6769893df674f6321b76942",
+      "original_updates": [
+        "2026-10-25"
+      ]
+    },
+    {
+      "id": "q-20261020-002",
+      "domain": "AI 编程",
+      "title": "2026-10-20 · MCP 服务器接入方式：npx 本地与 HTTP 远程的选择",
+      "original_body_sha256": "c9301bf871ca7c2b5bf67a0c6cec77d6db134b8b1a1713b75c001b1bdc09fad1",
+      "migrated_body_sha256": "aa0b352df2a79008dbdfa8bfb7542669a3d42ef6e10fed2357ec5b11b1b972fc",
+      "original_updates": [
+        "2026-10-25"
+      ]
+    },
+    {
+      "id": "q-20261020-003",
+      "domain": "AI 编程",
+      "title": "2026-10-20 · DWG 处理 WASM 云端部署的并发与 C++ 替代问题",
+      "original_body_sha256": "a4a6d503e1d382b7cca174cd55334b8df2eca23f5acae8fcf251ce8fd26fb6c0",
+      "migrated_body_sha256": "4ceaf48b580c9291375bf58be8290e59ea381849016e79d6364f2421855c372e",
+      "original_updates": [
+        "2026-10-25"
+      ]
+    },
+    {
+      "id": "q-20261025-001",
+      "domain": "AI 编程",
+      "title": "2026-10-25 · Codex 如何设置无需审批的完整访问权限",
+      "original_body_sha256": "391971adc2f5700e08cc6ab0faccbdd52aa8f914b503851ad463fc406724b6ce",
+      "migrated_body_sha256": "391971adc2f5700e08cc6ab0faccbdd52aa8f914b503851ad463fc406724b6ce",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260928-003",
+      "domain": "人工智能",
+      "title": "2026-09-28 · YouTube 上值得关注的 AI 博主",
+      "original_body_sha256": "e7d0c3090b2157fa3bbe97628c7e791ab36fc130a52a3ba95cf3e7a99ed1d8b4",
+      "migrated_body_sha256": "e7d0c3090b2157fa3bbe97628c7e791ab36fc130a52a3ba95cf3e7a99ed1d8b4",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260922-005",
+      "domain": "数据结构与算法",
+      "title": "2026-09-22 · 数据结构与算法的完整学习路线及已有知识点对应",
+      "original_body_sha256": "b4f268b1848e136babf4dd709022864f790c868e3692dfee8468ce876ee89952",
+      "migrated_body_sha256": "6279b854424a5921d106f41141ae2afd765b1a9abcb714abd70c4102c8b6d85a",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260922-006",
+      "domain": "OAuth",
+      "title": "2026-09-22 · 掌握 OAuth 2.0 的学习路线与完整知识地图",
+      "original_body_sha256": "2d8eef467e104ee6e4ad0898fd08f2bfe87e1c0fbf08ddf0c03711ade10820d4",
+      "migrated_body_sha256": "fb064e1bc3dd72d98144f954f7c6ba3309f46504f70fd215e178484198ac573a",
+      "original_updates": [],
+      "appendix": "附录/q-20260922-006.md",
+      "final_entry_sha256": "5c78d858510271c97cd9a7739bc5d53519d4085495b97ff8c10224f6879342b9",
+      "final_appendix_sha256": "bbbaadc9c688c3979185073a4587f50c56f89e78039454ee1906d2905a031021"
+    },
+    {
+      "id": "q-20261012-003",
+      "domain": "OAuth",
+      "title": "2026-10-12 · oauth.net 是社区官网而非 IETF 官方站点",
+      "original_body_sha256": "7799be3fe61e1fa17bd5ef1b00c1f8aaebb8b261d26a58d6bd259a4a0b9a2d9f",
+      "migrated_body_sha256": "480c546442ac7fd64ce934f3271dbd04bfb5428ea48882e7f693996fe4cfdad8",
+      "original_updates": [
+        "2026-10-12。追问\"用 oauth.net 学 OAuth 2 是否好选择、有无更好资源\"：oauth.net/2/ 实测为概念页＋RFC 链接的导览索引（核心概念、grant types、令牌管理、发现注册、PAR/DPoP/mTLS、OAuth 2.1），无分步教学；适合起步概览、查扩展对应规范、跟踪 2.1。系统教程用 [OAuth 2.0 Simplified](https://www.oauth.com/)（免费在线书，Aaron Parecki 著）与 [OAuth 2 in Action](https://www.manning.com/books/oauth-2-in-action)（Manning 2017-03，Justin Richer 与 Antonio Sanso 著；中文版《OAuth 2实战》，二手寻源：豆瓣）。该书出版早于 RFC 9700 与 RFC 10017，安全结论需按安全 BCP 校正。主干仍是 [[#2026-09-22 · 掌握 OAuth 2.0 的学习路线与完整知识地图]] 的 RFC 基线。"
+      ]
+    },
+    {
+      "id": "q-20260923-007",
+      "domain": "远程办公",
+      "title": "2026-09-23 · 美国住宅 IP 远程电脑如何订阅与选择",
+      "original_body_sha256": "2f397d7f7bd17a3dc755c2ec84a142fe1c4befc15d11ec78e2dd6ed67210ccd8",
+      "migrated_body_sha256": "5a0e76b353396f4bb6e68946087f6b03fd13aa9886eae1a44996fd997003faee",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-008",
+      "domain": "远程办公",
+      "title": "2026-09-23 · RDP 是什么以及与住宅 IP 有何关系",
+      "original_body_sha256": "8a9ffc38ee53828333965e42112212dafd4ac6e8a504b3b4b66d32d8ce6b7e6e",
+      "migrated_body_sha256": "8a9ffc38ee53828333965e42112212dafd4ac6e8a504b3b4b66d32d8ce6b7e6e",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-009",
+      "domain": "Linux",
+      "title": "2026-09-23 · 从零基础到 Linux 专家的完整学习路线与知识地图",
+      "original_body_sha256": "3c92babd51a9e1077f20ca54651a1d897d14ce51d61e1f9e424ae71d7f9fd125",
+      "migrated_body_sha256": "a35472f965b4a612ed7ec3af42ef596c790881e7ecf5ee7e289984ef4c651179",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261002-002",
+      "domain": "Linux",
+      "title": "2026-10-02 · 系统盘与数据盘合并后供 Docker 使用的方式与取舍",
+      "original_body_sha256": "d40c2a13976e46d4b6e20656fe49b85a2146c1eb0eb7194ddbad85cb47734b41",
+      "migrated_body_sha256": "97376cb4a7c91873e80484ab7fabdbe3a0f9b7ee3353a61a7bd71e1fe1dbe75c",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261023-001",
+      "domain": "Linux",
+      "title": "2026-10-23 · 零基础学习 Linux 的学习计划与资源组合",
+      "original_body_sha256": "d1cb9de671f9d19eede2fcd4de1ebbdfe52aed25ca8220c3a7e32ff5dd7e2f6b",
+      "migrated_body_sha256": "894b0c1653adfc9fdfb389cd29d9cf0361174b128b80f89ccf293878d61ab019",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261027-001",
+      "domain": "Linux",
+      "title": "2026-10-27 · 在 Windows 本机打开 WSL 完整 Linux 桌面的方案选择",
+      "original_body_sha256": "3a50262ef39bf35f2f4e4baa2ba7e7be5a65c4236c86381dab61c9c8394087cb",
+      "migrated_body_sha256": "1971920ed1d1c2c4a086961cba2fb5dce2ad857640a62ab4e0d2fa1cfda552cf",
+      "original_updates": [
+        "2026-10-27"
+      ]
+    },
+    {
+      "id": "q-20261027-002",
+      "domain": "Linux",
+      "title": "2026-10-27 · WSL 内存占用、缓存回收与开发容器按需启动",
+      "original_body_sha256": "02f03d0b4fd82e800cd27c1c89f08f504fcf3cd2a6351dff72deb11bc85d0f75",
+      "migrated_body_sha256": "2685938eb4130431e2a565557081678dafba75b6a913f4d07621fd19fdd5d393",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260923-010",
+      "domain": "前端开发",
+      "title": "2026-09-23 · 选用可嵌入的网页所见即所得 Markdown 编辑器",
+      "original_body_sha256": "ff04e82933b50197bfa66cc1b437e4c33982aa052038d74de54ace385971a0fc",
+      "migrated_body_sha256": "ff04e82933b50197bfa66cc1b437e4c33982aa052038d74de54ace385971a0fc",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261022-001",
+      "domain": "前端开发",
+      "title": "2026-10-22 · 从 awesome-design-md 合集为后台管理项目选设计风格",
+      "original_body_sha256": "f020c3c14a41cc463cec442e330ef72aecb76c5033f80c90bcc64a3dff9c86a3",
+      "migrated_body_sha256": "f020c3c14a41cc463cec442e330ef72aecb76c5033f80c90bcc64a3dff9c86a3",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261024-001",
+      "domain": "前端开发",
+      "title": "2026-10-24 · 网页端 3D 地球仪与地图的开源库选型（可交换）",
+      "original_body_sha256": "3df871d627606d6bf648f0e8be940b81910b8f188dfafff1b623454d7d3ceb49",
+      "migrated_body_sha256": "71c88c6a15cfcbb6a4519b7052b603d6aab1aebf7cb6b8e10c119c8caad6defe",
+      "original_updates": [
+        "2026-10-26（补充服务端选型的关联；前端库选型结论不变。）"
+      ]
+    },
+    {
+      "id": "q-20260924-001",
+      "domain": "Obsidian",
+      "title": "2026-09-24 · Obsidian Tasks 插件的定位与基本用法",
+      "original_body_sha256": "d8c7d74753553429d45cbde2c9931291772548ff6252b2a01876c9bea9bcda37",
+      "migrated_body_sha256": "d8c7d74753553429d45cbde2c9931291772548ff6252b2a01876c9bea9bcda37",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260924-002",
+      "domain": "Obsidian",
+      "title": "2026-09-24 · Windows 上的 Obsidian vault 如何免费供 iPhone 私有查阅",
+      "original_body_sha256": "1455d9fb3ee14210d5bc17a6f2d68e6602ae2abe806fc53ecc6926e5347bcf49",
+      "migrated_body_sha256": "1455d9fb3ee14210d5bc17a6f2d68e6602ae2abe806fc53ecc6926e5347bcf49",
+      "original_updates": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "id": "q-20260926-001",
+      "domain": "Obsidian",
+      "title": "2026-09-26 · Obsidian Git 插件设置与自动同步策略",
+      "original_body_sha256": "e7383ad65421edebb1088606f1aca313a6b7233bcd3f5c5be32657e70de9a0cf",
+      "migrated_body_sha256": "e7383ad65421edebb1088606f1aca313a6b7233bcd3f5c5be32657e70de9a0cf",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261001-001",
+      "domain": "Obsidian",
+      "title": "2026-10-01 · Obsidian 中美化 Mermaid 图表的插件选择",
+      "original_body_sha256": "33a55f0e5e40dc1a5a2cfd3185426a7443804137623a0f6dd251a92999a4dfc7",
+      "migrated_body_sha256": "33a55f0e5e40dc1a5a2cfd3185426a7443804137623a0f6dd251a92999a4dfc7",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260924-003",
+      "domain": "云存储",
+      "title": "2026-09-24 · 阿里云 OSS 单纯用于数据备份的成本",
+      "original_body_sha256": "cfba36e1ed5168c9d28fced3f2100617b5dfb6da5c627c26e664eacc03b75d73",
+      "migrated_body_sha256": "cfba36e1ed5168c9d28fced3f2100617b5dfb6da5c627c26e664eacc03b75d73",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260929-001",
+      "domain": "云存储",
+      "title": "2026-09-29 · Windows Server 更换 Linux 时用云盘快照恢复数据",
+      "original_body_sha256": "7369942d29154cbb1bac2a6ab9ebca69c8753b9e4e9c28bcc4d1ecc45028c6b1",
+      "migrated_body_sha256": "6096202dd61a4a08973d9e751f21ab892ffe789618f1b2a04d81eb37db8e58b7",
+      "original_updates": []
+    },
+    {
+      "id": "q-20260926-002",
+      "domain": "机器翻译",
+      "title": "2026-09-26 · 目前免费的翻译 API 接入方案",
+      "original_body_sha256": "1217819d7b652529de83c72a3e7d06e663bd48f48d603fdbe962d721d2a6fd65",
+      "migrated_body_sha256": "786aa38ea6f364a41a0ffd9ea85253e5884b65cf790807b0cea3882c21a91850",
+      "original_updates": [
+        "2026-09-27"
+      ]
+    },
+    {
+      "id": "q-20261008-001",
+      "domain": "机器翻译",
+      "title": "2026-10-08 · 截图中的翻译模型哪款英译中表现最好",
+      "original_body_sha256": "98c3b1a8b4ba8d44c942abe2864280136f94d2bd68f8becdc01a8dac6a88e9dc",
+      "migrated_body_sha256": "3f26cdcb16fea2576801721c07086681300c84fa513ae0b5099621cac72375c4",
+      "original_updates": [
+        "2026-10-08"
+      ]
+    },
+    {
+      "id": "q-20261015-005",
+      "domain": "机器翻译",
+      "title": "2026-10-15 · PDF 文档翻译的成熟方案与库服务选型",
+      "original_body_sha256": "97439ad0ecb2dbc07c06cc304666a9587993b57807902db5044ad7bb4a2ea1b3",
+      "migrated_body_sha256": "3c49f8164608240a7c3f47690903f5b81d82e0c4a2263a6a052aa61d153c9a74",
+      "original_updates": [
+        "2026-10-15"
+      ]
+    },
+    {
+      "id": "q-20260926-003",
+      "domain": "Zotero",
+      "title": "2026-09-26 · Zotero API 是什么",
+      "original_body_sha256": "cc51f77be64089c8d4222b0c9b5842f3b639f684c92699032f2203b4c9218680",
+      "migrated_body_sha256": "08d795b7b9060a6a602d06c414a56bc68fc58a3618d77a4bfe31fea0d5aa7880",
+      "original_updates": [
+        "2026-09-26"
+      ]
+    },
+    {
+      "id": "q-20261006-001",
+      "domain": "技术写作",
+      "title": "2026-10-06 · ASD-STE100 概览图的结构、规则与词表更正",
+      "original_body_sha256": "d96fa76f88e208bbe5718d13daa64194c5d383fd42525d1f7e41e87c30bf8ff7",
+      "migrated_body_sha256": "d96fa76f88e208bbe5718d13daa64194c5d383fd42525d1f7e41e87c30bf8ff7",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261006-002",
+      "domain": "药物制剂",
+      "title": "2026-10-06 · 利托那韦晶体问题是否解决及其原理",
+      "original_body_sha256": "198f32437e13878b7d0abc0c24a91b202d8624e3ee8283c3440deb81bf60ba4c",
+      "migrated_body_sha256": "198f32437e13878b7d0abc0c24a91b202d8624e3ee8283c3440deb81bf60ba4c",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261008-002",
+      "domain": "城乡规划",
+      "title": "2026-10-08 · 城乡规划领域的完整学习路线",
+      "original_body_sha256": "093d84a1a4d06ede8ff1b34d5414cb3b1d979d5729da49b89ec3e514cf836736",
+      "migrated_body_sha256": "093d84a1a4d06ede8ff1b34d5414cb3b1d979d5729da49b89ec3e514cf836736",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261008-003",
+      "domain": "AI 模型",
+      "title": "2026-10-08 · GLM 5.3 Flash 与 Haiku 5.5、GPT-6 Luna 对比图总结",
+      "original_body_sha256": "4923e3f76ce9d457ed4a8cc84c14ee75063e4ec479c02f49a9f2e9fa01137421",
+      "migrated_body_sha256": "4923e3f76ce9d457ed4a8cc84c14ee75063e4ec479c02f49a9f2e9fa01137421",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261008-004",
+      "domain": "AI 模型",
+      "title": "2026-10-08 · 英译中模型比较应保留哪些评测条件",
+      "original_body_sha256": "6b8335d9ee85515c0a3d5ec7ba4921a4b7ee7d09674506dc46f19261b114536f",
+      "migrated_body_sha256": "6a445e06724e4e36b6dc348c9f537a0934999c09ffea256f3c686af6de665dff",
+      "original_updates": [
+        "2026-10-08"
+      ]
+    },
+    {
+      "id": "q-20261015-006",
+      "domain": "AI 模型",
+      "title": "2026-10-15 · Jev 能否本地部署与硬件要求",
+      "original_body_sha256": "feaca28dbc1bbc98259f731d3362f9261f74a918324ab12c595b60c17eb9f06f",
+      "migrated_body_sha256": "feaca28dbc1bbc98259f731d3362f9261f74a918324ab12c595b60c17eb9f06f",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261015-007",
+      "domain": "AI 模型",
+      "title": "2026-10-15 · Laya 与 Jev 能力对比",
+      "original_body_sha256": "1f5fe312aa7364b0be63628634f0f9596c99e058caacf8a0177c25f166a2504c",
+      "migrated_body_sha256": "1f5fe312aa7364b0be63628634f0f9596c99e058caacf8a0177c25f166a2504c",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-001",
+      "domain": "AI 模型",
+      "title": "2026-10-26 · 智谱下一代模型的最新动向",
+      "original_body_sha256": "7fa22c0a9bf2a491a4d87b0720c85d6d20c5b77590b31028fdb8a8365b76c4ea",
+      "migrated_body_sha256": "7fa22c0a9bf2a491a4d87b0720c85d6d20c5b77590b31028fdb8a8365b76c4ea",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261008-005",
+      "domain": "传染病",
+      "title": "2026-10-08 · 俄罗斯鼠疫的最新情况",
+      "original_body_sha256": "1964707d9d42a2553a5d538ceff88fad41f7b0664367fb687377d6b47e141a36",
+      "migrated_body_sha256": "1964707d9d42a2553a5d538ceff88fad41f7b0664367fb687377d6b47e141a36",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261009-002",
+      "domain": "扫地机器人",
+      "title": "2026-10-09 · 全球扫地机器人品牌排名及统计口径",
+      "original_body_sha256": "4223a127fb4870e50b1147d1b2c1f6bfe49f1312db7b39a22f24d156c60fcee3",
+      "migrated_body_sha256": "4223a127fb4870e50b1147d1b2c1f6bfe49f1312db7b39a22f24d156c60fcee3",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261010-001",
+      "domain": "对象存储",
+      "title": "2026-10-10 · MinIO 公司是否倒闭或停止经营",
+      "original_body_sha256": "e280dab0be74f15e9bf8c3d6b26d4bce49796826b18899981cb35fb53be09067",
+      "migrated_body_sha256": "e280dab0be74f15e9bf8c3d6b26d4bce49796826b18899981cb35fb53be09067",
+      "original_updates": [
+        "2026-10-13"
+      ]
+    },
+    {
+      "id": "q-20261010-002",
+      "domain": "电脑供电",
+      "title": "2026-10-10 · ThinkPad T14p 能否使用拯救者 C140 氮化镓适配器供电",
+      "original_body_sha256": "ca87e02cc1c123ebbd63b0eae5ea8a300f6e2362b7e6b9d318374e05b1bd3269",
+      "migrated_body_sha256": "6f886181cd03d4231b6b8e688c206ae304b58c664e58a9b0423153d1b1685e9b",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261010-003",
+      "domain": "VPS",
+      "title": "2026-10-10 · 全球优质稳定的 VPS 提供商如何选择",
+      "original_body_sha256": "1288920476300a1181af8e378715db7e727d3a17fcc6b11a4936349138637e04",
+      "migrated_body_sha256": "1288920476300a1181af8e378715db7e727d3a17fcc6b11a4936349138637e04",
+      "original_updates": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "id": "q-20261010-004",
+      "domain": "VPS",
+      "title": "2026-10-10 · VPS 是什么",
+      "original_body_sha256": "49af54e604eac93e55eba87a354c168c10c1843721bbd2760a391fedefc7602a",
+      "migrated_body_sha256": "5d8c5149d84cf08213832e53b05324a8a7ad71a5c7e17385ba562cad45610a56",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261010-005",
+      "domain": "VPS",
+      "title": "2026-10-10 · VPS 与阿里云 ECS 有何区别",
+      "original_body_sha256": "c3b55b008edae57a0e3e20a34d1322a9ad392b5a59d7f361531edd5e60e3bb6c",
+      "migrated_body_sha256": "c3b55b008edae57a0e3e20a34d1322a9ad392b5a59d7f361531edd5e60e3bb6c",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261013-001",
+      "domain": "VPS",
+      "title": "2026-10-13 · 家庭服务器内网穿透如何选择云节点与直连方案",
+      "original_body_sha256": "d1a29f3cfb93dccde4832d31b70d8be331466fb993dd13146b27509f48372e27",
+      "migrated_body_sha256": "d1a29f3cfb93dccde4832d31b70d8be331466fb993dd13146b27509f48372e27",
+      "original_updates": [
+        "2026-10-13"
+      ]
+    },
+    {
+      "id": "q-20261010-006",
+      "domain": "大数据",
+      "title": "2026-10-10 · 什么是大数据",
+      "original_body_sha256": "50a102388770dbf07339029194eef0acf2e08ab3e1eebc3f61f9f33359816826",
+      "migrated_body_sha256": "50a102388770dbf07339029194eef0acf2e08ab3e1eebc3f61f9f33359816826",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261010-007",
+      "domain": "Git",
+      "title": "2026-10-10 · Git Bash 是什么及 Git 与 Bash 的分工",
+      "original_body_sha256": "158c332be4415c42d0ebee8cc2efb49accd4fde379aa5a412b000fdbd7dc7010",
+      "migrated_body_sha256": "158c332be4415c42d0ebee8cc2efb49accd4fde379aa5a412b000fdbd7dc7010",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261012-004",
+      "domain": "文本编辑器",
+      "title": "2026-10-12 · storytold（ArtCraft）组织有没有 Notepad++ 式带代码高亮的文本编辑器项目",
+      "original_body_sha256": "d716828c84da6699d54909fb5f942c5e0b8511b165aa146a961f185ddb6db9b5",
+      "migrated_body_sha256": "d716828c84da6699d54909fb5f942c5e0b8511b165aa146a961f185ddb6db9b5",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261012-005",
+      "domain": "文本编辑器",
+      "title": "2026-10-12 · 支持代码高亮的开源文本编辑器项目推荐",
+      "original_body_sha256": "1a97a07692cd6f7c885887d247b86f3022bf9e6eb51ac0bdc26dd923de130c57",
+      "migrated_body_sha256": "1a97a07692cd6f7c885887d247b86f3022bf9e6eb51ac0bdc26dd923de130c57",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261013-002",
+      "domain": "三维建模",
+      "title": "2026-10-13 · NVIDIA usd-brep 项目是什么",
+      "original_body_sha256": "b404ed60b47714e8f3c2a1f130fff415878f9f83e9003d4f29e13ca173c996fd",
+      "migrated_body_sha256": "b404ed60b47714e8f3c2a1f130fff415878f9f83e9003d4f29e13ca173c996fd",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261013-003",
+      "domain": "公司调研",
+      "title": "2026-10-13 · 斯菲尔电气公司画像：智能电网用户端厂商、新潮系与两度 IPO 折戟",
+      "original_body_sha256": "d7506f2509c6abddb148a9a4d0022c9418f76d9049bbd8a5cc508f3c667d21d2",
+      "migrated_body_sha256": "d7506f2509c6abddb148a9a4d0022c9418f76d9049bbd8a5cc508f3c667d21d2",
+      "original_updates": [
+        "2026-10-13 追问人员规模与薪资待遇。**规模**：500–999 人区间（[二手] 职友集）、参保约 598 人（[二手] 企业信息平台经百科转述）；组织为营销/研发/行政/制造四中心，官方社招页岗位发布于 2020-10、无薪资（[一手] [官网社会招聘页](https://www.sfere-elec.com/index.php/jrwm/shzp.html)）；在招职位分布无锡 47、南京 12、上海 6、苏州 1（[二手] 职友集）。**薪资**（均为二手，样本小）：在招岗位月薪嵌入式软件（硕士+）10–13K、电子软件（本科）6–10K、海外技术工程师 12–20K、测试（大专）6–11K（职友集汇总企业公开招聘）；储能海外销售 15–20K·13 薪、能源优化算法 17–30K、嵌入式硬件 10–20K（猎聘）；职友集统计 61.4% 岗位 10–30K/月、应届生平均约 12.5K、行业对比 +25%（算法统计，可靠性一般）；2020 校招：基础薪资 4000+ 提成、五险一金、节假日/生日福利、差旅补贴（旧）。**冲突**：爱企查（经职友集转载）示注册资本 4125 万元、法定代表人张凤雏，与百科 4500 万元不一致；王新潮是否仍任董事长未核实。员工评价（看准网）未检索到足够样本。新增一手信源：[关于我们页](https://www.sfere-elec.com/index.php/gywm/gywm.html)（国家火炬计划重点高新技术企业、博士后科研工作站、GB/T 22264-2008 与 GB/T 18216.12 起草单位、业务聚焦轨道交通/市政建筑/信息通信/商业地产/教育医疗）。"
+      ]
+    },
+    {
+      "id": "q-20261013-004",
+      "domain": "AutoCAD",
+      "title": "2026-10-13 · AutoCAD 自动化操作 MCP 的官方与社区现状",
+      "original_body_sha256": "c6b4e3caa7400dcceb2db30d7e8692823a9a6b7e4f1221cc61b59b00e5b70e5b",
+      "migrated_body_sha256": "bbdf2f5b6b4347f70cb8bcdb14415a4556ebeb657edc08476dbde015c9af66dc",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-003",
+      "domain": "AutoCAD",
+      "title": "2026-10-14 · 新建图形选择样板（DWT）的含义与自带样板的区别",
+      "original_body_sha256": "acc5e5565ae5d0be4c5b5cad1020928c2ce6df2d168a4db6cc8524af934092c8",
+      "migrated_body_sha256": "acc5e5565ae5d0be4c5b5cad1020928c2ce6df2d168a4db6cc8524af934092c8",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-004",
+      "domain": "AutoCAD",
+      "title": "2026-10-14 · 零基础学习 AutoCAD 的完整路线与官方免费资源",
+      "original_body_sha256": "89c84a0b1422c4a4295cc1e93579f0928efa21df37ee2c768d84d5c176eb40c4",
+      "migrated_body_sha256": "89c84a0b1422c4a4295cc1e93579f0928efa21df37ee2c768d84d5c176eb40c4",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-005",
+      "domain": "AutoCAD",
+      "title": "2026-10-14 · 中国大陆手机号申请 AutoCAD 试用的验证阻断（实测）",
+      "original_body_sha256": "88b6ce8b2fdb965601d49d77272a29f8a1be30219e582c5e6fb0905587cc2dca",
+      "migrated_body_sha256": "88b6ce8b2fdb965601d49d77272a29f8a1be30219e582c5e6fb0905587cc2dca",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261020-004",
+      "domain": "AutoCAD",
+      "title": "2026-10-20 · 天正转 T3 的含义与图纸兼容目的",
+      "original_body_sha256": "5ed692ed29296821ec403f8f14eb8f21be3ac9c527f59b41ea81b6937105d16a",
+      "migrated_body_sha256": "5ed692ed29296821ec403f8f14eb8f21be3ac9c527f59b41ea81b6937105d16a",
+      "original_updates": [
+        "2026-10-20"
+      ]
+    },
+    {
+      "id": "q-20261014-006",
+      "domain": "独立开发",
+      "title": "2026-10-14 · 程序员一人公司的创业方向有哪些",
+      "original_body_sha256": "edb638bad1d53545129164bd48f33ccf307dd3d551930b634d0deae79cd56b16",
+      "migrated_body_sha256": "edb638bad1d53545129164bd48f33ccf307dd3d551930b634d0deae79cd56b16",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-007",
+      "domain": "独立开发",
+      "title": "2026-10-14 · 做小游戏有没有前途",
+      "original_body_sha256": "25094821f78521bd8907b27b3ddda3fcf6fad905a3d2a2963c2c9afeeed8baa3",
+      "migrated_body_sha256": "25094821f78521bd8907b27b3ddda3fcf6fad905a3d2a2963c2c9afeeed8baa3",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-008",
+      "domain": "独立开发",
+      "title": "2026-10-14 · 产品化服务/咨询去哪里找客户",
+      "original_body_sha256": "cf276aacea765316ea69ed2c90068e58ef0fc9a6065b6e499df7f4b652529999",
+      "migrated_body_sha256": "cf276aacea765316ea69ed2c90068e58ef0fc9a6065b6e499df7f4b652529999",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-009",
+      "domain": "编程学习",
+      "title": "2026-10-14 · AI 时代学编程：看视频还是看书",
+      "original_body_sha256": "ab87fec3475f1f9c3ce24b8fe2d92b128a7796a174cf8fe682b5761114ef996e",
+      "migrated_body_sha256": "ab87fec3475f1f9c3ce24b8fe2d92b128a7796a174cf8fe682b5761114ef996e",
+      "original_updates": [
+        "2026-10-14 —— 追问“看书比看视频记得牢”。机制修正：差异不在媒介本身，而在媒介默认诱发的认知活动——书默认允许生成式加工（改述、重组），视频默认诱发转录式加工（听写、截图）。生成效应（Generation Effect，Slamecka & Graf 1978）支持自己生成的内容记得更牢。证据冲突如实并列：Mueller & Oppenheimer 2014 发现逐字转录的电脑笔记在概念题上劣于手写笔记，但 Morehead 等 2019 直接重复未复现手写优势，两说并存。实操判据：笔记里有无自己生成的改述与结构；复习时用问题-答案自测，不用重读。补充信源：[一手] [Slamecka & Graf 1978](https://psycnet.apa.org/record/1980-20399-001)；[Mueller & Oppenheimer 2014](https://journals.sagepub.com/doi/abs/10.1177/0956797614524581)；[Morehead et al. 2019 直接重复](https://link.springer.com/article/10.1007/s10648-019-09468-2)"
+      ]
+    },
+    {
+      "id": "q-20261026-002",
+      "domain": "编程学习",
+      "title": "2026-10-26 · 李刚“疯狂”编程书籍系列的网上读者评价",
+      "original_body_sha256": "b32fbd31b3810e6ed1f63ff8f77e5f4ba5f06da2b058e749f7c9637a870f296d",
+      "migrated_body_sha256": "b32fbd31b3810e6ed1f63ff8f77e5f4ba5f06da2b058e749f7c9637a870f296d",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261014-010",
+      "domain": "音乐",
+      "title": "2026-10-14 · 陈宇任（Funck）的相关歌曲",
+      "original_body_sha256": "92f50d02bb46390bac4b0f6ca2a46d358127f107568e889a100b34ca4db2ec70",
+      "migrated_body_sha256": "92f50d02bb46390bac4b0f6ca2a46d358127f107568e889a100b34ca4db2ec70",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261015-008",
+      "domain": "浏览器扩展",
+      "title": "2026-10-15 · Chrome 网页护眼插件的选择",
+      "original_body_sha256": "f28389300b51744b11a9361cb7748631e26e2592211deb8644551c70205f740b",
+      "migrated_body_sha256": "f28389300b51744b11a9361cb7748631e26e2592211deb8644551c70205f740b",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261016-001",
+      "domain": "视频技术",
+      "title": "2026-10-16 · 默认、AV1、HEVC 与 AVC 视频播放策略有什么区别",
+      "original_body_sha256": "117688f9c8db24d5bc45fcebf304c04b62e4091e326a4f748a4c178196f8e608",
+      "migrated_body_sha256": "117688f9c8db24d5bc45fcebf304c04b62e4091e326a4f748a4c178196f8e608",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261016-002",
+      "domain": "研究生考试",
+      "title": "2026-10-16 · 2027年408考试大纲的官方出处",
+      "original_body_sha256": "90bc42dc490e289137066673d3a70310b260c9983b925df6725f6db0c1f096a3",
+      "migrated_body_sha256": "90bc42dc490e289137066673d3a70310b260c9983b925df6725f6db0c1f096a3",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-003",
+      "domain": "研究生考试",
+      "title": "2026-10-26 · 退役大学生士兵考研优待的适用条件",
+      "original_body_sha256": "87423f1d019fd09b55910645e0b6c93e8430037b9317b16dcb398efabecb74bd",
+      "migrated_body_sha256": "60dd817320f131f36f0b1581298fd2969795955dcc50c1796811b6aba08d104b",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261018-003",
+      "domain": "C 语言",
+      "title": "2026-10-18 · Windows 上 C 语言开发环境、工具链与 IDE 的选择和搭建",
+      "original_body_sha256": "13eadaf8269d71a2591b254b918190770429a9ea7b591472c845ffaa2f4ddf85",
+      "migrated_body_sha256": "13eadaf8269d71a2591b254b918190770429a9ea7b591472c845ffaa2f4ddf85",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261021-001",
+      "domain": "笔记本电脑",
+      "title": "2026-10-21 · ThinkPad T14p 网友使用感受与口碑汇总",
+      "original_body_sha256": "2a9678d4509ffbe04986835eb3d2de2edd4a198cdbc837f7b4398097a2b4cf8f",
+      "migrated_body_sha256": "dc62961578e7d80fe8a12afefb366f21d75aae540e8847f0c831f65f13f2c1b2",
+      "original_updates": [
+        "2026-10-21（追问聚焦 Gen4／2026 款，见下方专条）。"
+      ]
+    },
+    {
+      "id": "q-20261021-002",
+      "domain": "笔记本电脑",
+      "title": "2026-10-21 · ThinkPad T14p Gen 4（2026 款）专项口碑与规格变化",
+      "original_body_sha256": "fbca21172d3b502465296d6b44a0b9a5c0a5eecb21ce5d74a1a21b9498540a4a",
+      "migrated_body_sha256": "9be627b8e2a4ea155641fa30dede25a40e41b46be4d2679cb079eee7bef64071",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261025-002",
+      "domain": "笔记本电脑",
+      "title": "2026-10-25 · ThinkPad 各系列定位、细分型号与程序员选型",
+      "original_body_sha256": "9a5e44913fc02ccda29e61bb75db395430f09bf6469c72b446aeee37020ee389",
+      "migrated_body_sha256": "9a5e44913fc02ccda29e61bb75db395430f09bf6469c72b446aeee37020ee389",
+      "original_updates": [
+        "2026-10-25"
+      ]
+    },
+    {
+      "id": "q-20261022-002",
+      "domain": "销售学",
+      "title": "2026-10-22 · 把销售作为科学时涉及的领域与专业知识",
+      "original_body_sha256": "db81873ce75ee296e589287ccd3df35ed7f026030e262d800f74113e1d7b8ed3",
+      "migrated_body_sha256": "db81873ce75ee296e589287ccd3df35ed7f026030e262d800f74113e1d7b8ed3",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261022-003",
+      "domain": "RPC",
+      "title": "2026-10-22 · RPC 的含义、调用过程与协议边界",
+      "original_body_sha256": "22acbffa0b82f40f8e1e1da9c8475ee2499d0e8cfb0c1396f0c7f33867da202d",
+      "migrated_body_sha256": "22acbffa0b82f40f8e1e1da9c8475ee2499d0e8cfb0c1396f0c7f33867da202d",
+      "original_updates": [
+        "2026-10-22"
+      ]
+    },
+    {
+      "id": "q-20261022-004",
+      "domain": "平面设计",
+      "title": "2026-10-22 · AI Agent 驱动海报、宣传册与封面制作的开源工具及工作流",
+      "original_body_sha256": "81c0ec8606f03e916384beadf3f8e65bf69fd8a07b4ae637d210e9032edbcc7e",
+      "migrated_body_sha256": "81c0ec8606f03e916384beadf3f8e65bf69fd8a07b4ae637d210e9032edbcc7e",
+      "original_updates": [
+        "2026-10-22"
+      ]
+    },
+    {
+      "id": "q-20261023-002",
+      "domain": "宠物食品",
+      "title": "2026-10-23 · 猫粮品牌排名有哪些口径",
+      "original_body_sha256": "a066f5ae534fe67550ab382258c7a1ff603add24797ac23fdeade6a29deb78ed",
+      "migrated_body_sha256": "a066f5ae534fe67550ab382258c7a1ff603add24797ac23fdeade6a29deb78ed",
+      "original_updates": [
+        "2026-10-23（追问品牌质量排名，深化质量口径与送检证据）"
+      ]
+    },
+    {
+      "id": "q-20261025-003",
+      "domain": "MCP",
+      "title": "2026-10-25 · 系统学习 MCP 的完整路线与知识点",
+      "original_body_sha256": "868470b3f842ba86c796df945a0fe2c4cba3867bb185f98d09f1f37a748678f1",
+      "migrated_body_sha256": "a3dfb82f11382f4eaf0ed7318217d8d1161d4f64e9cc03516ac48ad88b48d7c5",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-004",
+      "domain": "数字使用与自控",
+      "title": "2026-10-26 · 如何戒除抖音等短视频成瘾",
+      "original_body_sha256": "ba14db5cb575883001fba123aca80c46a4fde73e4c6f8f78db45664445c2632c",
+      "migrated_body_sha256": "ba14db5cb575883001fba123aca80c46a4fde73e4c6f8f78db45664445c2632c",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-005",
+      "domain": "电脑性能测试",
+      "title": "2026-10-26 · 有评分和排名的电脑性能测试工具",
+      "original_body_sha256": "b15389c41018dcf0b6d0a13ea57c5adc3a6674aed450377e5e3f84b3890e5956",
+      "migrated_body_sha256": "b15389c41018dcf0b6d0a13ea57c5adc3a6674aed450377e5e3f84b3890e5956",
+      "original_updates": [
+        "2026-10-26"
+      ]
+    },
+    {
+      "id": "q-20261026-006",
+      "domain": "电脑性能测试",
+      "title": "2026-10-26 · PassMark 整机 8994.2 分的水平与分项解读",
+      "original_body_sha256": "bc1ac269f74186cdaaa76731e43d071a322d58aafa6f42ceeeaaf687fbf5ca69",
+      "migrated_body_sha256": "bc1ac269f74186cdaaa76731e43d071a322d58aafa6f42ceeeaaf687fbf5ca69",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-007",
+      "domain": "GIS",
+      "title": "2026-10-26 · 免费私有化部署的 GIS 服务选型",
+      "original_body_sha256": "3b45174549118afd2b60434b08503e48afa90fcf6fcb13acc212f288f7a37295",
+      "migrated_body_sha256": "2d415ec0a993c322436f22815a07880cc4422ba56760cae0e29d9d6cfd45ae15",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-008",
+      "domain": "GIS",
+      "title": "2026-10-26 · GIS 的含义与地图、GIS 服务的关系",
+      "original_body_sha256": "0938d3968621de316933600c77ef47916a351b3cabbb268e1e51382d763e185b",
+      "migrated_body_sha256": "0938d3968621de316933600c77ef47916a351b3cabbb268e1e51382d763e185b",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-009",
+      "domain": "Windows",
+      "title": "2026-10-26 · Windows 11 专业版与家庭版的主要区别及选型",
+      "original_body_sha256": "e5979eb45fb0d2c9ec64e2bca8d257dbc709ecaabad79a75bb7524200593ccbe",
+      "migrated_body_sha256": "82612f7cdfd767a3828b9ef68bd5c5d9cd44871852b053c063f9ca3100dabf8f",
+      "original_updates": [
+        "2026-10-27"
+      ]
+    },
+    {
+      "id": "q-20261027-003",
+      "domain": "Windows",
+      "title": "2026-10-27 · Windows 11 深度清理与优化工具的选择",
+      "original_body_sha256": "1971d66e54b265036e275e4349e619b4ec789feb4636a41629d131b7572f852f",
+      "migrated_body_sha256": "1971d66e54b265036e275e4349e619b4ec789feb4636a41629d131b7572f852f",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261027-004",
+      "domain": "Windows",
+      "title": "2026-10-27 · Windows 内存清理后回涨与 WSL 常驻服务的占用诊断",
+      "original_body_sha256": "8124330cf3b8ca606e548ce66b100aa86675736b77963c13314319ad4bf2602a",
+      "migrated_body_sha256": "5af698929f8d4e4901af5bb0ddc85915ab3e62f20b545ea07794e00eb731b0c9",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-010",
+      "domain": "Navicat",
+      "title": "2026-10-26 · Navicat 最新版本",
+      "original_body_sha256": "2400a06e4b1b3d23421cb885045c5b38fdd118f38ba16b6e7662c8313baaee0b",
+      "migrated_body_sha256": "2400a06e4b1b3d23421cb885045c5b38fdd118f38ba16b6e7662c8313baaee0b",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-011",
+      "domain": "兵役与退役保障",
+      "title": "2026-10-26 · 在中国当兵的个人好处及制度规则与取舍",
+      "original_body_sha256": "d962cbb37660449774d6b2249788d7165d98b3ebb3945a641981ce6e2fa24d6f",
+      "migrated_body_sha256": "90ba4ffb019564e5b8ec9d979096a28ccd9a75779eabb6afd3903cf43de46fa6",
+      "original_updates": []
+    },
+    {
+      "id": "q-20261026-012",
+      "domain": "英语学习",
+      "title": "2026-10-26 · 新概念英语的自学方法、学习路径与资源选择",
+      "original_body_sha256": "d50b04c58b5f77714c57b21a6b10316a64d4dfeeacbad1802373fce1aaed36fc",
+      "migrated_body_sha256": "d50b04c58b5f77714c57b21a6b10316a64d4dfeeacbad1802373fce1aaed36fc",
+      "original_updates": []
+    }
+  ],
+  "verification": {
+    "date": "2026-10-27",
+    "archive_files_sha256_checked": 58,
+    "entries_reconstructed_equal_after_link_normalization": 116,
+    "original_update_dates_unchanged": true,
+    "question_count_unchanged": true,
+    "legacy_entry_anchors_preserved": 116,
+    "appendices": 3,
+    "integration_tests_passed": 9,
+    "check_elapsed_seconds": 0.3,
+    "idempotent_sync": true
+  }
+}

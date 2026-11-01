@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "explanatory-output-style@anthropic-plugin-directory": true
+  }
+}

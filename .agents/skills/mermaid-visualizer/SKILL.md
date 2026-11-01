@@ -1,6 +1,6 @@
 ---
 name: mermaid-visualizer
-description: Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, create flowcharts, or make diagrams from text. Supports process flows, system architectures, comparisons, mindmaps, and more with built-in syntax error prevention.
+description: Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, create flowcharts, or make diagrams from text. Supports process flows, system architectures, comparisons, mindmaps, and more with built-in syntax error prevention and contrast-safe text styling.
 ---
 
 # Mermaid Visualizer
@@ -108,6 +108,17 @@ Line breaks in circle nodes only: ((Text<br/>Break))
 - `==>` thick arrow (for emphasis)
 - `~~~` invisible link (for layout only)
 
+### Rule 6: Text Contrast (Required)
+Default node text renders light gray. On the palette's light fills it is unreadable. Set the palette's text color on every styled node, and add `stroke-width:1.5px` for crisper borders.
+
+```
+WRONG: style A fill:#d3f9d8,stroke:#2f9e44                 → faint default gray text
+RIGHT: style A fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+```
+
+For edge labels, set the global text color once at the top of the diagram:
+`%%{init: {"theme": "base", "themeVariables": {"textColor": "#1b1f24"}}}%%`
+
 For complete syntax reference and edge cases, see [references/syntax-rules.md](references/syntax-rules.md)
 
 ## Configuration Options
@@ -137,16 +148,18 @@ All diagrams accept these parameters:
 
 ## Color Scheme Defaults
 
-Standard professional palette:
-- Green (#d3f9d8/#2f9e44): Input, perception, start states
-- Red (#ffe3e3/#c92a2a): Planning, decision points
-- Purple (#e5dbff/#5f3dc4): Processing, reasoning
-- Orange (#ffe8cc/#d9480f): Actions, tool usage
-- Cyan (#c5f6fa/#0c8599): Output, execution, results
-- Yellow (#fff4e6/#e67700): Storage, memory, data
-- Pink (#f3d9fa/#862e9c): Learning, optimization
-- Blue (#e7f5ff/#1971c2): Metadata, definitions, titles
-- Gray (#f8f9fa/#868e96): Neutral elements, traditional systems
+Standard professional palette (fill / stroke / text):
+- Green: #d3f9d8 / #2f9e44 / #1e6b2f — Input, perception, start states
+- Red: #ffe3e3 / #c92a2a / #8c1d18 — Planning, decision points
+- Purple: #e5dbff / #5f3dc4 / #3f2a85 — Processing, reasoning
+- Orange: #ffe8cc / #d9480f / #8f3208 — Actions, tool usage
+- Cyan: #c5f6fa / #0c8599 / #0a5a68 — Output, execution, results
+- Yellow: #fff4e6 / #e67700 / #8a4b00 — Storage, memory, data
+- Pink: #f3d9fa / #862e9c / #5c1f6e — Learning, optimization
+- Blue: #e7f5ff / #1971c2 / #0f4d7a — Metadata, definitions, titles
+- Gray: #f8f9fa / #495057 / #212529 — Neutral elements, traditional systems
+
+Use fill, stroke, and text together; the text color is mandatory (Rule 6).
 
 ## Common Patterns
 
@@ -187,6 +200,8 @@ Before outputting, verify:
 - [ ] All subgraphs use proper ID syntax
 - [ ] All arrows use correct syntax (-->, -.->)
 - [ ] Colors applied consistently
+- [ ] Every styled node sets its palette text color (`color:#…`, Rule 6)
+- [ ] Edge labels present → `init` sets `textColor`
 - [ ] Layout direction specified
 - [ ] Style declarations present
 - [ ] No ambiguous node references

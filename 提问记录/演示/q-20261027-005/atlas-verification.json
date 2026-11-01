@@ -1,0 +1,22 @@
+{
+  "verifiedOn": "2026-10-27",
+  "scope": "使用自带校验器检查本次官方 Schema 所用的结构关键词；不把 format 注解、业务语义或任意通信时序当成已验证。",
+  "syntheticExamplesValidated": 56,
+  "capturedMessagesValidated": 8,
+  "coverage": {
+    "definitions": 155,
+    "literalMethods": 21,
+    "examples": 56,
+    "declaredPropertyOccurrences": 517,
+    "clientRequestMethods": 10,
+    "embeddedInputMethods": 3,
+    "notificationMethods": 8
+  },
+  "negativeChecksRejected": [
+    "缓存结果缺少 ttlMs",
+    "缓存结果缺少 cacheScope",
+    "请求缺少客户端能力"
+  ],
+  "officialConstraintsUnchangedAfterRemovingTeachingAnnotations": true,
+  "mrtrCorrelationChecked": true
+}

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<!-- ==================================================================
+     LONG DOCUMENT TEMPLATE · parchment design system
+     多页 A4 白皮书/技术报告/年度总结
+     结构：封面 -> 目录 -> 执行摘要 -> 正文章节 -> 附录
+     ================================================================== -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>【填：文档标题】</title>
+<meta name="author" content="私人导师">
+<meta name="description" content="【填：一句话摘要】">
+<meta name="keywords" content="【填：关键词，逗号分隔】">
+<meta name="generator" content="Kami">
+<style>
+  @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+
+  /* Regular weight */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W04.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Bold weight - W05 for all bold variants */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W05.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @page {
+    size: A4;
+    margin: 20mm 22mm 22mm 22mm;
+    background: #f5f4ed;
+
+    @top-right {
+      content: string(section-title);
+      font-family: "TsangerJinKai02", "Source Han Serif SC",
+                   "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+      font-size: 8pt;
+      color: #6b6a64;
+    }
+
+    @bottom-center {
+      content: counter(page) "  ·  知识报告";
+      font-family: "TsangerJinKai02", "Source Han Serif SC",
+                   "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+      font-size: 9pt;
+      color: #6b6a64;
+    }
+  }
+
+  @page:first {
+    @top-right { content: ""; }
+    @bottom-center { content: ""; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --near-black:#141413;
+    --dark-warm: #3d3d3a;
+    --olive:     #504e49;
+    --stone:     #6b6a64;
+    --brand:     #1B365D;
+    --border:    #e8e6dc;
+    --border-soft:#e5e3d8;
+    --tag-bg:    #E4ECF5;
+    --serif: "TsangerJinKai02", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+    --sans: var(--serif);
+
+    --rhythm-module:  14pt;
+    --rhythm-section: 18pt;
+  }
+
+  html, body { background: var(--parchment); }
+
+  @media screen {
+    /* 屏幕阅读放大 1.25 倍：正文约 17.5px，表格约 15.8px；打印/PDF 不受影响 */
+    body { max-width: 210mm; margin: 0 auto; padding: 20mm 22mm 22mm 22mm; zoom: 1.25; }
+  }
+
+  body {
+    color: var(--near-black);
+    font-family: var(--serif);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    letter-spacing: 0.3pt;
+    widows: 3;
+    orphans: 3;
+  }
+
+  .sans {
+    font-family: var(--sans);
+  }
+
+  /* ========== COVER ========== */
+  .cover {
+    min-height: 240mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40mm 0 0 0;
+    break-after: page;
+  }
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--brand);
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 18pt;
+  }
+  .cover-title {
+    font-size: 36pt;
+    font-weight: 500;
+    color: var(--near-black);
+    line-height: 1.15;
+    letter-spacing: 0.3pt;
+    margin-bottom: 16pt;
+  }
+  .cover-sub {
+    font-family: var(--sans);
+    font-size: 14pt;
+    color: var(--olive);
+    line-height: 1.5;
+    max-width: 85%;
+    margin-bottom: 30pt;
+  }
+  .cover-meta {
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+  .cover-meta strong {
+    color: var(--dark-warm);
+    font-weight: 500;
+  }
+
+  /* ========== TOC（目录）========== */
+  .toc { break-after: page; }
+  .toc h2 {
+    font-size: 22pt;
+    font-weight: 500;
+    margin-bottom: var(--rhythm-module);
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6pt 0;
+    border-bottom: 0.3pt dotted var(--border);
+    font-size: 11pt;
+  }
+  .toc-item:last-of-type { border-bottom: none; }
+  .toc-num {
+    color: var(--brand);
+    font-weight: 500;
+    min-width: 30pt;
+  }
+  .toc-title {
+    flex: 1;
+    color: var(--near-black);
+    padding-left: 6pt;
+    text-decoration: none;
+    /* Stays a block: WeasyPrint 70.0 resolves target-counter to 0 on a flex
+       anchor, so the page numbers below must not sit in a flex container. */
+    display: block;
+  }
+  .toc-title[href]::after {
+    content: target-counter(attr(href), page);
+    color: var(--stone);
+    font-variant-numeric: tabular-nums;
+    float: right;
+  }
+
+  /* ========== HEADINGS ========== */
+  h1 {
+    font-size: 22pt;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 10pt 0;
+    color: var(--near-black);
+    break-after: avoid;
+    string-set: section-title content();
+  }
+
+  .running-title { string-set: section-title content(); }
+
+  h2 {
+    font-size: 16pt;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 24pt 0 8pt 0;
+    color: var(--near-black);
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 13pt;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 18pt 0 6pt 0;
+    color: var(--dark-warm);
+    break-after: avoid;
+  }
+
+  .chapter-num {
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--brand);
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    margin-bottom: 6pt;
+  }
+
+  /* ========== PARAGRAPHS ========== */
+  p {
+    margin: 0 0 10pt 0;
+    line-height: 1.55;
+    color: var(--near-black);
+    widows: 2;
+    orphans: 2;
+  }
+
+  .lead {
+    font-size: 12pt;
+    line-height: 1.55;
+    color: var(--dark-warm);
+    margin-bottom: var(--rhythm-module);
+  }
+
+  .hl { color: var(--brand); font-weight: 500; }
+  strong { font-weight: 500; }
+
+  /* ========== LISTS ========== */
+  ul, ol {
+    margin: 6pt 0 10pt 0;
+    padding-left: 20pt;
+    line-height: 1.55;
+  }
+  ul li::marker { color: var(--brand); }
+  ol li::marker { color: var(--brand); font-weight: 500; }
+
+  /* ========== QUOTE ========== */
+  blockquote, .quote {
+    margin: 12pt 16pt;
+    padding: 4pt 0;
+    color: var(--olive);
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  blockquote .cite, .quote .cite {
+    display: block;
+    font-size: 9pt;
+    color: var(--stone);
+    margin-top: 4pt;
+  }
+
+  /* ========== CODE ========== */
+  /* Mono first for English glyphs, then CJK fallback so Chinese comments
+     inside code/pre render correctly. A mono-only chain causes missing
+     glyphs rendered as "?" or missing-glyph boxes in WeasyPrint when the system lacks
+     a mono font with CJK coverage. */
+  code {
+    font-family: "JetBrains Mono", "SF Mono", Consolas,
+                 "TsangerJinKai02", "Source Han Serif SC",
+                 "Noto Serif CJK SC", "Songti SC", monospace;
+    font-size: 9pt;
+    background: var(--ivory);
+    padding: 1pt 4pt;
+    border-radius: 2pt;
+    color: var(--dark-warm);
+  }
+  pre {
+    font-family: "JetBrains Mono", "SF Mono", Consolas,
+                 "TsangerJinKai02", "Source Han Serif SC",
+                 "Noto Serif CJK SC", "Songti SC", monospace;
+    font-size: 9pt;
+    line-height: 1.5;
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    margin: 10pt 0;
+    white-space: pre-wrap;
+    color: var(--near-black);
+    break-inside: avoid;
+  }
+  pre code { background: transparent; padding: 0; font-size: inherit; }
+
+  /* ========== TABLE (kami-table) ========== */
+  table, .kami-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 12pt 0;
+    break-inside: avoid;
+  }
+  table th, .kami-table th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--dark-warm);
+    padding: 6pt 8pt;
+    border-bottom: 0.6pt solid var(--border);
+    background: transparent;
+  }
+  table td, .kami-table td {
+    padding: 5pt 8pt;
+    border-bottom: 0.25pt solid var(--border);
+    vertical-align: top;
+  }
+  table.compact th, .kami-table.compact th { padding: 3pt 6pt; font-size: 8pt; }
+  table.compact td, .kami-table.compact td { padding: 2.5pt 6pt; font-size: 8pt; line-height: 1.4; }
+  table.financial td:not(:first-child), .kami-table.financial td:not(:first-child) {
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  table.financial th:not(:first-child), .kami-table.financial th:not(:first-child) { text-align: right; }
+  table.striped tbody tr:nth-child(even) td, .kami-table.striped tbody tr:nth-child(even) td {
+    background: var(--ivory);
+  }
+  table .total td, .kami-table .total td {
+    font-weight: 500; border-top: 0.6pt solid var(--border); border-bottom: none; color: var(--near-black);
+  }
+  /* Outer columns sit on the text edge, so a table lines up with the heading above it.
+     Striped rows keep their inset: the ivory fill needs room around the text. */
+  table:not(.striped) th:first-child, table:not(.striped) td:first-child { padding-left: 0; }
+  table:not(.striped) th:last-child, table:not(.striped) td:last-child { padding-right: 0; }
+
+  /* ========== CALLOUT ========== */
+  .callout {
+    background: var(--ivory);
+    padding: 10pt 14pt;
+    border-radius: 3pt;
+    margin: 12pt 0;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .callout blockquote,
+  .callout .quote {
+    margin: 6pt 0;
+    color: var(--olive);
+  }
+  .callout blockquote:first-child,
+  .callout .quote:first-child { margin-top: 0; }
+  .callout blockquote:last-child,
+  .callout .quote:last-child  { margin-bottom: 0; }
+
+  .takeaway {
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  .takeaway-label {
+    font-family: var(--sans);
+    font-size: 9pt;
+    color: var(--brand);
+    letter-spacing: 0.5pt;
+    text-transform: uppercase;
+    margin-bottom: 4pt;
+  }
+
+  /* ========== TAG ========== */
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: 9pt;
+    font-weight: 500;
+    padding: 1pt 6pt;
+    border-radius: 3pt;
+    margin-right: 4pt;
+  }
+
+  /* ========== FIGURE ========== */
+  figure {
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  figure img {
+    max-width: 100%;
+    border-radius: 4pt;
+  }
+  /* Inline diagrams (e.g. a Mermaid-sourced SVG via scripts/mermaid_normalize.py):
+     center and cap width so the figure never bleeds past the text column. */
+  figure svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 78%;
+    height: auto;
+  }
+  figcaption {
+    font-family: var(--sans);
+    font-size: 9pt;
+    color: var(--stone);
+    margin-top: 6pt;
+    text-align: center;
+  }
+
+  /* ========== EXECUTIVE SUMMARY ========== */
+  .exec-summary {
+    background: var(--ivory);
+    border-radius: 6pt;
+    padding: 16pt 20pt;
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  .exec-summary h2 {
+    margin-top: 0;
+    font-size: 13pt;
+  }
+
+  /* ========== CHAPTER BREAK ========== */
+  .chapter { break-before: page; }
+
+  /* ========== 图表预览（双击打开 · 左键拖拽 · 滚轮缩放）========== */
+  .fig-preview {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(20, 20, 19, 0.88);
+    z-index: 999;
+    cursor: grab;
+    overflow: hidden;
+  }
+  .fig-preview.open { display: block; }
+  .fig-preview .stage {
+    position: absolute; left: 0; top: 0;
+    transform-origin: 0 0;
+  }
+  .fig-preview svg {
+    display: block;
+    background: #f5f4ed;
+    border-radius: 4pt;
+    box-shadow: 0 8pt 40pt rgba(0, 0, 0, 0.4);
+  }
+  .fig-preview .hint {
+    position: fixed; left: 50%; bottom: 16pt;
+    transform: translateX(-50%);
+    font-family: var(--serif);
+    font-size: 9pt; color: #b8b7b0;
+    letter-spacing: 0.5pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═════════════ COVER ═════════════ -->
+<section class="cover">
+  <div>
+    <div class="cover-eyebrow">【填：领域】· 技术报告</div>
+    <div class="cover-title">【填：主标题<br>可两行】</div>
+    <div class="cover-sub">【填：副标题，一句话】</div>
+  </div>
+  <div class="cover-meta">
+    <strong>私人导师</strong><br>
+    V1.0  ·  【填：日期 YYYY.MM】<br>
+    知识学习 · 提问记录
+  </div>
+</section>
+
+<!-- ═════════════ 目录 ═════════════ -->
+<section class="toc">
+  <h2>目录</h2>
+  <div class="toc-item">
+    <span class="toc-num">01</span>
+    <a class="toc-title" href="#ch-executive-summary">执行摘要</a>
+  </div>
+  <div class="toc-item">
+    <span class="toc-num">02</span>
+    <a class="toc-title" href="#ch-background">【填：第2章标题】</a>
+  </div>
+  <div class="toc-item">
+    <span class="toc-num">03</span>
+    <a class="toc-title" href="#ch-methodology">【填：第3章标题】</a>
+  </div>
+  <div class="toc-item">
+    <span class="toc-num">04</span>
+    <a class="toc-title" href="#ch-evidence">【填：第4章标题】</a>
+  </div>
+  <div class="toc-item">
+    <span class="toc-num">05</span>
+    <a class="toc-title" href="#ch-conclusions">【填：第5章标题】</a>
+  </div>
+  <div class="toc-item">
+    <span class="toc-num">06</span>
+    <a class="toc-title" href="#ch-appendix">附录</a>
+  </div>
+</section>
+
+<!-- ═════════════ Chapter 01：执行摘要 ═════════════ -->
+<section class="chapter" id="ch-executive-summary">
+  <div class="chapter-num">01 · Executive Summary</div>
+  <h1>执行摘要</h1>
+
+  <p class="lead">
+    【填：2-3 句大论点开场，关键短语用 &lt;span class="hl"&gt;高亮&lt;/span&gt;。】
+  </p>
+
+  <h2>核心 Takeaways</h2>
+  <ul>
+    <li>【填：要点 1，一句话可检验结论】</li>
+    <li>【填：要点 2】</li>
+    <li>【填：要点 3】</li>
+    <li>【填：要点 4，可删】</li>
+  </ul>
+
+  <div class="takeaway">
+    <div class="takeaway-label">本文档回答的问题</div>
+    【填：本文的核心问题，一两句疑问句】
+  </div>
+</section>
+
+<!-- ═════════════ Chapter 02：背景 ═════════════ -->
+<section class="chapter" id="ch-background">
+  <div class="chapter-num">02 · Problem</div>
+  <h1>【填：第2章标题】</h1>
+
+  <p class="lead">
+    【填：章节导语，1-2 句。】
+  </p>
+
+  <h2>【填：小节标题】</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>【填：列1】</th>
+        <th>【填：列2】</th>
+        <th>【填：列3】</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落，术语首现写「中文名（English）」。】</p>
+
+  <div class="callout">
+    【填：核心观察；不需要则删除整个 div】
+  </div>
+</section>
+
+<!-- ═════════════ Chapter 03：机制 ═════════════ -->
+<section class="chapter" id="ch-methodology">
+  <div class="chapter-num">03 · Analysis</div>
+  <h1>【填：第3章标题】</h1>
+
+  <p class="lead">
+    【填：章节导语，1-2 句。】
+  </p>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落。】</p>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落，可加 &lt;strong&gt;小标题&lt;/strong&gt; 引出并列对象。】</p>
+  <p>【填：正文段落。】</p>
+
+  <!-- 图示槽：需要时间线/流程图时改写下方 SVG 标签；不需要则删除整个 figure -->
+  <figure>
+    <svg viewBox="0 0 960 460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="0.9" fill="#E3E2DC"/>
+        </pattern>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#f5f4ed"/>
+      <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
+
+      <!-- Horizontal axis -->
+      <line x1="60" y1="228" x2="900" y2="228" stroke="#b8b7b0" stroke-width="1.4"/>
+      <path d="M 894,224 L 900,228 L 894,232"
+            fill="none" stroke="#b8b7b0" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="60" y="254" fill="#6b6a64" font-size="11"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif">【填：轴说明】</text>
+
+      <!-- Event 0: x=140, ABOVE -->
+      <line x1="140" y1="220" x2="140" y2="168" stroke="#6b6a64" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="140" cy="228" r="5" fill="#6b6a64" stroke="#f5f4ed" stroke-width="1.5"/>
+      <rect x="72" y="124" width="136" height="44" rx="4"
+            fill="#f5f4ed" stroke="#e8e6dc" stroke-width="0.8"/>
+      <text x="140" y="141" fill="#6b6a64" font-size="11" font-family="'JetBrains Mono', monospace"
+            text-anchor="middle" letter-spacing="0.15em">【填：节点1标注】</text>
+      <text x="140" y="160" fill="#141413" font-size="15" font-weight="500"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif" text-anchor="middle">【填：节点1内容】</text>
+
+      <!-- Event 1: x=292, BELOW -->
+      <line x1="292" y1="236" x2="292" y2="288" stroke="#6b6a64" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="292" cy="228" r="5" fill="#6b6a64" stroke="#f5f4ed" stroke-width="1.5"/>
+      <rect x="200" y="288" width="184" height="44" rx="4"
+            fill="#f5f4ed" stroke="#e8e6dc" stroke-width="0.8"/>
+      <text x="292" y="305" fill="#6b6a64" font-size="11" font-family="'JetBrains Mono', monospace"
+            text-anchor="middle" letter-spacing="0.15em">【填：节点2标注】</text>
+      <text x="292" y="324" fill="#141413" font-size="15" font-weight="500"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif" text-anchor="middle">【填：节点2内容】</text>
+
+      <!-- Event 2: x=444, ABOVE, FOCAL -->
+      <line x1="444" y1="220" x2="444" y2="148" stroke="#1B365D" stroke-width="1.2"/>
+      <circle cx="444" cy="228" r="6" fill="#1B365D" stroke="#f5f4ed" stroke-width="1.5"/>
+      <rect x="319" y="94" width="250" height="54" rx="4"
+            fill="#EEF2F7" stroke="#1B365D" stroke-width="1"/>
+      <text x="444" y="113" fill="#1B365D" font-size="11" font-family="'JetBrains Mono', monospace"
+            text-anchor="middle" letter-spacing="0.15em">【填：节点3标注】</text>
+      <text x="444" y="137" fill="#141413" font-size="17" font-weight="500"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif" text-anchor="middle">【填：节点3内容（重点）】</text>
+
+      <!-- Event 3: x=596, BELOW -->
+      <line x1="596" y1="236" x2="596" y2="288" stroke="#6b6a64" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="596" cy="228" r="5" fill="#504e49" stroke="#f5f4ed" stroke-width="1.5"/>
+      <rect x="523" y="288" width="146" height="44" rx="4"
+            fill="#f5f4ed" stroke="#e8e6dc" stroke-width="0.8"/>
+      <text x="596" y="305" fill="#6b6a64" font-size="11" font-family="'JetBrains Mono', monospace"
+            text-anchor="middle" letter-spacing="0.15em">【填：节点4标注】</text>
+      <text x="596" y="324" fill="#141413" font-size="15" font-weight="500"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif" text-anchor="middle">【填：节点4内容】</text>
+
+      <!-- Event 4: x=748, ABOVE, reference -->
+      <line x1="748" y1="220" x2="748" y2="168" stroke="#6b6a64" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="748" cy="228" r="5" fill="#504e49" stroke="#f5f4ed" stroke-width="1.5"/>
+      <rect x="673" y="124" width="150" height="44" rx="4"
+            fill="#f5f4ed" stroke="#e8e6dc" stroke-width="0.8"/>
+      <text x="748" y="141" fill="#6b6a64" font-size="11" font-family="'JetBrains Mono', monospace"
+            text-anchor="middle" letter-spacing="0.15em">【填：节点5标注】</text>
+      <text x="748" y="160" fill="#141413" font-size="15" font-weight="500"
+            font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif" text-anchor="middle">【填：节点5内容】</text>
+
+      <!-- Legend -->
+      <line x1="40" y1="386" x2="920" y2="386" stroke="#DEDED7" stroke-width="0.8"/>
+      <text x="40" y="404" fill="#504e49" font-size="10" font-family="'JetBrains Mono', monospace"
+            letter-spacing="0.22em">LEGEND</text>
+
+      <circle cx="47" cy="424" r="6" fill="#1B365D" stroke="#f5f4ed" stroke-width="1.5"/>
+      <text x="60" y="429" fill="#504e49" font-size="11" font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif">重点节点</text>
+
+      <circle cx="196" cy="424" r="5" fill="#504e49" stroke="#f5f4ed" stroke-width="1.5"/>
+      <text x="209" y="429" fill="#504e49" font-size="11" font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif">普通节点</text>
+
+      <line x1="330" y1="424" x2="362" y2="424" stroke="#6b6a64" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="370" y="429" fill="#504e49" font-size="11" font-family="'TsangerJinKai02', 'Source Han Serif SC', 'Songti SC', Charter, Georgia, serif">节点连接线</text>
+    </svg>
+    <figcaption>【填：图题，一句说清洞察】</figcaption>
+  </figure>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落。】</p>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落。】</p>
+</section>
+
+<!-- ═════════════ Chapter 04：证据 ═════════════ -->
+<section class="chapter" id="ch-evidence">
+  <div class="chapter-num">04 · Evidence</div>
+  <h1>【填：第4章标题】</h1>
+
+  <p class="lead">
+    【填：章节导语，1-2 句。】
+  </p>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落，论断附来源（作者，年份，出处/PMID）。】</p>
+  <p>【填：正文段落。】</p>
+
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>【填：列1】</th>
+        <th>【填：列2】</th>
+        <th>【填：列3】</th>
+        <th>【填：列4】</th>
+        <th>【填：列5】</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落。】</p>
+
+  <blockquote>
+    【填：关键结论转述，一句话。】
+    <span class="cite">· 【填：来源（作者，年份，出处）】（结论转述）</span>
+  </blockquote>
+
+  <h2>【填：小节标题】</h2>
+  <p>【填：正文段落，写明适用条件与限制。】</p>
+</section>
+
+<!-- ═════════════ Chapter 05：结论 ═════════════ -->
+<section class="chapter" id="ch-conclusions">
+  <div class="chapter-num">05 · Conclusions</div>
+  <h1>【填：第5章标题】</h1>
+
+  <p class="lead">
+    【填：一句话总结，下面展开。】
+  </p>
+
+  <h2>核心结论</h2>
+  <ol>
+    <li><strong>【填：结论 1 主句】</strong>：【填：展开一句。】</li>
+    <li><strong>【填：结论 2 主句】</strong>：【填：展开一句。】</li>
+    <li><strong>【填：结论 3 主句】</strong>：【填：展开一句。】</li>
+  </ol>
+
+  <h2>【填：小节标题，如取舍对照】</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>【填：维度】</th>
+        <th>【填：方案A】</th>
+        <th>【填：方案B】</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+      <tr>
+        <td>【填】</td>
+        <td>【填】</td>
+        <td>【填】</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>下一步建议</h2>
+  <p>【填：可执行建议。】</p>
+
+  <div class="takeaway">
+    <div class="takeaway-label">【填：标签，如给你的三句话】</div>
+    【填：如果读者只记住一件事，是什么。】
+  </div>
+</section>
+
+<!-- ═════════════ Chapter 06：附录 ═════════════ -->
+<section class="chapter" id="ch-appendix">
+  <div class="chapter-num">06 · Appendix</div>
+  <h1>附录</h1>
+
+  <h2>A. 首要资料</h2>
+  <ul>
+    <li><a href="【填：链接】">【填：作者（年份），标题，出处，编号】</a>（一手）</li>
+    <li><a href="【填：链接】">【填：资料 2】</a>（一手）</li>
+    <li><a href="【填：链接】">【填：资料 3】</a>（二手，如有）</li>
+  </ul>
+
+  <h2>B. 术语表</h2>
+  <p><strong>【填：术语（English，缩写）】</strong>：【填：定义一句。】</p>
+  <p><strong>【填：术语 2】</strong>：【填：定义。】</p>
+  <p><strong>【填：术语 3】</strong>：【填：定义。】</p>
+
+  <h2>C. 说明</h2>
+  <p>本报告为一次性浏览版，不入提问记录、不做版本跟踪；知识条目已沉淀至提问记录对应领域。核实时间与适用条件见正文相应章节。</p>
+</section>
+
+<script>
+(function () {
+  var overlay = document.createElement('div');
+  overlay.className = 'fig-preview';
+  overlay.innerHTML = '<div class="stage"></div><div class="hint">拖拽平移 · 滚轮缩放 · 双击或 Esc 关闭</div>';
+  document.body.appendChild(overlay);
+  var stage = overlay.querySelector('.stage');
+  var scale = 1, tx = 0, ty = 0, dragging = false, lx = 0, ly = 0;
+
+  function apply() {
+    stage.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+  }
+  function open(svg) {
+    var clone = svg.cloneNode(true);
+    var w = 800, h = 600;
+    try {
+      var vb = clone.viewBox && clone.viewBox.baseVal;
+      if (vb && vb.width) { w = vb.width; h = vb.height; }
+    } catch (e) {}
+    clone.setAttribute('width', w);
+    clone.setAttribute('height', h);
+    stage.innerHTML = '';
+    stage.appendChild(clone);
+    var vw = window.innerWidth, vh = window.innerHeight;
+    scale = Math.min(vw * 0.8 / w, vh * 0.8 / h, 3);
+    tx = (vw - w * scale) / 2;
+    ty = (vh - h * scale) / 2;
+    apply();
+    overlay.classList.add('open');
+  }
+  function close() { overlay.classList.remove('open'); }
+
+  document.addEventListener('dblclick', function (e) {
+    var fig = e.target.closest ? e.target.closest('figure') : null;
+    if (!fig) return;
+    var svg = fig.querySelector('svg');
+    if (svg) open(svg);
+  });
+  overlay.addEventListener('dblclick', close);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  overlay.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    var ns = Math.min(12, Math.max(0.2, scale * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+    var rect = stage.getBoundingClientRect();
+    var cx = (e.clientX - rect.left) / scale;
+    var cy = (e.clientY - rect.top) / scale;
+    scale = ns;
+    tx = e.clientX - cx * scale;
+    ty = e.clientY - cy * scale;
+    apply();
+  }, { passive: false });
+
+  overlay.addEventListener('pointerdown', function (e) {
+    if (e.button !== 0) return;
+    dragging = true; lx = e.clientX; ly = e.clientY;
+    overlay.setPointerCapture(e.pointerId);
+    overlay.style.cursor = 'grabbing';
+  });
+  overlay.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    tx += e.clientX - lx;
+    ty += e.clientY - ly;
+    lx = e.clientX; ly = e.clientY;
+    apply();
+  });
+  overlay.addEventListener('pointerup', function () {
+    dragging = false;
+    overlay.style.cursor = 'grab';
+  });
+})();
+</script>
+</body>
+</html>

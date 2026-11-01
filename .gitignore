@@ -1,5 +1,9 @@
 # 工具生成
 .mimosa/
+.video_agent/
+
+# AI 工作目录
+.scratch/
 
 # 操作系统
 Thumbs.db

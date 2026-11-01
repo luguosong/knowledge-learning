@@ -1,0 +1,5 @@
+site_name = "知识学习"
+site_url = "https://luguosong.github.io/knowledge-learning/"
+
+[theme]
+language = "zh"

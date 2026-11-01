@@ -1,22 +1,29 @@
 site_name = "知识学习"
 site_url = "https://luguosong.github.io/knowledge-learning/"
 
-extra_css = [
-  "fonts/lxgwwenkai-regular.css",
-  "fonts/lxgwwenkai-bold.css",
-  "fonts/lxgwwenkaimono-regular.css",
-  "fonts/lxgwwenkaimono-bold.css",
-  "stylesheets/extra.css",
-]
-
 plugins = ["awesome-nav"]
 
 [theme]
 language = "zh"
-features = ["navigation.tabs"]
-font = false
+features = [
+  "navigation.tabs",
+  "navigation.top",
+]
 
-[theme.palette]
+[[theme.palette]]
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+
+[theme.palette.toggle]
+icon = "lucide/moon"
+name = "切换到暗色"
+
+[[theme.palette]]
 scheme = "slate"
-primary = "#241F19"
-accent = "#D4A95C"
+primary = "indigo"
+accent = "orange"
+
+[theme.palette.toggle]
+icon = "lucide/sun"
+name = "切换到亮色"

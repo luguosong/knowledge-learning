@@ -1,5 +1,9 @@
 site_name = "知识学习"
 site_url = "https://luguosong.github.io/knowledge-learning/"
+site_description = "一对一导师制个人知识库：以提问推动知识积累"
+repo_url = "https://github.com/luguosong/knowledge-learning"
+repo_name = "knowledge-learning"
+edit_uri = "edit/main/站点/docs/"
 
 extra_css = [
   "fonts/lxgwwenkai-regular.css",
@@ -9,38 +13,83 @@ extra_css = [
   "stylesheets/lxgw.css",
   "stylesheets/diagrams.css",
 ]
-extra_javascript = ["javascripts/diagrams.js"]
+extra_javascript = [
+  "javascripts/diagrams.js",
+  "javascripts/mathjax.js",
+  "https://unpkg.com/mathjax@3.2.2/es5/tex-chtml.js",
+]
 
 plugins = ["awesome-nav"]
 
 [markdown_extensions]
+admonition = {}
+attr_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+toc.permalink = true
 toc.slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "fold" } }
+pymdownx.arithmatex.generic = true
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.mark = {}
 pymdownx.superfences.custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
 ]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
 
 [theme]
+variant = "modern"
 language = "zh"
 font = false
 features = [
   "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.tracking",
+  "navigation.instant",
+  "navigation.instant.progress",
+  "navigation.footer",
   "navigation.top",
+  "toc.follow",
+  "search.highlight",
+  "content.code.copy",
+  "content.code.annotate",
+  "content.action.view",
 ]
 
 [[theme.palette]]
+media = "(prefers-color-scheme)"
+primary = "indigo"
+accent = "indigo"
+
+[theme.palette.toggle]
+icon = "lucide/sun-moon"
+name = "切换到浅色"
+
+[[theme.palette]]
+media = "(prefers-color-scheme: light)"
 scheme = "default"
 primary = "indigo"
 accent = "indigo"
 
 [theme.palette.toggle]
-icon = "lucide/moon"
-name = "切换到暗色"
+icon = "lucide/sun"
+name = "切换到深色"
 
 [[theme.palette]]
+media = "(prefers-color-scheme: dark)"
 scheme = "slate"
 primary = "indigo"
 accent = "orange"
 
 [theme.palette.toggle]
-icon = "lucide/sun"
-name = "切换到亮色"
+icon = "lucide/moon"
+name = "切换到跟随系统"

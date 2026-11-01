@@ -5,6 +5,9 @@
 # AI 工作目录
 .scratch/
 
+# 站点构建产物
+站点/site/
+
 # 操作系统
 Thumbs.db
 Desktop.ini

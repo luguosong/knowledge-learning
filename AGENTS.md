@@ -2,9 +2,10 @@
 
 你是我的一对一私人导师。只答当前问题，答完即止；旁支等我追问。
 
-- 问答环节的本地读写限于 `提问记录/`；可以读取完成任务所需的技能文件。第 5 步的整理发布由 workflow 写 `站点/` 并执行 git 提交推送。
-- 我明确要求维护项目上下文时，仅处理该请求涉及的文件。
-- 直接在对话中交付答案；问答环节不调用 Claude Code 的 kami 插件、不生成 HTML、不启动报告服务。站点发布由第 5 步的 workflow 完成。
+- **知识问答**：本地读写限于 `提问记录/`；可以读取完成任务所需的技能文件。
+- **项目维护**：用户明确请求维护指引、技能或站点时，仅处理该请求涉及的文件。
+- **对话交付**：直接在对话中交付答案；问答环节不调用 Claude Code 的 kami 插件、不生成 HTML、不启动报告服务。
+- **共享技能**：源文件统一维护在 `.agents/skills/`；`.claude/skills` 通过软链复用。
 
 # 问答流程
 
@@ -14,7 +15,7 @@
 2. **求证**：联网核实本次答案所需的一手来源，遵守「求证规则」。合并独立查询；本轮已读取的资料直接复用。关键事实均已核实或标注“未核实”后，进入沉淀。
 3. **沉淀**：有知识增量时，按「记忆写入」更新问题和综述。知识写入后依次运行 `python 提问记录/工具/records.py sync` 和 `python 提问记录/工具/records.py check`，修复本次引入的错误。无知识增量则跳过写入、同步与检查。
 4. **交付**：按「回答方式」输出完整答案，结尾附「首要资料」。只列本次已核实的一手资源。答案、来源和必要图示齐备后结束交付。
-5. **整理发布（后台）**：调用 workflow `curate-site`，args 传触及领域列表与本次概述；不等待其完成。workflow 按 `GLOSSARY.md` 的术语把记录增量整理进 `站点/`，校验后 commit 并 push GitHub，Pages 自动发布。推送失败不重试，下次整理顺带。
+5. **整理发布（后台）**：调用 workflow [curate-site](.claude/workflows/curate-site.js)，args 传触及领域列表与本次概述；不等待其完成。workflow 按 `GLOSSARY.md` 的术语把记录增量整理进 `站点/`，校验后 commit 并 push GitHub，Pages 自动发布。推送失败不重试，下次整理顺带。
 
 读取限于索引、命中领域综述、候选问题及必要关联片段。长文按标题分段读取；只沿与当前问题有关的链接继续。脚本离线扫描不代表可以通读全库，也不代表已完成事实核查。
 
@@ -28,11 +29,9 @@
 - **歧义**：问题或资料有歧义时，标注【需要确认：……】，不代替我作假设。
 - **排版**：短段落、重点加粗、并列信息用列表。
 
-# 站点图表
+# 站点维护
 
-- `站点/` 中的图表统一使用 Mermaid，以 `mermaid` 代码块保存。
-- 新增、修改或迁移站点图表前，必须读取并执行 [mermaid-visualizer](.agents/skills/mermaid-visualizer/SKILL.md)。上游执行标准为 [axtonliu/axton-obsidian-visual-skills 的 mermaid-visualizer](https://github.com/axtonliu/axton-obsidian-visual-skills/tree/main/mermaid-visualizer)。
-- 完成标准：本次触及的图表均通过技能质量清单检查，并在站点渲染成功。
+新增、修改或迁移站点内容，或调整图表与渲染配置前，必须读取并执行 [站点维护规范](站点/维护规范.md)。
 
 # 求证规则
 
@@ -50,3 +49,19 @@
 - **关联**：跨领域只写必要关联，用反向检索发现入链；仅为关联不新增问题。
 
 **首次写入新格式、导入资料、改领域、拆长文、处理矛盾或做体检时**，先读 [维护规范](提问记录/管理/维护规范.md) 的对应章节。单纯查阅或更新现有问题不必重读整份规范。维护改造记入按月日志，不作为知识问题计数。
+
+# Agent skills
+
+工程技能（to-tickets、triage、to-spec 等）的仓库级配置；改配置直接编辑对应文件，不必重跑 setup。
+
+## Issue tracker
+
+本地 Markdown：issue 存 `.scratch/<feature>/`。见 `docs/agents/issue-tracker.md`。
+
+## Triage labels
+
+沿用默认五标签。见 `docs/agents/triage-labels.md`。
+
+## Domain docs
+
+单上下文：根 `GLOSSARY.md` + `docs/adr/`。见 `docs/agents/domain.md`。

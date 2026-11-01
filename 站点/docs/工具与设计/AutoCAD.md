@@ -14,16 +14,18 @@ AutoCAD 个人问答合集。入门主线：样板、单位、精确绘图、注
 
 学习按五阶段推进：
 
-```text
-1 界面与视图
-  |
-2 精确 2D 绘图（坐标、对象捕捉、图层）
-  |
-3 注释与出图（标注、布局、打印 PDF）
-  |
-4 块与效率（动态块、样板 DWT）
-  |
-5 分方向（行业 2D / 3D / 自动化）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 零基础学习路线与官方免费资源
+    interface["阶段 1：界面与视图"]:::input
+    interface --> drawing["阶段 2：精确 2D 绘图，坐标、对象捕捉、图层"]
+    drawing --> output["阶段 3：注释与出图，标注、布局、打印 PDF"]
+    output --> blocks["阶段 4：块与效率，动态块、样板 DWT"]
+    blocks --> direction["阶段 5：分方向，行业 2D / 3D / 自动化"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 主线项目用官方教程中心的六部分平面图教程。每天约 1 小时，约 8–10 周可独立出图。
@@ -82,14 +84,22 @@ AutoCAD 个人问答合集。入门主线：样板、单位、精确绘图、注
 
 AutoCAD 有自动化操作的模型上下文协议（Model Context Protocol，MCP）方案，分官方与社区两条线。
 
-```text
-            +-- 官方：Autodesk Assistant（AutoCAD 2027 起内置，开始使用 MCP）
-            |        部分 Autodesk MCP 服务器经 Design and Make Marketplace 独立获取
-自动化 MCP --+
-            +-- 社区开源项目（活体控制）
-                 +-- 完整版 AutoCAD > 组件对象模型（Component Object Model，COM）控制
-                 +-- LT 2024+ > AutoLISP 注入
-                 +-- 无 AutoCAD > ezdxf 直接读写 DXF
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart LR
+    accTitle: 自动化操作 MCP：官方与社区两条线
+    mcp["自动化 MCP"]:::input
+    mcp --> official["官方：Autodesk Assistant"]
+    official --- builtin["AutoCAD 2027 起内置，开始使用 MCP"]:::note
+    official --- market["部分 Autodesk MCP 服务器经 Design and Make Marketplace 独立获取"]:::note
+    mcp --> community["社区开源项目：活体控制"]
+    community --> full["完整版 AutoCAD：COM 控制"]:::action
+    community --> lt["LT 2024+：AutoLISP 注入"]:::action
+    community --> absent["无 AutoCAD：ezdxf 直接读写 DXF"]:::action
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
 ```
 
 - 官方线：AutoCAD 2027 起内置 Autodesk Assistant 并开始使用 MCP。官方 FAQ（2026-09 修订）确认：部分 Autodesk MCP 服务器可以作为独立能力，经 Design and Make Marketplace 获取。
@@ -109,16 +119,22 @@ AutoCAD 有自动化操作的模型上下文协议（Model Context Protocol，MC
 
 "转 T3"指把天正图纸导出为"天正 3"兼容格式，供缺少天正支持的 CAD 或算量软件读取。结果仍是 DWG 图纸，常见名称如"平面图_t3.dwg"。
 
-```text
-天正原图（天正专业对象）
-   |
-   + > 保留原图不动
-   |
-   + > 另导出一份："转 T3"
-         |
-         + > T3 兼容 DWG（普通图元）
-              +-- 保留：图层、可见图形（通常）
-              +-- 丧失：构件类型、专业参数、关联编辑能力
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 天正转 T3：兼容导出的所得与所失
+    original["天正原图：天正专业对象"]:::input
+    original --> keep["保留原图不动"]:::storage
+    original --> export["另导出一份：转 T3"]:::action
+    export --> t3["T3 兼容 DWG：普通图元"]:::result
+    t3 --> preserved["通常保留：图层、可见图形"]
+    t3 --> lost["丧失：构件类型、专业参数、关联编辑能力"]:::note
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 - 保留：图层和可见图形通常可以保留。

@@ -6,9 +6,19 @@
 
 学习顺序：
 
-```text
-理论底座 > 安装与单任务闭环 > 提示与验证 > 上下文与配置
-         > 安全与扩展 > 并行与自动化 > 量化调优
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 学习地图：从单任务闭环到量化调优
+    theory["理论底座"]:::input --> install["安装与单任务闭环"]
+    install --> prompt["提示与验证"]
+    prompt --> context["上下文与配置"]
+    context --> safety["安全与扩展"]
+    safety --> parallel["并行与自动化"]
+    parallel --> tuning["量化调优"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 每阶段用一个可检验的项目练习收尾。专家能力不是记住全部功能，而是为任务选用合适的模型、努力档位、权限、上下文与编排方式，并用通过率、人工干预次数、端到端耗时、每个通过任务的 token／费用比较方案。
@@ -33,24 +43,25 @@ subagent 是拥有独立上下文、指令和工具配置的委托执行实例�
 
 ### 执行流程
 
-```text
-主 agent 按各代理 description 决定委派
-      |
-      v
-Agent tool 派生
-      |
-      v
-冷启动（不继承主对话历史）
-      |  自身 system prompt + 任务消息
-      |  + CLAUDE.md + git 快照 + 兄弟代理名单
-      v
-工具循环：两道工具过滤器 + 独立权限
-      |  权限提示上浮主会话
-      v
-输出扫描（标注指令形态，不判恶意）
-      |
-      v
-回传摘要 + agent ID（SendMessage 带全历史续聊，保留热 prompt cache）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 执行流程
+    main["主 agent：按 description 决定委派"]:::input
+    main --> spawn["Agent tool 派生"]:::action
+    spawn --> cold["冷启动：不继承主对话历史"]:::process
+    context["自身 system prompt、任务消息、CLAUDE.md、git 快照、兄弟代理名单"]:::note -.-> cold
+    cold --> loop["工具循环：两道工具过滤器 + 独立权限"]:::process
+    loop -.->|权限提示上浮| main
+    loop --> scan["输出扫描：标注指令形态，不判恶意"]:::action
+    scan --> summary["回传摘要 + agent ID"]:::result
+    summary -.-> resume["SendMessage 带全历史续聊，保留热 prompt cache"]:::note
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 ### 委派与调用

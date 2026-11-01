@@ -25,22 +25,21 @@ Spring 官方把起点追溯到对早期 J2EE 复杂性的回应：
 
 ### 主线：八个阶段
 
-```text
-原生 Java、Servlet、JDBC -- 先看问题
-   |
-   +--> 1-2 IoC 容器：对象从何而来，生命周期如何走
-   |
-   +--> 3 AOP 代理：调用如何被增强
-   |
-   +--> 4 Spring MVC：请求如何被分发
-   |
-   +--> 5 数据访问与事务：资源如何保持一致
-   |
-   +--> 6 Spring Boot：装配如何自动化
-   |
-   +--> 7-8 Security、测试与生产诊断
-   |
-   +--> 按需求进入 Data、WebFlux、Cloud 等分支
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 主线：八个阶段
+    problem["原生 Java、Servlet、JDBC：先看问题"]:::input
+    problem --> ioc["阶段 1-2 IoC 容器：对象从何而来，生命周期如何走"]
+    ioc --> aop["阶段 3 AOP 代理：调用如何被增强"]
+    aop --> mvc["阶段 4 Spring MVC：请求如何被分发"]
+    mvc --> transaction["阶段 5 数据访问与事务：资源如何保持一致"]
+    transaction --> boot["阶段 6 Spring Boot：装配如何自动化"]
+    boot --> production["阶段 7-8：Security、测试与生产诊断"]
+    production --> branches["按需求进入 Data、WebFlux、Cloud 等分支"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 | 阶段 | 知识点与底层问题 | 通过标准 |
@@ -86,18 +85,27 @@ Spring 官方把起点追溯到对早期 J2EE 复杂性的回应：
 
 不从仓库第一页读。下列 `main` 分支源码链接用于定位类；实际调试应切换到项目依赖的版本标签，避免把不同版本实现混为一谈。
 
-```text
-客户端
-   +-- HTTP 请求 --> Servlet Filter 链
-   |                  +-- 选择 SecurityFilterChain --> FilterChainProxy
-   |                  |      （认证授权后放行）
-   |                  +-- 请求分发 --> DispatcherServlet
-   |                  |                  +-- 匹配并调用处理器 --> HandlerAdapter
-   |                  |                  |      Controller 调用业务方法
-   |                  |                  |           +--> Service 代理
-   |                  |                  |           |     事务内访问数据库并返回
-   |                  |                  +-- 写响应或解析异常
-   +-- HTTP 响应 <-- 返回
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff","actorBkg":"#e7f5ff","actorBorder":"#1971c2","actorTextColor":"#0f4d7a","actorLineColor":"#64748b","signalColor":"#334155","signalTextColor":"#1b1f24","noteBkgColor":"#fff4e6","noteBorderColor":"#e67700","noteTextColor":"#8a4b00"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+sequenceDiagram
+    accTitle: 源码阅读顺序：沿一条请求追
+    participant C as 客户端
+    participant F as Servlet Filter 链
+    participant D as DispatcherServlet
+    participant H as HandlerAdapter / Controller
+    participant S as Service 代理
+    C->>F: HTTP 请求
+    Note over F: FilterChainProxy 选择 SecurityFilterChain
+    Note over F: 认证授权后放行
+    F->>D: 请求分发
+    D->>H: 匹配并调用处理器
+    H->>S: Controller 调用业务方法
+    Note over S: 事务内访问数据库并返回
+    S-->>H: 业务方法返回
+    H-->>D: 处理结果
+    Note over D: 写响应或解析异常
+    D-->>F: 响应
+    F-->>C: HTTP 响应
 ```
 
 图示为典型 Servlet + Spring MVC + Spring Security 路径的教学简化；短路、异常和异步请求会改变路径。见 [Security 架构（一手）](https://docs.spring.io/spring-security/reference/servlet/architecture.html)、[MVC 处理过程（一手）](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet/sequence.html)。
@@ -137,3 +145,11 @@ Spring 官方把起点追溯到对早期 J2EE 复杂性的回应：
 - **旧线退出**：Framework 6.2.x 同样支持 JDK 17–25，但开源支持已于 2026-06 结束；Boot 3.5 对应的 Cloud 列车 2025.0.x 已 EOL。Boot 3.5 + Cloud 2025.0 的组合已停止支持，不再作为新项目起点。
 
 信源（均为一手，核实日期 2026-10-15）：[Spring Framework Versions 官方 Wiki（各版本 JDK 区间与支持期限）](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions)、[Spring Boot 4.1 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/system-requirements.html)、[Spring Boot 4.0 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/4.0/system-requirements.html)、[Spring Cloud 项目页（发布列车与 Boot 兼容表）](https://spring.io/projects/spring-cloud)。
+
+<!-- backlinks:start -->
+
+## 引用本页的文章
+
+- [Java](index.md)
+
+<!-- backlinks:end -->

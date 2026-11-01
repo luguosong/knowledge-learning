@@ -1,0 +1,27 @@
+/* Mermaid 使用技能规定的浅色配色，画布在两种站点主题下保持一致。 */
+.md-typeset .mermaid {
+  --md-mermaid-font-family: var(--md-text-font-family);
+  --md-mermaid-node-bg-color: #e7f5ff;
+  --md-mermaid-node-fg-color: #1971c2;
+  --md-mermaid-edge-color: #64748b;
+  --md-mermaid-label-bg-color: #ffffff;
+  --md-mermaid-label-fg-color: #1b1f24;
+  --md-mermaid-sequence-actor-bg-color: #e7f5ff;
+  --md-mermaid-sequence-actor-border-color: #1971c2;
+  --md-mermaid-sequence-actor-fg-color: #0f4d7a;
+  --md-mermaid-sequence-actor-line-color: #64748b;
+  --md-mermaid-sequence-message-fg-color: #1b1f24;
+  --md-mermaid-sequence-message-line-color: #334155;
+  --md-mermaid-sequence-note-bg-color: #fff4e6;
+  --md-mermaid-sequence-note-border-color: #e67700;
+  --md-mermaid-sequence-note-fg-color: #8a4b00;
+
+  margin: 1.5em 0;
+  padding: 1rem;
+  overflow: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color-scheme: light;
+  text-align: center;
+}

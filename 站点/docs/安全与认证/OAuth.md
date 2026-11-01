@@ -14,27 +14,24 @@ OAuth 2.0 是授权框架：应用不取得用户密码，获得对资源的受�
 
 ### 学习路线总览
 
-```text
-核心必修（①至⑥）
-  ① Web 基础与协议边界
-    |
-    > ② 角色、端点与信任关系
-    |
-    > ③ 授权码流程与 PKCE
-    |
-    > ④ 令牌、校验与生命周期
-    |
-    > ⑤ OIDC 与单点登录
-    |
-    > ⑥ 攻击模型与安全防护
-工程必修（⑦至⑧）
-    |
-    > ⑦ 浏览器、原生应用与服务调用
-    |
-    > ⑧ Java 工程与生产运维
-场景选修（⑨）
-    |
-    > ⑨ 按场景学习扩展协议
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 学习路线总览
+    subgraph core["核心必修：①至⑥"]
+        web["① Web 基础与协议边界"] --> roles["② 角色、端点与信任关系"]
+        roles --> code["③ 授权码流程与 PKCE"]
+        code --> token["④ 令牌、校验与生命周期"]
+        token --> oidc["⑤ OIDC 与单点登录"]
+        oidc --> security["⑥ 攻击模型与安全防护"]
+    end
+    subgraph engineering["工程必修：⑦至⑧"]
+        apps["⑦ 浏览器、原生应用与服务调用"] --> java["⑧ Java 工程与生产运维"]
+    end
+    security --> apps
+    java --> extension["⑨ 场景选修：按场景学习扩展协议"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 ### 阶段 1：Web 基础与问题边界
@@ -64,17 +61,25 @@ OAuth 2.0 是授权框架：应用不取得用户密码，获得对资源的受�
 
 优先掌握授权码授予（Authorization Code Grant）加 Proof Key for Code Exchange（PKCE）。
 
-```text
-+ 客户端 --授权请求(前通道)--> 授权服务器
-|   参数: response_type=code, client_id, redirect_uri,
-|         scope, state, code_challenge, code_challenge_method
-+ 用户在授权服务器完成认证并同意授权
-+ 授权服务器 --浏览器回调(前通道)--> 客户端: code
-+ 客户端 --令牌请求(后通道)--> 授权服务器令牌端点
-|   参数: grant_type=authorization_code, code, code_verifier
-|   机密客户端另执行配置的客户端认证
-+ 授权服务器 --> 客户端: access_token / refresh_token
-+ 客户端 --Authorization: Bearer--> 资源服务器
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff","actorBkg":"#e7f5ff","actorBorder":"#1971c2","actorTextColor":"#0f4d7a","actorLineColor":"#64748b","signalColor":"#334155","signalTextColor":"#1b1f24","noteBkgColor":"#fff4e6","noteBorderColor":"#e67700","noteTextColor":"#8a4b00"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+sequenceDiagram
+    accTitle: 阶段 3：授权码流程与 PKCE
+    participant C as 客户端
+    participant A as 授权服务器
+    participant R as 资源服务器
+    C->>A: 授权请求：前通道
+    Note over C,A: response_type=code, client_id, redirect_uri
+    Note over C,A: scope, state, code_challenge
+    Note over C,A: code_challenge_method
+    A->>A: 用户完成认证并同意授权
+    A-->>C: 浏览器回调：前通道，返回 code
+    C->>A: 令牌请求：后通道，访问令牌端点
+    Note over C,A: grant_type=authorization_code
+    Note over C,A: code, code_verifier
+    Note over C,A: 机密客户端另执行配置的客户端认证
+    A-->>C: access_token / refresh_token
+    C->>R: Authorization: Bearer
 ```
 
 - 客户端产生每次事务独立的 code_verifier。S256 方法计算 code_challenge = BASE64URL(SHA256(ASCII(code_verifier)))，并去掉 Base64url 填充。

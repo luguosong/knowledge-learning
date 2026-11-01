@@ -76,16 +76,23 @@
 
 2026-10-27 本机实测的占用结构（物理内存 31.52 GiB）：
 
-```text
-Windows 主机（物理内存 31.52 GiB）
-  +-- Chrome 工作集约 2.31 GiB
-  +-- IDEA 约 2.12 GiB、ChatGPT 约 1.30 GiB、Zcode 约 0.84 GiB
-  +-- vmmemWSL（WSL 虚拟机）工作集约 7.26 GiB 至 10.01 GiB
-        +-- 七个开发容器 合计约 3.0 GiB
-        |     SQL Server 1.329 GiB、Nacos 1.002 GiB
-        |     MySQL 392.3 MiB、RabbitMQ 203 MiB，其余三项较小
-        +-- 多个 AI 开发进程
-        +-- 文件缓存约 4 GiB
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart LR
+    accTitle: 内存回涨与 WSL 常驻服务：诊断与按需启动
+    windows["Windows 主机：物理内存 31.52 GiB"]:::input
+    windows --> chrome["Chrome 工作集约 2.31 GiB"]
+    windows --> apps["IDEA 约 2.12 GiB；ChatGPT 约 1.30 GiB；Zcode 约 0.84 GiB"]
+    windows --> wsl["vmmemWSL 工作集约 7.26 GiB 至 10.01 GiB"]:::process
+    wsl --> containers["七个开发容器：合计约 3.0 GiB"]
+    containers --> large["SQL Server 1.329 GiB；Nacos 1.002 GiB"]
+    containers --> small["MySQL 392.3 MiB；RabbitMQ 203 MiB；其余三项较小"]
+    wsl --> ai["多个 AI 开发进程"]
+    wsl --> cache["文件缓存约 4 GiB"]:::storage
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 诊断要点：
@@ -100,13 +107,21 @@ Windows 主机（物理内存 31.52 GiB）
 
 清理后回涨的机制：
 
-```text
-内存清理工具
-  +--> 修剪进程工作集（类似 EmptyWorkingSet）
-  |        工作集下降，可用内存上升
-  +--> 进程再次访问被移出的页
-           页面错误，页重新加载
-           工作集回涨
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 内存回涨与 WSL 常驻服务：诊断与按需启动
+    cleaner["内存清理工具"]:::input
+    cleaner --> trim["修剪进程工作集：类似 EmptyWorkingSet"]:::action
+    trim --> decrease["工作集下降，可用内存上升"]
+    decrease --> access["进程再次访问被移出的页"]:::process
+    access --> fault["页面错误，页重新加载"]:::process
+    fault --> rebound["工作集回涨"]:::result
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 容器处置（2026-10-27 已执行）：

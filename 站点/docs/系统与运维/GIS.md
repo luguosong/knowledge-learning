@@ -8,19 +8,22 @@
 
 地图不等于 GIS。地图是 GIS 的展示方式之一；GIS 服务是通过网络向其他程序提供地图、空间数据或处理能力的服务端部分。分工是：地图前端负责显示与交互，服务端负责提供地图或数据。
 
-```text
-+------------------------------------------+
-|           GIS（地理信息系统）            |
-|          采集 > 管理 > 分析 > 展示        |
-+------------------------------------------+
-     | 空间分析：距离、范围、覆盖、选址
-     |                       | 展示方式之一
-     v                       v
-  查询与决策               地图（前端）
-     ^                       ^
-     |     GIS 服务：经网络提供    |
-     +---- 地图 / 空间数据 / 处理能力 -+
-              （服务端，可部署）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: GIS 是什么：与地图、GIS 服务的关系
+    gis["GIS：地理信息系统"]:::input
+    gis --- pipeline["采集 > 管理 > 分析 > 展示"]:::note
+    gis -->|空间分析：距离、范围、覆盖、选址| decision["查询与决策"]:::result
+    gis -->|展示方式之一| map["地图：前端"]:::result
+    service["GIS 服务：服务端，可部署"]:::process
+    service -->|经网络提供地图、空间数据、处理能力| decision
+    service -->|经网络提供地图、空间数据、处理能力| map
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 **限制**：该领域尚待确认实际需求——是发布自有空间数据，还是需要底图、地址搜索及路线规划等服务。需求不同，选型方向不同。

@@ -9,28 +9,40 @@ JVM 知识合并两条主线：系统学习路线，与 Oracle 教程「跨平�
 
 **结论**：Oracle 教程那段话讲两层机制。跨平台：javac 把源码编译为平台无关的字节码（bytecode），各操作系统各自移植 Java 虚拟机（Java Virtual Machine，JVM），把同一份字节码翻译为本机代码；前提是目标系统装有对应 JVM，代价是比直接执行本机代码多一层翻译。
 
-```text
-Hello.java
-    >
-[javac 编译]
-    >
-Hello.class（平台无关字节码）
-    >
-    +----------------+----------------+
-    |                |                |
- Windows JVM     Linux JVM        Mac JVM
-    >                >                >
- 本机代码          本机代码         本机代码
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 跨平台与 HotSpot 运行时优化
+    source["Hello.java"]:::input --> javac["javac 编译"]:::action
+    javac --> bytecode["Hello.class：平台无关字节码"]:::storage
+    bytecode --> windows["Windows JVM"]
+    bytecode --> linux["Linux JVM"]
+    bytecode --> mac["Mac JVM"]
+    windows --> wcode["Windows 本机代码"]:::result
+    linux --> lcode["Linux 本机代码"]:::result
+    mac --> mcode["Mac 本机代码"]:::result
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 HotSpot 运行时优化：「查找性能瓶颈」即运行时性能分析（profiling），「重新编译为本机代码」即 JIT。不在编译期全部编译为本机码，是为了保住跨平台，并利用只有运行时才有的信息（热点、类型分布）。HotSpot 用分层编译：C1 快速编译并采集信息，C2 据此深度优化。教程以「一些虚拟机」限定，因为 JIT 属实现行为，JVM 规范将指令优化留给实现。
 
-```text
-字节码 > 解释执行 > 热点探测（profiling）
-                      |
-                C1 快速编译 + 采集信息
-                      |
-                C2 深度优化（JIT）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 跨平台与 HotSpot 运行时优化
+    bytecode["字节码"]:::input --> interpret["解释执行"]
+    interpret --> profiling["热点探测：profiling"]:::process
+    profiling --> c1["C1：快速编译 + 采集信息"]:::action
+    c1 --> c2["C2：深度优化，JIT"]:::result
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 ## 规范与实现的边界
@@ -68,3 +80,12 @@ HotSpot 运行时优化：「查找性能瓶颈」即运行时性能分析（pro
 - [JDK 21 虚拟机指南（一手）](https://docs.oracle.com/en/java/javase/21/vm/)
 - [JDK 21 诊断工具（一手）](https://docs.oracle.com/en/java/javase/21/troubleshoot/diagnostic-tools.html)
 
+<!-- backlinks:start -->
+
+## 引用本页的文章
+
+- [Java](index.md)
+- [Java SE：语言与标准库](java-se/语言与标准库.md)
+- [Java 日志](日志.md)
+
+<!-- backlinks:end -->

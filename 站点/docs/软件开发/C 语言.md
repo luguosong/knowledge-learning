@@ -6,23 +6,39 @@ C 开发环境需要编辑器、编译与链接工具、头文件及库、调试
 
 C 开发环境由五部分组成，IDE 把它们放进同一工作界面：
 
-```text
-C 开发环境
-+--- 编辑器
-+--- 编译与链接工具
-+--- 头文件及库
-+--- 调试器
-+--- 相应配置
-
-IDE > 把以上工具组织到同一工作界面
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart LR
+    accTitle: Windows 上的 C 开发环境、工具链与 IDE 选择
+    environment["C 开发环境"]:::input
+    environment --> editor["编辑器"]
+    environment --> build["编译与链接工具"]
+    environment --> headers["头文件及库"]
+    environment --> debugger["调试器"]
+    environment --> config["相应配置"]
+    environment --- ide["IDE：把以上工具组织到同一工作界面"]:::note
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
 ```
 
 Windows 上有三条路线：
 
-```text
-Windows +-- Visual Studio > "使用 C++ 的桌面开发" > MSVC + Windows SDK
-         +-- VS Code      > C/C++ 扩展 + MSYS2 的 GCC 与 MinGW-w64
-         +-- CLion        > 附带 MinGW 工具链
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart LR
+    accTitle: Windows 上的 C 开发环境、工具链与 IDE 选择
+    windows["Windows"]:::input
+    windows --> visual["Visual Studio"]
+    visual --> workload["使用 C++ 的桌面开发"]
+    workload --> msvc["MSVC + Windows SDK"]:::result
+    windows --> vscode["VS Code"]
+    vscode --> gcc["C/C++ 扩展 + MSYS2 的 GCC 与 MinGW-w64"]:::result
+    windows --> clion["CLion"]
+    clion --> mingw["附带 MinGW 工具链"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 **选型结论**：
@@ -41,7 +57,7 @@ Windows +-- Visual Studio > "使用 C++ 的桌面开发" > MSVC + Windows SDK
 
 验证命令：
 
-```text
+```bash
 gcc -std=c17 -Wall -Wextra -g main.c -o main.exe
 ```
 

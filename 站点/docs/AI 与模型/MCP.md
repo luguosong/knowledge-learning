@@ -6,8 +6,18 @@
 
 学习按「会接入 → 会写服务器 → 理解协议 → 会写客户端和宿主 → 安全上线 → 扩展与兼容」推进。
 
-```text
-会接入 > 会写服务器 > 理解协议 > 会写客户端和宿主 > 安全上线 > 扩展与兼容
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 学习路线：从接入到扩展
+    connect["会接入"]:::input --> server["会写服务器"]
+    server --> protocol["理解协议"]
+    protocol --> client["会写客户端和宿主"]
+    client --> safety["安全上线"]
+    safety --> extend["扩展与兼容"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 完整知识清单分 12 块：
@@ -42,18 +52,22 @@
 
 **重启实验**：经 stdio 传输，父进程充当客户端，启动子进程充当服务器；每条 JSON-RPC 2.0 消息占一行，以换行符分帧；服务器收到输入结束后退出。流程：发现 → 列工具 → 调用加法得 5，随后关闭原服务器，启动全新进程，直接传入上一结果和新参数，仍得正确结果。
 
-```text
-客户端                      原服务器进程               新服务器进程
-  |
-  +--- id=1 server/discover --->   |
-  |<--- 支持版本与 tools 能力 ---   |
-  +--- id=2 tools/list ----------> |
-  |<--- add 工具与参数定义 -----   |
-  +--- id=3 tools/call a=2 b=3 --> |
-  |<--- sum=5 ------------------   |
-  |        客户端保存 5，关闭原服务器
-  +-------------- id=4 tools/call a=5 b=10 -------------> |
-  |<-------------------------- sum=15 -------------------- +
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff","actorBkg":"#e7f5ff","actorBorder":"#1971c2","actorTextColor":"#0f4d7a","actorLineColor":"#64748b","signalColor":"#334155","signalTextColor":"#1b1f24","noteBkgColor":"#fff4e6","noteBorderColor":"#e67700","noteTextColor":"#8a4b00"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+sequenceDiagram
+    accTitle: 数据层无状态：每请求自带版本与能力
+    participant C as 客户端
+    participant S as 原服务器进程
+    participant N as 新服务器进程
+    C->>S: id=1 server/discover
+    S-->>C: 支持版本与 tools 能力
+    C->>S: id=2 tools/list
+    S-->>C: add 工具与参数定义
+    C->>S: id=3 tools/call a=2 b=3
+    S-->>C: sum=5
+    Note over C,S: 客户端保存 5，关闭原服务器
+    C->>N: id=4 tools/call a=5 b=10
+    N-->>C: sum=15
 ```
 
 新服务器进程收到的第一条请求（它未收到任何历史请求，也未收到 `initialize`）：
@@ -100,20 +114,22 @@
 
 传输是绑定（Binding）：只规定消息如何分帧、如何投递、取消与终止如何表达，不规定消息含义。规范明确「协议语义在每种传输上相同」，协议与传输无关（transport-agnostic），可在任何支持双向消息交换的通道上实现。
 
-```text
-+----------------------------------------------------+
-| MCP 协议本体：JSON-RPC 2.0 消息                      |
-| 请求 + 响应 + 通知 + 消息模式 + 每请求元数据           |
-+--------------------------+-------------------------+
-                           |
-         +-----------------+------------------+
-         |                 |                  |
-   +-----+------+   +------+------+   +-------+------+
-   | stdio 绑定 |   | Streamable  |   | 自定义绑定    |
-   | 子进程标准流 |   | HTTP 绑定    |   | 任意双向通道  |
-   | 换行分帧    |   | 单端点 POST  |   | 保留消息格式  |
-   | 不含 HTTP   |   | JSON 或 SSE |   | 与元数据模型  |
-   +------------+   +-------------+   +--------------+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: MCP 与 HTTP：消息层本体与传输绑定
+    messages["MCP 协议本体：JSON-RPC 2.0 消息"]:::input
+    messages --- model["请求、响应、通知、消息模式、每请求元数据"]:::note
+    messages --> stdio["stdio 绑定"]
+    stdio --> streams["子进程标准流；换行分帧；不含 HTTP"]:::process
+    messages --> http["Streamable HTTP 绑定"]
+    http --> endpoint["单端点 POST；JSON 或 SSE"]:::process
+    messages --> custom["自定义绑定"]
+    custom --> channel["任意双向通道；保留消息格式与元数据模型"]:::process
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
 ```
 
 - **stdio**：客户端启动子进程，消息走标准输入与标准输出，按换行分帧，全程不出现 HTTP。

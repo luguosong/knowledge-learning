@@ -84,10 +84,21 @@ Laya 占优或不落下风的维度：
 
 级联（cascade）方案复现了 Jev 的准确率，平均延迟约减半：
 
-```text
-          +-> 置信度不低于 0.60 -> 采用 Laya 结果
-输入 --> Laya
-          +--> 置信度低于 0.60 --> 升级 Jev --> 采用 Jev 结果
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: Jev 与 Laya 的能力对比
+    input["输入"]:::input --> laya["Laya"]:::process
+    laya --> confidence{"置信度是否不低于 0.60？"}:::decision
+    confidence -->|是| accept["采用 Laya 结果"]:::result
+    confidence -->|否| jev["升级 Jev"]:::action
+    jev --> fallback["采用 Jev 结果"]:::result
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef decision fill:#ffe3e3,stroke:#c92a2a,color:#8c1d18,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 信源：[一手：laya 仓库 BENCHMARKS.md](https://github.com/NandhaKishorM/laya/blob/main/BENCHMARKS.md)、[一手：TypeSafe AI 发布 System One Models 与 Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)、[一手：yibie/laya-jev-lab 同输入实测](https://github.com/yibie/laya-jev-lab)。

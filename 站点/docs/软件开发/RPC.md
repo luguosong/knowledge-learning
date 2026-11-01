@@ -8,13 +8,14 @@
 
 **调用过程**：典型的一次请求、一次响应如下：
 
-```text
-+----------+  请求：方法标识+参数  +----------+
-|          | ------------------> |          |
-|  客户端  |    （编码为消息）     |  服务端  |
-|          | <------------------ |          |
-+----------+  响应：结果或错误    +----------+
-                （编码为消息）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff","actorBkg":"#e7f5ff","actorBorder":"#1971c2","actorTextColor":"#0f4d7a","actorLineColor":"#64748b","signalColor":"#334155","signalTextColor":"#1b1f24","noteBkgColor":"#fff4e6","noteBorderColor":"#e67700","noteTextColor":"#8a4b00"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+sequenceDiagram
+    accTitle: RPC 的含义、调用过程与协议边界
+    participant C as 客户端
+    participant S as 服务端
+    C->>S: 请求：方法标识 + 参数，编码为消息
+    S-->>C: 响应：结果或错误，编码为消息
 ```
 
 - 客户端把方法标识与参数编码为消息。
@@ -41,3 +42,11 @@
 - [一手] [RFC 9110：HTTP Semantics，第 3、9 节](https://www.rfc-editor.org/rfc/rfc9110.html)
 - [一手] [JSON-RPC 2.0 规范，第 1、4、5 节](https://www.jsonrpc.org/specification)
 - [一手] [OpenAPI 官方说明：HTTP 接口描述与客户端代码生成](https://www.openapis.org/what-is-openapi)
+
+<!-- backlinks:start -->
+
+## 引用本页的文章
+
+- [Java](java/index.md)
+
+<!-- backlinks:end -->

@@ -6,8 +6,18 @@
 
 **结论**：按"基础使用 → 单机管理 → 网络服务与安全 → 故障诊断和性能 → 自动化与交付 → 专家方向"推进，每阶段以可复现实验验收。专家要求能跨层定位复杂故障、解释机制和取舍，并在至少一个方向深入；不是背完所有工具，也不是取得某张证书。
 
-```text
-基础使用 > 单机管理 > 网络服务与安全 > 故障诊断与性能 > 自动化与交付 > 专家方向
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 学习路线：从零基础到独立管理服务器
+    basics["基础使用"]:::input --> admin["单机管理"]
+    admin --> services["网络服务与安全"]
+    services --> performance["故障诊断与性能"]
+    performance --> delivery["自动化与交付"]
+    delivery --> expert["专家方向"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 路线横向覆盖启动、进程、内存、文件系统、存储、网络、权限、安全、可观测性和容器等主要机制。
@@ -49,19 +59,21 @@
 
 **结论**：可以用逻辑卷管理器（Logical Volume Manager，LVM）把两块盘上纳入管理的空间组成跨盘线性逻辑卷，在其文件系统上存放 Docker 数据，以使用分配给该卷的合并容量。
 
-```text
-+-------------+  +-------------+
-|   系统盘     |  |   数据盘     |
-| 纳入 LVM 的  |  | 纳入 LVM 的  |
-| 空间（物理卷）|  | 空间（物理卷）|
-+------+------+  +------+------+
-       |                |
-       +-------+--------+
-               |  卷组：合并两盘纳入管理的容量
-       +-------+--------+
-               |  线性逻辑卷：容量相加，不保证均匀写入，无冗余
-       +-------+--------+
-               |  文件系统 > Docker 数据目录
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: LVM 合并两块盘供 Docker 使用
+    system["系统盘：纳入 LVM 的空间，物理卷"]:::input
+    data["数据盘：纳入 LVM 的空间，物理卷"]:::input
+    system --> vg["卷组：合并两盘纳入管理的容量"]:::storage
+    data --> vg
+    vg --> lv["线性逻辑卷：容量相加，不保证均匀写入，无冗余"]:::storage
+    lv --> fs["文件系统"]
+    fs --> docker["Docker 数据目录"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 限制与例外：

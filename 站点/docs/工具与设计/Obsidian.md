@@ -24,10 +24,17 @@ Obsidian 插件使用记录。主线有四条：Tasks 任务管理、Remotely Sa
 
 首次同步流程：先备份；再由电脑完成首次上传；手机从同名空库下载。
 
-```text
-[Windows 库] --Remotely Save 上传--> [OneDrive 个人版]
-                                           |
-[iPhone 同名空库] <--Remotely Save 下载----+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 手机查阅：Windows 库经 OneDrive 供 iPhone 只读
+    windows["Windows 库"]:::input
+    windows -->|Remotely Save 上传| cloud["OneDrive 个人版"]:::storage
+    cloud -->|Remotely Save 下载| iphone["iPhone 同名空库"]:::result
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 成本与容量：
@@ -67,11 +74,23 @@ Obsidian Git 用于版本历史与备份，其提交、拉取、推送的顺序�
 
 自动策略的核心取舍在顺序保证：
 
-```text
-分离定时器：  [自动提交] [自动拉取] [自动推送] 三个计时器各自独立
-              截图中 60 / 68 / 75 分钟 > 不保证先拉取再推送
-
-提交并同步：  [提交] > [拉取] > [推送] 顺序固定
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: Obsidian Git：定时策略与同步顺序
+    subgraph separate["分离定时器：三个计时器各自独立"]
+        commit["自动提交：60 分钟"]
+        pull["自动拉取：68 分钟"]
+        push["自动推送：75 分钟"]
+    end
+    separate --- warning["截图中的设定不保证先拉取再推送"]:::note
+    subgraph sync["提交并同步：顺序固定"]
+        c["提交"]:::action --> p["拉取"]:::action --> s["推送"]:::result
+    end
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 - 分离定时器模式下，自动提交、自动拉取、自动推送独立计时，不保证先拉取再推送。

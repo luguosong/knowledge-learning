@@ -25,20 +25,25 @@ Git 是分布式版本控制系统，Bash 是命令解释器，GitHub 在 Git �
 
 **结论**：PR 是 GitHub 的合并提案机制，是平台功能而非 Git 命令。在 head 分支（源）上提交并推送后，向 base 分支（目标）开启 PR；经评审与门禁后合并，随后删除 head 分支。
 
-```text
-base 分支（通常 main）
-  +
-  | 1 切出 head 分支
-  +-- head 分支 --2 提交并推送--> GitHub 远程仓库
-                                    +
-                                    | 3 开启 PR（head 向 base）：
-                                    |   只读引用 + CI Checks
-                                    | 4 草稿 PR 转 "Ready for review"
-                                    | 5 评审 + 6 分支保护门禁
-                                    | 7 合并（三方式之一）
-                                    | 8 删除 head 分支，issue 自动关闭
-                                    +
-                                 base 分支收到改动
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: Pull Request：从建分支到合并
+    base["base 分支：通常 main"]:::input
+    base -->|步骤 1：切出| head["head 分支"]
+    head -->|步骤 2：提交并推送| github["GitHub 远程仓库"]:::storage
+    github --> pr["步骤 3：开启 PR，head 向 base；只读引用 + CI Checks"]
+    pr --> ready["步骤 4：草稿 PR 转 Ready for review"]
+    ready --> review["步骤 5：评审"]
+    review --> protection["步骤 6：分支保护门禁"]
+    protection --> merge["步骤 7：合并，三方式之一"]:::action
+    merge --> updated["base 分支收到改动"]:::result
+    updated --> cleanup["步骤 8：删除 head 分支，issue 自动关闭"]
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 各阶段要点：
@@ -65,3 +70,11 @@ base 分支（通常 main）
 - [About pull requests（一手）](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 - [About pull request merges（一手）](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [About pull request reviews（一手）](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+
+<!-- backlinks:start -->
+
+## 引用本页的文章
+
+- [Java](java/index.md)
+
+<!-- backlinks:end -->

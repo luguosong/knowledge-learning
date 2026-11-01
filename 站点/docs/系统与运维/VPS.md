@@ -11,19 +11,29 @@ VPS 与 ECS 本质同类：都是 Hypervisor 切出的虚拟机加 root 权限�
 - **传统 VPS**：单机虚拟化。磁盘绑定宿主机，宿主机是单点。
 - **ECS**：实例跑在集群宿主机加调度层之上。云盘为分布式块存储，同可用区多副本、与宿主机解耦，数据可靠性标称 99.9999999%；支持升降配、在线扩容与五种计费模式。
 
-```text
-传统 VPS：单机虚拟化，磁盘绑定宿主机
-  物理服务器
-    +-- 虚拟机 1 -- 本地磁盘
-    +-- 虚拟机 2 -- 本地磁盘
-    +-- 虚拟机 3 -- 本地磁盘
-  宿主机是单点
-
-云服务器 ECS：集群宿主机 + 调度层，云盘与宿主机解耦
-  调度层
-    +-- 宿主机 A > 实例 >--+
-    +-- 宿主机 B > 实例 >--+ > 云盘（分布式块存储，同可用区多副本）
-    +-- 宿主机 C > 实例 >--+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: VPS 是什么，与云服务器有何区别
+    subgraph vps["传统 VPS：单机虚拟化，磁盘绑定宿主机"]
+        host["物理服务器：宿主机是单点"]:::input
+        host --> vm1["虚拟机 1 + 本地磁盘"]
+        host --> vm2["虚拟机 2 + 本地磁盘"]
+        host --> vm3["虚拟机 3 + 本地磁盘"]
+    end
+    subgraph ecs["云服务器 ECS：集群宿主机 + 调度层，云盘与宿主机解耦"]
+        scheduler["调度层"]:::input
+        scheduler --> a["宿主机 A：实例"]
+        scheduler --> b["宿主机 B：实例"]
+        scheduler --> c["宿主机 C：实例"]
+        a --> disk["云盘：分布式块存储，同可用区多副本"]:::storage
+        b --> disk
+        c --> disk
+    end
+    vps ~~~ ecs
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef storage fill:#fff4e6,stroke:#e67700,color:#8a4b00,stroke-width:1.5px
 ```
 
 **判断标准**：看实质不看名称——存储是否解耦、能否弹性、计费是否按量。"VPS"与"云服务器"的名称边界属营销。
@@ -54,15 +64,21 @@ VPS 与 ECS 本质同类：都是 Hypervisor 切出的虚拟机加 root 权限�
 
 **结论**：家庭自用可以先测试点对点直连（直连与中继状态可按 Tailscale 文档的方法判断）。只需购买中转流量时，按需求选托管方案：少量端口映射先考察樱花 FRP 托管隧道，NATAPP 是按隧道收费的另一候选；私有网络互访考察蒲公英纯软件组网及带宽加速。
 
-```text
-家庭互访需求
-  +
-  | 1 测试点对点直连
-  +-- 可用且稳定 --> 直连即可
-  |
-  | 2 不可用或不稳定，按需求买托管中转
-  +-- 少量端口映射 --> 樱花 FRP 托管隧道 / NATAPP（按隧道收费）
-  +-- 私有网络互访 --> 蒲公英纯软件组网 + 带宽加速
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 家庭服务器内网穿透：先测直连，再选中转
+    home["家庭互访需求"]:::input --> test["先测试点对点直连"]:::action
+    test --> stable{"直连可用且稳定？"}:::decision
+    stable -->|是| direct["直连即可"]:::result
+    stable -->|否| relay["按需求买托管中转"]
+    relay -->|少量端口映射| tunnel["樱花 FRP 托管隧道 / NATAPP：按隧道收费"]:::result
+    relay -->|私有网络互访| network["蒲公英纯软件组网 + 带宽加速"]:::result
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef decision fill:#ffe3e3,stroke:#c92a2a,color:#8c1d18,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 **比较维度**：套餐限速、流量配额、托管中继费用须分别比较；共享带宽不等于持续保证；增加云端带宽不能消除家庭上行瓶颈。以上是需求匹配建议，本次没有苏州实际线路的稳定性排名。

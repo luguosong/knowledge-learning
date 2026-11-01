@@ -10,18 +10,25 @@ Java 专题收拢 Java 家族的文章：[Java SE：语言与标准库](java-se/
 
 标记含义：A＝先掌握，B＝完成单体服务后深入，C＝按专项选学。A 与 B 是阶段，不代表能力上限。练习可以沿用 JDK 21，再用 JDK 25 对照版本差异；语言特性、API、预览状态和框架兼容性以对应版本文档为准。
 
-```text
-+ Java SE、算法与工程基础
-|
-+ 网络、数据库与 Spring 单体服务
-|
-+ 并发、JVM 与性能诊断
-|
-+ 缓存、消息与分布式系统
-|
-+ 选择专项 > 解决复杂问题 > 沉淀成果
-
-测试 - 安全 - 文档 - 源码阅读：贯穿以上全部阶段
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 主线与阶段标记
+    basics["Java SE、算法与工程基础"]:::input
+    basics --> monolith["网络、数据库与 Spring 单体服务"]
+    monolith --> performance["并发、JVM 与性能诊断"]
+    performance --> distributed["缓存、消息与分布式系统"]
+    distributed --> specialty["选择专项"]
+    specialty --> solve["解决复杂问题"]
+    solve --> output["沉淀成果"]:::result
+    practice["测试、安全、文档、源码阅读：贯穿全部阶段"]:::action
+    practice -.-> basics
+    practice -.-> performance
+    practice -.-> output
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 Java 标准版（Java Platform, Standard Edition，Java SE）的细化路线是独立专题，见 [Java SE：语言与标准库](java-se/语言与标准库.md)；本节只展开总路线。

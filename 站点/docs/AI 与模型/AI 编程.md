@@ -6,10 +6,18 @@
 
 代表性清单包含 12 个海外工程开发工具或系列、9 个国内厂商工具或系列、5 个国际开源工具和 4 个海外应用构建平台。同一产品可以同时提供终端、IDE、桌面与云端入口，不能按入口重复计数。
 
-```text
-读项目 --> 改文件 --> 调工具 --> 验证结果
-  ^                                  |
-  +----------------------------------+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 编程智能体工具全景
+    read["读项目"]:::input --> edit["改文件"]:::action
+    edit --> tools["调工具"]:::action
+    tools --> verify["验证结果"]:::result
+    verify -.->|继续迭代| read
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 收录口径：
@@ -107,15 +115,22 @@ OpenCode 支持多家在线模型提供商和本地模型；具体可用模型�
 
 仓库内真正的编译环节：
 
-```text
-主进程 TypeScript --tsup--> JS
-渲染层 React -------Vite--> JS
-两者的 JS + Chromium + Node.js 运行时
-        |
-        +-- electron-builder --> mac/win/linux 安装包
-node-pty 等原生模块 ----> 按平台重编译
-桌面内置 Agent ---------> 可编译为 V8 字节码
-CLI --------------------> 可选 SEA 打包
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: ZCode 桌面版的打包与分发
+    main["主进程 TypeScript"] -->|tsup| mainjs["主进程 JS"]
+    renderer["渲染层 React"] -->|Vite| renderjs["渲染层 JS"]
+    mainjs --> bundle["两者的 JS + Chromium + Node.js 运行时"]:::process
+    renderjs --> bundle
+    bundle -->|electron-builder| installer["mac / win / linux 安装包"]:::result
+    native["node-pty 等原生模块"] --> rebuild["按平台重编译"]:::action
+    agent["桌面内置 Agent"] --> bytecode["可编译为 V8 字节码"]:::action
+    cli["CLI"] --> sea["可选 SEA 打包"]:::action
+    classDef action fill:#ffe8cc,stroke:#d9480f,color:#8f3208,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 CLI 版另有可选的单一可执行应用（Single Executable Application，SEA）打包。
@@ -139,12 +154,16 @@ Codex 的 Full access 对应两个配置：`approval_policy = "never"` 与 `sand
 
 ChatGPT desktop app 内可选择 ChatGPT 或 Codex；本文比较其中的 Codex 与 CLI。两者共享底层 Codex 代理框架：App、CLI 和 IDE 扩展使用同一框架。宿主仍提供不同的界面、上下文、工具和执行边界；共享框架不能证明行为一致，也不能证明某一入口编码质量更高。比较任务质量时应固定模型、推理强度、指令、工具、权限及执行环境。
 
-```text
-        +------------------------------+
-        |  Codex 代理框架（同一底层）    |
-        +------------------------------+
-            |           |          |
-          桌面端      IDE 扩展     CLI
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: Codex 桌面端与 CLI 的分工
+    framework["Codex 代理框架：同一底层"]:::process
+    framework --> desktop["桌面端"]
+    framework --> ide["IDE 扩展"]
+    framework --> cli["CLI"]
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
 ```
 
 已核实差异：
@@ -169,14 +188,19 @@ ChatGPT desktop app 内可选择 ChatGPT 或 Codex；本文比较其中的 Codex
 
 推荐布局 `.agents/skills/<技能名>/SKILL.md`：每个技能一个独立子目录，`SKILL.md` 的 YAML 元数据写清 `name` 与 `description`，名称与技能目录名一致。不要因为某工具支持分组目录，就假定所有工具都递归发现多层技能；各宿主的专用元数据和执行工具也不完全通用。
 
-```text
-项目根目录/
-+-- .agents/
-    +-- skills/
-        +-- my-skill/
-            +-- SKILL.md
-            +-- scripts/     （可选）
-            +-- references/  （可选）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart LR
+    accTitle: 跨智能体共享技能：项目 .agents/skills
+    root["项目根目录/"] --> agents[".agents/"]
+    agents --> skills["skills/"]
+    skills --> skill["my-skill/"]
+    skill --> entry["SKILL.md"]:::input
+    skill -.-> scripts["scripts/：可选"]:::note
+    skill -.-> refs["references/：可选"]:::note
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
 ```
 
 已核实直接发现项目 `.agents/skills/` 的工具（2026-10-29 逐项查看官方文档；未在本机各工具中实测，清单不是所有智能体的完整名单）：
@@ -203,21 +227,25 @@ ChatGPT desktop app 内可选择 ChatGPT 或 Codex；本文比较其中的 Codex
 
 可以，三种形态均已落地。可行性根据：MCP 规范只定义 JSON-RPC 消息与传输绑定，明确与传输无关（transport-agnostic），不约束服务器实现技术。
 
-```text
-                     MCP 客户端（智能体）
-                            |
-                       JSON-RPC 消息
-                            |
-      +---------------------+---------------------+
-      |                     |                     |
- 形态一：自建宿主      形态二：通用插件型     形态三：整体编译
- MCP SDK 写服务器     Wassette / hyper-mcp   Spin / Wasmcp
- handler 内调用       插件即 WASM 模块       服务器编译为
- Wasmtime / Extism                          单个 server.wasm
-      |                     |                     |
-      +---------------------+---------------------+
-                            |
-                    WASM 导出函数执行
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: 将 WebAssembly 封装为 MCP 工具
+    client["MCP 客户端：智能体"]:::input -->|JSON-RPC 消息| routes{"宿主形态"}:::decision
+    routes --> own["形态一：MCP SDK 自建服务器"]
+    own --> handler["handler 内调用 Wasmtime / Extism"]:::process
+    routes --> plugin["形态二：Wassette / hyper-mcp 通用插件宿主"]
+    plugin --> module["插件即 WASM 模块"]:::process
+    routes --> compiled["形态三：Spin / Wasmcp 整体编译"]
+    compiled --> server["服务器编译为单个 server.wasm"]:::process
+    handler --> execute["WASM 导出函数执行"]:::result
+    module --> execute
+    server --> execute
+    classDef decision fill:#ffe3e3,stroke:#c92a2a,color:#8c1d18,stroke-width:1.5px
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 - **形态一（自建宿主）**：用 MCP SDK 写服务器，在工具 handler 内经 Wasmtime 或 Extism 调用 WebAssembly（WASM）导出函数。
@@ -251,16 +279,24 @@ ChatGPT desktop app 内可选择 ChatGPT 或 Codex；本文比较其中的 Codex
 
 **并发与 WASM 无关。** Wasmtime 官方语义：每个实例独占线性内存；Store 是隔离边界；不同 Store 的实例可跨线程并行；Engine（编译产物）线程间共享，模块只编译一次。按请求实例化即请求间零共享，天然隔离、可扩展。
 
-```text
-      Engine（编译产物，线程间共享；模块只编译一次）
-                        |
-        +---------------+---------------+
-        |                               |
-     Store A                         Store B     （Store 是隔离边界）
-        |                               |
- 实例 A（独占线性内存）          实例 B（独占线性内存）
-        |                               |
-     请求 1                         请求 2       （跨线程并行）
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
+flowchart TB
+    accTitle: WASM 云端并发与 C++ 取舍：DWG 处理案例
+    engine["Engine：编译产物线程间共享，模块只编译一次"]:::input
+    engine --> sa["Store A：隔离边界"]:::process
+    engine --> sb["Store B：隔离边界"]:::process
+    sa --> ia["实例 A：独占线性内存"]
+    sb --> ib["实例 B：独占线性内存"]
+    ia --> ra["请求 1"]:::result
+    ib --> rb["请求 2"]:::result
+    ra -.- parallel["跨线程并行"]:::note
+    rb -.- parallel
+    classDef default fill:#e7f5ff,stroke:#1971c2,color:#0f4d7a,stroke-width:1.5px
+    classDef input fill:#d3f9d8,stroke:#2f9e44,color:#1e6b2f,stroke-width:1.5px
+    classDef note fill:#f8f9fa,stroke:#495057,color:#212529,stroke-width:1.5px
+    classDef process fill:#e5dbff,stroke:#5f3dc4,color:#3f2a85,stroke-width:1.5px
+    classDef result fill:#c5f6fa,stroke:#0c8599,color:#0a5a68,stroke-width:1.5px
 ```
 
 DWG 处理「传文件、回结果」天然无状态，MCP 协议本身也无状态。多人并发是普通后端问题：水平扩展、网关认证限流、单实例内存与时间限额。

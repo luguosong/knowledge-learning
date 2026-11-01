@@ -4,7 +4,7 @@ How the engineering skills should consume this repo's domain documentation when 
 
 ## Before exploring, read these
 
-- **`GLOSSARY.md`** at the repo root. It points onward to [提问记录/管理/GLOSSARY.md](../../提问记录/管理/GLOSSARY.md) for record-system terms.
+- **`GLOSSARY.md`** at the repo root. Articles own the knowledge body; question records provide provenance and section links.
 - **`docs/adr/`**: read ADRs that touch the area you're about to work in.
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
@@ -18,9 +18,12 @@ Single-context repo:
 ├── GLOSSARY.md
 ├── docs/adr/
 │   ├── 0001-机器记录为唯一事实源.md
-│   └── 0002-站点专题目录树与双链.md
-├── 提问记录/
+│   ├── 0002-站点专题目录树与双链.md
+│   └── 0003-主题文章作为唯一正文.md
 └── 站点/
+    ├── docs/                       ← articles and attachments
+    ├── 工具/                       ← queries, validation and build
+    └── 管理/                       ← indexes, mappings and maintenance
 ```
 
 ## Use the glossary's vocabulary

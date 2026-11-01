@@ -1,5 +1,11 @@
 # GIS
 
+<!-- domain: GIS -->
+**范围**：地理信息系统的概念、空间分析及服务的私有化部署、空间数据发布、地图瓦片与数据门户选型。
+
+**综述**：地理信息系统（Geographic Information System，GIS）用于采集、管理、分析和展示与地理位置有关的数据，核心是把位置与描述对象的属性连接起来，再通过空间关系支持查询与决策；地图是其展示方式之一。GIS 服务通过网络向其他程序提供地图、空间数据或处理能力，其中地图与数据发布可使用免费开源软件在自己的服务器或内网部署。发布自有地图、矢量数据与影像时，可优先评估 GeoServer；需要沿用 QGIS 项目制图效果时，可评估 QGIS Server；需要数据上传、检索、分享和用户权限管理的完整门户时，可评估 GeoNode；主要向网页地图提供矢量瓦片时，可评估 Martin。地图前端负责显示与交互，服务端负责提供地图或数据；软件许可免费不包含机器、存储、运维和外部数据。尚待确认用户需要发布自有空间数据，还是需要底图、地址搜索及路线规划等服务。
+<!-- /domain -->
+
 地理信息系统（Geographic Information System，GIS）采集、管理、分析与展示位置相关数据，核心是把位置与属性连接起来。地图只是 GIS 的展示方式之一；GIS 服务通过网络向其他程序提供地图、数据与处理能力。主线：概念边界与免费私有化部署选型。
 
 ## GIS 是什么：与地图、GIS 服务的关系
@@ -34,6 +40,10 @@ flowchart TB
 - [一手] [USGS：What is a geographic information system (GIS)?](https://www.usgs.gov/faqs/what-a-geographic-information-system-gis)
 - [一手] [GeoServer 官方介绍](https://geoserver.org/about/)
 
+### 证据与时效 · q-20261026-008
+
+- **信源**：[一手] [Esri：What is GIS?](https://www.esri.com/en-us/what-is-gis/overview)；[一手] [USGS：What is a geographic information system (GIS)?](https://www.usgs.gov/faqs/what-a-geographic-information-system-gis)；[一手] [GeoServer 官方介绍](https://geoserver.org/about/)
+
 ## 免费私有化部署的 GIS 服务选型
 
 **结论**：有可免费私有化部署的 GIS 服务。GeoServer、QGIS Server、GeoNode 和 Martin 均可免费自行部署。按用途选择：
@@ -57,3 +67,29 @@ flowchart TB
 - [一手] [GeoNode 官网](https://geonode.org/)
 - [一手] [Martin 官方仓库](https://github.com/maplibre/martin)
 - [一手] [Martin 官方文档](https://maplibre.org/martin/)
+
+### 证据与时效 · q-20261026-007
+
+- **信源**：[一手] [GeoServer 官方介绍](https://geoserver.org/about/)；[一手] [GeoServer 许可证](https://geoserver.org/license/)；[一手] [GeoServer 官方 Docker 部署](https://github.com/geoserver/docker)；[一手] [QGIS 官方仓库](https://github.com/qgis/QGIS)；[一手] [QGIS Server 3.44 介绍](https://docs.qgis.org/3.44/en/docs/server_manual/introduction.html)；[一手] [GeoNode 官网](https://geonode.org/)；[一手] [Martin 官方仓库](https://github.com/maplibre/martin)；[一手] [Martin 官方文档](https://maplibre.org/martin/)
+
+
+## 提问记录
+
+### q-20261026-007
+
+- **原题**：2026-10-26 · 免费私有化部署的 GIS 服务选型
+- **问**：有没有可以免费私有化部署的 GIS 服务？
+- **领域**：GIS
+- **首次**：2026-10-26
+- **更新**：2026-10-26
+- **正文**：[免费私有化部署的 GIS 服务选型](#免费私有化部署的-gis-服务选型)
+- **关联**：[2026-10-24 · 网页端 3D 地球仪与地图的开源库选型（可交换）](../软件开发/前端开发.md#q-20261024-001)
+
+### q-20261026-008
+
+- **原题**：2026-10-26 · GIS 的含义与地图、GIS 服务的关系
+- **问**：什么是 GIS？
+- **领域**：GIS
+- **首次**：2026-10-26
+- **更新**：2026-10-26
+- **正文**：[GIS 是什么：与地图、GIS 服务的关系](#gis-是什么与地图gis-服务的关系)

@@ -28,10 +28,19 @@ Tomcat 与规范版本对应：Tomcat 9 对应 Java EE 8（Servlet 4.0，最后�
 - [Jakarta EE About（一手）](https://jakarta.ee/about/)
 - [Eclipse Foundation 博客：Java EE Moves to the Eclipse Foundation（一手，2017-09-12）](https://eclipse-foundation.blog/2017/09/12/java-ee-moves-to-the-eclipse-foundation)
 
-<!-- backlinks:start -->
+### 证据与时效 · q-20261014-001
 
-## 引用本页的文章
+- **信源**：[一手] [Apache Tomcat 版本与规范对应](https://tomcat.apache.org/whichversion.html)；[Jakarta EE 官网](https://jakarta.ee/)；[Jakarta EE About](https://jakarta.ee/about/)；[Eclipse Foundation 博客：Java EE Moves to the Eclipse Foundation（2017-09-12）](https://eclipse-foundation.blog/2017/09/12/java-ee-moves-to-the-eclipse-foundation)。核实日期：2026-10-14。
 
-- [Java](index.md)
 
-<!-- backlinks:end -->
+## 提问记录
+
+### q-20261014-001
+
+- **原题**：2026-10-14 · Java EE 与 Tomcat 的关系及名称演变
+- **问**：Java EE 和 Tomcat 之间是什么关系？为什么 Tomcat 听得多而很少听到 Java EE？
+- **领域**：Java
+- **首次**：2026-10-14
+- **更新**：2026-10-14
+- **正文**：[Java EE 与 Tomcat](#java-ee-与-tomcat)
+- **关联**：[2026-09-22 · 成为 Java 专家的完整学习路线](index.md#q-20260922-001)

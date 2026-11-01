@@ -1,5 +1,11 @@
 # Windows
 
+<!-- domain: Windows -->
+**范围**：Windows 桌面系统的版本差异、功能边界、清理维护、内存诊断与优化，及连接 WSL 桌面的版本条件。
+
+**综述**：Windows 家庭版与专业版按实际安全管理、远程接入、虚拟化和组织接入需求选择，具体功能及容量上限按版本核对。本机 RDP 客户端连接 WSL 内 xrdp 时，服务端在 Linux，无须据此升级 Windows 远程桌面主机能力。清理空间与减少后台负载分别诊断，清理文件数量不能证明提速。内存需区分工作集、提交量和缓存；清理后回涨不能单独证明泄漏。本机开发容器已按用户需求改为按需启动并正常停止，数据和配置备份保留；2026-10-27 尚未重启 WSL，gradual 回收配置仍待验证。
+<!-- /domain -->
+
 本领域记录 Windows 11 使用中的三类判断：家庭版与专业版选型、清理与优化工具选择、内存占用与 WSL 常驻服务诊断。主线是按需求与实测做选择；不覆盖系统安装与硬件维修。
 
 ## 专业版与家庭版：按需求选择
@@ -37,6 +43,10 @@
 - [WSL 常见问题（一手）](https://learn.microsoft.com/en-us/windows/wsl/faq#is-wsl-2-available-on-windows-10-home-and-windows-11-home)
 - [xrdp 官方项目：Linux 服务端与 Windows mstsc 客户端（一手）](https://github.com/neutrinolabs/xrdp)
 
+### 证据与时效 · q-20261026-009
+
+- **信源**：[一手] [微软 Windows 11 版本比较](https://www.microsoft.com/zh-cn/windows/compare-windows-11-home-vs-pro-versions)；[一手] [Windows 设备加密](https://support.microsoft.com/en-us/windows/security/encryption/device-encryption-in-windows)；[一手] [远程桌面的使用条件](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop)；[一手] [Hyper-V 安装与版本要求](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows)；[一手] [Windows 沙盒](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/)；[一手] [Microsoft Entra 加入设备](https://learn.microsoft.com/entra/identity/devices/concept-directory-join)；[一手] [Windows 物理内存上限](https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases#physical-memory-limits-windows-11)；[一手] [WSL 常见问题](https://learn.microsoft.com/en-us/windows/wsl/faq#is-wsl-2-available-on-windows-10-home-and-windows-11-home)；[一手] [xrdp 官方项目：Linux 服务端与 Windows mstsc 客户端](https://github.com/neutrinolabs/xrdp)
+
 ## 清理与优化工具：按用途选择
 
 **结论**：按用途选工具，系统文件先用 Windows 内置功能；释放空间与改善性能分别判断，清理文件数量不能证明提速。
@@ -69,6 +79,10 @@
 - [微软电脑管家（一手）](https://pcmanager.microsoft.com/zh-cn)
 - [微软释放磁盘空间指南（一手）](https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows)
 - [微软性能优化指南（一手）](https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows)
+
+### 证据与时效 · q-20261027-003
+
+- **信源**：[一手] [BleachBit 官方文档](https://docs.bleachbit.org/)；[一手] [BleachBit 功能说明](https://www.bleachbit.org/features)；[一手] [BleachBit Windows 下载与兼容要求](https://www.bleachbit.org/download/windows)；[一手] [WizTree 官方说明与个人使用许可](https://diskanalyzer.com/)；[一手] [BCUninstaller 官方项目](https://github.com/BCUninstaller/Bulk-Crap-Uninstaller)；[一手] [微软 Autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns)；[一手] [微软电脑管家](https://pcmanager.microsoft.com/zh-cn)；[一手] [微软释放磁盘空间指南](https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows)；[一手] [微软性能优化指南](https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows)
 
 ## 内存回涨与 WSL 常驻服务：诊断与按需启动
 
@@ -162,3 +176,39 @@ flowchart TB
 - [微软：提交量与内存泄漏诊断（一手）](https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/troubleshoot-application-service-memory-leaks)
 - [Linux 内核：手动丢弃缓存的性能代价（一手）](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop_caches)
 - [SQL Server 容器入口未转发终止信号的问题（一手·原报告）](https://github.com/microsoft/mssql-docker/issues/968)
+
+### 证据与时效 · q-20261027-004
+
+- **信源**：[一手·本机实测，2026-10-27] Windows CIM 与进程采样：物理内存 31.52 GiB，首次可用 8.77 GiB（使用率 72.2%），后续可用 5.59 GiB 至 8.31 GiB；`vmmemWSL` 工作集约 7.26 GiB 至 10.01 GiB，Chrome 约 2.31 GiB、IDEA 约 2.12 GiB、ChatGPT 约 1.30 GiB、ZCode 约 0.84 GiB，进程族工作集相加会重复计算共享页；提交量约 39.7 GiB 时上限为 55.52 GiB，工作集波动时提交量在短时采样中基本稳定，采样后段 Pages Output/sec 为 0，开机以来未发现资源耗尽事件 2004，不能据此排除长期泄漏；页面文件当前使用约 14.75 GiB，开机峰值约 23.83 GiB，该数字不等于实时换页速率。`docker stats`：SQL Server 1.329 GiB、Nacos 1.002 GiB、MySQL 392.3 MiB、RabbitMQ 203 MiB，其余三项较小，合计约 3.0 GiB；SQL Server 原无容器内存硬上限，其他六容器已有 1 GiB 至 4 GiB 上限，硬上限不表示预先占用；本地 Docker 上下文为 `unix:///var/run/docker.sock`。停用前紧邻 Windows 采样为可用 7.57 GiB、提交量 37.47 GiB、WSL 工作集 8.65 GiB，停用后为可用 8.31 GiB、提交量 35.15 GiB、WSL 工作集 7.87 GiB；WSL `free` 已用从约 7.1 GiB 降至约 3.0 GiB，仍有 Cached 4488728 KiB，期间其他 AI 进程仍在变化，全部差额不能只归因于容器。WSL 当前启动于 08:38:06，回收配置修改于 13:46:19，未重启。两处 Compose 经过 `docker compose config --quiet` 校验并核对只有目标服务的 restart 字段变化，备份后缀 `.backup-on-demand-20261027-135940`；七容器 `running=false`、`restart=no`、`oom=false`，SQL Server 退出码 0，Nacos 与 Qdrant 的 143 为收到 SIGTERM。当前 SQL Server 镜像 PID 1 为 `launch_sqlservr`，脚本无信号转发，已向其直接子进程 sqlservr 发送 TERM 完成正常退出；[一手] [微软：工作集、页面错误与修剪](https://learn.microsoft.com/en-us/windows/win32/memory/working-set)；[一手] [微软：EmptyWorkingSet](https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset)；[一手] [微软：WSL 内存上限、回收设置与重启生效](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)；[一手] [Docker：restart 策略](https://docs.docker.com/reference/compose-file/services/#restart)；[一手] [Docker：内存资源限制](https://docs.docker.com/engine/containers/resource_constraints/)；[一手] [Docker：stats 的缓存扣除口径](https://docs.docker.com/reference/cli/docker/container/stats/)；[一手] [微软：提交量与内存泄漏诊断](https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/troubleshoot-application-service-memory-leaks)；[一手] [Linux 内核：手动丢弃缓存的性能代价](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches)；[一手·原报告] [SQL Server 容器入口未转发终止信号的问题](https://github.com/microsoft/mssql-docker/issues/968)
+
+
+## 提问记录
+
+### q-20261026-009
+
+- **原题**：2026-10-26 · Windows 11 专业版与家庭版的主要区别及选型
+- **问**：Windows 11专业版和家庭版区别。
+- **领域**：Windows
+- **首次**：2026-10-26
+- **更新**：2026-10-27
+- **正文**：[专业版与家庭版：按需求选择](#专业版与家庭版按需求选择)
+- **关联**：[2026-10-27 · 在 Windows 本机打开 WSL 完整 Linux 桌面的方案选择](WSL.md#q-20261027-001)
+
+### q-20261027-003
+
+- **原题**：2026-10-27 · Windows 11 深度清理与优化工具的选择
+- **问**：优秀的 Win11 深度清理优化工具推荐。
+- **领域**：Windows
+- **首次**：2026-10-27
+- **更新**：2026-10-27
+- **正文**：[清理与优化工具：按用途选择](#清理与优化工具按用途选择)
+
+### q-20261027-004
+
+- **原题**：2026-10-27 · Windows 内存清理后回涨与 WSL 常驻服务的占用诊断
+- **问**：当前电脑内存经常升高，电脑管家清理后降低又回升，原因是什么，与 WSL 是否有关，能否优化；确认七个 Docker 服务仅开发时需要，要求改为按需启动。
+- **领域**：Windows
+- **首次**：2026-10-27
+- **更新**：2026-10-27
+- **正文**：[内存回涨与 WSL 常驻服务：诊断与按需启动](#内存回涨与-wsl-常驻服务诊断与按需启动)
+- **关联**：[2026-10-27 · WSL 内存占用、缓存回收与开发容器按需启动](WSL.md#q-20261027-002)；[本机开发服务启停工具](../附件/工具/开发服务.ps1)（PowerShell：`-Action Start`、`-Action Stop`、`-Action Status`，可选 `-Group Infra` 或 `-Group SqlServer`）

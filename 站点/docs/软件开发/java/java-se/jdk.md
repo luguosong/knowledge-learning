@@ -39,6 +39,10 @@ flowchart TB
 
 信源（均一手，核实日期 2026-10-15）：[JDK 8 项目页](https://openjdk.org/projects/jdk8/)、[Java 语言特性演进表](https://docs.oracle.com/en/java/javase/21/language/java-language-changes-summary.html)、[JEP 索引](https://openjdk.org/jeps/0)、[JDK 25 项目页](https://openjdk.org/projects/jdk/25/)。
 
+### 证据与时效 · q-20261015-002
+
+- **信源**：[一手] [JDK 8 项目页（GA 2014-03-18，Project Lambda）](https://openjdk.org/projects/jdk8/)；[Java 语言特性演进表（Oracle，JDK 9–21）](https://docs.oracle.com/en/java/javase/21/language/java-language-changes-summary.html)；[JEP 索引（JEP 与版本归属）](https://openjdk.org/jeps/0)；[JDK 25 项目页（LTS）](https://openjdk.org/projects/jdk/25/)。核实日期：2026-10-15。
+
 ## JDK 类库体系的宏观概览
 
 以 JDK 25 为基线，公开类库分为两类：Java SE 标准 API（模块名以 `java` 开头）和 JDK 专属 API（模块名以 `jdk` 开头）；前者以 `java.base` 为基础，再由其他模块提供数据库、文档、桌面、管理等能力。理解时先按职责定位，再按"模块 → 包 → 类／接口"查找。下列职责分组是教学归纳，不是官方固定分层。
@@ -76,14 +80,35 @@ flowchart LR
 
 信源（均一手，核实日期 2026-10-15）：[Java SE 25 与 JDK 25 API 总览](https://docs.oracle.com/en/java/javase/25/docs/api/index.html)、[java.base 模块](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/module-summary.html)、[模块描述与依赖](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/module/ModuleDescriptor.html)、[java.net.http](https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/module-summary.html)、[java.sql 包与驱动框架](https://docs.oracle.com/en/java/javase/25/docs/api/java.sql/java/sql/package-summary.html)、[java.desktop](https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/module-summary.html)、[java.compiler](https://docs.oracle.com/en/java/javase/25/docs/api/java.compiler/module-summary.html)、[java.logging](https://docs.oracle.com/en/java/javase/25/docs/api/java.logging/module-summary.html)、[jdk.jfr](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/module-summary.html)、[jdk.httpserver](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.httpserver/module-summary.html)。
 
-<!-- backlinks:start -->
+- **java.base 内的基础能力**：语言与对象支持（java.lang）、集合与函数式处理（java.util、java.util.function、java.util.stream）、数值／文本／时间（java.math、java.text、java.time）、并发（java.util.concurrent）、文件与基础网络（java.io、java.nio、java.net）、安全与密码（java.security、javax.crypto、javax.net.ssl）；反射、方法句柄、外部函数与内存、class 文件处理也在该模块中。
 
-## 引用本页的文章
+- **其他 Java SE 模块**：java.net.http 提供网络请求客户端；java.sql 与 java.sql.rowset 提供数据库访问 API；java.naming、java.rmi、java.prefs 提供命名、远程调用与偏好设置；java.xml 与 java.xml.crypto 处理 XML 及其密码操作；java.desktop 与 java.datatransfer 提供桌面和多媒体能力；java.logging、java.management、java.management.rmi、java.instrument 提供日志、管理与程序插桩；java.compiler 与 java.scripting 提供编译与脚本接口。
 
-- [Java](../index.md)
-- [Java 图形化编程](图形化.md)
-- [Java SE：语言与标准库](语言与标准库.md)
-- [JVM](../jvm.md)
-- [Spring](../spring.md)
+### 证据与时效 · q-20261015-003
 
-<!-- backlinks:end -->
+- **信源**：[一手] [Java SE 25 与 JDK 25 API 总览](https://docs.oracle.com/en/java/javase/25/docs/api/index.html)；[java.base](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/module-summary.html)；[模块描述与依赖](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/module/ModuleDescriptor.html)；[java.net.http](https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/module-summary.html)；[java.sql 包与驱动框架](https://docs.oracle.com/en/java/javase/25/docs/api/java.sql/java/sql/package-summary.html)；[java.desktop](https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/module-summary.html)；[java.compiler](https://docs.oracle.com/en/java/javase/25/docs/api/java.compiler/module-summary.html)；[java.logging](https://docs.oracle.com/en/java/javase/25/docs/api/java.logging/module-summary.html)；[jdk.jfr](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/module-summary.html)；[jdk.httpserver](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.httpserver/module-summary.html)。核实日期：2026-10-15。
+
+
+## 提问记录
+
+### q-20261015-002
+
+- **原题**：2026-10-15 · JDK 8 与 JDK 25 差别有多大
+- **问**：总结 JDK 25 和 JDK 8 差别有多大。
+- **领域**：Java SE
+- **首次**：2026-10-15
+- **更新**：2026-10-15
+- **正文**：[JDK 8 与 JDK 25 差别有多大](#jdk-8-与-jdk-25-差别有多大)
+- **关联**：[2026-09-23 · Java SE 的学习路线与完整知识点](语言与标准库.md#q-20260923-003)
+
+
+
+### q-20261015-003
+
+- **原题**：2026-10-15 · JDK 自身类库体系的宏观概览
+- **问**：JDK自身的类库体系总结，宏观概览。
+- **领域**：Java SE
+- **首次**：2026-10-15
+- **更新**：2026-10-15
+- **正文**：[JDK 类库体系的宏观概览](#jdk-类库体系的宏观概览)
+- **关联**：[2026-09-23 · Java SE 的学习路线与完整知识点](语言与标准库.md#q-20260923-003)；[2026-10-15 · JDK 8 与 JDK 25 差别有多大](jdk.md#q-20261015-002)

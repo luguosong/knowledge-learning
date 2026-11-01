@@ -1,5 +1,11 @@
 # Git
 
+<!-- domain: Git -->
+**范围**：Git 版本控制与 Git for Windows 命令行环境，及 GitHub Pull Request 协作流程。
+
+**综述**：Git 是分布式版本控制系统；Bash 是命令解释器（Shell）。Git Bash 是 Git for Windows 提供的 Bash 命令行环境，让用户在 Windows 上按类 Unix 的方式执行 Git 与配套工具。理解 Git Bash 时，应区分负责版本管理的 Git、负责解释命令的 Bash，以及将这些工具带到 Windows 的软件包。在 Git 之上，GitHub 以分支与合并为基础提供 PR（Pull Request）合并提案机制：head 分支向 base 分支发起，经评审、Checks 与分支保护门禁后按 merge commit、squash 或 rebase 合并并删除分支；PR 是平台功能而非 Git 命令。
+<!-- /domain -->
+
 Git 是分布式版本控制系统，Bash 是命令解释器，GitHub 在 Git 之上提供拉取请求（Pull Request，PR）合并提案机制。本领域记录 Git Bash 环境中三者的分工，以及 PR 从建分支到合并的完整流程、门禁与限制。
 
 ## Git Bash：Git 与 Bash 的分工
@@ -20,6 +26,10 @@ Git 是分布式版本控制系统，Bash 是命令解释器，GitHub 在 Git �
 - [Git 官方首页（一手）](https://git-scm.com/)
 - [GNU Bash：What is Bash?（一手）](https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html)
 - [git-status 官方文档（一手）](https://git-scm.com/docs/git-status)
+
+### 证据与时效 · q-20261010-007
+
+- **信源**：[一手] [Git for Windows](https://gitforwindows.org/)；[一手] [Git 官方首页](https://git-scm.com/)；[一手] [GNU Bash：What is Bash?](https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html)；[一手] [git-status 官方文档](https://git-scm.com/docs/git-status)
 
 ## Pull Request：从建分支到合并
 
@@ -71,10 +81,28 @@ flowchart TB
 - [About pull request merges（一手）](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [About pull request reviews（一手）](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
 
-<!-- backlinks:start -->
+### 证据与时效 · q-20261027-007
 
-## 引用本页的文章
+- **信源**：[一手] [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)；[一手] [About pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)；[一手] [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)；[一手] [About pull request reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+- **核实**：2026-10-27；核实了流程步骤、draft PR、PR 只读引用、三种合并方式、评审三种结论与分支保护门禁（GitHub Docs 当前版，适用 Free/Pro/Team 计划）；fork 场景的深层权限差异未展开。
 
-- [Java](java/index.md)
 
-<!-- backlinks:end -->
+## 提问记录
+
+### q-20261010-007
+
+- **原题**：2026-10-10 · Git Bash 是什么及 Git 与 Bash 的分工
+- **问**：什么是 git bash？
+- **领域**：Git
+- **首次**：2026-10-10
+- **更新**：2026-10-10
+- **正文**：[Git Bash：Git 与 Bash 的分工](#git-bashgit-与-bash-的分工)
+
+### q-20261027-007
+
+- **原题**：2026-10-27 · GitHub PR 的完整执行过程
+- **问**：GitHub PR（Pull Request）从建分支到合并后的完整执行过程是什么？
+- **领域**：Git
+- **首次**：2026-10-27
+- **更新**：2026-10-27
+- **正文**：[Pull Request：从建分支到合并](#pull-request从建分支到合并)

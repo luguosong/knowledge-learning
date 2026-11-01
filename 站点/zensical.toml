@@ -13,6 +13,7 @@ extra_css = [
 plugins = ["awesome-nav"]
 
 [markdown_extensions]
+toc.slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "fold" } }
 pymdownx.superfences.custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
 ]

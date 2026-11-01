@@ -1,5 +1,11 @@
 # Navicat
 
+<!-- domain: Navicat -->
+**范围**：Navicat 产品与平台的版本查询、发行记录及站点差异。
+
+**综述**：Navicat 的版本查询必须区分产品、操作系统、主版本与补丁版本。截至 2026-10-26，官网最新主版本为 Navicat 18；国际官网发行说明列出的 Navicat Premium Windows 版最新补丁为 18.0.5，发布日期为 2026-10-22。中文官网发行说明当次核实时只列到 18.0.3，两个站点的记录不同；本次 18.0.5 的结论适用于国际官网所列的 Windows 版，不能直接推及其他产品或平台。
+<!-- /domain -->
+
 Navicat 的版本核实记录。主线：查询最新版本。边界：结论必须区分产品、操作系统、主版本与补丁版本，只覆盖已核实的组合。
 
 ## 最新版本的核实
@@ -17,3 +23,19 @@ Navicat 的版本核实记录。主线：查询最新版本。边界：结论必
 - [一手] [Navicat 官方新闻中心：2026-09-16 发布 Navicat 18](https://www.navicat.com.cn/company/press)
 - [一手] [Navicat Premium 国际官网发行说明](https://www3.navicat.com/en/products/navicat-premium-release-note)
 - [一手] [Navicat Premium 中文官网发行说明](https://www.navicat.com.cn/products/navicat-premium-release-note)
+
+### 证据与时效 · q-20261026-010
+
+- **信源**：[一手] [Navicat 官方新闻中心：2026-09-16 发布 Navicat 18](https://www.navicat.com.cn/company/press)；[一手] [Navicat Premium 国际官网发行说明](https://www3.navicat.com/en/products/navicat-premium-release-note)；[一手] [Navicat Premium 中文官网发行说明](https://www.navicat.com.cn/products/navicat-premium-release-note)
+
+
+## 提问记录
+
+### q-20261026-010
+
+- **原题**：2026-10-26 · Navicat 最新版本
+- **问**：查看 navicat 最新是哪个版本。
+- **领域**：Navicat
+- **首次**：2026-10-26
+- **更新**：2026-10-26
+- **正文**：[最新版本的核实](#最新版本的核实)

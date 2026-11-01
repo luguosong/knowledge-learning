@@ -1,5 +1,11 @@
 # MCP
 
+<!-- domain: MCP -->
+**范围**：模型上下文协议的系统学习路线、核心规范、客户端与服务器开发、传输交互、授权安全、工程部署及扩展兼容。
+
+**综述**：模型上下文协议（Model Context Protocol，MCP）的学习按架构接入、核心能力、消息与传输、交互、宿主与客户端、授权安全、部署及兼容推进。当前学习基线为 2026-07-28 规范：每请求在 _meta 中自带版本与客户端能力，不依赖此前建立的协议会话；_meta 承载通信元数据，arguments 承载工具业务输入；server/discover 是可选发现，不是握手。请求、响应、通知及内嵌输入分别定义字段，缓存结果须含 ttlMs 与 cacheScope；完整类型与示例见报文问题附录。宿主可以保存上下文，再把所需结果明确写入下一请求；无状态不表示应用不能保存数据。旧握手与会话机制属于兼容知识；MRTR、订阅和扩展语义见路线问题，扩展能力需双方显式支持。npx 是启动命令；本体是 JSON-RPC 2.0 消息语义，stdio 与 Streamable HTTP 只是可替换的传输绑定，stdio 不经 HTTP，OAuth 授权只面向 HTTP 传输；HTTP 可以运行在本机，stdio 不强制串行。宿主、SDK 与扩展支持按实际版本核实，通过服务器、客户端、多用户隔离及故障恢复练习验证。
+<!-- /domain -->
+
 模型上下文协议（Model Context Protocol，MCP）用 JSON-RPC 2.0 消息把工具、资源与提示模板接入模型。主线：架构接入、核心能力、消息与传输、交互、宿主、授权安全、部署与兼容；基线为 2026-07-28 规范。
 
 ## 学习路线：从接入到扩展
@@ -38,6 +44,19 @@ flowchart TB
 项目验收建议：同一服务器分别经 stdio 与 HTTP 调用并用 Inspector 解释报文；个人知识库服务器覆盖分页、Schema 和错误；自建宿主连接至少两个服务器并处理同名工具、超时和用户拒绝；授权远程服务完成 OAuth、两用户数据隔离、权限不足和令牌过期测试；长任务可轮询、取消、中途补充输入并在客户端重启后继续；对比旧版客户端验证迁移，确认重试不重复写入。注意：路线与项目验收是学习建议，不是规范要求所有应用实现全部可选能力。
 
 信源（均一手）：[现行规范](https://modelcontextprotocol.io/specification/2026-07-28)、[架构](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)、[基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)、[工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)、[资源](https://modelcontextprotocol.io/specification/2026-07-28/server/resources)、[提示模板](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts.md)、[stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)、[Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)、[MRTR](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr)、[订阅](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions.md)、[Elicitation](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)、[授权](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)、[安全最佳实践](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)、[扩展总览](https://modelcontextprotocol.io/extensions/overview)。
+
+### 项目验收建议
+
+- 接入实验：同一服务器分别通过 stdio 与 HTTP 调用，用 Inspector 解释完整报文。
+- 个人知识库服务器：搜索工具、文档资源、总结提示模板，覆盖分页、Schema 和错误。
+- 自建宿主：连接至少两个服务器，完成工具调用循环，处理同名工具、超时和用户拒绝。
+- 授权远程服务：完成 OAuth、两个用户的数据隔离、权限不足和令牌过期测试。
+- 长任务与扩展：批处理任务可轮询、取消、中途补充输入和客户端重启后继续；支持时增加一个 MCP App 或 Skill。
+- 迁移与部署：对比当前和一个旧版客户端；验证重试不会重复写入，输出部署、监控和升级说明。
+
+### 证据与时效 · q-20261025-003
+
+- **信源**：[一手] [现行规范](https://modelcontextprotocol.io/specification/2026-07-28)；[一手] [版本变更](https://modelcontextprotocol.io/specification/2026-07-28/changelog)；[一手] [架构](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)；[一手] [基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)；[一手] [规范类型源码](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2026-07-28/schema.ts)；[一手] [工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)；[一手] [资源](https://modelcontextprotocol.io/specification/2026-07-28/server/resources)；[一手] [提示模板](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts.md)；[一手] [stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)；[一手] [Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)；[一手] [MRTR](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr)；[一手] [订阅](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions.md)；[一手] [Elicitation](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)；[一手] [授权](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)；[一手] [安全最佳实践](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)；[一手] [本地服务器安全](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/local-server-security)；[一手] [客户端最佳实践](https://modelcontextprotocol.io/docs/2026-07-28/develop/clients/client-best-practices)；[一手] [官方 SDK](https://modelcontextprotocol.io/docs/2026-07-28/sdk)；[一手] [Inspector](https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector)；[一手] [扩展总览](https://modelcontextprotocol.io/extensions/overview)；[一手] [Tasks](https://modelcontextprotocol.io/extensions/tasks/overview)；[一手] [MCP Apps](https://modelcontextprotocol.io/extensions/apps/overview)；[一手] [Skills over MCP](https://modelcontextprotocol.io/extensions/skills/overview)；[一手] [Registry](https://modelcontextprotocol.io/registry/about)。
 
 ## 数据层无状态：每请求自带版本与能力
 
@@ -95,7 +114,7 @@ sequenceDiagram
 
 **实验限制**：运行结果来自本地教学实现，不代表完整实现了 MCP，也没有调用真实模型或外部服务。实验验证的是「协议字段和业务参数齐备时，全新服务器进程可以处理调用」；它没有验证所有工具都无需持久化业务数据，也没有验证失败重试的幂等性。
 
-**完整报文参考**：MCP 各种消息结构不同，不能合成一条同时包含所有字段的有效报文。据此建立的参考册与逐字段附录（存于提问记录）覆盖官方核心 Schema 的 155 个类型定义、21 个固定方法名、517 项声明属性位置、56 个带具体数据的独立示例；517 含继承后在多个类型中重复出现的属性，不代表互异字段名。要点：
+**完整报文参考**：MCP 各种消息结构不同，不能合成一条同时包含所有字段的有效报文。据此建立的参考册与[逐字段附录](../附录/q-20261027-005.md)覆盖官方核心 Schema 的 155 个类型定义、21 个固定方法名、517 项声明属性位置、56 个带具体数据的独立示例；517 含继承后在多个类型中重复出现的属性，不代表互异字段名。要点：
 
 - 顶层客户端请求 10 种方法（发现、工具、资源、提示模板、参数补全、订阅等）。
 - 内嵌补充输入 3 种方法；elicitation 分 form 与 url 示例；roots 与 sampling 在本版已弃用，不能按旧版作为独立服务器请求发送。
@@ -107,6 +126,96 @@ sequenceDiagram
 - 订阅的确认是 `notifications/subscriptions/acknowledged`；最终 result 只在正常结束时返回。
 
 信源（均一手）：[基础消息与每请求元数据](https://modelcontextprotocol.io/specification/2026-07-28/basic)、[版本与兼容](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning)、[服务器发现](https://modelcontextprotocol.io/specification/2026-07-28/server/discover)、[工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)、[stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)、[架构与宿主职责](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)、[类型源码](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts)、[版本变更](https://modelcontextprotocol.io/specification/2026-07-28/changelog)。
+
+### 无状态的准确边界
+
+“无状态”不表示客户端和服务器进程不能保存任何数据。本实验中，客户端明确保存计算结果 `5`，再把 `5` 写入下一请求；这不要求服务器记住前一次调用。MCP 不规定宿主如何管理模型上下文。[一手：架构](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)
+
+### 追问：`_meta` 字段是什么意思
+
+`_meta` 是 MCP 约定的元数据（Metadata）容器，用于附带协议版本、客户端能力等描述通信的信息。它可以出现在请求参数中，也可以出现在响应结果等规范允许的位置。在刚才的工具调用中，`params.arguments` 提供计算输入 `a`、`b`，`params._meta` 则提供处理本次通信所需的协议信息。[一手：基础规范 `_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic#_meta)、[一手：工具调用](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#calling-tools)
+
+- `io.modelcontextprotocol/protocolVersion`：本次请求使用的 MCP 规范版本。
+- `io.modelcontextprotocol/clientCapabilities`：客户端声明的能力；`{}` 表示未声明可选能力。
+
+在 2026-07-28 版中，每次请求必须携带上述两个字段。`clientInfo` 用于提供客户端名称和软件版本，属于应附带的可选字段。元数据是附带信息，不表示其中所有字段都可以删除；随请求携带必需信息使服务器无需从历史请求取回版本和能力。[一手：每请求协议字段](https://modelcontextprotocol.io/specification/2026-07-28/basic#_meta)
+
+### 实际运行的消息顺序
+
+本实验使用标准输入／输出（Standard Input/Output，stdio）。父进程充当客户端，启动子进程充当服务器。JSON-RPC 2.0 消息实际经过进程管道；每条消息占一行，以换行符分帧。界面为了阅读而把捕获的 JSON 缩进展示，缩进换行不属于线上报文。服务器收到输入结束后退出。[一手：stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)
+
+`add` 是本演示定义的业务工具，不是 MCP 内置工具。`tools/list` 返回该工具的 `inputSchema`，要求输入整数 `a` 和 `b`；`tools/call` 按 `name` 和 `arguments` 调用。`id` 用于配对请求和响应，不是会话编号。[一手：工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)、[一手：基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)
+
+新服务器收到的第一条请求如下。它未收到原服务器的三条历史请求，也未收到 `initialize`。
+
+### 实验结果与重放
+
+初次记录：2026-10-27 本地运行发送了 4 条请求，收到 4 条响应。原服务器进程 PID 为 `16348`，新服务器进程 PID 为 `14028`；PID 只标识本次本地进程，不是 MCP 报文字段。原进程计算 `2 + 3 = 5`；新进程首次收到 `tools/call(a=5,b=10)`，返回 `15`。
+
+**已被 2026-10-27 修正**：初版发现与工具列表响应遗漏必填的 `ttlMs` 和 `cacheScope`，不能作为这两类完整规范响应的范例。官方 `DiscoverResult`、`ListToolsResult` 都继承 `CacheableResult`；现已补齐并重跑，仍得到 `5` 和 `15`，当前八条捕获报文均通过所保存官方 Schema 的结构关键词校验。原捕获保留在 [修正前轨迹](../附件/演示/q-20261027-005/trace-before-cache-fix.json)，供核对遗漏；当前轨迹与界面已刷新。新进程 PID 分别为 `13816` 和 `12560`。无状态实验的计算结果未改变。[一手：类型源码](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts)、[一手：版本变更](https://modelcontextprotocol.io/specification/2026-07-28/changelog)
+
+2026-10-29 复跑：重新核实 2026-07-28 版发现、工具及 stdio 规范，并运行现有教学脚本。收到 4 条请求对应的 4 条响应；原服务器进程 PID 为 `14904`，新进程 PID 为 `13588`。原进程返回 `5`；新进程首次收到 `tools/call(a=5,b=10)`，返回 `15`。轨迹与观察界面已刷新；本次没有重新执行官方 Schema 结构校验，不扩展此前校验结论。[一手：发现](https://modelcontextprotocol.io/specification/2026-07-28/server/discover)、[一手：工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)、[一手：stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)
+
+- [教学脚本](../附件/演示/q-20261027-005/simulate_mcp.py)：仅实现本实验使用的三个方法；服务端请求处理函数不读取历史请求。
+- [捕获的完整轨迹](../附件/演示/q-20261027-005/trace.json)：保存实传的八条 JSON 原始行及一次重启事件。
+- [逐条观察界面](../附件/演示/q-20261027-005/mcp-stateless-flow.html)：展示已捕获轨迹；点击按钮不会再次发送请求。
+
+重跑会刷新轨迹和观察界面，进程 PID 会变化。这个实验验证的是：当本次调用所需的协议字段和业务参数都明确提供时，全新服务器进程可以处理调用。它没有验证所有工具都无需持久化业务数据，也没有验证失败重试的幂等性。
+
+### 追问：整个 MCP 的完整 JSON 与逐字段说明
+
+MCP 各种消息具有不同结构，不能合成一条同时包含所有字段的有效报文。本次建立 [完整 JSON 参考册](../附件/演示/q-20261027-005/mcp-message-atlas.json) 和 [逐字段说明附录](../附录/q-20261027-005.md)，覆盖所采集官方核心 Schema 的全部 155 个定义、21 个固定方法名和 517 项声明属性位置；包含 56 个带具体数据的独立示例。覆盖计数包含继承后在多个类型中重复出现的属性，不代表 517 个互异字段名。
+
+参考册的 `examples[].data` 是具体示例，内嵌输入与内容块需放入对应父结构；`$defs` 和 `fieldGuide` 是查阅材料。`x-description-zh`、`x-required-in-parent`、`x-status` 是参考册注解，不是线上字段。JSON 键 `io.modelcontextprotocol/protocolVersion` 是一个完整名称，斜杠不产生对象嵌套。原 `description` 与约束原样保留，中文说明不取代完整适用条件。[一手：官方类型](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts)
+
+结构检查验证 56 个示例、修订后的八条实传报文、全部方法名覆盖、注解移除后官方约束不变、MRTR 的新请求 id 和补充输入关联。缺少缓存必填字段、缺少客户端能力的反例均被拒绝。自带校验器不把媒体解码、format 注解、外部服务业务语义或任意通信时序当成已验证，见 [验证记录](../附件/演示/q-20261027-005/atlas-verification.json)。
+
+### 实际运行的消息顺序
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 4,
+  "method": "tools/call",
+  "params": {
+    "name": "add",
+    "arguments": {"a": 5, "b": 10},
+    "_meta": {
+      "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+      "io.modelcontextprotocol/clientInfo": {
+        "name": "learning-client",
+        "version": "1.0.0"
+      },
+      "io.modelcontextprotocol/clientCapabilities": {}
+    }
+  }
+}
+```
+
+### 实验结果与重放
+
+```powershell
+python 站点/docs/附件/演示/q-20261027-005/simulate_mcp.py
+```
+
+- **本节核实**：2026-10-27；本次复核基础规范中 `_meta` 定义、必需字段与工具调用参数结构；本节未重新验证进程实验结果。
+
+- **本节核实**：2026-10-27；采集并核对 2026-07-28 官方 schema.ts、生成的 schema.json、消息模式、MRTR、补充输入与版本变更。完整原件、采集时间及 SHA-256 保存在 [采集说明](../附件/来源/mcp-2026-07-28-schema-20261027/采集说明.json)；未用采集哈希替代事实核查。
+
+- **顶层客户端请求**：10 种方法，含发现、工具、资源、提示模板、参数补全与订阅。
+
+- **响应与嵌套数据**：最终结果、中间结果、协议错误、工具执行失败、五类普通内容块及采样工具调用内容。
+
+- **字段解释**：中文概括、类型引用、直接父对象内必填性与原始 Schema 约束；任意业务字段、供应商能力及独立扩展是开放集合，不能声称穷尽。
+
+### 证据与时效 · q-20261027-005
+
+- **信源**：[一手] [基础消息与每请求元数据](https://modelcontextprotocol.io/specification/2026-07-28/basic)；[一手] [版本与兼容](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning)；[一手] [服务器发现](https://modelcontextprotocol.io/specification/2026-07-28/server/discover)；[一手] [工具](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)；[一手] [stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)；[一手] [架构与宿主职责](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)。
+- **核实**：2026-10-27；核实每请求元数据、发现可选性、工具列表与调用报文、stdio 分帧和进程退出、旧握手的版本边界。适用 MCP 2026-07-28；下述运行结果来自本地教学实现，不代表完整实现了 MCP，也没有调用真实模型或外部服务。
+- 原记录资料（未在迁移时复核）：[一手：消息模式](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns)
+- 原记录资料（未在迁移时复核）：[一手：核心 JSON Schema](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.json)
+
+[详细清单与推导](../附录/q-20261027-005.md)。
 
 ## MCP 与 HTTP：消息层本体与传输绑定
 
@@ -154,3 +263,55 @@ flowchart TB
 错误对象为 `{code, message, data?}`；-32700 至 -32603 为预定义错误（解析错误、无效请求、方法不存在、参数无效、内部错误）；-32000 至 -32099 保留给实现定义的服务器错误，MCP 在此范围内划出 -32020 至 -32099 为规范专用码。批处理：客户端可一次发送请求数组，服务器返回响应数组；响应顺序任意，靠 `id` 配对。版本信息：2.0 定稿于 2010-03-26，由 JSON-RPC Working Group 维护，是社区规范，不是 IETF RFC。MCP 选择它的原因：传输无关、结构极简、无状态，与「每请求自带元数据、不依赖会话」的模型一致；MCP 在其上加了自身规则——`id` 不得为 null，`result` 必须含 `resultType`。
 
 信源（均一手）：[基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)、[传输](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports)、[stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)、[Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)、[JSON-RPC 2.0 规范](https://www.jsonrpc.org/specification)。
+
+### 协议本体在消息层
+
+MCP 规范规定：客户端与服务器之间的所有消息必须遵循 JSON-RPC 2.0。基础协议（Base Protocol）定义请求、响应（结果或错误）、通知三类核心消息，所有实现必须支持。消息模式（请求响应、MRTR、订阅通知）与每请求元数据也属于核心协议。这一层不依赖任何网络协议。[一手：基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)
+
+- **stdio**：客户端启动子进程，JSON-RPC 消息按换行分帧，走子进程的标准输入与标准输出。全程不出现 HTTP。[一手：stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)
+
+- **本节核实**：2026-10-27；核实协议定位、三类消息结构、参数形式、错误码划分、批处理与版本信息。适用 JSON-RPC 2.0（2010-03-26 定稿）。
+
+### 证据与时效 · q-20261027-006
+
+- **信源**：[一手] [基础消息](https://modelcontextprotocol.io/specification/2026-07-28/basic)；[一手] [传输](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports)；[一手] [stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)；[一手] [Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)。
+- **核实**：2026-10-27；核实消息格式（JSON-RPC 2.0）、传输即绑定、两种标准传输、自定义传输条款、授权框架的传输适用范围。适用 MCP 2026-07-28。
+- 原记录资料（未在迁移时复核）：[一手：基础消息中的授权一节](https://modelcontextprotocol.io/specification/2026-07-28/basic#auth)
+
+
+## 提问记录
+
+### q-20261025-003
+
+- **原题**：2026-10-25 · 系统学习 MCP 的完整路线与知识点
+- **问**：我希望系统性学习 mcp，给出完整学习路线和全部需要学习的知识点。
+- **领域**：MCP
+- **首次**：2026-10-25
+- **更新**：2026-10-25
+- **正文**：[学习路线：从接入到扩展](#学习路线从接入到扩展)
+- **关联**：[2026-10-20 · MCP 服务器接入方式：npx 本地与 HTTP 远程的选择](AI%20编程.md#q-20261020-002)；[2026-10-20 · 将 WASM 封装为 MCP 供 Agent 调用的可行性与形态](AI%20编程.md#q-20261020-001)；[2026-10-20 · DWG 处理 WASM 云端部署的并发与 C++ 替代问题](AI%20编程.md#q-20261020-003)
+
+
+
+### q-20261027-005
+
+- **追问**：创建一个完整的数据 JSON，尽量包含每一个字段，并对每个字段说明；用户确认范围是整个 MCP 的各种消息类型。
+
+- **原题**：2026-10-27 · MCP 数据层无状态的完整报文与重启实验
+- **问**：mcp 协议数据层是无状态的，模拟一次完整的 mcp 数据传输，我实际观察一下。
+- **领域**：MCP
+- **首次**：2026-10-27
+- **更新**：2026-10-29
+- **正文**：[数据层无状态：每请求自带版本与能力](#数据层无状态每请求自带版本与能力)；[详细清单](../附录/q-20261027-005.md)
+- **关联**：[2026-10-25 · 系统学习 MCP 的完整路线与知识点](MCP.md#q-20261025-003)。
+
+
+### q-20261027-006
+
+- **原题**：2026-10-27 · MCP 与 HTTP 的关系：消息层本体与传输绑定
+- **问**：mcp 本质上还是 http 协议吗？
+- **领域**：MCP
+- **首次**：2026-10-27
+- **更新**：2026-10-27
+- **正文**：[MCP 与 HTTP：消息层本体与传输绑定](#mcp-与-http消息层本体与传输绑定)
+- **关联**：[2026-10-25 · 系统学习 MCP 的完整路线与知识点](MCP.md#q-20261025-003)；[2026-10-27 · MCP 数据层无状态的完整报文与重启实验](MCP.md#q-20261027-005)；[2026-10-22 · RPC 的含义、调用过程与协议边界](../软件开发/RPC.md#q-20261022-003)。

@@ -1,5 +1,11 @@
 # OAuth
 
+<!-- domain: OAuth -->
+**范围**：OAuth 2.x 授权框架、令牌安全、OIDC 边界、客户端架构、工程落地与信源定位。
+
+**综述**：学习主线是理解受限授权，再掌握授权码流程与 PKCE、令牌验证与生命周期、OIDC 身份层、安全机制、客户端架构和工程运维，最后按场景学习扩展。OAuth 2.0 是授权框架；OIDC 在其上提供身份认证；JWT 是数据格式，Bearer 是使用凭证的方式，二者不是同一维度。学习基线应结合 RFC 6749、RFC 6750、RFC 7636 与 RFC 9700，不能仅照搬早期四种授权模式。2026-09-22 核实：OAuth 2.1 仍为 draft-ietf-oauth-v2-1-16；浏览器应用指南已于 2026 年 8 月发布为 RFC 10017。路线按核心必修、工程必修、场景选修组织，以独立解释请求、安全失败用例和系统取舍为掌握标准。2026-10-12 核实：oauth.net 是 OAuth 社区维护的项目官网，非 IETF 站点；协议事实仍以 IETF RFC 为一手，oauth.net 用作社区第一方参考，定位为入门概览与规范索引，不作主干教程。系统教程补充 OAuth 2.0 Simplified（免费在线书）与 OAuth in Action（中文版《OAuth 2实战》，2017 年出版，安全结论需按 RFC 9700 与 RFC 10017 校正）。
+<!-- /domain -->
+
 OAuth 2.0 是授权框架：应用不取得用户密码，获得对资源的受限访问。主线为授权码＋PKCE、令牌与生命周期、OIDC 身份层、安全防护、客户端架构与工程运维。OIDC 是身份层，JWT 是数据格式，Bearer 是使用方式。
 
 ## 掌握 OAuth 2.0 的学习路线与知识地图
@@ -185,6 +191,10 @@ sequenceDiagram
 
 每个知识点用三个问题验收：它解决什么问题？省略它会出现什么具体错误或攻击？怎样用一次请求或测试观察结果？
 
+### 证据与时效 · q-20260922-006
+
+- **信源**：[一手] [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749)、[RFC 6750](https://www.rfc-editor.org/rfc/rfc6750)、[RFC 7636](https://www.rfc-editor.org/rfc/rfc7636)、[RFC 9700](https://www.rfc-editor.org/info/rfc9700/)、[OIDC Core](https://openid.net/specs/openid-connect-core-1_0.html)、[RFC 10017](https://www.rfc-editor.org/rfc/rfc10017)、[Spring Security OAuth2](https://docs.spring.io/spring-security/reference/servlet/oauth2/)；专题来源见下文。
+
 ## oauth.net 的定位与系统教程选择
 
 - 结论：oauth.net 是 OAuth 社区（协议项目本身）的官网，不是第三方教程站，也不是 IETF 站点。OAuth 是开放标准，规范权威在 IETF OAuth 工作组发布的 RFC。
@@ -193,3 +203,32 @@ sequenceDiagram
 - 实测定位（2026-10-12）：oauth.net/2/ 是概念页＋RFC 链接的导览索引，覆盖核心概念、grant types、令牌管理、发现注册、PAR／DPoP／mTLS、OAuth 2.1，无分步教学。适合起步概览、查扩展对应规范、跟踪 2.1；不作主干教程。
 - 系统教程：[OAuth 2.0 Simplified](https://www.oauth.com/)（免费在线书，Aaron Parecki 著）与 [OAuth 2 in Action](https://www.manning.com/books/oauth-2-in-action)（Manning，2017-03 出版，Justin Richer 与 Antonio Sanso 著；中文版《OAuth 2实战》，二手寻源：豆瓣）。该书出版早于 RFC 9700 与 RFC 10017，安全结论需按安全 BCP 与 RFC 10017 校正。
 - 主干仍是上一节的 RFC 基线。
+
+### 证据与时效 · q-20261012-003
+
+- **信源**：[一手] [oauth.net 首页](https://oauth.net/)（社区站点，页面经 GitHub 编辑，源码指向 aaronpk/oauth.net 仓库）；[一手] [oauth.net 社区页](https://oauth.net/community/)（自述社区目标，并写明 IETF 邮件列表负责标准化工作）；[一手] [IETF OAuth WG](https://datatracker.ietf.org/wg/oauth/about/)（官方渠道为 datatracker、wiki、Zulip 与邮件列表，未链接 oauth.net）。
+
+
+## 提问记录
+
+### q-20260922-006
+
+- **原题**：2026-09-22 · 掌握 OAuth 2.0 的学习路线与完整知识地图
+- **问**：整理掌握 oauth2 的学习路线，以及所有需要掌握的知识点。
+- **领域**：OAuth
+- **首次**：2026-09-22
+- **更新**：2026-09-22
+- **正文**：[掌握 OAuth 2.0 的学习路线与知识地图](#掌握-oauth-20-的学习路线与知识地图)
+- **关联**：[2026-09-21 · 用户身份认证技术的演化过程](身份认证.md#q-20260921-001)；[2026-09-21 · Cookie/Session/JWT 算不算认证技术](身份认证.md#q-20260921-002)
+
+
+
+### q-20261012-003
+
+- **原题**：2026-10-12 · oauth.net 是社区官网而非 IETF 官方站点
+- **问**：https://oauth.net/ 属于第三方还是官方网站？
+- **领域**：OAuth
+- **首次**：2026-10-12
+- **更新**：2026-10-12
+- **正文**：[oauth.net 的定位与系统教程选择](#oauthnet-的定位与系统教程选择)
+- **关联**：[2026-10-12 · in Action 系列中服务器认证与鉴权的成书盘点](身份认证.md#q-20261012-001)

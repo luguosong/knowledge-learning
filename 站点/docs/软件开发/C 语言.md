@@ -1,5 +1,11 @@
 # C 语言
 
+<!-- domain: C 语言 -->
+**范围**：C 语言、工具链、开发环境与工程实践。
+
+**综述**：C 开发环境需要编辑器、编译与链接工具、头文件及库、调试器和相应配置；集成开发环境（Integrated Development Environment，IDE）把这些工具组织到同一工作界面。Windows 上，Visual Studio 可通过“使用 C++ 的桌面开发”工作负载配置 Microsoft Visual C++（MSVC）与 Windows SDK，并按 C 语言编译 `.c` 文件；VS Code 的 C/C++ 扩展不附带编译器与调试器，可配合 MSYS2 分发的 GNU 编译器集合（GNU Compiler Collection，GCC）与 MinGW-w64 工具链；CLion 在 Windows 上附带 MinGW 工具链。选型应依据配置便利性、目标平台与工程习惯。x64 Windows 的 GCC 路线可选 MSYS2 UCRT64 环境，先用命令行验证编译，再连接编辑器的构建与调试功能；学习 C 应明确选择 `.c`、C 编译方式和语言标准。本次未确认用户的 Windows 版本、处理器架构及课程要求。
+<!-- /domain -->
+
 C 开发环境需要编辑器、编译与链接工具、头文件及库、调试器和相应配置；集成开发环境（Integrated Development Environment，IDE）把这些工具组织到同一工作界面。主线：Windows 上开发环境的选型与搭建。
 
 ## Windows 上的 C 开发环境、工具链与 IDE 选择
@@ -84,3 +90,19 @@ C17 是本次示例基线。
 - [一手] [GCC：警告选项](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 - [一手] [GCC：调试信息选项](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html)
 - [一手] [GCC：gcc 与 g++ 的语言处理差异](https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html)
+
+### 证据与时效 · q-20261018-003
+
+- **信源**：[一手] [GCC：编译阶段与总体选项](https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html)；[一手] [Visual Studio：安装 C/C++ 支持](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170)；[一手] [Visual Studio：配置 C11/C17 支持](https://learn.microsoft.com/en-us/cpp/overview/install-c17-support?view=msvc-170)；[一手] [VS Code：C/C++ 扩展与外部工具要求](https://code.visualstudio.com/docs/languages/cpp)；[一手] [VS Code：Windows GCC/MinGW 配置](https://code.visualstudio.com/docs/cpp/config-mingw)；[一手] [MSYS2：安装与系统要求](https://www.msys2.org/)；[一手] [MSYS2：环境及 UCRT64 选择](https://www.msys2.org/docs/environments/)；[一手] [MSYS2：更新流程](https://www.msys2.org/docs/updating/)；[一手] [MinGW-w64：项目说明](https://www.mingw-w64.org/)；[一手] [CLion：安装与附带工具链](https://www.jetbrains.com/help/clion/installation-guide.html)；[一手] [GCC：C 语言标准选项](https://gcc.gnu.org/onlinedocs/gcc/C-Dialect-Options.html)；[一手] [GCC：警告选项](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)；[一手] [GCC：调试信息选项](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html)；[一手] [GCC：gcc 与 g++ 的语言处理差异](https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html)。
+
+
+## 提问记录
+
+### q-20261018-003
+
+- **原题**：2026-10-18 · Windows 上 C 语言开发环境、工具链与 IDE 的选择和搭建
+- **问**：windows系统中C语言环境的搭建，开发环境、ide等。
+- **领域**：C 语言
+- **首次**：2026-10-18
+- **更新**：2026-10-18
+- **正文**：[Windows 上的 C 开发环境、工具链与 IDE 选择](#windows-上的-c-开发环境工具链与-ide-选择)

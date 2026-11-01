@@ -1,5 +1,11 @@
 # AI 模型
 
+<!-- domain: AI 模型 -->
+**范围**：AI 模型基准成绩、能力比较、评测条件、Jev/Laya 本地部署与智谱模型研发动向。
+
+**综述**：模型比较必须保留实际型号、基准版本、工具条件、语言方向和评测环境；榜单不能直接证明个人任务的表现或性价比。现有 GLM 对比图仅部分数值经一手资料核实，原始发布者与其余数值仍待确认。翻译选型不能把旧型号、其他语言方向或订阅服务名当作当前模型证据。Jev 与 Laya 的部署、许可和校准能力不同，现有小样本结果不能代替同条件的大样本测试。智谱产品线和研发动向按对应问题的核实日期理解，未获官方确认的后续型号、参数和发布日期保持未核实。
+<!-- /domain -->
+
 本领域核实 AI 模型对比与选型的证据。主线有四条：对比图与榜单的可信度、翻译选型的评测条件、Jev 与 Laya 的部署和能力差异、智谱研发动向。结论按各问题的核实日期理解；未核实项保持未核实，不升级为事实。
 
 ## 对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna
@@ -22,6 +28,10 @@
 
 信源：[一手：Anthropic 发布 Claude Haiku 5.5](https://www.anthropic.com/claude-haiku-5-5)、[一手：GLM-5.3-Flash 官方模型卡](https://huggingface.co/zai-org/GLM-5.3-Flash)、[一手：Artificial Analysis 的 GLM 5.3 Flash 页](https://artificialanalysis.ai/models/glm-5-3-flash)。
 
+### 证据与时效 · q-20261008-003
+
+- **信源**：用户提供的对比图（原始发布者与链接未核实）；[一手] [Anthropic：Introducing Claude Haiku 5.5](https://www.anthropic.com/claude-haiku-5-5)（已核实图中 Haiku、Luna 数值）；[一手] [Z.ai：GLM-5.3-Flash 模型卡](https://huggingface.co/zai-org/GLM-5.3-Flash)（已核实官方模型卡存在并说明 HLE 使用工具的评测设置，数值位于图表，未逐项核实）；[一手] [Artificial Analysis：GLM 5.3 Flash](https://artificialanalysis.ai/models/glm-5-3-flash)（已核实评测页面及基准版本，当前提取的页面未展示各项数值）。
+
 ## 英译中选型要保留哪些评测条件
 
 结论：现有资料不足以给截图中十款翻译服务排出英译中第一名。要比较，必须先固定四项条件：翻译方向（英译中还是中译英）、内容类型、模型版本、评测日期与质量指标。
@@ -41,6 +51,10 @@
 
 信源：[一手：HardMTBench 原始论文](https://arxiv.org/html/2605.28315v1)、[一手：DeepL 模型类型说明](https://developers.deepl.com/docs/translate/understanding-model-types)、[一手：DeepL 2024 年模型与盲测发布页](https://www.deepl.com/en/blog/next-gen-language-model)、[一手：DeepL 发布商说明](https://www.deepl.com/zh/publisher)。
 
+### 证据与时效 · q-20261008-004
+
+- **信源**：[一手] [HardMTBench 原始论文](https://arxiv.org/html/2605.28315v1)；[一手] [DeepL：Understanding Model Types](https://developers.deepl.com/docs/translate/understanding-model-types)；[一手] [DeepL 发布商说明](https://www.deepl.com/zh/publisher)；[一手] [DeepL 2024 年模型与盲测发布页](https://www.deepl.com/en/blog/next-gen-language-model)。
+
 ## Jev 不能本地部署，开源复刻 Laya 可以
 
 结论：Jev 本体闭源、仅提供 API、未发布权重，不能本地部署。可本地部署的是开源复刻 Laya，许可证 Apache 2.0。
@@ -58,6 +72,10 @@ Laya 的规模与硬件数据（官方未标最低显存）：
 二手参考未核实：ZiCode 称 8 GB 显卡可实测运行；36kr 称 MLX 约 1 GB 内存可运行。
 
 信源：[一手：TypeSafe AI 发布 System One Models 与 Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)、[一手：laya GitHub 仓库](https://github.com/NandhaKishorM/laya)、[一手：Laya 模型卡](https://huggingface.co/convaiinnovations/laya)。
+
+### 证据与时效 · q-20261015-006
+
+- **信源**：[一手] [TypeSafe AI：Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)（已核实：无权重发布、仅 API 控制台）；[一手] [GitHub：NandhaKishorM/laya README](https://github.com/NandhaKishorM/laya)（已核实：检查点规模、各设备延迟、协议兼容）；[一手] [Hugging Face：convaiinnovations/laya 模型卡](https://huggingface.co/convaiinnovations/laya)（已核实：下载体积、T4 基准、Apache 2.0）；二手参考未核实：ZiCode 8 GB 显卡实测、36kr MLX 约 1 GB 内存运行
 
 ## Jev 与 Laya 的能力对比
 
@@ -103,6 +121,10 @@ flowchart TB
 
 信源：[一手：laya 仓库 BENCHMARKS.md](https://github.com/NandhaKishorM/laya/blob/main/BENCHMARKS.md)、[一手：TypeSafe AI 发布 System One Models 与 Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)、[一手：yibie/laya-jev-lab 同输入实测](https://github.com/yibie/laya-jev-lab)。
 
+### 证据与时效 · q-20261015-007
+
+- **信源**：[一手] [NandhaKishorM/laya：BENCHMARKS.md](https://github.com/NandhaKishorM/laya/blob/main/BENCHMARKS.md)（Laya 侧全套自测数字与诚实限制；Jev 侧为第三方公布，作者自注"仅作参考"）；[一手] [TypeSafe AI：Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)（Jev 官方声明：70–500 ms、255 选项上限、自评条件与偏差声明）；[一手] [yibie/laya-jev-lab](https://github.com/yibie/laya-jev-lab)（第三方同输入 40 例中文工单实测与级联；样本小、作者自标答案）
+
 ## 智谱下一代模型动向
 
 以下按核实日期 2026-10-26 理解。
@@ -122,3 +144,56 @@ flowchart TB
 二手寻源线索（其中具体型号、日期与参数规模未在一手材料中核实）：[每经业绩会报道](https://www.nbd.com.cn/articles/2026-09-01/4568516.html)、[快科技转载](https://www.hstong.com/news/hk/detail/26100818550373922)。
 
 信源：[一手：智谱 2026 年中期业绩公告（印刷页 18 至 20）](https://www.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101540_c.pdf)、[一手：智谱 2026-09-13 配售与可转债公告（印刷页 20 至 22）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0913/2026091300025.pdf)、[一手：NUS 唐杰讲座摘要](https://ai.nus.edu.sg/glms-road-to-agi-from-chat-to-agents/)、[一手：GLM-5.3 文档](https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3)、[一手：GLM-5.3-Flash／FlashX 文档](https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash)、[一手：Z.ai GLM-5.3-Flash 发布说明](https://z.ai/blog/glm-5.3-flash?trk=article-ssr-frontend-pulse_little-text-block)、[一手：Z.ai 发布记录](https://docs.z.ai/release-notes/new-released)、[一手：zai-org 官方模型仓库](https://huggingface.co/zai-org)。
+
+### 证据与时效 · q-20261026-001
+
+- **信源**：[一手] [智谱 2026 年中期业绩公告](https://www.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101540_c.pdf)（印刷页 18 至 20：下一代基座训练、数天任务目标、自训练愿景及人工环节）；[一手] [智谱 2026-09-13 配售与可转债公告](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0913/2026091300025.pdf)（印刷页 20 至 22：约 60% 净募资计划投向下一代基座、自训练与算力基础设施，未给出新旗舰型号或发布日期）；[一手] [新加坡国立大学：2026-10-07 唐杰讲座摘要](https://ai.nus.edu.sg/glms-road-to-agi-from-chat-to-agents/)（已核实活动日期与摘要，未获得演讲完整录像或讲稿，不能据此确认媒体所称万亿参数或 GLM-5.4/5.5 命名）；[一手] [智谱：GLM-5.3 文档](https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3)；[一手] [智谱：GLM-5.3-Flash/FlashX 文档](https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash)；[一手] [Z.ai：GLM-5.3-Flash 发布说明](https://z.ai/blog/glm-5.3-flash?trk=article-ssr-frontend-pulse_little-text-block)（新基座、混合注意力架构及向更大模型扩展的声明）；[一手] [Z.ai 发布记录](https://docs.z.ai/release-notes/new-released)；[一手] [zai-org 官方模型仓库](https://huggingface.co/zai-org)。二手寻源线索：[每经 2026-09-01 业绩会报道](https://www.nbd.com.cn/articles/2026-09-01/4568516.html)、[快科技转载 2026-10-08](https://www.hstong.com/news/hk/detail/26100818550373922)；其中具体型号、发布日期与参数规模未在本次一手材料中核实。
+
+
+## 提问记录
+
+### q-20261008-003
+
+- **原题**：2026-10-08 · GLM 5.3 Flash 与 Haiku 5.5、GPT-6 Luna 对比图总结
+- **问**：用中文总结这张图。
+- **领域**：AI 模型
+- **首次**：2026-10-08
+- **更新**：2026-10-08
+- **正文**：[对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna](#对比图怎么看glm-53-flashhaiku-55-与-gpt-6-luna)
+
+### q-20261008-004
+
+- **原题**：2026-10-08 · 英译中模型比较应保留哪些评测条件
+- **问**：关联问题：如何判断截图中的服务哪款英译中最好？
+- **领域**：AI 模型
+- **首次**：2026-10-08
+- **更新**：2026-10-08
+- **正文**：[英译中选型要保留哪些评测条件](#英译中选型要保留哪些评测条件)
+- **关联**：[2026-10-08 · 截图中的翻译模型哪款英译中表现最好](机器翻译.md#q-20261008-001)
+
+### q-20261015-006
+
+- **原题**：2026-10-15 · Jev 能否本地部署与硬件要求
+- **问**：Jev 这个模型可以本地部署吗？硬件要求是什么？
+- **领域**：AI 模型
+- **首次**：2026-10-15
+- **更新**：2026-10-15
+- **正文**：[Jev 不能本地部署，开源复刻 Laya 可以](#jev-不能本地部署开源复刻-laya-可以)
+
+### q-20261015-007
+
+- **原题**：2026-10-15 · Laya 与 Jev 能力对比
+- **问**：Laya 和 Jev 的能力对比？
+- **领域**：AI 模型
+- **首次**：2026-10-15
+- **更新**：2026-10-15
+- **正文**：[Jev 与 Laya 的能力对比](#jev-与-laya-的能力对比)
+
+### q-20261026-001
+
+- **原题**：2026-10-26 · 智谱下一代模型的最新动向
+- **问**：智谱下一代模型的最新动向。
+- **领域**：AI 模型
+- **首次**：2026-10-26
+- **更新**：2026-10-26
+- **正文**：[智谱下一代模型动向](#智谱下一代模型动向)

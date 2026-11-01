@@ -1,5 +1,11 @@
 # Spring
 
+<!-- domain: Spring -->
+**范围**：Spring Framework 的容器、AOP、Web、事务与 Spring Boot、Security、生态分支的学习路线及各线 JDK 25 支持现状。
+
+**综述**：Spring 学习以 Spring Framework 为机制主线：先用原生 Java、Servlet 和 JDBC 认识对象装配、横切逻辑、请求分发与事务问题，再学习容器、代理、Web MVC、数据访问和测试；随后研究 Spring Boot 如何组织这些能力，并把 Spring Security 与生产诊断纳入一个可测试的单体服务。Spring Data、WebFlux、Cloud、Batch、Integration 等按业务需求分支深入。每一层都以“能使用、能沿调用链解释、能复现失效条件、能说明取舍”验收。此路线是基于官方资料的教学编排，并非 Spring 官方课程；版本行为以所用项目的 Framework、Boot、Cloud 对应文档为准。2026-10-15 核实：Spring Framework 7.0.x（JDK 17–25+）与 Spring Boot 4.1.x（Java 17–26）官方支持 JDK 25 且为推荐生产版本；Spring Cloud 现行列车 2025.1.x 对应 Boot 4.x。
+<!-- /domain -->
+
 以 Spring Framework 为机制主线：先在原生 Java、Servlet、JDBC 中认识装配、横切与事务问题，再学容器、代理、MVC 与数据访问，由 Spring Boot 组织；Security 与测试入主线，其余按需分支。
 
 ## Spring 的学习路线与知识地图
@@ -124,6 +130,10 @@ sequenceDiagram
 
 信源（均为一手，核实日期 2026-09-23）：[Spring Framework Reference](https://docs.spring.io/spring-framework/reference/)、[Spring Boot Reference](https://docs.spring.io/spring-boot/reference/)、[Spring Security Reference](https://docs.spring.io/spring-security/reference/)、[Spring Data JPA Reference](https://docs.spring.io/spring-data/jpa/reference/)、[Spring Projects 与 Cloud 兼容表](https://spring.io/projects)、[Spring Framework 源码](https://github.com/spring-projects/spring-framework)。
 
+### 证据与时效 · q-20260923-004
+
+- **信源**：[一手] [Spring Framework Reference](https://docs.spring.io/spring-framework/reference/)；[Spring Boot Reference](https://docs.spring.io/spring-boot/reference/)；[Spring Projects](https://spring.io/projects)；具体章节见下文。核实日期：2026-09-23。
+
 ## JDK 25 支持现状：Spring 各线
 
 **结论**：Spring 各线支持 JDK 25，且 JDK 25 是官方推荐的生产版本（[JDK 版本演化](java-se/jdk.md)）。新项目组合（2026-10）：JDK 25 + Boot 4.1 + Cloud 2025.1.x BOM。
@@ -146,10 +156,31 @@ sequenceDiagram
 
 信源（均为一手，核实日期 2026-10-15）：[Spring Framework Versions 官方 Wiki（各版本 JDK 区间与支持期限）](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions)、[Spring Boot 4.1 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/system-requirements.html)、[Spring Boot 4.0 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/4.0/system-requirements.html)、[Spring Cloud 项目页（发布列车与 Boot 兼容表）](https://spring.io/projects/spring-cloud)。
 
-<!-- backlinks:start -->
+### 证据与时效 · q-20261015-004
 
-## 引用本页的文章
+- **信源**：[一手] [Spring Framework Versions 官方 Wiki（各版本 JDK 区间与支持期限）](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions)；[Spring Boot 4.1 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/system-requirements.html)；[Spring Boot 4.0 系统要求（Java 17–26）](https://docs.spring.io/spring-boot/4.0/system-requirements.html)；[Spring Cloud 项目页（发布列车与 Boot 兼容表）](https://spring.io/projects/spring-cloud)。核实日期：2026-10-15。
 
-- [Java](index.md)
 
-<!-- backlinks:end -->
+## 提问记录
+
+### q-20260923-004
+
+- **原题**：2026-09-23 · Spring 框架的完整学习路径与知识地图
+- **问**：整理 Spring 框架的完整学习路径。不光知道是什么、如何使用。还需要知道为什么、底层相关原理。整理全部相关的知识点。
+- **领域**：Spring
+- **首次**：2026-09-23
+- **更新**：2026-09-23
+- **正文**：[Spring 的学习路线与知识地图](#spring-的学习路线与知识地图)
+- **关联**：[2026-09-22 · 成为 Java 专家的完整学习路线](index.md#q-20260922-001)
+
+
+
+### q-20261015-004
+
+- **原题**：2026-10-15 · JDK 25 支持现状（Spring 各线）
+- **问**：Spring、Spring 微服务（Spring Cloud）现在都支持 JDK 25 了吗？
+- **领域**：Spring
+- **首次**：2026-10-15
+- **更新**：2026-10-15
+- **正文**：[JDK 25 支持现状：Spring 各线](#jdk-25-支持现状spring-各线)
+- **关联**：[2026-09-23 · Java SE 的学习路线与完整知识点](java-se/语言与标准库.md#q-20260923-003)

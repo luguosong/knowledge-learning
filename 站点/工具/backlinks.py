@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """构建期反向链接生成器。
 
-扫描 站点/docs 下文章间的站内相对链接，向每个被引用文章末尾追加
+扫描构建副本中文章间的站内相对链接，向每个被引用文章末尾追加
 「引用本页的文章」小节。生成块带标记注释，重跑时先剥离旧块再生成（幂等）。
-生成块不提交入库：CI 在 zensical build 前对检出副本运行本脚本。
-本地预览同样先运行再构建，提交前用 git checkout -- 站点/docs 撤销生成块。
+生成块不提交入库：build.py 只对临时构建副本调用本模块。
 
-用法：python3 站点/工具/backlinks.py [--selftest]
+验证：python3 站点/工具/backlinks.py --selftest
 """
 import os
 import re
@@ -14,11 +13,11 @@ import sys
 import tempfile
 from pathlib import Path
 
+from references import references
+
 MARK_START = "<!-- backlinks:start -->"
 MARK_END = "<!-- backlinks:end -->"
 SECTION_TITLE = "## 引用本页的文章"
-LINK_RE = re.compile(r"(?<!\!)\[[^\]]*\]\(([^)]+)\)")
-EXTERNAL = ("http://", "https://", "mailto:")
 
 
 def strip_block(text: str) -> str:
@@ -41,15 +40,10 @@ def rel_link(dst: Path, src: Path) -> str:
 def run(root: Path) -> int:
     pages = {f.resolve(): f.read_text(encoding="utf-8") for f in sorted(root.rglob("*.md"))}
     stripped = {p: strip_block(t) for p, t in pages.items()}
-    inbound = {p: [] for p in pages}
-    for src, text in stripped.items():
-        for m in LINK_RE.finditer(text):
-            target = m.group(1).split("#", 1)[0].strip()
-            if not target or target.startswith(EXTERNAL):
-                continue
-            dst = (src.parent / target).resolve()
-            if dst in stripped and dst != src:
-                inbound[dst].append(src)
+    inbound: dict[Path, list[Path]] = {p: [] for p in pages}
+    for ref in references(root.parent, stripped):
+        if not ref.error and ref.path in stripped and ref.path != ref.source:
+            inbound[ref.path].append(ref.source)
     changed = 0
     for p, body in stripped.items():
         refs = sorted(set(inbound[p]))
@@ -70,7 +64,8 @@ def run(root: Path) -> int:
 
 def selftest() -> None:
     with tempfile.TemporaryDirectory() as td:
-        root = Path(td)
+        root = Path(td) / "docs"
+        root.mkdir()
         (root / "sub").mkdir()
         (root / "a.md").write_text("# A\n\n见 [B](b.md) 与 [外](https://x.test/)。\n", encoding="utf-8")
         (root / "b.md").write_text("# B\n\n见 [A](a.md)。\n", encoding="utf-8")
@@ -92,5 +87,4 @@ if __name__ == "__main__":
     if "--selftest" in sys.argv:
         selftest()
     else:
-        root = Path(__file__).resolve().parent.parent / "docs"
-        print(f"backlinks: {run(root)} 个页面更新")
+        raise SystemExit("请运行 python 站点/工具/build.py；反向链接仅写入构建副本。")

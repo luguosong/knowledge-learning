@@ -1,0 +1,3827 @@
+{
+  "baseline": "10ed23b276fa052df9c857af33663889c4bcf44d",
+  "questions": [
+    {
+      "id": "q-20260921-001",
+      "title": "2026-09-21 · 用户身份认证技术的演化过程",
+      "domain": "身份认证",
+      "created": "2026-09-21",
+      "updated": "2026-09-22",
+      "query": "用户身份认证技术是怎么一步步演化过来的？",
+      "sources": [
+        "https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html",
+        "https://doi.org/10.1145/359168.359172",
+        "https://fidoalliance.org/passkeys/",
+        "https://news.mit.edu/2019/mit-professor-emeritus-fernando-corby-corbato-computing-pioneer-dies-0715",
+        "https://openid.net/specs/openid-connect-core-1_0.html",
+        "https://www.rfc-editor.org/rfc/rfc6749",
+        "https://www.w3.org/TR/webauthn-3/"
+      ],
+      "path": "docs/安全与认证/身份认证.md",
+      "heading": "认证技术的演化：共享秘密向更安全的位置迁移"
+    },
+    {
+      "id": "q-20260921-002",
+      "title": "2026-09-21 · Cookie/Session/JWT 算不算认证技术",
+      "domain": "身份认证",
+      "created": "2026-09-21",
+      "updated": "2026-09-22",
+      "query": "cookie、session、JWT 这些算用户身份认证技术吗？",
+      "sources": [
+        "https://en.wikipedia.org/wiki/HTTP_cookie",
+        "https://oauth.net/2/dpop/",
+        "https://openid.net/specs/openid-connect-core-1_0.html",
+        "https://www.rfc-editor.org/rfc/rfc6265",
+        "https://www.rfc-editor.org/rfc/rfc6750",
+        "https://www.rfc-editor.org/rfc/rfc7519",
+        "https://www.rfc-editor.org/rfc/rfc9449"
+      ],
+      "path": "docs/安全与认证/身份认证.md",
+      "heading": "Cookie、Session 与 JWT：会话与令牌层，不是认证协议"
+    },
+    {
+      "id": "q-20260921-003",
+      "title": "2026-09-21 · 什么是 Kubernetes",
+      "domain": "容器编排",
+      "created": "2026-09-21",
+      "updated": "2026-09-21",
+      "query": "什么是 k8s",
+      "sources": [
+        "https://cloud.google.com/blog/products/gcp/from-open-source-to-sustainable-success-the-kubernetes-graduation-story",
+        "https://kubernetes.io/blog/2015/04/borg-predecessor-to-kubernetes/",
+        "https://kubernetes.io/docs/concepts/overview/"
+      ],
+      "path": "docs/系统与运维/容器编排.md",
+      "heading": "Kubernetes 是什么"
+    },
+    {
+      "id": "q-20260921-004",
+      "title": "2026-09-21 · k8s 和 Docker 的关系（承接上条）",
+      "domain": "容器编排",
+      "created": "2026-09-21",
+      "updated": "2026-09-23",
+      "query": "k8s 和 docker 之间是什么关系",
+      "sources": [
+        "https://kubernetes.io/blog/2020/12/02/dockershim-faq/",
+        "https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/",
+        "https://www.cncf.io/announcements/2017/03/29/containerd-joins-cloud-native-computing-foundation/"
+      ],
+      "path": "docs/系统与运维/容器编排.md",
+      "heading": "Kubernetes 与 Docker：从绑定到解耦"
+    },
+    {
+      "id": "q-20260921-005",
+      "title": "2026-09-21 · Claude Code subagent 的使用、配置与执行原理",
+      "domain": "Claude Code",
+      "created": "2026-09-21",
+      "updated": "2026-10-07",
+      "query": "详细讲解 Claude Code 中 subagent 的使用方法、配置方式、执行过程以及原理。追问：深入学习讲解 Claude Code 中的 subagent 用法。",
+      "sources": [
+        "https://code.claude.com/docs/en/agent-teams#compare-with-subagents",
+        "https://code.claude.com/docs/en/best-practices#add-an-adversarial-review-step",
+        "https://code.claude.com/docs/en/cli-reference",
+        "https://code.claude.com/docs/en/commands",
+        "https://code.claude.com/docs/en/costs",
+        "https://code.claude.com/docs/en/env-vars",
+        "https://code.claude.com/docs/en/memory",
+        "https://code.claude.com/docs/en/skills#run-skills-in-a-subagent",
+        "https://code.claude.com/docs/en/sub-agents",
+        "https://code.claude.com/docs/en/worktrees"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "subagent：委派、配置与执行原理"
+    },
+    {
+      "id": "q-20260921-006",
+      "title": "2026-09-21 · 系统学习 Claude Code 与 Agent 原理的学习地图",
+      "domain": "Claude Code",
+      "created": "2026-09-21",
+      "updated": "2026-09-24",
+      "query": "从宏观角度系统深入学习 Claude Code 的使用与原理，顺带学 agent 智能体工作原理，需要学哪些模块与知识点？追问：希望系统学习 Claude Code，榨干性能并成为专家，需要完整学习路线和知识点。",
+      "sources": [
+        "https://code.claude.com/docs/en/best-practices",
+        "https://code.claude.com/docs/en/costs",
+        "https://code.claude.com/docs/en/features-overview",
+        "https://code.claude.com/docs/en/how-claude-code-works",
+        "https://code.claude.com/docs/en/model-config",
+        "https://code.claude.com/docs/en/sandboxing",
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "学习地图：从单任务闭环到量化调优"
+    },
+    {
+      "id": "q-20260922-001",
+      "title": "2026-09-22 · 成为 Java 专家的完整学习路线",
+      "domain": "Java",
+      "created": "2026-09-22",
+      "updated": "2026-09-23",
+      "query": "我如果希望成为 Java 领域的专家，学习路线是怎么样的？需要学习哪些领域，每个领域需要学习哪些知识点，例如 Java SE 的集合、反射、注解等？追问：整理 javaSE的学习路线，以及涉及的全部知识点。",
+      "sources": [
+        "https://dev.java/learn/",
+        "https://dev.java/learn/new-features/virtual-threads/",
+        "https://docs.junit.org/current/user-guide/",
+        "https://docs.oracle.com/en/java/javase/25/",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/gctuning/available-collectors.html",
+        "https://docs.oracle.com/en/java/javase/25/troubleshoot/diagnostic-tools.html",
+        "https://docs.oracle.com/javase/specs/",
+        "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html",
+        "https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html",
+        "https://docs.spring.io/spring-boot/reference/index.html",
+        "https://docs.spring.io/spring-framework/reference/overview.html",
+        "https://docs.spring.io/spring-modulith/reference/fundamentals.html",
+        "https://docs.spring.io/spring-security/reference/index.html",
+        "https://github.com/openjdk/jmh",
+        "https://hibernate.org/orm/documentation/",
+        "https://java.testcontainers.org/",
+        "https://kafka.apache.org/42/design/design/",
+        "https://kubernetes.io/docs/concepts/",
+        "https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html",
+        "https://mybatis.org/mybatis-3/",
+        "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+        "https://opentelemetry.io/docs/concepts/",
+        "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+        "https://raft.github.io/",
+        "https://redis.io/docs/latest/develop/",
+        "https://spring.io/projects/spring-cloud/",
+        "https://www.graalvm.org/latest/reference-manual/native-image/",
+        "https://www.oracle.com/java/technologies/javase/seccodeguide.html",
+        "https://www.postgresql.org/docs/current/index.html",
+        "https://www.postgresql.org/docs/current/mvcc.html",
+        "https://www.rfc-editor.org/rfc/rfc9110.html"
+      ],
+      "path": "docs/软件开发/java/index.md",
+      "heading": "Java 专家的学习路线：18 个领域与专项"
+    },
+    {
+      "id": "q-20260922-002",
+      "title": "2026-09-22 · 成为密码学专家的系统性学习路线",
+      "domain": "密码学",
+      "created": "2026-09-22",
+      "updated": "2026-09-22",
+      "query": "我希望成为密码学领域的专家，帮我整理系统性学习路线。补充：工程与研究兼顾；数学较扎实；每周 10 小时以上。",
+      "sources": [
+        "https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/",
+        "https://cryptopals.com/",
+        "https://csrc.nist.gov/projects/post-quantum-cryptography",
+        "https://csrc.nist.gov/pubs/fips/203/final",
+        "https://csrc.nist.gov/pubs/fips/204/final",
+        "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+        "https://docs.openssl.org/3.5/man7/EVP_PKEY-SM2/",
+        "https://github.com/C2SP/wycheproof",
+        "https://iacr.org/publications/",
+        "https://joyofcryptography.com/",
+        "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=45B1A67F20F3BF339211C391E9278F5E",
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=6F1FAEB62F9668F25F38E0BF0291D4AC",
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=7803DE42D3BC5E80B0C3E5D8E873D56A",
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=EBF1360C272E40E7A8B9B32ED0724AB1",
+        "https://toc.cryptobook.us/",
+        "https://www.oscca.gov.cn/sca/xxgk/2021-10/19/content_1060890.shtml",
+        "https://www.rfc-editor.org/rfc/rfc5280.html",
+        "https://www.rfc-editor.org/rfc/rfc8446.html"
+      ],
+      "path": "docs/安全与认证/密码学.md",
+      "heading": "成为密码学专家的系统性学习路线"
+    },
+    {
+      "id": "q-20260922-003",
+      "title": "2026-09-22 · 从小学算术到数学研究的完整学习路线与领域关系",
+      "domain": "数学",
+      "created": "2026-09-22",
+      "updated": "2026-09-22",
+      "query": "如果希望成为数学家，如何从最简单的 1+1 到研究前沿，循序渐进学习各领域的知识点，并理解先后顺序和领域关系？补充：选择从小学算术重新系统学习。",
+      "sources": [
+        "https://math.mit.edu/academics/undergrad/roadmaps.php",
+        "https://openstax.org/books/algebra-and-trigonometry-2e/pages/preface",
+        "https://openstax.org/books/elementary-algebra-2e/pages/preface",
+        "https://openstax.org/books/prealgebra-2e/pages/preface",
+        "https://richardhammack.github.io/BookOfProof/",
+        "https://www.maths.cam.ac.uk/postgrad/part-iii/node/85",
+        "https://www.maths.cam.ac.uk/postgrad/part-iii/part-iii-guide-courses",
+        "https://www.moe.gov.cn/srcsite/A26/s8001/202204/t20220420_619921.html"
+      ],
+      "path": "docs/学习与人文/数学.md",
+      "heading": "从小学算术到数学研究的学习路线"
+    },
+    {
+      "id": "q-20260922-004",
+      "title": "2026-09-22 · 国内外 AI Agent 编程工具概览",
+      "domain": "AI 编程",
+      "created": "2026-09-22",
+      "updated": "2026-09-22",
+      "query": "目前市面上有哪些 AI Agent 编程工具，国内国外都整理。",
+      "sources": [
+        "https://aider.chat/",
+        "https://ampcode.com/docs",
+        "https://antigravity.google/docs/overview",
+        "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+        "https://code.claude.com/docs/en/overview",
+        "https://cognition.com/blog/introducing-devin-desktop",
+        "https://comate.baidu.com/docs/vscode.html",
+        "https://cursor.com/docs/agent/overview",
+        "https://docs.augmentcode.com/introduction",
+        "https://docs.cline.bot/cline-overview",
+        "https://docs.devin.ai/get-started/devin-intro",
+        "https://docs.factory.ai/droid-cli/quickstart",
+        "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/autopilot",
+        "https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide",
+        "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/overview",
+        "https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions",
+        "https://docs.lovable.dev/introduction/welcome",
+        "https://docs.replit.com/features/agent/overview",
+        "https://docs.trae.cn/cli_get-started-with-trae-cli",
+        "https://docs.trae.cn/ide_what-is-trae-code",
+        "https://geminicli.com/docs/reference/tools/",
+        "https://github.com/QwenLM/qwen-code",
+        "https://github.com/RooCodeInc/Roo-Code",
+        "https://github.com/google-gemini/gemini-cli",
+        "https://github.com/iflow-ai/iflow-cli",
+        "https://github.com/zgsm-ai/costrict",
+        "https://help.aliyun.com/zh/lingma",
+        "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+        "https://kilo.ai/",
+        "https://kiro.dev/",
+        "https://kiro.dev/cli/",
+        "https://learn.chatgpt.com/docs/cloud",
+        "https://learn.chatgpt.com/docs/codex/cli",
+        "https://opencode.ai/",
+        "https://qoder.com/ide",
+        "https://roomote.dev/",
+        "https://support.bolt.new/",
+        "https://support.huaweicloud.com/intl/zh-cn/productdesc-codeartsagent/codeartsagent_pd_0001.html",
+        "https://support.huaweicloud.com/intl/zh-cn/usermanual-cli/codeartsagent_cli_0031.html",
+        "https://vercel.com/blog/how-we-made-v0-an-effective-coding-agent",
+        "https://vibex.iflow.cn/t/topic/5753",
+        "https://www.antigravity.google/",
+        "https://www.codebuddy.cn/",
+        "https://www.codebuddy.cn/docs/ide/User-guide/Agent-Mode/Overview",
+        "https://www.kimi.com/code/docs/en/",
+        "https://www.openhands.dev/",
+        "https://zcode.z.ai/cn/docs/qa"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "编程智能体工具全景"
+    },
+    {
+      "id": "q-20260922-005",
+      "title": "2026-09-22 · 数据结构与算法的完整学习路线及已有知识点对应",
+      "domain": "数据结构与算法",
+      "created": "2026-09-22",
+      "updated": "2026-09-22",
+      "query": "整理数据结构和算法学习路线，已经涉及的全部知识点。澄清：需要完整学习路线及各阶段知识点，并标出已有记录。",
+      "sources": [
+        "https://15445.courses.cs.cmu.edu/fall2024/notes/08-indexes1.pdf",
+        "https://algs4.cs.princeton.edu/53substring/",
+        "https://algs4.cs.princeton.edu/55compression/",
+        "https://algs4.cs.princeton.edu/cheatsheet/",
+        "https://courses.csail.mit.edu/6.851/spring12/lectures/",
+        "https://cses.fi/book/book.pdf",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashMap.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/PriorityQueue.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/TreeMap.html",
+        "https://github.com/facebook/rocksdb/wiki/RocksDB-Overview",
+        "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+        "https://jeffe.cs.illinois.edu/teaching/algorithms/notes/06-bloom.pdf",
+        "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+        "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/pages/readings/",
+        "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/pages/lecture-notes/",
+        "https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/pages/lecture-slides/",
+        "https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/pages/lecture-notes/",
+        "https://opendatastructures.org/",
+        "https://www.cs.cmu.edu/~15451-s15/LectureNotes/lecture24.pdf"
+      ],
+      "path": "docs/软件开发/数据结构与算法.md",
+      "heading": "完整学习路线与已有知识点对应"
+    },
+    {
+      "id": "q-20260922-006",
+      "title": "2026-09-22 · 掌握 OAuth 2.0 的学习路线与完整知识地图",
+      "domain": "OAuth",
+      "created": "2026-09-22",
+      "updated": "2026-09-22",
+      "query": "整理掌握 oauth2 的学习路线，以及所有需要掌握的知识点。",
+      "sources": [
+        "https://docs.spring.io/spring-security/reference/servlet/oauth2/",
+        "https://openid.net/specs/openid-connect-core-1_0.html",
+        "https://www.rfc-editor.org/info/rfc9700/",
+        "https://www.rfc-editor.org/rfc/rfc10017",
+        "https://www.rfc-editor.org/rfc/rfc6749",
+        "https://www.rfc-editor.org/rfc/rfc6750",
+        "https://www.rfc-editor.org/rfc/rfc7636"
+      ],
+      "path": "docs/安全与认证/OAuth.md",
+      "heading": "掌握 OAuth 2.0 的学习路线与知识地图"
+    },
+    {
+      "id": "q-20260923-001",
+      "title": "2026-09-23 · Java 日志的系统学习路线与知识地图",
+      "domain": "Java",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "系统性学习 Java 日志的学习路线，以及全部知识点。",
+      "sources": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+        "https://docs.oracle.com/en/java/javase/21/core/java-logging-overview.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.Logger.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html",
+        "https://docs.spring.io/spring-boot/3.5/reference/features/logging.html",
+        "https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.4-Release-Notes",
+        "https://kubernetes.io/docs/concepts/cluster-administration/logging/",
+        "https://logback.qos.ch/manual/",
+        "https://logback.qos.ch/manual/appenders-async-sift.html",
+        "https://logging.apache.org/log4j/2.x/manual/architecture.html",
+        "https://opentelemetry.io/docs/specs/otel/logs/",
+        "https://opentelemetry.io/docs/specs/otel/logs/data-model/",
+        "https://www.slf4j.org/api/org/slf4j/MDC.html",
+        "https://www.slf4j.org/codes.html",
+        "https://www.slf4j.org/legacy.html",
+        "https://www.slf4j.org/manual.html"
+      ],
+      "path": "docs/软件开发/java/日志.md",
+      "heading": "Java 日志"
+    },
+    {
+      "id": "q-20260923-002",
+      "title": "2026-09-23 · JVM 的系统学习路线与知识地图",
+      "domain": "Java",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "制定 JVM 的学习路线，以及需要掌握的全部知识点。",
+      "sources": [
+        "https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ref/package-summary.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.instrument/java/lang/instrument/package-summary.html",
+        "https://docs.oracle.com/en/java/javase/21/gctuning/",
+        "https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-garbage-collector-tuning.html",
+        "https://docs.oracle.com/en/java/javase/21/troubleshoot/diagnostic-tools.html",
+        "https://docs.oracle.com/en/java/javase/21/troubleshoot/troubleshooting-memory-leaks.html",
+        "https://docs.oracle.com/en/java/javase/21/vm/",
+        "https://docs.oracle.com/en/java/javase/21/vm/class-data-sharing.html",
+        "https://docs.oracle.com/en/java/javase/21/vm/java-hotspot-virtual-machine-performance-enhancements.html",
+        "https://docs.oracle.com/en/java/javase/21/vm/native-memory-tracking.html",
+        "https://docs.oracle.com/en/java/javase/25/core/foreign-function-and-memory-api.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/specs/jvmti.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html",
+        "https://docs.oracle.com/en/java/javase/25/gctuning/",
+        "https://docs.oracle.com/en/java/javase/27/gctuning/available-collectors.html",
+        "https://docs.oracle.com/javase/specs/jls/se27/html/jls-13.html",
+        "https://docs.oracle.com/javase/specs/jls/se27/html/jls-17.html",
+        "https://docs.oracle.com/javase/specs/jvms/se21/html/index.html",
+        "https://docs.oracle.com/javase/specs/jvms/se27/html/index.html",
+        "https://docs.oracle.com/javase/specs/jvms/se27/html/jvms-2.html",
+        "https://docs.oracle.com/javase/specs/jvms/se27/html/jvms-4.html",
+        "https://docs.oracle.com/javase/specs/jvms/se27/html/jvms-5.html",
+        "https://docs.oracle.com/javase/specs/jvms/se27/html/jvms-6.html",
+        "https://www.oracle.com/java/technologies/java-se-support-roadmap.html"
+      ],
+      "path": "docs/软件开发/java/jvm.md",
+      "heading": "JVM"
+    },
+    {
+      "id": "q-20260923-003",
+      "title": "2026-09-23 · Java SE 的学习路线与完整知识点",
+      "domain": "Java SE",
+      "created": "2026-09-23",
+      "updated": "2026-10-15",
+      "query": "整理 javaSE的学习路线，以及涉及的全部知识点。",
+      "sources": [
+        "https://dev.java/learn/",
+        "https://dev.java/learn/annotations/",
+        "https://dev.java/learn/api/collections-framework/",
+        "https://dev.java/learn/api/streams/",
+        "https://dev.java/learn/classes-objects/",
+        "https://dev.java/learn/date-time/",
+        "https://dev.java/learn/exceptions/",
+        "https://dev.java/learn/java-io/",
+        "https://dev.java/learn/language-basics/",
+        "https://dev.java/learn/modules/",
+        "https://dev.java/learn/reflection/",
+        "https://docs.oracle.com/en/java/javase/21/core/creating-sequenced-collections-sets-and-maps.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/index.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/foreign/package-summary.html",
+        "https://docs.oracle.com/en/java/javase/21/docs/specs/",
+        "https://docs.oracle.com/en/java/javase/21/docs/specs/man/index.html",
+        "https://docs.oracle.com/en/java/javase/21/language/java-language-changes-summary.html",
+        "https://openjdk.org/jeps/0",
+        "https://openjdk.org/jeps/444",
+        "https://openjdk.org/projects/jdk/25/",
+        "https://openjdk.org/projects/jdk/27/"
+      ],
+      "path": "docs/软件开发/java/java-se/语言与标准库.md",
+      "heading": "Java SE：语言与标准库"
+    },
+    {
+      "id": "q-20260923-004",
+      "title": "2026-09-23 · Spring 框架的完整学习路径与知识地图",
+      "domain": "Spring",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "整理 Spring 框架的完整学习路径。不光知道是什么、如何使用。还需要知道为什么、底层相关原理。整理全部相关的知识点。",
+      "sources": [
+        "https://docs.spring.io/spring-boot/reference/",
+        "https://docs.spring.io/spring-framework/reference/",
+        "https://spring.io/projects"
+      ],
+      "path": "docs/软件开发/java/spring.md",
+      "heading": "Spring 的学习路线与知识地图"
+    },
+    {
+      "id": "q-20260923-005",
+      "title": "2026-09-23 · 苏州中考与江苏高考数学考试范围及官方公开入口",
+      "domain": "数学",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "中国中考和高考的数学考试范围大纲是否统一公开？江苏省苏州市中考和高考考试大纲是否有公开下载或相关说明网站？",
+      "sources": [
+        "https://hudong.moe.gov.cn/srcsite/A06/s3321/202204/t20220406_614237.html",
+        "https://jyj.changdu.gov.cn/cdsjyj/c101476/202205/764ee1914e3c45aaba8e372f1b628a34/files/75676dfa9af0442db1457404a884a69f.pdf",
+        "https://jyt.jiangsu.gov.cn/art/2026/4/21/art_58320_11767036.html",
+        "https://www.jseea.cn/webfile/upload/2025/03-28/21-01-380982-1996828970.pdf",
+        "https://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/201906/t20190619_386539.html",
+        "https://www.moe.gov.cn/srcsite/A26/s8001/202204/W020220510531636118932.pdf",
+        "https://www.suzhou.gov.cn/szsrmzf/bmwj/202604/b75cb721b3b84ef1a44cde0f060b5e3f.shtml"
+      ],
+      "path": "docs/学习与人文/数学.md",
+      "heading": "苏州中考与江苏高考数学考试范围"
+    },
+    {
+      "id": "q-20260923-006",
+      "title": "2026-09-23 · Grok Bot 是什么：常驻智能体队友产品",
+      "domain": "AI 编程",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "Grok bot 是什么？",
+      "sources": [
+        "https://docs.x.ai",
+        "https://x.ai/bot",
+        "https://x.ai/news"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "常驻智能体队友：Grok Bot"
+    },
+    {
+      "id": "q-20260923-007",
+      "title": "2026-09-23 · 美国住宅 IP 远程电脑如何订阅与选择",
+      "domain": "远程办公",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "如何订阅一台美国住宅ip的远程电脑。在上面办公。有没有这样的服务",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows-365/enterprise/windows-365-network-deployment-options",
+        "https://support.google.com/chrome/answer/1649523?hl=en",
+        "https://www.residentialvps.com/Legal/Refund.html",
+        "https://www.residentialvps.com/Legal/Terms.html",
+        "https://www.residentialvps.com/RDP/"
+      ],
+      "path": "docs/系统与运维/远程办公.md",
+      "heading": "美国住宅 IP 远程电脑的订阅与选择"
+    },
+    {
+      "id": "q-20260923-008",
+      "title": "2026-09-23 · RDP 是什么以及与住宅 IP 有何关系",
+      "domain": "远程办公",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "什么是rdp",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows-365/enterprise/windows-365-network-deployment-options",
+        "https://learn.microsoft.com/en-us/windows/win32/termserv/remote-desktop-protocol",
+        "https://www.residentialvps.com/RDP/"
+      ],
+      "path": "docs/系统与运维/远程办公.md",
+      "heading": "RDP 是什么，与住宅 IP 有何关系"
+    },
+    {
+      "id": "q-20260923-009",
+      "title": "2026-09-23 · 从零基础到 Linux 专家的完整学习路线与知识地图",
+      "domain": "Linux",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "整理从零基础到linux专家的完整学习路线，整理需要学习的全部完整知识点",
+      "sources": [
+        "https://docs.ansible.com/projects/ansible/latest/getting_started/index.html",
+        "https://docs.kernel.org/",
+        "https://kubernetes.io/docs/concepts/",
+        "https://www.debian.org/doc/manuals/debian-handbook/",
+        "https://www.gnu.org/software/bash/manual/bash.html",
+        "https://www.lpi.org/our-certifications/exam-010-objectives/",
+        "https://www.lpi.org/our-certifications/exam-101-102-objectives/",
+        "https://www.lpi.org/our-certifications/exam-201-202-objectives/",
+        "https://www.lpi.org/our-certifications/lpic-3-303-overview/"
+      ],
+      "path": "docs/系统与运维/Linux.md",
+      "heading": "学习路线：从零基础到独立管理服务器"
+    },
+    {
+      "id": "q-20260923-010",
+      "title": "2026-09-23 · 选用可嵌入的网页所见即所得 Markdown 编辑器",
+      "domain": "前端开发",
+      "created": "2026-09-23",
+      "updated": "2026-09-23",
+      "query": "有没有成熟、可直接嵌入网页的开源 Markdown 编辑器，要求单栏所见即所得，不要左右分栏？",
+      "sources": [
+        "https://github.com/Vanessa219/vditor/blob/master/README.md",
+        "https://github.com/nhn/tui.editor",
+        "https://milkdown.dev/docs/api/crepe",
+        "https://milkdown.dev/docs/guide/getting-started"
+      ],
+      "path": "docs/软件开发/前端开发.md",
+      "heading": "可嵌入的所见即所得 Markdown 编辑器选型"
+    },
+    {
+      "id": "q-20260924-001",
+      "title": "2026-09-24 · Obsidian Tasks 插件的定位与基本用法",
+      "domain": "Obsidian",
+      "created": "2026-09-24",
+      "updated": "2026-09-24",
+      "query": "介绍一下 https://github.com/obsidian-tasks-group/obsidian-tasks 这个插件。",
+      "sources": [
+        "https://github.com/obsidian-tasks-group/obsidian-tasks",
+        "https://publish.obsidian.md/tasks/Advanced/Notifications",
+        "https://publish.obsidian.md/tasks/Queries/Examples"
+      ],
+      "path": "docs/工具与设计/Obsidian.md",
+      "heading": "Tasks 插件：任务留在笔记里，跨库查询"
+    },
+    {
+      "id": "q-20260924-002",
+      "title": "2026-09-24 · Windows 上的 Obsidian vault 如何免费供 iPhone 私有查阅",
+      "domain": "Obsidian",
+      "created": "2026-09-24",
+      "updated": "2026-10-10",
+      "query": "obsidian 免费的发布方案；电脑上的 Obsidian vault，希望在手机上查阅。澄清后为仅自己看，手机是 iPhone；2026-10-10 追问免费多端同步，主要电脑端编辑、iPhone 查看。",
+      "sources": [
+        "https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories",
+        "https://github.com/remotely-save/remotely-save/blob/master/README.zh-cn.md",
+        "https://github.com/remotely-save/remotely-save/blob/master/pro/src/sync.ts",
+        "https://github.com/remotely-save/remotely-save/blob/master/src/settings.ts",
+        "https://obsidian.md/help/sync-notes",
+        "https://remotelysave.com/",
+        "https://support.microsoft.com/en-us/onedrive/microsoft-storage-faqs"
+      ],
+      "path": "docs/工具与设计/Obsidian.md",
+      "heading": "手机查阅：Windows 库经 OneDrive 供 iPhone 只读"
+    },
+    {
+      "id": "q-20260924-003",
+      "title": "2026-09-24 · 阿里云 OSS 单纯用于数据备份的成本",
+      "domain": "云存储",
+      "created": "2026-09-24",
+      "updated": "2026-09-24",
+      "query": "阿里云 oss 单纯做数据备份，成本高吗？",
+      "sources": [
+        "https://cn.aliyun.com/price/detail/oss",
+        "https://help.aliyun.com/zh/oss/storage-fees",
+        "https://help.aliyun.com/zh/oss/user-guide/overview-53/"
+      ],
+      "path": "docs/系统与运维/云存储.md",
+      "heading": "OSS 长期备份的成本"
+    },
+    {
+      "id": "q-20260926-001",
+      "title": "2026-09-26 · Obsidian Git 插件设置与自动同步策略",
+      "domain": "Obsidian",
+      "created": "2026-09-26",
+      "updated": "2026-09-26",
+      "query": "根据八张 Obsidian Git 设置截图，详细讲解如何配置。",
+      "sources": [
+        "https://github.com/Vinzent03/obsidian-git/blob/master/src/automaticsManager.ts",
+        "https://github.com/Vinzent03/obsidian-git/blob/master/src/setting/settings.ts",
+        "https://publish.obsidian.md/git-doc/Authentication",
+        "https://publish.obsidian.md/git-doc/Features",
+        "https://publish.obsidian.md/git-doc/Getting%20Started",
+        "https://publish.obsidian.md/git-doc/Tips-and-Tricks"
+      ],
+      "path": "docs/工具与设计/Obsidian.md",
+      "heading": "Obsidian Git：定时策略与同步顺序"
+    },
+    {
+      "id": "q-20260926-002",
+      "title": "2026-09-26 · 目前免费的翻译 API 接入方案",
+      "domain": "机器翻译",
+      "created": "2026-09-26",
+      "updated": "2026-09-27",
+      "query": "目前免费的翻译api接入方案；追问：那deeplx又是什么；有没有办法我服务端自己部署一套免费的翻译引擎",
+      "sources": [
+        "https://azure.microsoft.com/en-us/pricing/details/translator/",
+        "https://cloud.google.com/products/translate/pricing",
+        "https://cloud.tencent.com/announce/detail/2448",
+        "https://docs.libretranslate.com/",
+        "https://fanyi-api.baidu.com/access/0",
+        "https://github.com/OwO-Network/DLX",
+        "https://github.com/windingwind/zotero-pdf-translate/blob/main/src/modules/services/deeplcustom.ts",
+        "https://github.com/windingwind/zotero-pdf-translate/blob/main/src/modules/services/deeplx.ts",
+        "https://github.com/windingwind/zotero-pdf-translate/blob/main/src/modules/services/mtranserver.ts",
+        "https://github.com/xxnuo/MTranServer",
+        "https://github.com/xxnuo/MTranServer/blob/main/API.md",
+        "https://huggingface.co/tencent/Hy-MT2-1.8B",
+        "https://support.deepl.com/hc/en-us/articles/360021200939-DeepL-API-plans",
+        "https://www.deepl.com/en/terms-of-use"
+      ],
+      "path": "docs/AI 与模型/机器翻译.md",
+      "heading": "免费翻译 API 与自托管引擎"
+    },
+    {
+      "id": "q-20260926-003",
+      "title": "2026-09-26 · Zotero API 是什么",
+      "domain": "Zotero",
+      "created": "2026-09-26",
+      "updated": "2026-09-26",
+      "query": "ZOTERO API 是什么",
+      "sources": [
+        "https://www.zotero.org/support/dev/web_api/v3/basics",
+        "https://www.zotero.org/support/dev/web_api/v3/local_api",
+        "https://www.zotero.org/support/dev/web_api/v3/start",
+        "https://www.zotero.org/support/dev/web_api/v3/write_requests"
+      ],
+      "path": "docs/工具与设计/Zotero.md",
+      "heading": "Zotero API 是什么：两套接口的选用"
+    },
+    {
+      "id": "q-20260928-001",
+      "title": "2026-09-28 · YouTube 数学频道推荐",
+      "domain": "数学",
+      "created": "2026-09-28",
+      "updated": "2026-09-28",
+      "query": "数学领域相关优质博主（承接上一问的 YouTube 语境）。",
+      "sources": [
+        "https://mathantics.com/",
+        "https://thebrightsideofmathematics.com/topics/",
+        "https://www.3blue1brown.com/",
+        "https://www.khanacademy.org/mission/math/",
+        "https://www.youtube.com/channel/UCSs4A6HYKmHA2MG_0z-F0xw",
+        "https://www.youtube.com/watch?v=P0ziKHQIsyk",
+        "https://www.youtube.com/watch?v=nGEUOLCYbng"
+      ],
+      "path": "docs/学习与人文/数学.md",
+      "heading": "按学习阶段选数学视频"
+    },
+    {
+      "id": "q-20260928-002",
+      "title": "2026-09-28 · OpenCode 可以使用哪些模型",
+      "domain": "AI 编程",
+      "created": "2026-09-28",
+      "updated": "2026-09-28",
+      "query": "opencode中可以用哪些模型？",
+      "sources": [
+        "https://opencode.ai/docs/cli/",
+        "https://opencode.ai/docs/models/",
+        "https://opencode.ai/docs/providers/",
+        "https://opencode.ai/docs/zen/"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "OpenCode 可用的模型"
+    },
+    {
+      "id": "q-20260928-003",
+      "title": "2026-09-28 · YouTube 上值得关注的 AI 博主",
+      "domain": "人工智能",
+      "created": "2026-09-28",
+      "updated": "2026-09-28",
+      "query": "youtube中Ai相关的优质博主",
+      "sources": [
+        "https://github.com/mli/paper-reading",
+        "https://karpathy.ai/zero-to-hero.html",
+        "https://mattwolfe.com/",
+        "https://speech.ee.ntu.edu.tw/~hylee/GenAI-ML/2025-fall.php/index.html",
+        "https://statquest.org/video_index.html",
+        "https://www.3blue1brown.com/lessons/attention/",
+        "https://www.youtube.com/@mu_li"
+      ],
+      "path": "docs/AI 与模型/人工智能.md",
+      "heading": "按学习目标选 YouTube AI 频道"
+    },
+    {
+      "id": "q-20260929-001",
+      "title": "2026-09-29 · Windows Server 更换 Linux 时用云盘快照恢复数据",
+      "domain": "云存储",
+      "created": "2026-09-29",
+      "updated": "2026-09-29",
+      "query": "我现在使用的是win server,希望重装成linux。我是否可以利用阿里云的云盘快照功能。先备份硬盘数据，重装成liunx后再进行数据恢复",
+      "sources": [
+        "https://help.aliyun.com/zh/ecs/user-guide/create-a-snapshot",
+        "https://help.aliyun.com/zh/ecs/user-guide/replace-the-operating-system-of-an-instance-1",
+        "https://help.aliyun.com/zh/ecs/user-guide/use-a-snapshot-of-the-original-system-disk-to-restore-data-after-the-operating-system-of-an-ecs-instance-is-replaced"
+      ],
+      "path": "docs/系统与运维/云存储.md",
+      "heading": "更换操作系统时用云盘快照迁移数据"
+    },
+    {
+      "id": "q-20261001-001",
+      "title": "2026-10-01 · Obsidian 中美化 Mermaid 图表的插件选择",
+      "domain": "Obsidian",
+      "created": "2026-10-01",
+      "updated": "2026-10-01",
+      "query": "obsidian中美化mermaid图表的插件。",
+      "sources": [
+        "https://github.com/dreamfarer-space/obsidian-mermaid-boost",
+        "https://github.com/pasevin/obsidian-slick-mermaid",
+        "https://github.com/rxdxxxx/obsidian-auto-beautiful-mermaid",
+        "https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-plugins.json"
+      ],
+      "path": "docs/工具与设计/Obsidian.md",
+      "heading": "Mermaid 图表美化：三个插件的取舍"
+    },
+    {
+      "id": "q-20261002-001",
+      "title": "2026-10-02 · Docker 存储目录与系统盘、数据盘合并的关系",
+      "domain": "容器编排",
+      "created": "2026-10-02",
+      "updated": "2026-10-02",
+      "query": "系统盘与数据盘能否合并，让安装 Docker 容器时自然用到两块盘？（关联条目，主记录见 Linux）",
+      "sources": [
+        "https://docs.docker.com/engine/daemon/",
+        "https://docs.docker.com/engine/storage/containerd/",
+        "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/basic-logical-volume-management"
+      ],
+      "path": "docs/系统与运维/容器编排.md",
+      "heading": "Docker 存储目录与跨盘容量"
+    },
+    {
+      "id": "q-20261002-002",
+      "title": "2026-10-02 · 系统盘与数据盘合并后供 Docker 使用的方式与取舍",
+      "domain": "Linux",
+      "created": "2026-10-02",
+      "updated": "2026-10-02",
+      "query": "linux中一块系统盘和一块数据盘。能不能将它们合成一个整体，我装docker容器时，自然的同时用到这两块盘",
+      "sources": [
+        "https://docs.docker.com/engine/daemon/",
+        "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/basic-logical-volume-management",
+        "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/configuring-raid-logical-volumes",
+        "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/managing-lvm-physical-volumes",
+        "https://www.kernel.org/doc/html/latest/admin-guide/device-mapper/linear.html"
+      ],
+      "path": "docs/系统与运维/Linux.md",
+      "heading": "LVM 合并两块盘供 Docker 使用"
+    },
+    {
+      "id": "q-20261006-001",
+      "title": "2026-10-06 · ASD-STE100 概览图的结构、规则与词表更正",
+      "domain": "技术写作",
+      "created": "2026-10-06",
+      "updated": "2026-10-06",
+      "query": "详细总结这张图中的内容。",
+      "sources": [
+        "https://www.asd-ste100.org/",
+        "https://www.asd-ste100.org/STE_faq.html",
+        "https://www.asd-ste100.org/about_STE.html",
+        "https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf"
+      ],
+      "path": "docs/工具与设计/技术写作.md",
+      "heading": "简化技术英语：ASD-STE100 的规则与词表"
+    },
+    {
+      "id": "q-20261006-002",
+      "title": "2026-10-06 · 利托那韦晶体问题是否解决及其原理",
+      "domain": "药物制剂",
+      "created": "2026-10-06",
+      "updated": "2026-10-06",
+      "query": "利托那韦艾滋病晶体问题解决了吗，是什么原理？",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6479559/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9960583/",
+        "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209512Orig1s000OtherR.pdf",
+        "https://www.accessdata.fda.gov/drugsatfda_docs/nda/99/20-945.pdf_Ritonovir_Admindocs.pdf",
+        "https://www.cmbe.engr.uga.edu/bche4520/Other/Ch9/Bauer%202001.pdf"
+      ],
+      "path": "docs/生活与健康/药物制剂.md",
+      "heading": "利托那韦晶体问题的解决与原理"
+    },
+    {
+      "id": "q-20261008-001",
+      "title": "2026-10-08 · 截图中的翻译模型哪款英译中表现最好",
+      "domain": "机器翻译",
+      "created": "2026-10-08",
+      "updated": "2026-10-08",
+      "query": "BabelFast (Beta)、DeepSeek-V4.1-F…、Qwen 3.5 Plus、Gemini 3 Flash、GPT-6 Luna、GLM-4.7、DeepL Pro、Claude Haiku 4.5、PLaMo 3.0 Prime、Grok 4.3 中，哪款英文翻译成中文表现最好？追问：DeepL Pro 好像是 2024 年的？是不是太老了？",
+      "sources": [
+        "https://arxiv.org/html/2605.28315v1",
+        "https://developers.deepl.com/docs/resources/roadmap-and-release-notes",
+        "https://developers.deepl.com/docs/translate/understanding-model-types",
+        "https://immersivetranslate.com/zh-Hans/docs/CHANGELOG/",
+        "https://www.deepl.com/en/blog/next-gen-language-model",
+        "https://www.deepl.com/zh/publisher"
+      ],
+      "path": "docs/AI 与模型/机器翻译.md",
+      "heading": "英译中选型与评测条件"
+    },
+    {
+      "id": "q-20261008-002",
+      "title": "2026-10-08 · 城乡规划领域的完整学习路线",
+      "domain": "城乡规划",
+      "created": "2026-10-08",
+      "updated": "2026-10-08",
+      "query": "规划领域的完整学习路线。",
+      "sources": [
+        "http://www.hunan.gov.cn",
+        "https://flk.npc.gov.cn",
+        "https://www.12371.cn/2019/05/24/ARTI1558654423262365.shtml",
+        "https://www.cpta.com.cn",
+        "https://yz.chsi.com.cn"
+      ],
+      "path": "docs/学习与人文/城乡规划.md",
+      "heading": "城乡规划的学习路线"
+    },
+    {
+      "id": "q-20261008-003",
+      "title": "2026-10-08 · GLM 5.3 Flash 与 Haiku 5.5、GPT-6 Luna 对比图总结",
+      "domain": "AI 模型",
+      "created": "2026-10-08",
+      "updated": "2026-10-08",
+      "query": "用中文总结这张图。",
+      "sources": [
+        "https://artificialanalysis.ai/models/glm-5-3-flash",
+        "https://huggingface.co/zai-org/GLM-5.3-Flash",
+        "https://www.anthropic.com/claude-haiku-5-5"
+      ],
+      "path": "docs/AI 与模型/AI 模型.md",
+      "heading": "对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna"
+    },
+    {
+      "id": "q-20261008-004",
+      "title": "2026-10-08 · 英译中模型比较应保留哪些评测条件",
+      "domain": "AI 模型",
+      "created": "2026-10-08",
+      "updated": "2026-10-08",
+      "query": "关联问题：如何判断截图中的服务哪款英译中最好？",
+      "sources": [
+        "https://arxiv.org/html/2605.28315v1",
+        "https://developers.deepl.com/docs/translate/understanding-model-types",
+        "https://www.deepl.com/en/blog/next-gen-language-model",
+        "https://www.deepl.com/zh/publisher"
+      ],
+      "path": "docs/AI 与模型/AI 模型.md",
+      "heading": "英译中选型要保留哪些评测条件"
+    },
+    {
+      "id": "q-20261008-005",
+      "title": "2026-10-08 · 俄罗斯鼠疫的最新情况",
+      "domain": "传染病",
+      "created": "2026-10-08",
+      "updated": "2026-10-08",
+      "query": "俄罗斯鼠疫的最新情况",
+      "sources": [
+        "https://www.ecdc.europa.eu/en/news-events/ecdc-closely-monitoring-situation-following-case-pneumonia-unknown-origin-russia",
+        "https://www.unognewsroom.org/teleprompter/en/3288/un-geneva-press-briefing-06-october-2026/9744",
+        "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing---7-october-2026"
+      ],
+      "path": "docs/生活与健康/传染病.md",
+      "heading": "俄罗斯鼠疫传闻的核实"
+    },
+    {
+      "id": "q-20261009-001",
+      "title": "2026-10-09 · 加密锁中签名证书与加密证书的存放和使用规范",
+      "domain": "密码学",
+      "created": "2026-10-09",
+      "updated": "2026-10-09",
+      "query": "加密锁中签名证书和加密证书的存放和使用规范。追问：绘制锁内文件目录结构。",
+      "sources": [
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F969F4765DFEE1CD475201A2D55B10ED",
+        "https://raw.githubusercontent.com/gurecn/Specification/master/SKF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/GB%E2%88%95T%2035291-2017%20%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%20%E6%99%BA%E8%83%BD%E5%AF%86%E7%A0%81%E9%92%A5%E5%8C%99%E5%BA%94%E7%94%A8%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83.pdf",
+        "https://service.bjca.cn/private/businessRules.html",
+        "https://www.gb-gbt.com/PDF/Chinese.aspx/GMT0016-2023",
+        "https://www.nca.gov.cn/sca/xxgk/2023-12/23/content_1061160.shtml",
+        "https://www.rfc-editor.org/rfc/rfc5280.html"
+      ],
+      "path": "docs/安全与认证/密码学.md",
+      "heading": "加密锁中签名证书与加密证书的存放与使用"
+    },
+    {
+      "id": "q-20261009-002",
+      "title": "2026-10-09 · 全球扫地机器人品牌排名及统计口径",
+      "domain": "扫地机器人",
+      "created": "2026-10-09",
+      "updated": "2026-10-09",
+      "query": "扫地机器人全球品牌排名",
+      "sources": [
+        "https://www.idc.com/resource-center/blog/1120-5%E4%B8%87%E5%8F%B0%EF%BC%8C%E5%90%8C%E6%AF%94%E5%A2%9E%E9%95%BF21-5-2026q2%E5%AE%B6%E7%94%A8%E6%B8%85%E6%B4%81%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%B8%82%E5%9C%BA%E5%85%A8%E5%9C%BA/",
+        "https://www.idc.com/wp-content/uploads/2026/09/ClaireZhao0914b.png"
+      ],
+      "path": "docs/生活与健康/扫地机器人.md",
+      "heading": "全球品牌排名的统计口径"
+    },
+    {
+      "id": "q-20261010-001",
+      "title": "2026-10-10 · MinIO 公司是否倒闭或停止经营",
+      "domain": "对象存储",
+      "created": "2026-10-10",
+      "updated": "2026-10-13",
+      "query": "minio 这个公司是倒闭不干了吗？追问：有什么替代方案吗？再追问：minio 平替或更优解？本次追问：除了 https://github.com/pgsty/silo，还有没有 MinIO 的平替或相关项目，用于项目中文件管理？",
+      "sources": [
+        "https://docs.ceph.com/en/tentacle/radosgw/",
+        "https://docs.cloudreve.org/en/",
+        "https://docs.cloudreve.org/en/api/overview",
+        "https://docs.min.io/aistor/administration/upgrade-aistor-server/",
+        "https://docs.rustfs.com/en/reference/s3-compatibility",
+        "https://garagehq.deuxfleurs.fr/_releases.html",
+        "https://garagehq.deuxfleurs.fr/documentation/reference-manual/features/",
+        "https://garagehq.deuxfleurs.fr/documentation/reference-manual/s3-compatibility/",
+        "https://github.com/cloudreve/Cloudreve",
+        "https://github.com/deuxfleurs-org/garage",
+        "https://github.com/deuxfleurs-org/garage/blob/main-v2/LICENSE",
+        "https://github.com/dromara/x-file-storage",
+        "https://github.com/minio/minio",
+        "https://github.com/pgsty/silo#current-release-and-main-branch",
+        "https://github.com/pgsty/silo，还有没有",
+        "https://github.com/rustfs/rustfs",
+        "https://github.com/rustfs/rustfs/blob/1.0.1/docs/architecture/s3-compatibility-matrix.md",
+        "https://github.com/rustfs/rustfs/blob/main/LICENSE",
+        "https://github.com/rustfs/rustfs/releases/tag/1.0.1",
+        "https://github.com/seaweedfs/seaweedfs",
+        "https://github.com/seaweedfs/seaweedfs/blob/master/LICENSE",
+        "https://github.com/seaweedfs/seaweedfs/releases/tag/4.48",
+        "https://github.com/seaweedfs/seaweedfs/wiki/Amazon-S3-API",
+        "https://github.com/seaweedfs/seaweedfs/wiki/Quick-Start-with-weed-mini",
+        "https://github.com/versity/versitygw",
+        "https://github.com/versity/versitygw/wiki/POSIX-Backend",
+        "https://rustfs.com/blog/announcing-rustfs-1-0-0-ga/",
+        "https://www.min.io/download"
+      ],
+      "path": "docs/系统与运维/对象存储.md",
+      "heading": "MinIO 平替：四个自托管方案的取舍"
+    },
+    {
+      "id": "q-20261010-002",
+      "title": "2026-10-10 · ThinkPad T14p 能否使用拯救者 C140 氮化镓适配器供电",
+      "domain": "电脑供电",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "ThinkPad T14p 的电池为 75 Wh 锂聚合物电池，原配 100 W 适配器，能否使用拯救者 C140 氮化镓适配器供电？补充：T14p 为 2026 款，C140 应该为 2023 款。",
+      "sources": [
+        "https://b.lenovo.com.cn/product/1055126.html",
+        "https://www.chargerlab.com/teardown-of-lenovo-legion-140w-pd3-1-usb-c-gan-laptop-charger-la140/",
+        "https://www.lenovo.com.cn/wiki/article-440194.html",
+        "https://www.usb.org/usb-charger-pd"
+      ],
+      "path": "docs/工具与设计/电脑供电.md",
+      "heading": "用拯救者 C140 为 ThinkPad T14p 2026 供电"
+    },
+    {
+      "id": "q-20261010-003",
+      "title": "2026-10-10 · 全球优质稳定的 VPS 提供商如何选择",
+      "domain": "VPS",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "目前全球优质稳定的vps提供商。追问：https://bwh89.net/index.php 怎么样，主要用于翻墙，看重低延迟与稳定；补充：江苏苏州，电信。",
+      "sources": [
+        "https://aws.amazon.com/lightsail/sla-lightsail-instances-and-block-storage/",
+        "https://bandwagonhost.com/cart.php",
+        "https://bandwagonhost.com/cn2gia-vps.php",
+        "https://bandwagonhost.com/kb.php?action=displayarticle&id=26",
+        "https://bandwagonhost.com/kb.php?action=displayarticle&id=28",
+        "https://bandwagonhost.com/service-level-agreement.php",
+        "https://bandwagonhost.com/tos-frame.php",
+        "https://bwh89.net/index.php",
+        "https://bwhstatus.com/",
+        "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html",
+        "https://docs.digitalocean.com/products/droplets/details/features/",
+        "https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/",
+        "https://status.digitalocean.com/",
+        "https://status.hetzner.com/incident/0a75c7ae-3377-41dc-aabe-601063724d24",
+        "https://status.linode.com/",
+        "https://status.vultr.com/",
+        "https://www.akamai.com/legal/sla-compute",
+        "https://www.akamai.com/products/cpu",
+        "https://www.digitalocean.com/sla/cpu-droplets",
+        "https://www.hetzner.com/cloud/",
+        "https://www.hetzner.com/legal/cloud-server/",
+        "https://www.ovhcloud.com/en/vps/"
+      ],
+      "path": "docs/系统与运维/VPS.md",
+      "heading": "按用途选 VPS 提供商"
+    },
+    {
+      "id": "q-20261010-004",
+      "title": "2026-10-10 · VPS 是什么",
+      "domain": "VPS",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "vps 是什么",
+      "sources": [
+        "https://www.digitalocean.com/solutions/vps-hosting",
+        "https://www.ibm.com/topics/vps"
+      ],
+      "path": "docs/系统与运维/VPS.md",
+      "heading": "VPS 是什么，与云服务器有何区别"
+    },
+    {
+      "id": "q-20261010-005",
+      "title": "2026-10-10 · VPS 与阿里云 ECS 有何区别",
+      "domain": "VPS",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "VPS 和阿里云的 ECS 云服务器有什么区别",
+      "sources": [
+        "https://help.aliyun.com/product/25365.html",
+        "https://www.alibabacloud.com/product/block-storage",
+        "https://www.ibm.com/topics/vps"
+      ],
+      "path": "docs/系统与运维/VPS.md",
+      "heading": "VPS 是什么，与云服务器有何区别"
+    },
+    {
+      "id": "q-20261010-006",
+      "title": "2026-10-10 · 什么是大数据",
+      "domain": "大数据",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "什么是大数据",
+      "sources": [
+        "https://hadoop.apache.org/",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf"
+      ],
+      "path": "docs/系统与运维/大数据.md",
+      "heading": "什么是大数据"
+    },
+    {
+      "id": "q-20261010-007",
+      "title": "2026-10-10 · Git Bash 是什么及 Git 与 Bash 的分工",
+      "domain": "Git",
+      "created": "2026-10-10",
+      "updated": "2026-10-10",
+      "query": "什么是 git bash？",
+      "sources": [
+        "https://git-scm.com/",
+        "https://git-scm.com/docs/git-status",
+        "https://gitforwindows.org/",
+        "https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html"
+      ],
+      "path": "docs/软件开发/Git.md",
+      "heading": "Git Bash：Git 与 Bash 的分工"
+    },
+    {
+      "id": "q-20261012-001",
+      "title": "2026-10-12 · in Action 系列中服务器认证与鉴权的成书盘点",
+      "domain": "身份认证",
+      "created": "2026-10-12",
+      "updated": "2026-10-12",
+      "query": "Manning \"in Action\" 系列有没有通用服务器认证和鉴权的书，不局限于 OAuth？",
+      "sources": [
+        "https://medium.com/@moghiny/everything-you-need-to-know-about-oauth-2-0-ceab235ff020",
+        "https://www.manning.com/books/api-security-in-action",
+        "https://www.manning.com/books/oauth-2-in-action",
+        "https://www.manning.com/books/spring-security-in-action",
+        "https://www.manning.com/books/spring-security-in-action-second-edition"
+      ],
+      "path": "docs/安全与认证/身份认证.md",
+      "heading": "in Action 系列的服务器认证与鉴权书目"
+    },
+    {
+      "id": "q-20261012-002",
+      "title": "2026-10-12 · Claude Code 高质量编程插件的选择与组合",
+      "domain": "Claude Code",
+      "created": "2026-10-12",
+      "updated": "2026-10-29",
+      "query": "目前比较火的 Claude Code，质量比较高的编程插件有哪些？追问：对于开发者，有哪些插件或 skill 是必须装的吗？还是说装尽可能少的插件？",
+      "sources": [
+        "https://claude.com/marketplace/plugins",
+        "https://code.claude.com/docs/en/best-practices",
+        "https://code.claude.com/docs/en/discover-plugins",
+        "https://code.claude.com/docs/en/features-overview",
+        "https://code.claude.com/docs/en/features-overview#understand-context-costs",
+        "https://code.claude.com/docs/en/how-claude-code-works",
+        "https://code.claude.com/docs/en/plugins/code-intelligence",
+        "https://code.claude.com/docs/en/plugins/measure",
+        "https://code.claude.com/docs/en/skills",
+        "https://code.claude.com/docs/en/skills#bundled-skills",
+        "https://github.com/affaan-m/ECC",
+        "https://github.com/microsoft/playwright-mcp",
+        "https://github.com/obra/superpowers",
+        "https://github.com/upstash/context7",
+        "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/feature-dev/README.md",
+        "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/frontend-design/README.md",
+        "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/pr-review-toolkit/README.md"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "插件与 skill：没有通用必装"
+    },
+    {
+      "id": "q-20261012-003",
+      "title": "2026-10-12 · oauth.net 是社区官网而非 IETF 官方站点",
+      "domain": "OAuth",
+      "created": "2026-10-12",
+      "updated": "2026-10-12",
+      "query": "https://oauth.net/ 属于第三方还是官方网站？",
+      "sources": [
+        "https://datatracker.ietf.org/wg/oauth/about/",
+        "https://oauth.net/",
+        "https://oauth.net/community/",
+        "https://www.manning.com/books/oauth-2-in-action",
+        "https://www.oauth.com/"
+      ],
+      "path": "docs/安全与认证/OAuth.md",
+      "heading": "oauth.net 的定位与系统教程选择"
+    },
+    {
+      "id": "q-20261012-004",
+      "title": "2026-10-12 · storytold（ArtCraft）组织有没有 Notepad++ 式带代码高亮的文本编辑器项目",
+      "domain": "文本编辑器",
+      "created": "2026-10-12",
+      "updated": "2026-10-12",
+      "query": "https://github.com/storytold 下的仓库中，有没有类似 Notepad++ 的、带代码高亮的文本编辑器项目？",
+      "sources": [
+        "https://api.github.com/users/storytold",
+        "https://api.github.com/users/storytold/repos?per_page=100",
+        "https://github.com/storytold"
+      ],
+      "path": "docs/工具与设计/文本编辑器.md",
+      "heading": "storytold（ArtCraft）组织没有 Notepad++ 式代码编辑器"
+    },
+    {
+      "id": "q-20261012-005",
+      "title": "2026-10-12 · 支持代码高亮的开源文本编辑器项目推荐",
+      "domain": "文本编辑器",
+      "created": "2026-10-12",
+      "updated": "2026-10-12",
+      "query": "推荐一些支持代码高亮的编辑器项目（Notepad++ 那种）。",
+      "sources": [
+        "https://github.com/dail8859/NotepadNext",
+        "https://github.com/lapce/lapce",
+        "https://github.com/notepad-plus-plus/notepad-plus-plus",
+        "https://github.com/zed-industries/zed",
+        "https://kate-editor.org/",
+        "https://www.geany.org/"
+      ],
+      "path": "docs/工具与设计/文本编辑器.md",
+      "heading": "可直接采用的开源代码编辑器"
+    },
+    {
+      "id": "q-20261013-001",
+      "title": "2026-10-13 · 家庭服务器内网穿透如何选择云节点与直连方案",
+      "domain": "VPS",
+      "created": "2026-10-13",
+      "updated": "2026-10-13",
+      "query": "我希望为我的家庭服务器做内网穿透，走 frp 那种，有没有配置要求不高但网速快且稳定的云服务器，或者更优方案？补充：江苏省苏州市；只供自己和家人使用，可以安装客户端。追问：有没有专门的云中转业务，我其实不需要一个完整的服务器，只需要中转流量。",
+      "sources": [
+        "https://cloud.tencent.cn/document/product/213/6091",
+        "https://cloud.tencent.com/document/product/1207/44755",
+        "https://cloud.tencent.com/document/product/213/113026",
+        "https://cloud.tencent.com/document/product/213/12523",
+        "https://doc.natfrp.com/faq/network.html",
+        "https://doc.natfrp.com/launcher/usage.html",
+        "https://gofrp.org/zh-cn/docs/overview/",
+        "https://help.aliyun.com/zh/ecs/user-guide/network-bandwidth/",
+        "https://help.aliyun.com/zh/ecs/user-guide/regions-and-zones",
+        "https://help.aliyun.com/zh/simple-application-server/product-overview/usage-notes",
+        "https://natapp.cn/article/faq",
+        "https://natapp.cn/tunnel/buy",
+        "https://pgy.oray.com/parts/bandwidth",
+        "https://pgy.oray.com/price/",
+        "https://service.oray.com/question/10258",
+        "https://tailscale.com/docs/concepts/ipv6",
+        "https://tailscale.com/docs/features/peer-relay",
+        "https://tailscale.com/docs/reference/connection-types",
+        "https://tailscale.com/docs/reference/troubleshooting/poor-performance-tailnet",
+        "https://tailscale.com/pricing",
+        "https://www.natfrp.com/"
+      ],
+      "path": "docs/系统与运维/VPS.md",
+      "heading": "家庭服务器内网穿透：先测直连，再选中转"
+    },
+    {
+      "id": "q-20261013-002",
+      "title": "2026-10-13 · NVIDIA usd-brep 项目是什么",
+      "domain": "三维建模",
+      "created": "2026-10-13",
+      "updated": "2026-10-13",
+      "query": "https://github.com/NVIDIA-Omniverse/usd-brep 是个什么项目。",
+      "sources": [
+        "https://github.com/NVIDIA-Omniverse/usd-brep",
+        "https://github.com/NVIDIA-Omniverse/usd-brep/blob/main/Examples/README.md",
+        "https://nvidia-omniverse.github.io/usd-brep/latest/"
+      ],
+      "path": "docs/工具与设计/三维建模.md",
+      "heading": "NVIDIA usd-brep：把 CAD 精确几何带进 OpenUSD"
+    },
+    {
+      "id": "q-20261013-003",
+      "title": "2026-10-13 · 斯菲尔电气公司画像：智能电网用户端厂商、新潮系与两度 IPO 折戟",
+      "domain": "公司调研",
+      "created": "2026-10-13",
+      "updated": "2026-10-13",
+      "query": "调研一下斯菲尔电气这家公司。",
+      "sources": [
+        "http://pdf.dfcfw.com",
+        "https://unglobalcompact.org",
+        "https://www.chinanews.com.cn/stock/",
+        "https://www.chinanews.com/stock/2013/08-12/5148720.shtml",
+        "https://www.elecnovapower.com",
+        "https://www.sfere-elec.com",
+        "https://www.sfere-elec.com/index.php/gywm/gywm.html",
+        "https://www.sfere-elec.com/index.php/jrwm/shzp.html"
+      ],
+      "path": "docs/社会与财经/公司调研.md",
+      "heading": "斯菲尔电气公司画像：智能电网用户端厂商、新潮系与两度 IPO 折戟"
+    },
+    {
+      "id": "q-20261013-004",
+      "title": "2026-10-13 · AutoCAD 自动化操作 MCP 的官方与社区现状",
+      "domain": "AutoCAD",
+      "created": "2026-10-13",
+      "updated": "2026-10-13",
+      "query": "AutoCAD 有没有相关自动化操作的 MCP。",
+      "sources": [
+        "https://github.com/U-C4N/Autocad-MCP",
+        "https://github.com/puran-water/autocad-mcp",
+        "https://github.com/zh19980811/Easy-MCP-AutoCad",
+        "https://www.autodesk.com/solutions/autodesk-assistant"
+      ],
+      "path": "docs/工具与设计/AutoCAD.md",
+      "heading": "自动化操作 MCP：官方与社区两条线"
+    },
+    {
+      "id": "q-20261014-001",
+      "title": "2026-10-14 · Java EE 与 Tomcat 的关系及名称演变",
+      "domain": "Java",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "Java EE 和 Tomcat 之间是什么关系？为什么 Tomcat 听得多而很少听到 Java EE？",
+      "sources": [
+        "https://eclipse-foundation.blog/2017/09/12/java-ee-moves-to-the-eclipse-foundation",
+        "https://jakarta.ee/",
+        "https://jakarta.ee/about/",
+        "https://tomcat.apache.org/whichversion.html"
+      ],
+      "path": "docs/软件开发/java/java-ee.md",
+      "heading": "Java EE 与 Tomcat"
+    },
+    {
+      "id": "q-20261014-002",
+      "title": "2026-10-14 · Java SE 经典学习书籍与网站",
+      "domain": "Java SE",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "Java SE 有哪些经典学习书籍和网站？",
+      "sources": [
+        "https://baike.baidu.com/item/JAVA%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15269293",
+        "https://baike.baidu.com/item/On%20Java%20%E4%B8%AD%E6%96%87%E7%89%88%E5%9F%BA%E7%A1%80%E5%8D%B7/61439301",
+        "https://dev.java/learn/",
+        "https://docs.oracle.com/javase/tutorial/index.html",
+        "https://github.com/BruceEckel/TIJ4-code",
+        "https://horstmann.com/unblog/2024-06-22/index.html",
+        "https://jcip.net",
+        "https://jenkov.com/tutorials/java/index.html",
+        "https://learning.oreilly.com/library/view/core-java-volume/9780135371671",
+        "https://liaoxuefeng.com/books/java/index.html",
+        "https://m.douban.com/book/subject/35751619/reviews",
+        "https://www.jd.com/hprm/17134fd314da8236f1a6.html",
+        "https://www.oreilly.com/library/view/head-first-java/9781492091646"
+      ],
+      "path": "docs/软件开发/java/index.md",
+      "heading": "经典书籍与学习网站"
+    },
+    {
+      "id": "q-20261014-003",
+      "title": "2026-10-14 · 新建图形选择样板（DWT）的含义与自带样板的区别",
+      "domain": "AutoCAD",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "使用 AutoCAD 新建文件时，让我选择样板是什么意思，选择不同样板有什么区别。",
+      "sources": [
+        "https://help.autodesk.com/view/ACD/2026/ENU/?caas=caas/documentation/ACDLT/2014/ENU/files/GUID-02979F86-385F-4A53-A3FB-7202F1225CDA-htm.html",
+        "https://help.autodesk.com/view/ACDLT/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-9836C645-44B4-4EF8-B05A-66EFB2FE0DD2-htm.html",
+        "https://help.autodesk.com/view/ACDLTM/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-009D9EB3-DE3E-4107-BE48-56D907A7E9B7-htm.html",
+        "https://help.autodesk.com/view/ACDLTM/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-BB840055-4B21-4E4A-9DFC-187D63B44F6D-htm.html",
+        "https://www.autodesk.com.cn/support/technical/article/caas/tsarticles/ts/a2FplfQ1RO2AiFuw1aeHn.html",
+        "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3jQpr3507YTptqWwl5ct8a.html"
+      ],
+      "path": "docs/工具与设计/AutoCAD.md",
+      "heading": "新建图形选样板：DWT 的作用与自带样板的区别"
+    },
+    {
+      "id": "q-20261014-004",
+      "title": "2026-10-14 · 零基础学习 AutoCAD 的完整路线与官方免费资源",
+      "domain": "AutoCAD",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "零基础学习 AutoCAD 的完整教程。",
+      "sources": [
+        "https://web.autocad.com",
+        "https://www.autodesk.com/education/edu-software/overview",
+        "https://www.autodesk.com/learn/ondemand/curated/autocad-quick-start-guide",
+        "https://www.autodesk.com/products/autocad/free-trial",
+        "https://www.autodesk.com/solutions/aec/autocad-tutorials",
+        "https://www.autodesk.com/support/account/education/students-educators/overview"
+      ],
+      "path": "docs/工具与设计/AutoCAD.md",
+      "heading": "零基础学习路线与官方免费资源"
+    },
+    {
+      "id": "q-20261014-005",
+      "title": "2026-10-14 · 中国大陆手机号申请 AutoCAD 试用的验证阻断（实测）",
+      "domain": "AutoCAD",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "用中国大陆手机号在官网申请 AutoCAD 免费试用，验证码收不到怎么办。",
+      "sources": [
+        "https://www.autodesk.com/education/home"
+      ],
+      "path": "docs/工具与设计/AutoCAD.md",
+      "heading": "中国大陆手机号申请试用：验证阻断与出路（实测）"
+    },
+    {
+      "id": "q-20261014-006",
+      "title": "2026-10-14 · 程序员一人公司的创业方向有哪些",
+      "domain": "独立开发",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "目前阶段程序员自主创业有哪些方向？约束：一人公司、稳定盈利、可持续、投资少。",
+      "sources": [
+        "https://developer.apple.com/app-store/small-business-program",
+        "https://finance.ifeng.com/c/8sBJGku9YcO",
+        "https://help.shopify.com/en/partners/partner-program/how-to-earn",
+        "https://support.google.com/googleplay/android-developer/answer/112622"
+      ],
+      "path": "docs/软件开发/独立开发.md",
+      "heading": "一人公司的创业方向怎么选"
+    },
+    {
+      "id": "q-20261014-007",
+      "title": "2026-10-14 · 做小游戏有没有前途",
+      "domain": "独立开发",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "程序员一人公司方向中，做小游戏有没有前途？",
+      "sources": [
+        "https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/operation1/revenue/sharingclause/mini-game",
+        "https://developers.weixin.qq.com/minigame/introduction/commercialization/guide/ad-monetization.html",
+        "https://developers.weixin.qq.com/minigame/introduction/commercialization/guide/virtual-payment.html",
+        "https://view.inews.qq.com/a/20260115A08GAW00",
+        "https://www.steampageanalyzer.com/blog/indie-game-revenue-data",
+        "https://www.tmtpost.com/7942848.html"
+      ],
+      "path": "docs/软件开发/独立开发.md",
+      "heading": "小游戏赛道的上限与方差"
+    },
+    {
+      "id": "q-20261014-008",
+      "title": "2026-10-14 · 产品化服务/咨询去哪里找客户",
+      "domain": "独立开发",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "以产品化服务（Productized Service）/咨询为例，客户从哪里来？",
+      "sources": [
+        "https://abbeywoodcock.medium.com/where-do-creative-freelancers-actually-get-clients-d59812a1fa3a",
+        "https://eleduck.com/posts/lafgo4",
+        "https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee",
+        "https://www.upwork.com/pricing/freelancer",
+        "https://www.upwork.com/tools/fiverr-fee-calculator",
+        "https://zhuanlan.zhihu.com/p/1986855426793424215"
+      ],
+      "path": "docs/软件开发/独立开发.md",
+      "heading": "产品化服务从哪里找客户"
+    },
+    {
+      "id": "q-20261014-009",
+      "title": "2026-10-14 · AI 时代学编程：看视频还是看书",
+      "domain": "编程学习",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "目前 AI 时代，学编程，看视频学和看书学，更推荐哪种？",
+      "sources": [
+        "https://elifesciences.org/articles/58906",
+        "https://journals.sagepub.com/doi/abs/10.1177/0956797614524581",
+        "https://link.springer.com/article/10.1007/s10648-019-09468-2",
+        "https://mitili.mit.edu/news/compared-reading-how-much-does-video-improve-learning-outcomes",
+        "https://norvig.com/21-days.html",
+        "https://psycnet.apa.org/record/1980-20399-001",
+        "https://pubmed.ncbi.nlm.nih.gov/16507066",
+        "https://pubmed.ncbi.nlm.nih.gov/26162104",
+        "https://www.pnas.org/doi/10.1073/pnas.1821936116"
+      ],
+      "path": "docs/软件开发/编程学习.md",
+      "heading": "AI 时代学编程：看视频还是看书"
+    },
+    {
+      "id": "q-20261014-010",
+      "title": "2026-10-14 · 陈宇任（Funck）的相关歌曲",
+      "domain": "音乐",
+      "created": "2026-10-14",
+      "updated": "2026-10-14",
+      "query": "陈宇任有哪些相关歌曲？",
+      "sources": [
+        "https://baike.baidu.com/item/%E5%A4%A7%E5%AE%B6%E9%83%BD%E7%88%B1%E5%AD%99%E4%B8%AD%E5%B1%B1/203302",
+        "https://baike.baidu.com/item/%E9%99%88%E5%AE%87%E4%BB%BB/5320254",
+        "https://streetvoice.com/taipeicases/songs/205058",
+        "https://zh.wikipedia.org/wiki/%E5%8F%B0%E5%8C%97%E5%85%AC%E6%A1%88",
+        "https://zh.wikipedia.org/wiki/Funck"
+      ],
+      "path": "docs/学习与人文/音乐.md",
+      "heading": "陈宇任（Funck）的创作分三块"
+    },
+    {
+      "id": "q-20261015-001",
+      "title": "2026-10-15 · 用 Claude Code 与 Agent SDK 自建 PDF 翻译流程",
+      "domain": "Claude Code",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "基于 Claude Code 等智能体与工具搭建自己的 PDF 翻译流程，应选哪些库与方案？",
+      "sources": [
+        "https://code.claude.com/docs/en/agent-sdk/overview",
+        "https://code.claude.com/docs/en/skills",
+        "https://github.com/anthropics/claude-agent-sdk-python",
+        "https://github.com/deusyu/translate-book",
+        "https://github.com/funstory-ai/BabelDOC"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "PDF 翻译流程：智能体配工具"
+    },
+    {
+      "id": "q-20261015-002",
+      "title": "2026-10-15 · JDK 8 与 JDK 25 差别有多大",
+      "domain": "Java SE",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "总结 JDK 25 和 JDK 8 差别有多大。",
+      "sources": [
+        "https://docs.oracle.com/en/java/javase/21/language/java-language-changes-summary.html",
+        "https://openjdk.org/jeps/0",
+        "https://openjdk.org/projects/jdk/25/",
+        "https://openjdk.org/projects/jdk8/"
+      ],
+      "path": "docs/软件开发/java/java-se/jdk.md",
+      "heading": "JDK 8 与 JDK 25 差别有多大"
+    },
+    {
+      "id": "q-20261015-003",
+      "title": "2026-10-15 · JDK 自身类库体系的宏观概览",
+      "domain": "Java SE",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "JDK自身的类库体系总结，宏观概览。",
+      "sources": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/index.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/module/ModuleDescriptor.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.compiler/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.logging/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.sql/java/sql/package-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/jdk.httpserver/module-summary.html",
+        "https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/module-summary.html"
+      ],
+      "path": "docs/软件开发/java/java-se/jdk.md",
+      "heading": "JDK 类库体系的宏观概览"
+    },
+    {
+      "id": "q-20261015-004",
+      "title": "2026-10-15 · JDK 25 支持现状（Spring 各线）",
+      "domain": "Spring",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "Spring、Spring 微服务（Spring Cloud）现在都支持 JDK 25 了吗？",
+      "sources": [
+        "https://docs.spring.io/spring-boot/4.0/system-requirements.html",
+        "https://docs.spring.io/spring-boot/system-requirements.html",
+        "https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions",
+        "https://spring.io/projects/spring-cloud"
+      ],
+      "path": "docs/软件开发/java/spring.md",
+      "heading": "JDK 25 支持现状：Spring 各线"
+    },
+    {
+      "id": "q-20261015-005",
+      "title": "2026-10-15 · PDF 文档翻译的成熟方案与库服务选型",
+      "domain": "机器翻译",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "目前 PDF 文档翻译最成熟、最稳定、效果最好的方案，以及相关库和服务；追问澄清：不是传统方式，而是 AI agent 方案；进一步限定：基于 Claude Code 等智能体与工具搭建自己的翻译流程。",
+      "sources": [
+        "https://app.immersivetranslate.com/pdf-pro/",
+        "https://arxiv.org/html/2605.10845v1",
+        "https://cloud.google.com/products/translate/pricing?hl=en",
+        "https://cloud.google.com/translate/sla",
+        "https://code.claude.com/docs/en/agent-sdk/mcp",
+        "https://code.claude.com/docs/en/agent-sdk/overview",
+        "https://code.claude.com/docs/en/agent-sdk/subagents",
+        "https://code.claude.com/docs/en/skills",
+        "https://developers.deepl.com/api-reference/document/upload-and-translate-a-document",
+        "https://developers.deepl.com/docs/getting-started/client-libraries",
+        "https://developers.deepl.com/docs/resources/usage-limits",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents?hl=en",
+        "https://docs.cloud.google.com/translate/docs/reference/libraries/v3/overview-v3",
+        "https://docs.langchain.com/oss/python/deepagents/overview",
+        "https://docs.langchain.com/oss/python/langgraph/overview",
+        "https://github.com/PDFMathTranslate/PDFMathTranslate",
+        "https://github.com/PDFMathTranslate/PDFMathTranslate-next",
+        "https://github.com/PDFMathTranslate/PDFMathTranslate-next/blob/main/docs/en/advanced/API/python.md",
+        "https://github.com/PDFMathTranslate/PDFMathTranslate-next/blob/main/pdf2zh_next/high_level.py",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/pipeline_usage/PP-DocTranslation.en.md",
+        "https://github.com/andrewyng/translation-agent",
+        "https://github.com/anthropics/claude-agent-sdk-python",
+        "https://github.com/deusyu/translate-book",
+        "https://github.com/docling-project/docling",
+        "https://github.com/funstory-ai/BabelDOC",
+        "https://github.com/hint-lab/deeptrans-studio",
+        "https://github.com/hint-lab/deeptrans-studio/blob/main/CHANGELOG.md",
+        "https://github.com/opendatalab/MinerU",
+        "https://help.smartcat.com/choosing-the-right-pdf-translation-workflow-in-smartcat/",
+        "https://help.smartcat.com/getting-started-chief-of-staff/",
+        "https://immersivetranslate.com/zh-Hans/docs/usage/",
+        "https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/faq",
+        "https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/latest/overview",
+        "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+        "https://learn.microsoft.com/en-us/azure/ai-services/translator/service-limits",
+        "https://learn.microsoft.com/python/api/overview/azure/ai-translation-document-readme?view=azure-python",
+        "https://pymupdf.readthedocs.io/en/latest/about.html",
+        "https://support.deepl.com/hc/en-us/articles/360020685720-Usage-count-and-billing-in-DeepL-API",
+        "https://support.deepl.com/hc/en-us/articles/4411308018450-Translate-PDF-files"
+      ],
+      "path": "docs/AI 与模型/机器翻译.md",
+      "heading": "PDF 翻译：智能体自建流程"
+    },
+    {
+      "id": "q-20261015-006",
+      "title": "2026-10-15 · Jev 能否本地部署与硬件要求",
+      "domain": "AI 模型",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "Jev 这个模型可以本地部署吗？硬件要求是什么？",
+      "sources": [
+        "https://github.com/NandhaKishorM/laya",
+        "https://huggingface.co/convaiinnovations/laya",
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+      ],
+      "path": "docs/AI 与模型/AI 模型.md",
+      "heading": "Jev 不能本地部署，开源复刻 Laya 可以"
+    },
+    {
+      "id": "q-20261015-007",
+      "title": "2026-10-15 · Laya 与 Jev 能力对比",
+      "domain": "AI 模型",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "Laya 和 Jev 的能力对比？",
+      "sources": [
+        "https://github.com/NandhaKishorM/laya/blob/main/BENCHMARKS.md",
+        "https://github.com/yibie/laya-jev-lab",
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+      ],
+      "path": "docs/AI 与模型/AI 模型.md",
+      "heading": "Jev 与 Laya 的能力对比"
+    },
+    {
+      "id": "q-20261015-008",
+      "title": "2026-10-15 · Chrome 网页护眼插件的选择",
+      "domain": "浏览器扩展",
+      "created": "2026-10-15",
+      "updated": "2026-10-15",
+      "query": "chrome 网页护眼插件",
+      "sources": [
+        "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
+        "https://chromewebstore.google.com/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg",
+        "https://darkreader.org/help/zh-CN/"
+      ],
+      "path": "docs/工具与设计/浏览器扩展.md",
+      "heading": "按目标选择护眼配色扩展"
+    },
+    {
+      "id": "q-20261016-001",
+      "title": "2026-10-16 · 默认、AV1、HEVC 与 AVC 视频播放策略有什么区别",
+      "domain": "视频技术",
+      "created": "2026-10-16",
+      "updated": "2026-10-16",
+      "query": "播放器中的“默认、AV1、HEVC、AVC”几种视频播放策略有什么区别？",
+      "sources": [
+        "https://aomedia.org/specifications/av1/",
+        "https://engineering.fb.com/wp-content/uploads/2025/09/Meta-AV1-White-Paper-FINAL.pdf",
+        "https://www.chromium.org/audio-video/",
+        "https://www.itu.int/rec/T-REC-H.264",
+        "https://www.itu.int/rec/T-REC-H.265"
+      ],
+      "path": "docs/工具与设计/视频技术.md",
+      "heading": "默认、AV1、HEVC 与 AVC 播放策略的区别"
+    },
+    {
+      "id": "q-20261016-002",
+      "title": "2026-10-16 · 2027年408考试大纲的官方出处",
+      "domain": "研究生考试",
+      "created": "2026-10-16",
+      "updated": "2026-10-16",
+      "query": "全国硕士研究生计算机学科专业基础综合（408）考试，考试大纲；确认需要 2027 年版（2026 年底初试）。",
+      "sources": [
+        "https://www.hep.com.cn/book/show/2099763850751057921",
+        "https://xuanshu.hep.com.cn/front/book/findBookDetails?bookId=6aa97a0be119ac9729dd09ea"
+      ],
+      "path": "docs/学习与人文/研究生考试.md",
+      "heading": "2027 年 408 考试大纲的官方出处"
+    },
+    {
+      "id": "q-20261018-001",
+      "title": "2026-10-18 · 2026 年 3 月 31 日 Claude Code 源码泄露相关项目",
+      "domain": "Claude Code",
+      "created": "2026-10-18",
+      "updated": "2026-10-18",
+      "query": "上次 Claude Code 源码泄露，相关开源项目；已确认指 2026 年 3 月 31 日那次。",
+      "sources": [
+        "https://github.com/ChinaSiro/claude-code-sourcemap",
+        "https://github.com/Kuberwastaken/claurst",
+        "https://github.com/Kuberwastaken/claurst/blob/main/LICENSE.md",
+        "https://github.com/Rangizingo/cc-cache-fix",
+        "https://github.com/anthropics/claude-code/blob/main/LICENSE.md",
+        "https://github.com/sanbuphy/learn-coding-agent",
+        "https://github.com/ultraworkers/claw-code",
+        "https://github.com/ultraworkers/claw-code/blob/main/LICENSE"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "源码泄露相关项目：三种类别必须区分"
+    },
+    {
+      "id": "q-20261018-002",
+      "title": "2026-10-18 · Claude Code 文档站源码与全部页面批量获取",
+      "domain": "Claude Code",
+      "created": "2026-10-18",
+      "updated": "2026-10-18",
+      "query": "https://code.claude.com/docs/ 这个网站本身有没有源码，如何批量获取全部页面内容？",
+      "sources": [
+        "https://code.claude.com/docs/",
+        "https://code.claude.com/docs/_llms/zh-cn.txt",
+        "https://code.claude.com/docs/llms-full.txt",
+        "https://code.claude.com/docs/llms.txt",
+        "https://code.claude.com/docs/sitemap.xml",
+        "https://code.claude.com/docs/zh-CN/overview.md",
+        "https://github.com/anthropics/claude-code",
+        "https://www.mintlify.com/docs/ai/llmstxt",
+        "https://www.mintlify.com/docs/ai/markdown-export"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "文档站全量获取"
+    },
+    {
+      "id": "q-20261018-003",
+      "title": "2026-10-18 · Windows 上 C 语言开发环境、工具链与 IDE 的选择和搭建",
+      "domain": "C 语言",
+      "created": "2026-10-18",
+      "updated": "2026-10-18",
+      "query": "windows系统中C语言环境的搭建，开发环境、ide等。",
+      "sources": [
+        "https://code.visualstudio.com/docs/cpp/config-mingw",
+        "https://code.visualstudio.com/docs/languages/cpp",
+        "https://gcc.gnu.org/onlinedocs/gcc/C-Dialect-Options.html",
+        "https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html",
+        "https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html",
+        "https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html",
+        "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html",
+        "https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170",
+        "https://learn.microsoft.com/en-us/cpp/overview/install-c17-support?view=msvc-170",
+        "https://www.jetbrains.com/help/clion/installation-guide.html",
+        "https://www.mingw-w64.org/",
+        "https://www.msys2.org/",
+        "https://www.msys2.org/docs/environments/",
+        "https://www.msys2.org/docs/updating/"
+      ],
+      "path": "docs/软件开发/C 语言.md",
+      "heading": "Windows 上的 C 开发环境、工具链与 IDE 选择"
+    },
+    {
+      "id": "q-20261019-001",
+      "title": "2026-10-19 · ZCode 桌面版基于什么技术打包 JS",
+      "domain": "AI 编程",
+      "created": "2026-10-19",
+      "updated": "2026-10-19",
+      "query": "GitHub 仓库 zai-org/ZCode 基于什么技术将 JS 做成桌面端？",
+      "sources": [
+        "https://github.com/zai-org/ZCode/blob/master/README.md",
+        "https://github.com/zai-org/ZCode/blob/master/apps/zcode-cli/package.json",
+        "https://github.com/zai-org/ZCode/blob/master/packages/desktop/package.json"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "ZCode 桌面版的打包与分发"
+    },
+    {
+      "id": "q-20261020-001",
+      "title": "2026-10-20 · 将 WASM 封装为 MCP 供 Agent 调用的可行性与形态",
+      "domain": "AI 编程",
+      "created": "2026-10-20",
+      "updated": "2026-10-25",
+      "query": "是否可以将 WASM 封装成 MCP 供 agent 调用？",
+      "sources": [
+        "https://github.com/tuananh/hyper-mcp",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+        "https://opensource.microsoft.com/blog/2025/08/06/introducing-wassette-webassembly-based-tools-for-ai-agents",
+        "https://spinframework.dev/blog/mcp-with-wasmcp",
+        "https://wasmtime.dev/"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "将 WebAssembly 封装为 MCP 工具"
+    },
+    {
+      "id": "q-20261020-002",
+      "title": "2026-10-20 · MCP 服务器接入方式：npx 本地与 HTTP 远程的选择",
+      "domain": "AI 编程",
+      "created": "2026-10-20",
+      "updated": "2026-10-25",
+      "query": "mcp 有 npx 和 http，建议哪种方式？",
+      "sources": [
+        "https://code.claude.com/docs/en/mcp",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "MCP 服务器的接入方式：本地进程与远程 HTTP"
+    },
+    {
+      "id": "q-20261020-003",
+      "title": "2026-10-20 · DWG 处理 WASM 云端部署的并发与 C++ 替代问题",
+      "domain": "AI 编程",
+      "created": "2026-10-20",
+      "updated": "2026-10-25",
+      "query": "处理 DWG 文件的 WASM 放云端会不会有并发/多人同时使用问题？云端是不是可以直接用 C++，都没必要用 WASM？",
+      "sources": [
+        "https://docs.rs/wasmtime/latest/wasmtime/",
+        "https://github.com/advisories/GHSA-37rg-q294-rgvc",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "WASM 云端并发与 C++ 取舍：DWG 处理案例"
+    },
+    {
+      "id": "q-20261020-004",
+      "title": "2026-10-20 · 天正转 T3 的含义与图纸兼容目的",
+      "domain": "AutoCAD",
+      "created": "2026-10-20",
+      "updated": "2026-10-20",
+      "query": "天正转T3是什么意思；追问：原图层和对象信息会丢失吗。",
+      "sources": [
+        "https://club.everdrawing.com/question/detail/14389",
+        "https://patents.google.com/patent/CN116484482A/zh",
+        "https://www.gstarcad.com/cmsDetail/20969/",
+        "https://www.gstarcad.com/cmsDetail/23254/",
+        "https://yun.gstarcad.com/news/1072/"
+      ],
+      "path": "docs/工具与设计/AutoCAD.md",
+      "heading": "天正转 T3：兼容导出的所得与所失"
+    },
+    {
+      "id": "q-20261021-001",
+      "title": "2026-10-21 · ThinkPad T14p 网友使用感受与口碑汇总",
+      "domain": "笔记本电脑",
+      "created": "2026-10-21",
+      "updated": "2026-10-21",
+      "query": "搜集网友关于 ThinkPad T14p 的使用感受和评价。",
+      "sources": [
+        "https://plumz.me/archives/14252",
+        "https://www.reddit.com/r/thinkpad/comments/1fwlr1v/chinaexclusive_thinkpad_t14p_gen_2_the_hidden_gem",
+        "https://www.reddit.com/r/thinkpad/comments/1hdbkm3/t14p_gen2_145inch_thinkpad_with_rtx4050",
+        "https://www.reddit.com/r/thinkpad/comments/1ow3smk/i_purchased_a_t14p_g3_then_returned_it_ama/",
+        "https://www.v2ex.com/t/1112902",
+        "https://www.v2ex.com/t/1129499",
+        "https://www.v2ex.com/t/1208154",
+        "https://zhuanlan.zhihu.com/p/110780004",
+        "https://zhuanlan.zhihu.com/p/634907290"
+      ],
+      "path": "docs/工具与设计/笔记本电脑.md",
+      "heading": "ThinkPad T14p 口碑：性能与扩展强，模具与品控留疑"
+    },
+    {
+      "id": "q-20261021-002",
+      "title": "2026-10-21 · ThinkPad T14p Gen 4（2026 款）专项口碑与规格变化",
+      "domain": "笔记本电脑",
+      "created": "2026-10-21",
+      "updated": "2026-10-21",
+      "query": "聚焦 ThinkPad T14p Gen 4（2026 款）这一代的规格变化与网友评价。",
+      "sources": [
+        "https://club.lenovo.com.cn/forum.php?mod=viewthread&tid=9531689",
+        "https://post.smzdm.com/p/anv9x527",
+        "https://post.smzdm.com/p/awwk4q4g",
+        "https://www.ithome.com/0/979/087.htm",
+        "https://www.reddit.com/r/thinkpad/comments/1tmnjv9/t14p_gen_4_comes_with_rtx_5060_optionsat_35k_usd",
+        "https://www.zhihu.com/question/2062671178213365082",
+        "https://zhuanlan.zhihu.com/p/2048940231966172586"
+      ],
+      "path": "docs/工具与设计/笔记本电脑.md",
+      "heading": "T14p Gen 4（2026 款）：规格变化与口碑"
+    },
+    {
+      "id": "q-20261022-001",
+      "title": "2026-10-22 · 从 awesome-design-md 合集为后台管理项目选设计风格",
+      "domain": "前端开发",
+      "created": "2026-10-22",
+      "updated": "2026-10-22",
+      "query": "https://github.com/voltagent/awesome-design-md 项目中哪种风格适合后台管理项目？",
+      "sources": [
+        "https://github.com/VoltAgent/awesome-design-md/blob/master/design-md/linear.app/DESIGN.md",
+        "https://github.com/VoltAgent/awesome-design-md/blob/master/design-md/posthog/DESIGN.md",
+        "https://github.com/VoltAgent/awesome-design-md/blob/master/design-md/supabase/DESIGN.md",
+        "https://github.com/VoltAgent/awesome-design-md/blob/master/design-md/vercel/DESIGN.md",
+        "https://github.com/voltagent/awesome-design-md"
+      ],
+      "path": "docs/软件开发/前端开发.md",
+      "heading": "后台管理项目的设计风格选型"
+    },
+    {
+      "id": "q-20261022-002",
+      "title": "2026-10-22 · 把销售作为科学时涉及的领域与专业知识",
+      "domain": "销售学",
+      "created": "2026-10-22",
+      "updated": "2026-10-22",
+      "query": "如果把销售作为一门科学，它包含哪些领域和专业知识？",
+      "sources": [
+        "https://bulletin.kelley.iu.edu/Undergrad/Plan/Detail?planCode=PRFSALEBSB&year=2025-2026",
+        "https://ocw.mit.edu/courses/15-667-negotiation-and-conflict-management-spring-2001/pages/study-materials/",
+        "https://openstax.org/books/principles-marketing/pages/13-1-the-promotion-mix-and-its-elements",
+        "https://openstax.org/books/principles-marketing/pages/15-3-steps-in-the-personal-selling-process",
+        "https://openstax.org/books/principles-marketing/pages/15-7-ethical-issues-in-personal-selling-and-sales-promotion",
+        "https://www.bauer.uh.edu/ms-sales-leadership/documents/MS-Sales-Leadership-at-UH-Bauer-College.pdf",
+        "https://www.isb.edu/faculty-and-research/research-directory/do-activity-based-incentive-plans-work-evidence-from-a-large-scale-field-intervention"
+      ],
+      "path": "docs/学习与人文/销售学.md",
+      "heading": "销售作为科学的知识构成"
+    },
+    {
+      "id": "q-20261022-003",
+      "title": "2026-10-22 · RPC 的含义、调用过程与协议边界",
+      "domain": "RPC",
+      "created": "2026-10-22",
+      "updated": "2026-10-22",
+      "query": "什么是 RPC 协议？追问：它和 HTTP 接口调用有什么区别？",
+      "sources": [
+        "https://github.com/grpc/grpc/blob/master/CONCEPTS.md",
+        "https://grpc.io/docs/what-is-grpc/core-concepts/",
+        "https://www.jsonrpc.org/specification",
+        "https://www.openapis.org/what-is-openapi",
+        "https://www.rfc-editor.org/rfc/rfc5531.html",
+        "https://www.rfc-editor.org/rfc/rfc9110.html"
+      ],
+      "path": "docs/软件开发/RPC.md",
+      "heading": "RPC 的含义、调用过程与协议边界"
+    },
+    {
+      "id": "q-20261022-004",
+      "title": "2026-10-22 · AI Agent 驱动海报、宣传册与封面制作的开源工具及工作流",
+      "domain": "平面设计",
+      "created": "2026-10-22",
+      "updated": "2026-10-22",
+      "query": "目前 AI Agent 驱动的海报制作、宣传册制作、封面设计与制作有哪些开源库，有哪些标准优秀的工作流？追问用两页软件地形功能介绍图明确：主要制作这样的产品介绍宣传海报。",
+      "sources": [
+        "https://arxiv.org/abs/2505.21497",
+        "https://arxiv.org/abs/2508.17188",
+        "https://doc.courtbouillon.org/weasyprint/stable/api_reference.html",
+        "https://doc.courtbouillon.org/weasyprint/stable/changelog.html#version-70-0",
+        "https://doc.courtbouillon.org/weasyprint/stable/common_use_cases.html#pdf-x-graphics-exchange",
+        "https://docs.comfy.org/development/comfyui-server/comms_routes",
+        "https://docs.langchain.com/oss/python/langgraph/interrupts",
+        "https://docs.langchain.com/oss/python/langgraph/overview",
+        "https://gitbrent.github.io/PptxGenJS/docs/api-images/",
+        "https://gitbrent.github.io/PptxGenJS/docs/api-text/",
+        "https://github.com/Comfy-Org/ComfyUI",
+        "https://github.com/Kozea/WeasyPrint/blob/main/LICENSE",
+        "https://github.com/Paper2Poster/Paper2Poster",
+        "https://github.com/Y-Research-SBU/PosterGen",
+        "https://github.com/dabodamjan/poster-maker",
+        "https://github.com/fabricjs/fabric.js/blob/master/LICENSE",
+        "https://github.com/gitbrent/PptxGenJS",
+        "https://github.com/gitbrent/PptxGenJS/blob/master/LICENSE",
+        "https://github.com/gitbrent/PptxGenJS/blob/master/src/pptxgen.ts",
+        "https://github.com/huggingface/diffusers",
+        "https://github.com/konvajs/konva/blob/master/LICENSE",
+        "https://github.com/langchain-ai/langgraph",
+        "https://github.com/lovell/sharp/blob/main/LICENSE",
+        "https://github.com/microsoft/playwright/blob/main/LICENSE",
+        "https://github.com/open-pencil/open-pencil",
+        "https://github.com/penpot/penpot/blob/develop/LICENSE",
+        "https://github.com/penpot/penpot/blob/develop/docs/mcp/index.md",
+        "https://github.com/scribusproject/scribus/blob/master/COPYING",
+        "https://github.com/scribusproject/scribus/blob/master/doc/en/readme.html",
+        "https://github.com/scribusproject/scribus/blob/master/doc/en/scripterapi-PDFfile.html",
+        "https://github.com/thx/resvg-js",
+        "https://github.com/thx/resvg-js/blob/main/LICENSE",
+        "https://github.com/vercel/satori/blob/main/LICENSE",
+        "https://help.penpot.app/user-guide/export-import/exporting-layers/",
+        "https://konvajs.org/docs/data_and_serialization/Serialize_a_Stage.html",
+        "https://konvajs.org/docs/sandbox/Canvas_to_PDF.html",
+        "https://myaccount.ingramspark.com/Portal/Tools/SpineCalculator",
+        "https://openpencil.dev/programmable/mcp-server",
+        "https://playwright.dev/docs/api/class-page#page-pdf",
+        "https://raw.githubusercontent.com/vercel/satori/main/README.md",
+        "https://sharp.pixelplumbing.com/api-output/",
+        "https://sharp.pixelplumbing.com/install/#fonts",
+        "https://typst.app/docs/reference/pdf/",
+        "https://typst.app/docs/reference/visualize/color/#definitions-cmyk",
+        "https://typst.app/open-source/",
+        "https://www.fabricjs.com/demos/loading-custom-fonts/",
+        "https://www.fabricjs.com/docs/core-concepts/",
+        "https://www.ingramspark.com/hubfs/downloads/Print-Book-File-Guidelines.pdf",
+        "https://www.w3.org/TR/SVG2/intro.html"
+      ],
+      "path": "docs/工具与设计/平面设计.md",
+      "heading": "开源工具的分工与边界"
+    },
+    {
+      "id": "q-20261023-001",
+      "title": "2026-10-23 · 零基础学习 Linux 的学习计划与资源组合",
+      "domain": "Linux",
+      "created": "2026-10-23",
+      "updated": "2026-10-23",
+      "query": "零基础学习linux，最好的学习计划、学习路线和相关资源",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/wsl/install",
+        "https://linux.vbird.org/",
+        "https://linuxcommand.org/tlcl.php",
+        "https://linuxupskillchallenge.org/",
+        "https://missing.csail.mit.edu/",
+        "https://overthewire.org/wargames/bandit/",
+        "https://training.linuxfoundation.org/training/introduction-to-linux/",
+        "https://ubuntu.com/tutorials/command-line-for-beginners"
+      ],
+      "path": "docs/系统与运维/Linux.md",
+      "heading": "学习路线：从零基础到独立管理服务器"
+    },
+    {
+      "id": "q-20261023-002",
+      "title": "2026-10-23 · 猫粮品牌排名有哪些口径",
+      "domain": "宠物食品",
+      "created": "2026-10-23",
+      "updated": "2026-10-23",
+      "query": "猫粮品牌排名是怎样的？（追问：不是公司层面，要具体品牌的**质量**排名）",
+      "sources": [
+        "https://cats.com/cat-food-reviews",
+        "https://cats.com/how-we-rate-cat-food",
+        "https://ipaper.oeeee.com/ipaper/A/html/2026-03/20/content_2291.htm",
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=9496ABE283E8EB1FF58DF961B2DBAC9B",
+        "https://wsava.org/global-guidelines/global-nutrition-guidelines",
+        "https://www.fxbaogao.com/detail/5185582",
+        "https://www.nestle.com/media/pressreleases/allpressreleases/full-year-results-2025",
+        "https://www.petfoodindustry.com/regions/us-and-canada/article/15832036/us-home-to-all-top-10-north-american-pet-food-companies-by-2025-revenue",
+        "https://www.thepaper.cn/newsDetail_forward_33544984",
+        "https://www.time-weekly.com/post/279871",
+        "https://www.zj315.org/News/ArticleDetail.aspx?iIY2ISQvqOCvTQDgRnw41A==",
+        "https://zhuanlan.zhihu.com/p/360809384"
+      ],
+      "path": "docs/生活与健康/宠物食品.md",
+      "heading": "猫粮品牌排名的三种口径"
+    },
+    {
+      "id": "q-20261024-001",
+      "title": "2026-10-24 · 网页端 3D 地球仪与地图的开源库选型（可交换）",
+      "domain": "前端开发",
+      "created": "2026-10-24",
+      "updated": "2026-10-26",
+      "query": "有没有网页端 3D 地球仪/地图相关的开源项目或库，需要可交换那种？",
+      "sources": [
+        "https://deck.gl/docs/api-reference/core/globe-view",
+        "https://github.com/CesiumGS/cesium",
+        "https://github.com/iTowns/itowns",
+        "https://github.com/maplibre/maplibre-gl-js",
+        "https://github.com/openglobus/openglobus",
+        "https://github.com/vasturiano/three-globe",
+        "https://github.com/visgl/deck.gl",
+        "https://maplibre.org/roadmap/maplibre-gl-js/globe-view"
+      ],
+      "path": "docs/软件开发/前端开发.md",
+      "heading": "网页端三维地球仪与地图的开源库选型"
+    },
+    {
+      "id": "q-20261025-001",
+      "title": "2026-10-25 · Codex 如何设置无需审批的完整访问权限",
+      "domain": "AI 编程",
+      "created": "2026-10-25",
+      "updated": "2026-10-25",
+      "query": "Codex 如何设置类似 Claude Code 的 bypass permissions on 完全权限？",
+      "sources": [
+        "https://learn.chatgpt.com/docs/config-file/config-basic",
+        "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+        "https://learn.chatgpt.com/docs/sandboxing"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "Codex 的完整访问权限设置"
+    },
+    {
+      "id": "q-20261025-002",
+      "title": "2026-10-25 · ThinkPad 各系列定位、细分型号与程序员选型",
+      "domain": "笔记本电脑",
+      "created": "2026-10-25",
+      "updated": "2026-10-25",
+      "query": "ThinkPad 各个系列介绍，生成详细介绍表格整理，最后总结程序员最适合哪个系列。追问：不限联想或 ThinkPad，不考虑价格，只考虑适配；已确认主要做 Java／后端／全栈。",
+      "sources": [
+        "https://docs.docker.com/build/building/multi-platform/",
+        "https://docs.docker.com/desktop/features/vmm/",
+        "https://docs.oracle.com/en/java/javase/25/install/installation-jdk-macos.html",
+        "https://frame.work/laptop13pro?slug=laptop13pro-amd-ai300&tab=specs",
+        "https://guides.frame.work/c/Framework_Laptop_13_Pro",
+        "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+        "https://news.lenovo.com/pressroom/press-releases/lenovo-at-ces-2026-smarter-ai-meets-purposeful-business-innovation/",
+        "https://news.lenovo.com/pressroom/press-releases/lenovo-completes-2026-thinkpad-portfolio-with-expanded-ai-pcs-for-mainstream-enterprise-computing/",
+        "https://news.lenovo.com/pressroom/press-releases/trusted-ai-powered-business-computing-modular-enterprise-mwc/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P14s_Gen_7_Intel/ThinkPad_P14s_Gen_7_Intel_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P16_Gen_3/ThinkPad_P16_Gen_3_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P1_Gen_9/ThinkPad_P1_Gen_9_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14_Gen_7_Intel/ThinkPad_T14_Gen_7_Intel_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14s_Gen_7_Intel/ThinkPad_T14s_Gen_7_Intel_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T16g_Gen_3/ThinkPad_T16g_Gen_3_Spec.pdf",
+        "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T1g_Gen_9/ThinkPad_T1g_Gen_9_Spec.pdf",
+        "https://s.lenovo.com.cn/search/?key=%E4%BC%81%E4%B8%9Athinkpad+thinkpad_T%E7%B3%BB%E5%88%97_ThinkPad_%E7%AC%94%E8%AE%B0%E6%9C%AC&source=&type=home",
+        "https://support.hp.com/lv-en/document/ish_11944615-11944684-16",
+        "https://thinkpad.lenovo.com.cn/",
+        "https://ubuntu.com/certified/search?category=Laptop&offset=0&q=ThinkPad",
+        "https://www.apple.com/macbook-pro/specs/",
+        "https://www.dell.com/support/manuals/en-us/dell-pro-max-ma16250-laptop/dell-pro-max-16-ma16250-owners-manual/operating-system?guid=guid-7b81d002-0a69-4d28-9c38-bbcdf7051010&lang=en-us",
+        "https://www.jetbrains.com/help/idea/installation-guide.html",
+        "https://www.lenovo.com/es/es/c/laptops/thinkpad/"
+      ],
+      "path": "docs/工具与设计/笔记本电脑.md",
+      "heading": "程序员选型：先筛系统与架构"
+    },
+    {
+      "id": "q-20261025-003",
+      "title": "2026-10-25 · 系统学习 MCP 的完整路线与知识点",
+      "domain": "MCP",
+      "created": "2026-10-25",
+      "updated": "2026-10-25",
+      "query": "我希望系统性学习 mcp，给出完整学习路线和全部需要学习的知识点。",
+      "sources": [
+        "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/schema/2026-07-28/schema.ts",
+        "https://modelcontextprotocol.io/docs/2026-07-28/develop/clients/client-best-practices",
+        "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+        "https://modelcontextprotocol.io/docs/2026-07-28/sdk",
+        "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector",
+        "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/local-server-security",
+        "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices",
+        "https://modelcontextprotocol.io/extensions/apps/overview",
+        "https://modelcontextprotocol.io/extensions/overview",
+        "https://modelcontextprotocol.io/extensions/skills/overview",
+        "https://modelcontextprotocol.io/extensions/tasks/overview",
+        "https://modelcontextprotocol.io/registry/about",
+        "https://modelcontextprotocol.io/specification/2026-07-28",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions.md",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http",
+        "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+        "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts.md",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/resources",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/tools"
+      ],
+      "path": "docs/AI 与模型/MCP.md",
+      "heading": "学习路线：从接入到扩展"
+    },
+    {
+      "id": "q-20261026-001",
+      "title": "2026-10-26 · 智谱下一代模型的最新动向",
+      "domain": "AI 模型",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "智谱下一代模型的最新动向。",
+      "sources": [
+        "https://ai.nus.edu.sg/glms-road-to-agi-from-chat-to-agents/",
+        "https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3",
+        "https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash",
+        "https://docs.z.ai/release-notes/new-released",
+        "https://huggingface.co/zai-org",
+        "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101540_c.pdf",
+        "https://www.hstong.com/news/hk/detail/26100818550373922",
+        "https://www.nbd.com.cn/articles/2026-09-01/4568516.html",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0913/2026091300025.pdf",
+        "https://z.ai/blog/glm-5.3-flash?trk=article-ssr-frontend-pulse_little-text-block"
+      ],
+      "path": "docs/AI 与模型/AI 模型.md",
+      "heading": "智谱下一代模型动向"
+    },
+    {
+      "id": "q-20261026-002",
+      "title": "2026-10-26 · 李刚“疯狂”编程书籍系列的网上读者评价",
+      "domain": "编程学习",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "评价李刚的编程书籍系列，寻找网上的真实评价。",
+      "sources": [
+        "https://book.douban.com/comment/1954418108/",
+        "https://book.douban.com/comment/1966942678/",
+        "https://book.douban.com/comment/2279776603/",
+        "https://book.douban.com/review/2113345/",
+        "https://book.douban.com/review/2420901/",
+        "https://book.douban.com/review/2428962/",
+        "https://book.douban.com/review/3042101/",
+        "https://book.douban.com/review/4938279/",
+        "https://book.douban.com/review/6661667/",
+        "https://book.douban.com/review/6718543/",
+        "https://book.douban.com/subject/30404737/",
+        "https://book.douban.com/subject/3246499/",
+        "https://book.douban.com/subject/6002664/",
+        "https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=62037"
+      ],
+      "path": "docs/软件开发/编程学习.md",
+      "heading": "李刚\"疯狂\"系列编程书籍的网上读者评价"
+    },
+    {
+      "id": "q-20261026-003",
+      "title": "2026-10-26 · 退役大学生士兵考研优待的适用条件",
+      "domain": "研究生考试",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "参军对升学有什么实际好处，退役大学生士兵考研有哪些条件限制？（关联条目）",
+      "sources": [
+        "https://tyjrswj.beijing.gov.cn/fwzl/jycy/202610/t20261020_4911367.html",
+        "https://www.moe.gov.cn/srcsite/A15/moe_778/s3261/202609/t20260923_1451734.html"
+      ],
+      "path": "docs/学习与人文/研究生考试.md",
+      "heading": "退役大学生士兵考研优待的适用条件"
+    },
+    {
+      "id": "q-20261026-004",
+      "title": "2026-10-26 · 如何戒除抖音等短视频成瘾",
+      "domain": "数字使用与自控",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "如何戒除抖音等短视频成瘾。",
+      "sources": [
+        "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2737418",
+        "https://link.springer.com/article/10.1007/s11126-020-09852-0",
+        "https://link.springer.com/article/10.1007/s11469-022-00826-w"
+      ],
+      "path": "docs/生活与健康/数字使用与自控.md",
+      "heading": "如何戒除抖音等短视频成瘾"
+    },
+    {
+      "id": "q-20261026-005",
+      "title": "2026-10-26 · 有评分和排名的电脑性能测试工具",
+      "domain": "电脑性能测试",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "电脑性能测试相关权威工具，最好有评分和排名；追问：中文友好、专业的。",
+      "sources": [
+        "https://benchmarks.ul.com/3dmark",
+        "https://benchmarks.ul.com/support/how-to-benchmark",
+        "https://benchmarks.ul.com/zh-hans/3dmark",
+        "https://browser.geekbench.com/processor-benchmarks",
+        "https://opendata.blender.org/about/",
+        "https://opendata.blender.org/benchmarks/query/?group_by=device_name",
+        "https://support.benchmarks.ul.com/support/solutions/articles/44002126273-options-screen",
+        "https://www.3dmark.com/hall-of-fame-2/",
+        "https://www.aida64.com/products/aida64-extreme",
+        "https://www.geekbench.com/",
+        "https://www.maxon.net/en/cinebench",
+        "https://www.maxon.net/en/tech-info-cinebench",
+        "https://www.passmark.com/chinese/",
+        "https://www.passmark.com/products/performancetest/",
+        "https://www.pcbenchmarks.net/"
+      ],
+      "path": "docs/工具与设计/电脑性能测试.md",
+      "heading": "按负载选择基准测试工具"
+    },
+    {
+      "id": "q-20261026-006",
+      "title": "2026-10-26 · PassMark 整机 8994.2 分的水平与分项解读",
+      "domain": "电脑性能测试",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "这算什么水平？（提供 PerformanceTest 11.1 完整跑分截图。）",
+      "sources": [
+        "https://forums.passmark.com/pc-hardware-and-benchmarks/37035-cpu-benchmark-low",
+        "https://www.passmark.com/support/performancetest_faq/understanding-results.php",
+        "https://www.pcbenchmarks.net/"
+      ],
+      "path": "docs/工具与设计/电脑性能测试.md",
+      "heading": "PassMark 整机 8994.2 分的解读"
+    },
+    {
+      "id": "q-20261026-007",
+      "title": "2026-10-26 · 免费私有化部署的 GIS 服务选型",
+      "domain": "GIS",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "有没有可以免费私有化部署的 GIS 服务？",
+      "sources": [
+        "https://docs.qgis.org/3.44/en/docs/server_manual/introduction.html",
+        "https://geonode.org/",
+        "https://geoserver.org/about/",
+        "https://geoserver.org/license/",
+        "https://github.com/geoserver/docker",
+        "https://github.com/maplibre/martin",
+        "https://github.com/qgis/QGIS",
+        "https://maplibre.org/martin/"
+      ],
+      "path": "docs/系统与运维/GIS.md",
+      "heading": "免费私有化部署的 GIS 服务选型"
+    },
+    {
+      "id": "q-20261026-008",
+      "title": "2026-10-26 · GIS 的含义与地图、GIS 服务的关系",
+      "domain": "GIS",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "什么是 GIS？",
+      "sources": [
+        "https://geoserver.org/about/",
+        "https://www.esri.com/en-us/what-is-gis/overview",
+        "https://www.usgs.gov/faqs/what-a-geographic-information-system-gis"
+      ],
+      "path": "docs/系统与运维/GIS.md",
+      "heading": "GIS 是什么：与地图、GIS 服务的关系"
+    },
+    {
+      "id": "q-20261026-009",
+      "title": "2026-10-26 · Windows 11 专业版与家庭版的主要区别及选型",
+      "domain": "Windows",
+      "created": "2026-10-26",
+      "updated": "2026-10-27",
+      "query": "Windows 11专业版和家庭版区别。",
+      "sources": [
+        "https://github.com/neutrinolabs/xrdp",
+        "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows",
+        "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/",
+        "https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases#physical-memory-limits-windows-11",
+        "https://learn.microsoft.com/en-us/windows/wsl/faq#is-wsl-2-available-on-windows-10-home-and-windows-11-home",
+        "https://learn.microsoft.com/entra/identity/devices/concept-directory-join",
+        "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop",
+        "https://support.microsoft.com/en-us/windows/security/encryption/device-encryption-in-windows",
+        "https://www.microsoft.com/zh-cn/windows/compare-windows-11-home-vs-pro-versions"
+      ],
+      "path": "docs/系统与运维/Windows.md",
+      "heading": "专业版与家庭版：按需求选择"
+    },
+    {
+      "id": "q-20261026-010",
+      "title": "2026-10-26 · Navicat 最新版本",
+      "domain": "Navicat",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "查看 navicat 最新是哪个版本。",
+      "sources": [
+        "https://www.navicat.com.cn/company/press",
+        "https://www.navicat.com.cn/products/navicat-premium-release-note",
+        "https://www3.navicat.com/en/products/navicat-premium-release-note"
+      ],
+      "path": "docs/工具与设计/Navicat.md",
+      "heading": "最新版本的核实"
+    },
+    {
+      "id": "q-20261026-011",
+      "title": "2026-10-26 · 在中国当兵的个人好处及制度规则与取舍",
+      "domain": "兵役与退役保障",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "在中国，当兵对自身有什么好处，解析整个规则和逻辑。",
+      "sources": [
+        "https://app.www.gov.cn/govdata/gov/202308/04/505983/article.html",
+        "https://jyt.hubei.gov.cn/zfxxgk/zc_GK2020/qtzdgkwj_GK2020/202601/t20260123_5862335.shtml",
+        "https://nmg.mof.gov.cn/tongzhitonggao/202412/t20241204_3948955.htm",
+        "https://sdxszz.sdei.edu.cn/Show/7573",
+        "https://shanghai.chinatax.gov.cn/xxgk/rsxx/202610/t481764.html",
+        "https://www.beijing.gov.cn/zhengce/zhengcefagui/202106/t20210611_2411278.html",
+        "https://www.mee.gov.cn/zcwj/gwywj/202408/t20240802_1083259.shtml",
+        "https://www.mod.gov.cn/gfbw/fgwx/16048590.html",
+        "https://www.mod.gov.cn/gfbw/fgwx/flfg/4892491.html",
+        "https://www.moe.gov.cn/srcsite/A15/moe_778/s3261/202609/t20260923_1451734.html",
+        "https://www.mva.gov.cn/gongkai/zfxxgkpt/zhengce/gfxwj/202209/t20220902_65211.html",
+        "https://www.mva.gov.cn/hudong/bzxx/hfxd/202410/t20241008_446802.html"
+      ],
+      "path": "docs/社会与财经/兵役与退役保障.md",
+      "heading": "参军的个人收益与制度取舍"
+    },
+    {
+      "id": "q-20261026-012",
+      "title": "2026-10-26 · 新概念英语的自学方法、学习路径与资源选择",
+      "domain": "英语学习",
+      "created": "2026-10-26",
+      "updated": "2026-10-26",
+      "query": "新概念英语学习方法，自学学习路径，以及优秀的自学学习资源。",
+      "sources": [
+        "https://dictionary.cambridge.org/pronunciation/",
+        "https://learnenglish.britishcouncil.org/free-resources/listening",
+        "https://learninglab.psych.purdue.edu/downloads/2008/2008_Karpicke_Roediger_Science.pdf",
+        "https://shop.cambridge.org/english/product/2700140114",
+        "https://www.cambridge.org/gb/search?iFeelLucky=false&page=1&query=grammar+in+use&site=CE&tab=related",
+        "https://www.fltrp.com/c/2022-10-20/514394.shtml",
+        "https://www.fltrp.com/c/2022-10-20/514397.shtml",
+        "https://www.fltrp.com/ebook/jcjyyjzx/2023_jcjyjxzy/files/basic-html/page186.html"
+      ],
+      "path": "docs/学习与人文/英语学习.md",
+      "heading": "新概念英语的自学路径与资源选择"
+    },
+    {
+      "id": "q-20261027-001",
+      "title": "2026-10-27 · 在 Windows 本机打开 WSL 完整 Linux 桌面的方案选择",
+      "domain": "Linux",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "wsl 可视桌面化远程方案；已澄清为在当前 Windows 上打开完整 Linux 桌面；追问：探测当前电脑 WSL 情况并给出建议；WSL 3.0.3.0 是否有对应的 WSL 3 发行版。",
+      "sources": [
+        "https://github.com/microsoft/WSL/releases/tag/3.0.3",
+        "https://github.com/neutrinolabs/xrdp",
+        "https://learn.microsoft.com/en-us/windows/wsl/basic-commands",
+        "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+        "https://learn.microsoft.com/en-us/windows/wsl/faq",
+        "https://learn.microsoft.com/en-us/windows/wsl/networking",
+        "https://learn.microsoft.com/en-us/windows/wsl/systemd",
+        "https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps",
+        "https://learn.microsoft.com/en-us/windows/wsl/wsl-config",
+        "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop",
+        "https://www.kali.org/docs/wsl/win-kex/",
+        "https://xfce.org/about/"
+      ],
+      "path": "docs/系统与运维/WSL.md",
+      "heading": "在 Windows 本机打开 WSL 完整 Linux 桌面"
+    },
+    {
+      "id": "q-20261027-002",
+      "title": "2026-10-27 · WSL 内存占用、缓存回收与开发容器按需启动",
+      "domain": "Linux",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "Windows 内存升高与 WSL 的关系；七个开发用 Docker 服务要求取消常驻，使用时再启动。",
+      "sources": [
+        "https://docs.docker.com/engine/containers/resource_constraints/",
+        "https://docs.docker.com/reference/compose-file/services/#restart",
+        "https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches",
+        "https://learn.microsoft.com/en-us/windows/wsl/wsl-config"
+      ],
+      "path": "docs/系统与运维/WSL.md",
+      "heading": "WSL 内存占用与开发容器按需启动"
+    },
+    {
+      "id": "q-20261027-003",
+      "title": "2026-10-27 · Windows 11 深度清理与优化工具的选择",
+      "domain": "Windows",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "优秀的 Win11 深度清理优化工具推荐。",
+      "sources": [
+        "https://diskanalyzer.com/",
+        "https://docs.bleachbit.org/",
+        "https://github.com/BCUninstaller/Bulk-Crap-Uninstaller",
+        "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "https://pcmanager.microsoft.com/zh-cn",
+        "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows",
+        "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/free-up-drive-space-in-windows",
+        "https://www.bleachbit.org/download/windows",
+        "https://www.bleachbit.org/features"
+      ],
+      "path": "docs/系统与运维/Windows.md",
+      "heading": "清理与优化工具：按用途选择"
+    },
+    {
+      "id": "q-20261027-004",
+      "title": "2026-10-27 · Windows 内存清理后回涨与 WSL 常驻服务的占用诊断",
+      "domain": "Windows",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "当前电脑内存经常升高，电脑管家清理后降低又回升，原因是什么，与 WSL 是否有关，能否优化；确认七个 Docker 服务仅开发时需要，要求改为按需启动。",
+      "sources": [
+        "https://docs.docker.com/engine/containers/resource_constraints/",
+        "https://docs.docker.com/reference/cli/docker/container/stats/",
+        "https://docs.docker.com/reference/compose-file/services/#restart",
+        "https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches",
+        "https://github.com/microsoft/mssql-docker/issues/968",
+        "https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/troubleshoot-application-service-memory-leaks",
+        "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset",
+        "https://learn.microsoft.com/en-us/windows/win32/memory/working-set",
+        "https://learn.microsoft.com/en-us/windows/wsl/wsl-config"
+      ],
+      "path": "docs/系统与运维/Windows.md",
+      "heading": "内存回涨与 WSL 常驻服务：诊断与按需启动"
+    },
+    {
+      "id": "q-20261027-005",
+      "title": "2026-10-27 · MCP 数据层无状态的完整报文与重启实验",
+      "domain": "MCP",
+      "created": "2026-10-27",
+      "updated": "2026-10-29",
+      "query": "mcp 协议数据层是无状态的，模拟一次完整的 mcp 数据传输，我实际观察一下。",
+      "sources": [
+        "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic#_meta",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning",
+        "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/discover",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/tools#calling-tools",
+        "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.json",
+        "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts"
+      ],
+      "path": "docs/AI 与模型/MCP.md",
+      "heading": "数据层无状态：每请求自带版本与能力"
+    },
+    {
+      "id": "q-20261027-006",
+      "title": "2026-10-27 · MCP 与 HTTP 的关系：消息层本体与传输绑定",
+      "domain": "MCP",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "mcp 本质上还是 http 协议吗？",
+      "sources": [
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic#auth",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+        "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http",
+        "https://www.jsonrpc.org/specification"
+      ],
+      "path": "docs/AI 与模型/MCP.md",
+      "heading": "MCP 与 HTTP：消息层本体与传输绑定"
+    },
+    {
+      "id": "q-20261027-007",
+      "title": "2026-10-27 · GitHub PR 的完整执行过程",
+      "domain": "Git",
+      "created": "2026-10-27",
+      "updated": "2026-10-27",
+      "query": "GitHub PR（Pull Request）从建分支到合并后的完整执行过程是什么？",
+      "sources": [
+        "https://docs.github.com/en/get-started/using-github/github-flow",
+        "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges",
+        "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests",
+        "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews"
+      ],
+      "path": "docs/软件开发/Git.md",
+      "heading": "Pull Request：从建分支到合并"
+    },
+    {
+      "id": "q-20261028-001",
+      "title": "2026-10-28 · 美国中期选举的意义：不是换总统",
+      "domain": "美国政治",
+      "created": "2026-10-28",
+      "updated": "2026-10-28",
+      "query": "美国中期选举的意义是什么，是换总统吗？",
+      "sources": [
+        "https://ballotpedia.org/United_States_Congress_elections,_2026",
+        "https://www.archives.gov/founding-docs/constitution-transcript",
+        "https://www.presidency.ucsb.edu/statistics/data/seats-congress-gainedlost-the-presidents-party-mid-term-elections",
+        "https://www.usa.gov/midterm-elections"
+      ],
+      "path": "docs/社会与财经/美国政治.md",
+      "heading": "中期选举的意义：不换总统，换国会"
+    },
+    {
+      "id": "q-20261028-002",
+      "title": "2026-10-28 · 阿里巴巴-W 与 阿里巴巴-WR：同一股份的港币与人民币柜台",
+      "domain": "证券市场",
+      "created": "2026-10-28",
+      "updated": "2026-10-28",
+      "query": "阿里巴巴W 和 阿里巴巴WR 有什么区别？",
+      "sources": [
+        "https://cj.sina.cn/articles/view/1393100891/5309085b0270197zc",
+        "https://finance.yahoo.com/quote/89988.HK",
+        "https://finance.yahoo.com/quote/9988.HK",
+        "https://www.21jingji.com/article/20240910/herald/e4f0aff91807fb2f91d4534bdf43ddea.html",
+        "https://www.alibabagroup.com/document-1765436812471304192",
+        "https://www.alibabagroup.com/zh-HK/document-1607442761408053248",
+        "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_news_detail.php?code=388&newsid=20260923559&section=related",
+        "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Overview/Trading-Mechanism/HKDRMB-Dual-Counter/Dual-Counter-Model-FAQ_E.pdf",
+        "https://www.hkex.com.hk/Products/Securities/Naming-Conventions-of-Stock-Short-Name-by-Product-Types?sc_lang=zh-HK",
+        "https://www.hkex.com.hk/services/trading/securities/overview/trading-mechanism/hkd-rmb-dual-counter-model?sc_lang=zh-HK",
+        "https://www.sec.gov/Archives/edgar/data/1577552/000119312526231755/baba-20260331.htm",
+        "https://www.stcn.com/article/detail/2070722.html"
+      ],
+      "path": "docs/社会与财经/证券市场.md",
+      "heading": "美股与市值：三个代码、一个市值"
+    },
+    {
+      "id": "q-20261028-003",
+      "title": "2026-10-28 · 漂亮的编程文档风格推荐与代表站点",
+      "domain": "技术写作",
+      "created": "2026-10-28",
+      "updated": "2026-10-28",
+      "query": "推荐漂亮的编程文档风格，可以推荐相关网站或博客地址供查看。",
+      "sources": [
+        "https://developers.google.com/style",
+        "https://docs.stripe.com/",
+        "https://docusaurus.io/",
+        "https://nextra.site/",
+        "https://react.dev/",
+        "https://squidfunk.github.io/mkdocs-material/",
+        "https://starlight.astro.build/",
+        "https://tailwindcss.com/docs",
+        "https://vitepress.dev/",
+        "https://vuejs.org/",
+        "https://www.linkedin.com/posts/data-science-dojo_designsystems-frontenddevelopment-aicoding-activity-7480712845756825600-IfP4"
+      ],
+      "path": "docs/工具与设计/技术写作.md",
+      "heading": "文档站生成器选型"
+    },
+    {
+      "id": "q-20261029-001",
+      "title": "2026-10-29 · JVM 跨平台与 HotSpot 运行时优化的机制",
+      "domain": "Java",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "解释 Oracle 教程原文：JVM 可运行于多种操作系统，同一 .class 文件能在 Windows、Solaris OS、Linux、Mac OS 上运行；HotSpot 等虚拟机在运行时执行额外步骤提升性能，包括查找性能瓶颈、将频繁使用的代码段重新编译为本机代码。",
+      "sources": [
+        "https://docs.oracle.com/en/java/javase/21/vm/java-hotspot-virtual-machine-performance-enhancements.html",
+        "https://docs.oracle.com/javase/tutorial/getStarted/intro/definition.html"
+      ],
+      "path": "docs/软件开发/java/jvm.md",
+      "heading": "跨平台与 HotSpot 运行时优化"
+    },
+    {
+      "id": "q-20261029-002",
+      "title": "2026-10-29 · ZCode 与 Claude Code 的当前差距",
+      "domain": "AI 编程",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "ZCode 现在和 Claude Code 之间存在差距吗？",
+      "sources": [
+        "https://code.claude.com/docs/en/overview",
+        "https://docs.bigmodel.cn/cn/coding-plan/tool/claude",
+        "https://github.com/zai-org/ZCode",
+        "https://www.anthropic.com/news/claude-3-7-sonnet",
+        "https://zcode.z.ai/cn",
+        "https://zcode.z.ai/cn/docs/automations",
+        "https://zcode.z.ai/cn/docs/bot-channel",
+        "https://zcode.z.ai/cn/docs/idle-time-tasks",
+        "https://zcode.z.ai/cn/docs/qa",
+        "https://zcode.z.ai/cn/docs/remote-control",
+        "https://zcode.z.ai/cn/docs/welcome"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "ZCode 与 Claude Code 的差距"
+    },
+    {
+      "id": "q-20261029-003",
+      "title": "2026-10-29 · Windows 与 WSL 之间文件实时同步的技术",
+      "domain": "Linux",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "有没有文件在 Windows 端和 WSL 端实时同步的技术。",
+      "sources": [
+        "https://github.com/microsoft/WSL/issues/4739",
+        "https://learn.microsoft.com/en-us/windows/dev-environment/wsl-interop",
+        "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+        "https://learn.microsoft.com/en-us/windows/wsl/filesystems",
+        "https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode"
+      ],
+      "path": "docs/系统与运维/WSL.md",
+      "heading": "Windows 与 WSL 的文件互通"
+    },
+    {
+      "id": "q-20261029-004",
+      "title": "2026-10-29 · Windows 与 WSL 混合项目如何统一 Claude Code 配置和上下文",
+      "domain": "Claude Code",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "大部分工作代码位于 WSL，Obsidian 笔记及相关代码保留在 Windows；是否必须两边安装 Claude Code 并维护两套上下文和配置？用户确认 Windows 侧主要是终端修改笔记或代码，没有提出必须由 Obsidian 插件调用或必须使用 Windows 原生开发工具。",
+      "sources": [
+        "https://code.claude.com/docs/en/how-claude-code-works",
+        "https://code.claude.com/docs/en/memory",
+        "https://code.claude.com/docs/en/memory#choose-where-to-put-claudemd-files",
+        "https://code.claude.com/docs/en/memory#storage-location",
+        "https://code.claude.com/docs/en/sandboxing",
+        "https://code.claude.com/docs/en/settings",
+        "https://code.claude.com/docs/en/settings#find-or-create-your-settings-files",
+        "https://code.claude.com/docs/en/setup",
+        "https://doc.rust-lang.org/book/ch01-01-installation.html",
+        "https://docs.docker.com/desktop/features/wsl/",
+        "https://docs.docker.com/desktop/features/wsl/best-practices/",
+        "https://joshsalway.com/articles/windows-vs-mac-for-claude-code-the-benchmark-that-changed-how-i-work/",
+        "https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows",
+        "https://learn.microsoft.com/en-us/windows/wsl/case-sensitivity",
+        "https://learn.microsoft.com/en-us/windows/wsl/filesystems",
+        "https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems",
+        "https://maven.apache.org/install.html",
+        "https://raw.githubusercontent.com/JoshSalway/dev-workflow-benchmark/master/dev-workflow-benchmark.sh",
+        "https://raw.githubusercontent.com/JoshSalway/dev-workflow-benchmark/master/results-DESKTOP-2RVUL12.txt",
+        "https://raw.githubusercontent.com/JoshSalway/dev-workflow-benchmark/master/results-WSL.txt",
+        "https://vite.dev/guide/"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "Windows 与 WSL：统一配置与性能"
+    },
+    {
+      "id": "q-20261029-005",
+      "title": "2026-10-29 · 项目 .agents/skills 的跨智能体自动发现支持",
+      "domain": "AI 编程",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "在项目 `.agents` 目录下放 Skill，现在会被哪些 Agent 自动读取，ZCode 和 Codex 是否支持？",
+      "sources": [
+        "https://code.claude.com/docs/en/skills#choose-where-skills-load",
+        "https://cursor.com/docs/skills",
+        "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills",
+        "https://docs.opencode.ai/docs/skills/",
+        "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md",
+        "https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/08-skills.md",
+        "https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/README.md",
+        "https://learn.chatgpt.com/docs/build-skills",
+        "https://zcode.z.ai/cn/docs/skill"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "跨智能体共享技能：项目 .agents/skills"
+    },
+    {
+      "id": "q-20261029-006",
+      "title": "2026-10-29 · Codex 桌面端（ChatGPT）与 Codex CLI 的差距",
+      "domain": "AI 编程",
+      "created": "2026-10-29",
+      "updated": "2026-10-29",
+      "query": "对比 Codex 桌面端（ChatGPT）和 Codex CLI 的差距。",
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform",
+        "https://learn.chatgpt.com/docs/agent-configuration/subagents",
+        "https://learn.chatgpt.com/docs/app",
+        "https://learn.chatgpt.com/docs/auth",
+        "https://learn.chatgpt.com/docs/automations",
+        "https://learn.chatgpt.com/docs/browser",
+        "https://learn.chatgpt.com/docs/cli",
+        "https://learn.chatgpt.com/docs/code-review",
+        "https://learn.chatgpt.com/docs/computer-use",
+        "https://learn.chatgpt.com/docs/environments/git-worktrees",
+        "https://learn.chatgpt.com/docs/non-interactive-mode",
+        "https://learn.chatgpt.com/docs/projects",
+        "https://learn.chatgpt.com/docs/skills-and-plugins"
+      ],
+      "path": "docs/AI 与模型/AI 编程.md",
+      "heading": "Codex 桌面端与 CLI 的分工"
+    },
+    {
+      "id": "q-20261030-001",
+      "title": "2026-10-30 · WSL 内 `文件名:Zone.Identifier` 文件的来历与处理",
+      "domain": "Linux",
+      "created": "2026-10-30",
+      "updated": "2026-10-30",
+      "query": "仓库里为什么出现 `.gitignore:Zone.Identifier`、`AGENTS.md:Zone.Identifier` 这类文件。",
+      "sources": [
+        "https://github.com/microsoft/WSL/issues/4609",
+        "https://github.com/microsoft/WSL/issues/7456",
+        "https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537175(v=vs.85"
+      ],
+      "path": "docs/系统与运维/WSL.md",
+      "heading": "`文件名:Zone.Identifier` 文件的来历与处理"
+    },
+    {
+      "id": "q-20261030-002",
+      "title": "2026-10-30 · 青简输入法有没有类似项目或更好的选择",
+      "domain": "输入法",
+      "created": "2026-10-30",
+      "updated": "2026-10-30",
+      "query": "[qingjian-team/qingjian](https://github.com/qingjian-team/qingjian)（青简）有没有类似项目，或更好的选择。",
+      "sources": [
+        "https://github.com/iDvel/rime-ice",
+        "https://github.com/qingjian-team/qingjian",
+        "https://github.com/snomiao/rime-snomiao",
+        "https://rime.im",
+        "https://sspai.com/post/89281"
+      ],
+      "path": "docs/工具与设计/输入法.md",
+      "heading": "打字顺便学外语：青简是该细分最完整的选择"
+    },
+    {
+      "id": "q-20261030-003",
+      "title": "2026-10-30 · 轻重负荷都力竭时机械张力与增肌效果是否相同",
+      "domain": "力量训练",
+      "created": "2026-10-30",
+      "updated": "2026-10-30",
+      "query": "20 kg × 12 次与 10 kg × 30 次都做到力竭，产生的机械张力效果和肌肉增长效果一样吗？",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/15523522/",
+        "https://pubmed.ncbi.nlm.nih.gov/27174923/",
+        "https://pubmed.ncbi.nlm.nih.gov/29564973/",
+        "https://pubmed.ncbi.nlm.nih.gov/33433148/",
+        "https://pubmed.ncbi.nlm.nih.gov/33874848/",
+        "https://pubmed.ncbi.nlm.nih.gov/36334240/"
+      ],
+      "path": "docs/生活与健康/力量训练.md",
+      "heading": "轻负荷与重负荷都力竭时，增肌效果是否相同"
+    },
+    {
+      "id": "q-20261030-004",
+      "title": "2026-10-30 · 租新加坡或日本服务器跑 Claude Code 防封号是否靠谱",
+      "domain": "Claude Code",
+      "created": "2026-10-30",
+      "updated": "2026-10-30",
+      "query": "租一台新加坡或日本的服务器跑 Claude Code、避免封号，这个做法是否靠谱？",
+      "sources": [
+        "https://code.claude.com/docs/en/devcontainer",
+        "https://code.claude.com/docs/en/sandbox-environments",
+        "https://www.anthropic.com/claude-ai-locations",
+        "https://www.anthropic.com/legal/consumer-terms",
+        "https://www.anthropic.com/news/updating-restrictions-of-sales-to-unsupported-regions"
+      ],
+      "path": "docs/AI 与模型/Claude Code.md",
+      "heading": "VPS 防封号：信号与规则两层"
+    },
+    {
+      "id": "q-20261030-005",
+      "title": "2026-10-30 · 目前主流的虚拟货币",
+      "domain": "虚拟货币",
+      "created": "2026-10-30",
+      "updated": "2026-10-30",
+      "query": "目前主流的虚拟货币有哪些？",
+      "sources": [
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1",
+        "https://www.shanghaiinvest.com/cn/viewfile.php?id=21619"
+      ],
+      "path": "docs/社会与财经/虚拟货币.md",
+      "heading": "主流虚拟货币的格局与分类"
+    },
+    {
+      "id": "q-20261101-001",
+      "title": "2026-11-01 · 什么是 DDNS",
+      "domain": "VPS",
+      "created": "2026-11-01",
+      "updated": "2026-11-01",
+      "query": "什么是 ddns？",
+      "sources": [
+        "https://datatracker.ietf.org/doc/html/rfc2136",
+        "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/update/"
+      ],
+      "path": "docs/系统与运维/VPS.md",
+      "heading": "家宽动态 IP 与 DDNS"
+    },
+    {
+      "id": "q-20261101-002",
+      "title": "2026-11-01 · rg 不可用是什么意思",
+      "domain": "Linux",
+      "created": "2026-11-01",
+      "updated": "2026-11-01",
+      "query": "rg 不可用是什么？",
+      "sources": [
+        "https://github.com/BurntSushi/ripgrep#ripgrep-rg",
+        "https://github.com/BurntSushi/ripgrep/blob/master/crates/core/flags/doc/template.rg.1",
+        "https://www.gnu.org/software/bash/manual/html_node/Command-Search-and-Execution.html"
+      ],
+      "path": "docs/系统与运维/Linux.md",
+      "heading": "rg 不可用是什么意思"
+    },
+    {
+      "id": "q-20261101-003",
+      "title": "2026-11-01 · Java 图形化编程技术有哪些",
+      "domain": "Java SE",
+      "created": "2026-11-01",
+      "updated": "2026-11-01",
+      "query": "Java 图形化编程技术有哪些？",
+      "sources": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/module-summary.html",
+        "https://eclipse.dev/eclipse/swt/",
+        "https://github.com/JFormDesigner/FlatLaf",
+        "https://github.com/LWJGL/lwjgl3",
+        "https://kotlinlang.org/compose-multiplatform/",
+        "https://libgdx.com/",
+        "https://openjfx.io/",
+        "https://pivot.apache.org/"
+      ],
+      "path": "docs/软件开发/java/java-se/图形化.md",
+      "heading": "Java 图形化编程"
+    },
+    {
+      "id": "q-20261101-004",
+      "title": "2026-11-01 · 30 岁+男性科学提高睾酮的方式",
+      "domain": "男性健康",
+      "created": "2026-11-01",
+      "updated": "2026-11-01",
+      "query": "30 岁以上男性，有哪些有科学证据支持的提高睾酮的方式。",
+      "sources": [
+        "https://jamanetwork.com/journals/jama/fullarticle/1029127",
+        "https://pubmed.ncbi.nlm.nih.gov/11158037/",
+        "https://pubmed.ncbi.nlm.nih.gov/23482592/",
+        "https://pubmed.ncbi.nlm.nih.gov/24559105/",
+        "https://www.endocrine.org/clinical-practice-guidelines/testosterone-therapy"
+      ],
+      "path": "docs/生活与健康/男性健康.md",
+      "heading": "30 岁+男性如何科学提高睾酮"
+    }
+  ],
+  "attachments": [
+    {
+      "path": "docs/附件/来源/mcp-2026-07-28-schema-20261027/采集说明.json",
+      "sha256": "ab40b0316be700fd3a7cdbb55e24717fdcdb51be0769c9ab1c2d5462dfcd3c19"
+    },
+    {
+      "path": "docs/附件/来源/mcp-2026-07-28-schema-20261027/schema.json",
+      "sha256": "ef70b61f99b6d2e5e3b46863822eab08dff6a45bedc7a08914e0e5b133f40203"
+    },
+    {
+      "path": "docs/附件/来源/mcp-2026-07-28-schema-20261027/schema.ts",
+      "sha256": "742750af0bb8c716e7030c4977c992b55d1adc4407e9e66997db5846baedc2cd"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/atlas-verification.json",
+      "sha256": "3934000e4085739a2efca4ed1e6f84c0ac7df38bde1b973ae6df5dbf7f2709e8"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/trace-before-cache-fix.json",
+      "sha256": "20fe132da3044a41c60878f6aa85702e1896fcd045a242e3cdbb5494330bd965"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/mcp-message-atlas.json",
+      "sha256": "151c3c2ad40db0f2c81b7691baf194295258ae3dbccb8c5be8384dbe6107e695"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/simulate_mcp.py",
+      "sha256": "56f3dab981040fff71fd32aca357e7524b57bf8eceff78ac30a8fc209b81a929"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/mcp-stateless-flow.html",
+      "sha256": "75c99346b06f56b0063c4ef58f1a308b5d89c7800688da5debc1033b18aa9dc9"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/build_message_atlas.py",
+      "sha256": "933f20653f5a4e70b8c27b10b400a5178bb6aa448554a4fb5bf01425e92dfe02",
+      "source_sha256": "d5e7584f05d72a8fb36827a82d2e43361fb5d04c4b1d96dca3541877aa7efbc8",
+      "说明": "只调整生成附录的输出位置和内部链接；协议生成与校验逻辑保持原样。"
+    },
+    {
+      "path": "docs/附件/演示/q-20261027-005/trace.json",
+      "sha256": "a8364d728e94b73773b017792ee9bac3c746f65cc28f7fd67a56411f4be4611e"
+    },
+    {
+      "path": "docs/附件/工具/开发服务.ps1",
+      "sha256": "0de44e82cc3b3decd6a595b855013745240a3349c9a3ed2b3abf43cbe98e6b28"
+    },
+    {
+      "path": "docs/附录/q-20261027-005.md",
+      "source_sha256": "fab61910e980e6e21d7bdfa9a9542963cc3b4642c11d57f483863d17b33e0e14",
+      "sha256": "316e590a94f806092dfb15220c0aba12f366006052a803436f2570603fed7777"
+    },
+    {
+      "path": "docs/附件/工具/Get-ClaudeCodeDocs.ps1",
+      "sha256": "bfaa95c0c0923342862ebb32a63fc32288528dec8ab8b0b93c4ea3ca9cb4568d"
+    }
+  ],
+  "review": [
+    {
+      "id": "q-20260921-001",
+      "path": "安全与认证/身份认证.md",
+      "heading": "认证技术的演化：共享秘密向更安全的位置迁移",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260921-002",
+      "path": "安全与认证/身份认证.md",
+      "heading": "Cookie、Session 与 JWT：会话与令牌层，不是认证协议",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260921-003",
+      "path": "系统与运维/容器编排.md",
+      "heading": "Kubernetes 是什么",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260921-004",
+      "path": "系统与运维/容器编排.md",
+      "heading": "Kubernetes 与 Docker：从绑定到解耦",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260921-005",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "subagent：委派、配置与执行原理",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260921-006",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "学习地图：从单任务闭环到量化调优",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-001",
+      "path": "软件开发/java/index.md",
+      "heading": "Java 专家的学习路线：18 个领域与专项",
+      "补入块": 3,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-002",
+      "path": "安全与认证/密码学.md",
+      "heading": "成为密码学专家的系统性学习路线",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-003",
+      "path": "学习与人文/数学.md",
+      "heading": "从小学算术到数学研究的学习路线",
+      "补入块": 12,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-004",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "编程智能体工具全景",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-005",
+      "path": "软件开发/数据结构与算法.md",
+      "heading": "完整学习路线与已有知识点对应",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260922-006",
+      "path": "安全与认证/OAuth.md",
+      "heading": "掌握 OAuth 2.0 的学习路线与知识地图",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-001",
+      "path": "软件开发/java/日志.md",
+      "heading": "Java 日志",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-002",
+      "path": "软件开发/java/jvm.md",
+      "heading": "JVM",
+      "补入块": 2,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-003",
+      "path": "软件开发/java/java-se/语言与标准库.md",
+      "heading": "Java SE：语言与标准库",
+      "补入块": 7,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-004",
+      "path": "软件开发/java/spring.md",
+      "heading": "Spring 的学习路线与知识地图",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-005",
+      "path": "学习与人文/数学.md",
+      "heading": "苏州中考与江苏高考数学考试范围",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-006",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "常驻智能体队友：Grok Bot",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-007",
+      "path": "系统与运维/远程办公.md",
+      "heading": "美国住宅 IP 远程电脑的订阅与选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-008",
+      "path": "系统与运维/远程办公.md",
+      "heading": "RDP 是什么，与住宅 IP 有何关系",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-009",
+      "path": "系统与运维/Linux.md",
+      "heading": "学习路线：从零基础到独立管理服务器",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260923-010",
+      "path": "软件开发/前端开发.md",
+      "heading": "可嵌入的所见即所得 Markdown 编辑器选型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260924-001",
+      "path": "工具与设计/Obsidian.md",
+      "heading": "Tasks 插件：任务留在笔记里，跨库查询",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260924-002",
+      "path": "工具与设计/Obsidian.md",
+      "heading": "手机查阅：Windows 库经 OneDrive 供 iPhone 只读",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260924-003",
+      "path": "系统与运维/云存储.md",
+      "heading": "OSS 长期备份的成本",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260926-001",
+      "path": "工具与设计/Obsidian.md",
+      "heading": "Obsidian Git：定时策略与同步顺序",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260926-002",
+      "path": "AI 与模型/机器翻译.md",
+      "heading": "免费翻译 API 与自托管引擎",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260926-003",
+      "path": "工具与设计/Zotero.md",
+      "heading": "Zotero API 是什么：两套接口的选用",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260928-001",
+      "path": "学习与人文/数学.md",
+      "heading": "按学习阶段选数学视频",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260928-002",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "OpenCode 可用的模型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260928-003",
+      "path": "AI 与模型/人工智能.md",
+      "heading": "按学习目标选 YouTube AI 频道",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20260929-001",
+      "path": "系统与运维/云存储.md",
+      "heading": "更换操作系统时用云盘快照迁移数据",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261001-001",
+      "path": "工具与设计/Obsidian.md",
+      "heading": "Mermaid 图表美化：三个插件的取舍",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261002-001",
+      "path": "系统与运维/容器编排.md",
+      "heading": "Docker 存储目录与跨盘容量",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261002-002",
+      "path": "系统与运维/Linux.md",
+      "heading": "LVM 合并两块盘供 Docker 使用",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261006-001",
+      "path": "工具与设计/技术写作.md",
+      "heading": "简化技术英语：ASD-STE100 的规则与词表",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261006-002",
+      "path": "生活与健康/药物制剂.md",
+      "heading": "利托那韦晶体问题的解决与原理",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261008-001",
+      "path": "AI 与模型/机器翻译.md",
+      "heading": "英译中选型与评测条件",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261008-002",
+      "path": "学习与人文/城乡规划.md",
+      "heading": "城乡规划的学习路线",
+      "补入块": 7,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261008-003",
+      "path": "AI 与模型/AI 模型.md",
+      "heading": "对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261008-004",
+      "path": "AI 与模型/AI 模型.md",
+      "heading": "英译中选型要保留哪些评测条件",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261008-005",
+      "path": "生活与健康/传染病.md",
+      "heading": "俄罗斯鼠疫传闻的核实",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261009-001",
+      "path": "安全与认证/密码学.md",
+      "heading": "加密锁中签名证书与加密证书的存放与使用",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261009-002",
+      "path": "生活与健康/扫地机器人.md",
+      "heading": "全球品牌排名的统计口径",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-001",
+      "path": "系统与运维/对象存储.md",
+      "heading": "MinIO 平替：四个自托管方案的取舍",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-002",
+      "path": "工具与设计/电脑供电.md",
+      "heading": "用拯救者 C140 为 ThinkPad T14p 2026 供电",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-003",
+      "path": "系统与运维/VPS.md",
+      "heading": "按用途选 VPS 提供商",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-004",
+      "path": "系统与运维/VPS.md",
+      "heading": "VPS 是什么，与云服务器有何区别",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-005",
+      "path": "系统与运维/VPS.md",
+      "heading": "VPS 是什么，与云服务器有何区别",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-006",
+      "path": "系统与运维/大数据.md",
+      "heading": "什么是大数据",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261010-007",
+      "path": "软件开发/Git.md",
+      "heading": "Git Bash：Git 与 Bash 的分工",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261012-001",
+      "path": "安全与认证/身份认证.md",
+      "heading": "in Action 系列的服务器认证与鉴权书目",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261012-002",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "插件与 skill：没有通用必装",
+      "补入块": 4,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261012-003",
+      "path": "安全与认证/OAuth.md",
+      "heading": "oauth.net 的定位与系统教程选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261012-004",
+      "path": "工具与设计/文本编辑器.md",
+      "heading": "storytold（ArtCraft）组织没有 Notepad++ 式代码编辑器",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261012-005",
+      "path": "工具与设计/文本编辑器.md",
+      "heading": "可直接采用的开源代码编辑器",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261013-001",
+      "path": "系统与运维/VPS.md",
+      "heading": "家庭服务器内网穿透：先测直连，再选中转",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261013-002",
+      "path": "工具与设计/三维建模.md",
+      "heading": "NVIDIA usd-brep：把 CAD 精确几何带进 OpenUSD",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261013-003",
+      "path": "社会与财经/公司调研.md",
+      "heading": "斯菲尔电气公司画像：智能电网用户端厂商、新潮系与两度 IPO 折戟",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261013-004",
+      "path": "工具与设计/AutoCAD.md",
+      "heading": "自动化操作 MCP：官方与社区两条线",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-001",
+      "path": "软件开发/java/java-ee.md",
+      "heading": "Java EE 与 Tomcat",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-002",
+      "path": "软件开发/java/index.md",
+      "heading": "经典书籍与学习网站",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-003",
+      "path": "工具与设计/AutoCAD.md",
+      "heading": "新建图形选样板：DWT 的作用与自带样板的区别",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-004",
+      "path": "工具与设计/AutoCAD.md",
+      "heading": "零基础学习路线与官方免费资源",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-005",
+      "path": "工具与设计/AutoCAD.md",
+      "heading": "中国大陆手机号申请试用：验证阻断与出路（实测）",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-006",
+      "path": "软件开发/独立开发.md",
+      "heading": "一人公司的创业方向怎么选",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-007",
+      "path": "软件开发/独立开发.md",
+      "heading": "小游戏赛道的上限与方差",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-008",
+      "path": "软件开发/独立开发.md",
+      "heading": "产品化服务从哪里找客户",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-009",
+      "path": "软件开发/编程学习.md",
+      "heading": "AI 时代学编程：看视频还是看书",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261014-010",
+      "path": "学习与人文/音乐.md",
+      "heading": "陈宇任（Funck）的创作分三块",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-001",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "PDF 翻译流程：智能体配工具",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-002",
+      "path": "软件开发/java/java-se/jdk.md",
+      "heading": "JDK 8 与 JDK 25 差别有多大",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-003",
+      "path": "软件开发/java/java-se/jdk.md",
+      "heading": "JDK 类库体系的宏观概览",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-004",
+      "path": "软件开发/java/spring.md",
+      "heading": "JDK 25 支持现状：Spring 各线",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-005",
+      "path": "AI 与模型/机器翻译.md",
+      "heading": "PDF 翻译：智能体自建流程",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-006",
+      "path": "AI 与模型/AI 模型.md",
+      "heading": "Jev 不能本地部署，开源复刻 Laya 可以",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-007",
+      "path": "AI 与模型/AI 模型.md",
+      "heading": "Jev 与 Laya 的能力对比",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261015-008",
+      "path": "工具与设计/浏览器扩展.md",
+      "heading": "按目标选择护眼配色扩展",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261016-001",
+      "path": "工具与设计/视频技术.md",
+      "heading": "默认、AV1、HEVC 与 AVC 播放策略的区别",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261016-002",
+      "path": "学习与人文/研究生考试.md",
+      "heading": "2027 年 408 考试大纲的官方出处",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261018-001",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "源码泄露相关项目：三种类别必须区分",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261018-002",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "文档站全量获取",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261018-003",
+      "path": "软件开发/C 语言.md",
+      "heading": "Windows 上的 C 开发环境、工具链与 IDE 选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261019-001",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "ZCode 桌面版的打包与分发",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261020-001",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "将 WebAssembly 封装为 MCP 工具",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261020-002",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "MCP 服务器的接入方式：本地进程与远程 HTTP",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261020-003",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "WASM 云端并发与 C++ 取舍：DWG 处理案例",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261020-004",
+      "path": "工具与设计/AutoCAD.md",
+      "heading": "天正转 T3：兼容导出的所得与所失",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261021-001",
+      "path": "工具与设计/笔记本电脑.md",
+      "heading": "ThinkPad T14p 口碑：性能与扩展强，模具与品控留疑",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261021-002",
+      "path": "工具与设计/笔记本电脑.md",
+      "heading": "T14p Gen 4（2026 款）：规格变化与口碑",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261022-001",
+      "path": "软件开发/前端开发.md",
+      "heading": "后台管理项目的设计风格选型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261022-002",
+      "path": "学习与人文/销售学.md",
+      "heading": "销售作为科学的知识构成",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261022-003",
+      "path": "软件开发/RPC.md",
+      "heading": "RPC 的含义、调用过程与协议边界",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261022-004",
+      "path": "工具与设计/平面设计.md",
+      "heading": "开源工具的分工与边界",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261023-001",
+      "path": "系统与运维/Linux.md",
+      "heading": "学习路线：从零基础到独立管理服务器",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261023-002",
+      "path": "生活与健康/宠物食品.md",
+      "heading": "猫粮品牌排名的三种口径",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261024-001",
+      "path": "软件开发/前端开发.md",
+      "heading": "网页端三维地球仪与地图的开源库选型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261025-001",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "Codex 的完整访问权限设置",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261025-002",
+      "path": "工具与设计/笔记本电脑.md",
+      "heading": "程序员选型：先筛系统与架构",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261025-003",
+      "path": "AI 与模型/MCP.md",
+      "heading": "学习路线：从接入到扩展",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-001",
+      "path": "AI 与模型/AI 模型.md",
+      "heading": "智谱下一代模型动向",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-002",
+      "path": "软件开发/编程学习.md",
+      "heading": "李刚\"疯狂\"系列编程书籍的网上读者评价",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-003",
+      "path": "学习与人文/研究生考试.md",
+      "heading": "退役大学生士兵考研优待的适用条件",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-004",
+      "path": "生活与健康/数字使用与自控.md",
+      "heading": "如何戒除抖音等短视频成瘾",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-005",
+      "path": "工具与设计/电脑性能测试.md",
+      "heading": "按负载选择基准测试工具",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-006",
+      "path": "工具与设计/电脑性能测试.md",
+      "heading": "PassMark 整机 8994.2 分的解读",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-007",
+      "path": "系统与运维/GIS.md",
+      "heading": "免费私有化部署的 GIS 服务选型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-008",
+      "path": "系统与运维/GIS.md",
+      "heading": "GIS 是什么：与地图、GIS 服务的关系",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-009",
+      "path": "系统与运维/Windows.md",
+      "heading": "专业版与家庭版：按需求选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-010",
+      "path": "工具与设计/Navicat.md",
+      "heading": "最新版本的核实",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-011",
+      "path": "社会与财经/兵役与退役保障.md",
+      "heading": "参军的个人收益与制度取舍",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261026-012",
+      "path": "学习与人文/英语学习.md",
+      "heading": "新概念英语的自学路径与资源选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-001",
+      "path": "系统与运维/WSL.md",
+      "heading": "在 Windows 本机打开 WSL 完整 Linux 桌面",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-002",
+      "path": "系统与运维/WSL.md",
+      "heading": "WSL 内存占用与开发容器按需启动",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-003",
+      "path": "系统与运维/Windows.md",
+      "heading": "清理与优化工具：按用途选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-004",
+      "path": "系统与运维/Windows.md",
+      "heading": "内存回涨与 WSL 常驻服务：诊断与按需启动",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-005",
+      "path": "AI 与模型/MCP.md",
+      "heading": "数据层无状态：每请求自带版本与能力",
+      "补入块": 17,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-006",
+      "path": "AI 与模型/MCP.md",
+      "heading": "MCP 与 HTTP：消息层本体与传输绑定",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261027-007",
+      "path": "软件开发/Git.md",
+      "heading": "Pull Request：从建分支到合并",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261028-001",
+      "path": "社会与财经/美国政治.md",
+      "heading": "中期选举的意义：不换总统，换国会",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261028-002",
+      "path": "社会与财经/证券市场.md",
+      "heading": "美股与市值：三个代码、一个市值",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261028-003",
+      "path": "工具与设计/技术写作.md",
+      "heading": "文档站生成器选型",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-001",
+      "path": "软件开发/java/jvm.md",
+      "heading": "跨平台与 HotSpot 运行时优化",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-002",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "ZCode 与 Claude Code 的差距",
+      "补入块": 5,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-003",
+      "path": "系统与运维/WSL.md",
+      "heading": "Windows 与 WSL 的文件互通",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-004",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "Windows 与 WSL：统一配置与性能",
+      "补入块": 20,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-005",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "跨智能体共享技能：项目 .agents/skills",
+      "补入块": 4,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261029-006",
+      "path": "AI 与模型/AI 编程.md",
+      "heading": "Codex 桌面端与 CLI 的分工",
+      "补入块": 2,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261030-001",
+      "path": "系统与运维/WSL.md",
+      "heading": "`文件名:Zone.Identifier` 文件的来历与处理",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261030-002",
+      "path": "工具与设计/输入法.md",
+      "heading": "打字顺便学外语：青简是该细分最完整的选择",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261030-003",
+      "path": "生活与健康/力量训练.md",
+      "heading": "轻负荷与重负荷都力竭时，增肌效果是否相同",
+      "补入块": 1,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261030-004",
+      "path": "AI 与模型/Claude Code.md",
+      "heading": "VPS 防封号：信号与规则两层",
+      "补入块": 3,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261030-005",
+      "path": "社会与财经/虚拟货币.md",
+      "heading": "主流虚拟货币的格局与分类",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261101-001",
+      "path": "系统与运维/VPS.md",
+      "heading": "家宽动态 IP 与 DDNS",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261101-002",
+      "path": "系统与运维/Linux.md",
+      "heading": "rg 不可用是什么意思",
+      "补入块": 5,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261101-003",
+      "path": "软件开发/java/java-se/图形化.md",
+      "heading": "Java 图形化编程",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    },
+    {
+      "id": "q-20261101-004",
+      "path": "生活与健康/男性健康.md",
+      "heading": "30 岁+男性如何科学提高睾酮",
+      "补入块": 0,
+      "处理": "以现有主题小节为基础，补入差异、来源与核实；正文不存入提问记录"
+    }
+  ],
+  "integrated_appendices": [
+    {
+      "source": "附录/q-20260922-003.md",
+      "source_sha256": "8764a79005e6448e9f75b471e8a00ea56323ad7ef0a8b85ebfdff6d466f5c46b",
+      "article": "docs/学习与人文/数学.md",
+      "处理": "原附录内容已在主题文章中展开，仅补齐差异，不保留重复全文"
+    },
+    {
+      "source": "附录/q-20260922-006.md",
+      "source_sha256": "bbbaadc9c688c3979185073a4587f50c56f89e78039454ee1906d2905a031021",
+      "article": "docs/安全与认证/OAuth.md",
+      "处理": "原附录内容已在主题文章中展开，仅补齐差异，不保留重复全文"
+    },
+    {
+      "source": "附录/q-20260923-004.md",
+      "source_sha256": "962e7b1bb3a45c7b9faec0d9c98b8f9f32aeb3bae113be4ffb2f697fccb96779",
+      "article": "docs/软件开发/java/spring.md",
+      "处理": "原附录内容已在主题文章中展开，仅补齐差异，不保留重复全文"
+    }
+  ],
+  "字段差异处理": "另核对并补齐 56 块来源、局部核实、修正历史及被压缩的知识字段；原始追问归入提问记录。"
+}

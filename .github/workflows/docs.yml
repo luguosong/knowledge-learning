@@ -24,7 +24,8 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install zensical==0.0.74
-      - run: zensical build --clean
+      - run: python3 站点/工具/backlinks.py
+      - run: zensical build --clean --strict
         working-directory: 站点
       - uses: actions/upload-pages-artifact@v3
         with:

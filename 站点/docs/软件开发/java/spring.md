@@ -20,7 +20,7 @@ Spring 官方把起点追溯到对早期 J2EE 复杂性的回应：
 ### 分工与前置
 
 - **Spring Framework** 提供控制反转（Inversion of Control，IoC）容器、面向切面编程（Aspect-Oriented Programming，AOP）、事务、Web MVC / WebFlux、测试和集成抽象；**Spring Boot** 负责应用启动、自动配置、依赖管理与生产支持；**Spring Data、Security、Cloud 等**是独立项目。先掌握 Framework，才能解释 Boot 和其他项目的行为。见 [Framework 目录（一手）](https://docs.spring.io/spring-framework/reference/)、[项目目录（一手）](https://spring.io/projects)。
-- 前置知识：Java SE 的反射、注解、泛型、异常、并发；Maven 或 Gradle；HTTP、Servlet / Filter；SQL、JDBC、数据库事务；JUnit。先能写出不依赖 Spring 的小型服务，再观察 Spring 消除了哪些重复工作。
+- 前置知识：[Java SE](java-se/语言与标准库.md) 的反射、注解、泛型、异常、并发；Maven 或 Gradle；HTTP、Servlet / Filter；SQL、JDBC、数据库事务；JUnit。先能写出不依赖 Spring 的小型服务，再观察 Spring 消除了哪些重复工作。
 - 固定一个项目版本做实验，再查该版本文档。进入 Spring Cloud 时，必须核对其发布列车与 Boot 的兼容表，使用对应 BOM。见 [Boot 系统要求（一手）](https://docs.spring.io/spring-boot/system-requirements.html)、[Cloud 兼容表（一手）](https://spring.io/projects/spring-cloud/)。
 
 ### 主线：八个阶段
@@ -118,7 +118,7 @@ Spring 官方把起点追溯到对早期 J2EE 复杂性的回应：
 
 ## JDK 25 支持现状：Spring 各线
 
-**结论**：Spring 各线支持 JDK 25，且 JDK 25 是官方推荐的生产版本。新项目组合（2026-10）：JDK 25 + Boot 4.1 + Cloud 2025.1.x BOM。
+**结论**：Spring 各线支持 JDK 25，且 JDK 25 是官方推荐的生产版本（[JDK 版本演化](java-se/jdk.md)）。新项目组合（2026-10）：JDK 25 + Boot 4.1 + Cloud 2025.1.x BOM。
 
 ### 各线支持对照
 

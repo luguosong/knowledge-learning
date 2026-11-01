@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """构建期反向链接生成器。
 
-扫描 站点/docs 下文章间的站内相对链接，向每个被引用页面末尾追加
-「引用本页的页面」小节。生成块带标记注释，重跑时先剥离旧块再生成（幂等）。
-产物只进构建副本，不提交入库：CI 在 zensical build 前运行本脚本。
+扫描 站点/docs 下文章间的站内相对链接，向每个被引用文章末尾追加
+「引用本页的文章」小节。生成块带标记注释，重跑时先剥离旧块再生成（幂等）。
+生成块不提交入库：CI 在 zensical build 前对检出副本运行本脚本。
+本地预览同样先运行再构建，提交前用 git checkout -- 站点/docs 撤销生成块。
 
 用法：python3 站点/工具/backlinks.py [--selftest]
 """
@@ -15,7 +16,7 @@ from pathlib import Path
 
 MARK_START = "<!-- backlinks:start -->"
 MARK_END = "<!-- backlinks:end -->"
-SECTION_TITLE = "## 引用本页的页面"
+SECTION_TITLE = "## 引用本页的文章"
 LINK_RE = re.compile(r"(?<!\!)\[[^\]]*\]\(([^)]+)\)")
 EXTERNAL = ("http://", "https://", "mailto:")
 

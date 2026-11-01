@@ -1,6 +1,6 @@
 # Java
 
-Java 专题收拢 Java 家族的文章：[Java SE：语言与标准库](java-se/语言与标准库.md)、[JDK：版本演化与类库体系](java-se/jdk.md)、[Java 图形化编程](java-se/图形化.md)、[JVM](jvm.md)、[Java 日志](日志.md)与 [Spring](spring.md)。Java 领域围绕服务端 Java 展开：专家学习路线、日志体系、虚拟机机制与企业平台规范。主线是先形成可测试的服务，再以故障诊断与设计取舍深化专项；知识清单不等于已经掌握。本页只放路线、书籍与家族概览，具体知识见上述文章。
+Java 专题收拢 Java 家族的文章：[Java SE：语言与标准库](java-se/语言与标准库.md)、[JDK：版本演化与类库体系](java-se/jdk.md)、[Java 图形化编程](java-se/图形化.md)、[JVM](jvm.md)、[Java 日志](日志.md)、[Spring](spring.md) 与 [Java EE 与 Tomcat](java-ee.md)。Java 领域围绕服务端 Java 展开：专家学习路线、日志体系、虚拟机机制与企业平台规范。主线是先形成可测试的服务，再以故障诊断与设计取舍深化专项；知识清单不等于已经掌握。本导读只放路线、书籍与家族概览，具体知识见上述文章。
 
 ## Java 专家的学习路线：18 个领域与专项
 
@@ -129,26 +129,3 @@ Java 标准版（Java Platform, Standard Edition，Java SE）的细化路线是�
 信源（核实日期 2026-10-14）：一手——[Core Java 第 13 版付印公告（Horstmann 博客）](https://horstmann.com/unblog/2024-06-22/index.html)、[jcip.net](https://jcip.net)、[TIJ4 官方示例代码仓库](https://github.com/BruceEckel/TIJ4-code)、[Head First Java 第 3 版目录页](https://www.oreilly.com/library/view/head-first-java/9781492091646)、[Core Java 第 13 版电子版收录页](https://learning.oreilly.com/library/view/core-java-volume/9780135371671)；二手（书目信息）——[On Java 中文版基础卷（豆瓣）](https://m.douban.com/book/subject/35751619/reviews)、[《Java核心技术：基础知识》第 12 版中文（百度百科）](https://baike.baidu.com/item/JAVA%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15269293)、[京东第 13 版英文版页](https://www.jd.com/hprm/17134fd314da8236f1a6.html)。
 
 
-## Java EE 与 Tomcat：规范与实现的关系
-
-**结论**：Java 企业版（Java Platform, Enterprise Edition，Java EE，现 Jakarta EE）是一组规范，不是软件；Tomcat 是实现其中 Web 层子集（Servlet、JSP、EL、WebSocket）的开源 Servlet 容器。完整实现全部规范的软件叫应用服务器（如 GlassFish、WildFly、WebLogic）。Tomcat 听得多而 Java EE 听得少，因为：Tomcat 是可安装运行的具体产品、是 Web 子集的事实标准且被 Spring Boot 默认内嵌；「Java EE」之名已停用，完整平台话题又被 Spring 分流。
-
-名称与归属演变：
-
-```text
-1999 Sun 发布 J2EE 1.2
-  > 2006 J2EE 更名 Java EE（Java EE 5 起）
-  > 2017 Oracle 将 Java EE 移交 Eclipse 基金会（EE4J 项目）
-  > 2019 更名 Jakarta EE，首版 Jakarta EE 8 与 Java EE 8 规范一致
-  > 2020 Jakarta EE 9 起，命名空间 javax 改为 jakarta
-  > 2026 Tomcat 11 对应 Jakarta EE 11 的 Web 层规范
-```
-
-Tomcat 与规范版本对应：Tomcat 9 对应 Java EE 8（Servlet 4.0，最后一个支持 `javax` 命名空间的大版本）；Tomcat 10.1 对应 Jakarta EE 10（Servlet 6.0）；Tomcat 11 对应 Jakarta EE 11（Servlet 6.1）。学习方向应按实际工程需求选择。
-
-信源：
-
-- [Apache Tomcat 版本与规范对应（一手）](https://tomcat.apache.org/whichversion.html)
-- [Jakarta EE 官网（一手）](https://jakarta.ee/)
-- [Jakarta EE About（一手）](https://jakarta.ee/about/)
-- [Eclipse Foundation 博客：Java EE Moves to the Eclipse Foundation（一手，2017-09-12）](https://eclipse-foundation.blog/2017/09/12/java-ee-moves-to-the-eclipse-foundation)

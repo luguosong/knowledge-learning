@@ -10,6 +10,7 @@ export const meta = {
 }
 
 const ROOT = "/home/luguosong/code-wsl/personal/知识学习"
+const OPS = ["merge", "split", "fission", "collapse"]
 
 const UPDATE_SCHEMA = {
   type: "object",
@@ -29,7 +30,7 @@ const OPS_SCHEMA = {
       items: {
         type: "object",
         properties: {
-          op: { type: "string", enum: ["merge", "split", "fission", "collapse"] },
+          op: { type: "string", enum: OPS },
           sources: { type: "array", items: { type: "string" } },
           target: { type: "string" },
           reason: { type: "string" },
@@ -75,7 +76,7 @@ function updatePrompt(d) {
     "2. 文章已存在时：先 grep 它的小节标题（^## ），与目录的问题清单对比；只为缺失或主题已变的问题读 提问记录/条目/ 对应文件；综述有变则重写导语（至多 120 字）。",
     "3. 文章不存在时：按目录读全部问题新建文章（以 \"# " + d + "\" 开头，不用 frontmatter，含导语）。落位：优先放入同族专题目录（如 Java 家族 → 站点/docs/软件开发/java/，成员见其 .nav.yml），否则放最贴切的分类目录根，路径 <目录>/" + d + ".md。分类即顶部导航（八类固定，不新建）；可在专题内新建小写英文子目录并配 .nav.yml（首条「导读: index.md」）。",
     "",
-    "写作规范：每问题一节（主题化标题，不用日期），讲结论、原因与取舍，保留条件、单位、限制与例外；关键信源为 Markdown 链接并保留一手/二手标注；复杂结构用 text 代码块 ASCII 图；短句、一词一义；术语首次出现写「中文名（English Name，缩写）」。跨文章知识遵守归属页规则：知识点已有专门文章时，本文只写一句话并附相对链接（如 [JVM](../jvm.md)），完整解释只在归属文章出现一次。",
+    "写作规范：每问题一节（主题化标题，不用日期），讲结论、原因与取舍，保留条件、单位、限制与例外；关键信源为 Markdown 链接并保留一手/二手标注；复杂结构用 text 代码块 ASCII 图；短句、一词一义；术语首次出现写「中文名（English Name，缩写）」。跨文章知识遵守归属页规则：知识点已有专门文章时，本文只写一句话并附相对链接（如 [JVM](../jvm.md)），完整解释只在归属页出现一次。",
     "铁律：不引入记录中没有的结论；矛盾并列并注明；禁止把 [[...]] wiki 链接原样写入；内容性改写仅限本文。",
     "",
     "返回 JSON：domain、updated（新增或改写的小节数）、notes（结构异常说明，如文章过长含多个子主题，可空）。",
@@ -92,7 +93,7 @@ const structPrompt = [
   "- fission：split 条件成立且文章名即主题锚点（位于分类根或专题根、无同名目录）时裂变：新建同名小写英文目录，概览/路线内容改写为 index.md 导读（一句话介绍 + 指向全部成员文章的链接，不承载具体知识解释），其余小节各自成篇放入，配 .nav.yml（首条「导读: index.md」，成员按学习顺序）。",
   "- collapse：专题目录经合并后只剩一篇文章时，收回为上级目录的同名单文件，删除空目录及其 .nav.yml。",
   "4. 不确定则不动；操作之间不得共享源文件。",
-  "返回 ops：op（merge/split）、sources、target、reason（split 时含新文件名清单）。",
+  "返回 ops：op（" + OPS.join("/") + "）、sources、target、reason（split/fission 时含新文件或目录名清单）。",
 ].join("\n")
 
 function applyPrompt(op) {

@@ -1,0 +1,21 @@
+/* 霞鹜文楷（LXGW WenKai）：官方配色方案下的全站字体 */
+:root {
+  --md-text-font: "LXGW WenKai";
+  --md-code-font: "LXGW WenKai Mono";
+  --md-text-font-family: "LXGW WenKai", "Kaiti SC", KaiTi, STKaiti, serif;
+  --md-code-font-family: "LXGW WenKai Mono", ui-monospace, "Cascadia Mono", monospace;
+}
+
+body {
+  font-family: var(--md-text-font-family);
+}
+
+.md-typeset {
+  line-height: 1.9;
+}
+
+.md-typeset pre > code,
+.md-typeset code,
+.md-typeset kbd {
+  font-family: var(--md-code-font-family);
+}

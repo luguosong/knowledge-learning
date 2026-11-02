@@ -8,7 +8,7 @@
 
 地理信息系统（Geographic Information System，GIS）采集、管理、分析与展示位置相关数据，核心是把位置与属性连接起来。地图只是 GIS 的展示方式之一；GIS 服务通过网络向其他程序提供地图、数据与处理能力。主线：概念边界与免费私有化部署选型。
 
-## GIS 是什么：与地图、GIS 服务的关系
+## GIS 的概念与地图、GIS 服务的分工
 
 **结论**：GIS 用于采集、管理、分析和展示与地理位置有关的数据。核心是把位置与描述对象的属性连接起来，再通过空间关系支持距离、范围、覆盖和选址等空间分析与查询。
 
@@ -17,7 +17,7 @@
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: GIS 是什么：与地图、GIS 服务的关系
+    accTitle: GIS 的概念与地图、GIS 服务的分工
     gis["GIS：地理信息系统"]:::input
     gis --- pipeline["采集 > 管理 > 分析 > 展示"]:::note
     gis -->|空间分析：距离、范围、覆盖、选址| decision["查询与决策"]:::result
@@ -92,4 +92,4 @@ flowchart TB
 - **领域**：GIS
 - **首次**：2026-10-26
 - **更新**：2026-10-26
-- **正文**：[GIS 是什么：与地图、GIS 服务的关系](#gis-是什么与地图gis-服务的关系)
+- **正文**：[GIS 的概念与地图、GIS 服务的分工](#gis-的概念与地图gis-服务的分工)

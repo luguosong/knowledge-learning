@@ -83,23 +83,16 @@ flowchart TB
 | Bolt.new | StackBlitz | 在浏览器中构建网站和应用，集成数据库与发布；[官方帮助](https://support.bolt.new/) |
 | v0 | Vercel | 生成可预览的网站/应用代码，通过执行反馈修复生成错误；[官方工程说明](https://vercel.com/blog/how-we-made-v0-an-effective-coding-agent) |
 
-旧名称与服务状态：
+### 旧名称和服务状态
 
-- **Windsurf**：2026-06-02 官方发布 Devin Desktop，称为 Windsurf 的下一代；与 Devin 合并为一个产品系列计数。[一手：发布说明](https://cognition.com/blog/introducing-devin-desktop)
-- **通义灵码**：阿里云现行入口为 Qoder CN 系列，正文保留「原通义灵码」的产品关系，不另算新产品。[一手：现行文档](https://help.aliyun.com/zh/lingma)
-- **Roo Code**：官方仓库 2026-05-15 归档；原官网跳转至 Roomote。Roomote 标明 source-available，不能据此称其为开源。[一手：仓库](https://github.com/RooCodeInc/Roo-Code)
-- **iFlow CLI**：官方 2026-04-17 关闭托管模型调用、搜索等服务；现存客户端仍支持 OpenAI 兼容自定义模型。[一手：公告](https://vibex.iflow.cn/t/topic/5753)
+- Windsurf：2026-06-02 官方发布 Devin Desktop，称为 Windsurf 的下一代；与 Devin 合并为一个产品系列计数。[一手：发布说明](https://cognition.com/blog/introducing-devin-desktop)
+- 通义灵码：阿里云现行入口为 Qoder CN 系列，正文保留「原通义灵码」的产品关系，不将旧名称另算新产品。[一手：现行文档](https://help.aliyun.com/zh/lingma)
+- Roo Code：官方仓库于 2026-05-15 归档，不列为持续维护的现行项目；原官网跳转至原作者的新产品 Roomote。Roomote 标明 source-available，不能据此称其为开源。[一手：仓库](https://github.com/RooCodeInc/Roo-Code)、[一手：Roomote](https://roomote.dev/)
+- iFlow CLI：官方于 2026-04-17 关闭托管模型调用、搜索等服务；现存客户端仍支持 OpenAI 兼容自定义模型。官网旧快速开始仍保留旧认证说明，按明确的官方停服公告判断服务状态。[一手：公告](https://vibex.iflow.cn/t/topic/5753)、[一手：仓库](https://github.com/iflow-ai/iflow-cli)
 
 边界：以上核实产品入口、公开能力、名称与公开服务状态；未安装实测，不做模型质量、成功率、价格或地区可用性排名。部分动态站点抓取失败，改用已读取的第一方文档或官方工程文章作依据。
 
 信源（一手）：[Claude Code 概览](https://code.claude.com/docs/en/overview)、[Codex CLI](https://learn.chatgpt.com/docs/codex/cli)、[TraeCode 概览](https://docs.trae.cn/ide_what-is-trae-code)、[Qoder CN 现行文档](https://help.aliyun.com/zh/lingma)、[Devin Desktop 发布说明](https://cognition.com/blog/introducing-devin-desktop)。
-
-### 旧名称和服务状态
-
-- Windsurf：2026-06-02 官方发布 Devin Desktop，称为 Windsurf 的下一代；这里与 Devin 合并成一个产品系列计数。[一手：公告](https://cognition.com/blog/introducing-devin-desktop)
-- 通义灵码：阿里云现行入口标题为 Qoder CN 系列，正文仍保留“原通义灵码”的产品关系，不将旧名称另算一个新产品。[一手：现行文档](https://help.aliyun.com/zh/lingma)
-- Roo Code：官方仓库于 2026-05-15 归档，不列为持续维护的现行项目；原官网跳转至原作者的新产品 Roomote。Roomote 标明 source-available，不能直接据此称其为开源。[一手：仓库](https://github.com/RooCodeInc/Roo-Code)、[Roomote](https://roomote.dev/)
-- iFlow CLI：官方于 2026-04-17 关闭托管模型调用、搜索等服务；现存客户端仍支持 OpenAI 兼容自定义模型。官网旧快速开始仍保留旧认证说明，本次按明确的官方停服公告判断服务状态。[一手：公告](https://vibex.iflow.cn/t/topic/5753)、[仓库](https://github.com/iflow-ai/iflow-cli)
 
 ### 证据与时效 · q-20260922-004
 
@@ -140,9 +133,9 @@ OpenCode 支持多家在线模型提供商和本地模型；具体可用模型�
 
 ## ZCode 与 Claude Code 的差距
 
-应分开比较工具与模型两层。
+比较 ZCode 与 Claude Code 应分开工具与模型两层。
 
-产品形态：差距已基本对齐。
+### 产品形态：差距已基本对齐
 
 | 维度 | ZCode | Claude Code |
 | --- | --- | --- |
@@ -151,21 +144,27 @@ OpenCode 支持多家在线模型提供商和本地模型；具体可用模型�
 | 浏览器 | `zcode --web` 本地 Web UI | claude.ai/code 云端，无需本地环境 |
 | 扩展 | 技能（Skill）、UI 插件、模型上下文协议（Model Context Protocol，MCP）、子代理（MCP 与子代理为本会话 CLI 实测） | CLAUDE.md、技能、hooks、MCP、子代理 |
 
-修正记录：旧判断认为 Claude Code 多出云端托管运行、移动端 App、Slack/Channels 集成、Agent SDK、后台并行 agent、云端定时任务与 GitHub Actions/GitLab CI 集成。2026-10-29 修正：ZCode 已提供手机浏览器远控、微信/飞书 Bot Channel 和本地定时任务；手机远控不等于独立移动 App，本地定时不等于云端托管；未对 ZCode 全面排查的能力不能据此断言缺失。
+修正记录：旧判断认为 Claude Code 多出云端托管运行、移动端 App、Slack/Channels 集成、Agent SDK、后台并行 agent、云端定时任务与 GitHub Actions/GitLab CI 集成。2026-10-29 修正：不能把移动使用、聊天渠道和定时任务整体归为 ZCode 缺失能力。ZCode 已提供手机浏览器远控、微信／飞书 Bot Channel 和本地定时任务；手机远控不等于独立移动 App，本地定时也不等于云端托管。Claude Code 官方概览列有移动 App、云端与本地定时任务、Channels 和 Agent SDK，但未对 ZCode 全面排查的能力不能据此断言缺失。[一手：ZCode 自动化](https://zcode.z.ai/cn/docs/automations)、[一手：Remote Control](https://zcode.z.ai/cn/docs/remote-control)、[一手：Bot Channel](https://zcode.z.ai/cn/docs/bot-channel)、[一手：Claude Code 概览](https://code.claude.com/docs/en/overview)。
 
-成熟度与生态：
+### 成熟度与生态
 
 - Claude Code：2025-02-24 以 limited research preview 首发，此后约 20 个月周更级迭代（2.1.x 系列）。
 - ZCode：仓库公开版本记录自 2026-09-23（v3.14.3）起，2026-10-19 至 v3.16.2；8.3k stars。开源发生于 2026 年 9 月（媒体一致报道；「开源当日仓库仅两次提交」出自 The Next Web，二手，未核实）。
 - 智谱同时在 Claude Code 内运营官方插件市场（zai-coding-plugins），GLM 也可服务 Claude Code 用户。
 
-模型层：无法量化。
+### 模型层
 
-- Claude Code 终端与 IDE 入口支持第三方提供商；智谱提供 GLM Coding Plan 的兼容接口接入教程。因此 GLM 的价格、国内服务与模型能力不能算作 ZCode 的独有优势；也不能把「有兼容接入方式」外推为任意模型与全部功能无条件兼容。
+模型层差距无法量化。
+
+- Claude Code 终端与 IDE 入口支持第三方提供商；智谱提供 GLM Coding Plan 的兼容接口接入教程，ZCode 官网也明确套餐支持 ZCode、Claude Code 等多种工具。因此 GLM 的价格、国内服务与模型能力不能算作 ZCode 的独有优势，不能单独构成改用 ZCode 的理由；也不能把「有兼容接入方式」外推为任意模型与全部功能无条件兼容。[一手：智谱接入教程](https://docs.bigmodel.cn/cn/coding-plan/tool/claude)、[一手：ZCode 官网](https://zcode.z.ai/cn)
 - ZCode 工具免费；自配智谱服务（GLM Coding Plan 等）、OpenAI 兼容端点或 Anthropic 端点。
 - 已核实的同条件对比仅有小模型层：GLM-5.3-Flash 对 Claude Haiku 5.5，Haiku 5.5 多数项领先，GDPval-AA v2.1 上 GLM 略高。不能外推到双方旗舰模型。
 
-为什么还用 ZCode：闲时任务。符合资格的 Coding Plan 订阅用户把不紧急的本地任务排队执行，自动执行不消耗套餐额度。适用条件与限制（均据官方文档，2026-10-29 核实）：
+### 闲时任务
+
+ZCode 的差异化价值在闲时任务：把「不急于开始」换成「不消耗套餐额度」。符合资格的 Coding Plan 订阅用户把不紧急的本地任务排队执行，自动执行不消耗套餐额度；代码库分析、批量注释和文档同步检查等任务可以交给队列。适合已有套餐且有此类工作的人；这是一项套餐权益理由，未实测其任务质量，也未核实同模型比较中 ZCode 更强。[一手：闲时任务](https://zcode.z.ai/cn/docs/idle-time-tasks)（2026-10-29 核实，面向订阅用户分批开放）
+
+适用条件与限制（均据官方文档，2026-10-29 核实）：
 
 - 需要有效的 ZAI 或 BigModel 个人 Coding Plan；Start Plan 和纯 API Key 模式不支持；团队套餐支持分批开放中。
 - 只支持桌面端本地项目；电脑必须保持唤醒。
@@ -173,25 +172,14 @@ OpenCode 支持多家在线模型提供商和本地模型；具体可用模型�
 - 自动执行与分段续跑不扣套餐额度；用户主动发送的追加消息及其驱动的执行正常计入额度；权限确认属于免费自动执行。
 - 闲时通道实际使用的模型由服务端统一指定，不保证使用会话界面显示的自选模型；支持前台子代理，不支持后台子代理。
 
-结论：形态差距已对齐；模型层差距没有已核实数据；日常任务两者均可用，选型取决于模型偏好、预算与网络条件。如果已用顺 Claude Code + GLM，又不需要闲时任务或其他经实际验证的 ZCode 工作流，现有证据不足以支持迁移。官方「深度联调」是厂商表述，不能替代同模型、同仓库、同任务的实测。
-
-信源（一手）：[zai-org/ZCode 仓库](https://github.com/zai-org/ZCode)、[ZCode 官方问答](https://zcode.z.ai/cn/docs/qa)、[Claude Code 概览](https://code.claude.com/docs/en/overview)、[Anthropic 2025-02-24 公告](https://www.anthropic.com/news/claude-3-7-sonnet)、[智谱：Claude Code 接入 GLM Coding Plan](https://docs.bigmodel.cn/cn/coding-plan/tool/claude)、[ZCode 闲时任务](https://zcode.z.ai/cn/docs/idle-time-tasks)、[ZCode 自动化](https://zcode.z.ai/cn/docs/automations)、[Remote Control](https://zcode.z.ai/cn/docs/remote-control)、[Bot Channel](https://zcode.z.ai/cn/docs/bot-channel)。
-
-### 产品形态：差距已基本对齐
-
-修正：不能把移动使用、聊天渠道和定时任务整体归为 ZCode 缺失能力。ZCode 已提供手机浏览器远控、微信／飞书 Bot Channel 和本地定时任务；手机远控不等于独立移动 App，本地定时也不等于云端托管。Claude Code 官方概览列有移动 App、云端与本地定时任务、Channels 和 Agent SDK，但未对 ZCode 全面排查的能力不能据此断言缺失。[一手：ZCode 自动化](https://zcode.z.ai/cn/docs/automations)、[一手：Remote Control](https://zcode.z.ai/cn/docs/remote-control)、[一手：Bot Channel](https://zcode.z.ai/cn/docs/bot-channel)、[一手：Claude Code 概览](https://code.claude.com/docs/en/overview)。
-
-### 结论
+### 结论与修正历史
 
 - 历史结论（已被 2026-10-29 修正）：差距存在：打磨时间（约 20 个月对 1 个多月）、功能广度（云端、移动、SDK、定时任务）、社区与生态规模。修正原因：公开仓库历史不等于产品开发时长；功能存在性必须逐项核实，ZCode 已有手机远控、本地定时和聊天渠道，不能把旧清单直接当作当前能力差距。
 - 形态差距已对齐：三端入口与核心扩展机制齐备。
-- 模型层差距没有已核实数据；日常任务两者均可用，选型取决于模型偏好、预算与网络条件。
+- 模型层差距没有已核实数据；日常任务两者均可用，选型取决于模型偏好、预算与网络条件。如果已用顺 Claude Code + GLM，又不需要闲时任务或其他经实际验证的 ZCode 工作流，现有证据不足以支持迁移。
+- 官方「深度联调」是厂商表述，不能替代同模型、同仓库、同任务的实测。
 
-### 2026-10-29 追问：既然 Claude Code 能接 GLM，为什么还用 ZCode？
-
-**事实**：智谱官方文档说明如何在 Claude Code 中使用 GLM Coding Plan。ZCode 官网也明确套餐支持 ZCode、Claude Code 等多种工具。因此，GLM 的基础价格、国内服务和模型能力不能单独构成改用 ZCode 的理由。[一手：智谱接入教程](https://docs.bigmodel.cn/cn/coding-plan/tool/claude)、[一手：ZCode 官网](https://zcode.z.ai/cn)。
-
-**具体理由**：ZCode 闲时任务把“不急于开始”换成“不消耗套餐额度”。例如代码库分析、批量注释和文档同步检查可以交给队列。适合已有套餐且有此类工作的人；这是一项套餐权益理由，本次未实测其任务质量，也未核实同模型比较中 ZCode 更强。[一手：闲时任务](https://zcode.z.ai/cn/docs/idle-time-tasks)（2026-10-29 核实，面向订阅用户分批开放）。
+信源（一手）：[zai-org/ZCode 仓库](https://github.com/zai-org/ZCode)、[ZCode 官方问答](https://zcode.z.ai/cn/docs/qa)、[Claude Code 概览](https://code.claude.com/docs/en/overview)、[Anthropic 2025-02-24 公告](https://www.anthropic.com/news/claude-3-7-sonnet)、[智谱：Claude Code 接入 GLM Coding Plan](https://docs.bigmodel.cn/cn/coding-plan/tool/claude)、[ZCode 闲时任务](https://zcode.z.ai/cn/docs/idle-time-tasks)、[ZCode 自动化](https://zcode.z.ai/cn/docs/automations)、[Remote Control](https://zcode.z.ai/cn/docs/remote-control)、[Bot Channel](https://zcode.z.ai/cn/docs/bot-channel)。
 
 ### 核查范围
 
@@ -235,26 +223,9 @@ CLI 版另有可选的单一可执行应用（Single Executable Application，SE
 
 - **信源**：[一手] [ZCode 仓库 README](https://github.com/zai-org/ZCode/blob/master/README.md)、[packages/desktop/package.json](https://github.com/zai-org/ZCode/blob/master/packages/desktop/package.json)、[apps/zcode-cli/package.json](https://github.com/zai-org/ZCode/blob/master/apps/zcode-cli/package.json)
 
-## Codex 的完整访问权限设置
-
-Codex 的 Full access 对应两个配置：`approval_policy = "never"` 与 `sandbox_mode = "danger-full-access"`。
-
-- 终端启动：`codex --yolo`（即 `--dangerously-bypass-approvals-and-sandbox`）。
-- 桌面/IDE：在输入框下方权限菜单选择 Full access。
-- CLI 会话内：`/permissions`。
-- 默认值写入用户 `~/.codex/config.toml` 顶层。
-
-限制：`never` 仅关闭审批；必须同时取消沙箱才是完整访问。命令行参数、项目配置及组织强制要求仍可能影响结果。产品变更快，具体配置按问题日期（2026-10-25）重新核实。
-
-信源（一手）：[Sandbox](https://learn.chatgpt.com/docs/sandboxing)、[Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)、[Config basics](https://learn.chatgpt.com/docs/config-file/config-basic)。
-
-### 证据与时效 · q-20261025-001
-
-- **信源**：[一手] [OpenAI 官方文档：Sandbox](https://learn.chatgpt.com/docs/sandboxing)；[一手] [OpenAI 官方文档：Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)；[一手] [OpenAI 官方文档：Config basics](https://learn.chatgpt.com/docs/config-file/config-basic)
-
 ## Codex 桌面端与 CLI 的分工
 
-ChatGPT desktop app 内可选择 ChatGPT 或 Codex；本文比较其中的 Codex 与 CLI。两者共享底层 Codex 代理框架：App、CLI 和 IDE 扩展使用同一框架。宿主仍提供不同的界面、上下文、工具和执行边界；共享框架不能证明行为一致，也不能证明某一入口编码质量更高。比较任务质量时应固定模型、推理强度、指令、工具、权限及执行环境。
+现行官方桌面入口称为 ChatGPT desktop app，应用内可选择 ChatGPT 或 Codex；本文比较其中的 Codex 与 CLI，不把普通 Chat 模式的能力代入本地 Codex。[一手：桌面应用](https://learn.chatgpt.com/docs/app) 两者共享底层 Codex 代理框架：App、CLI 和 IDE 扩展使用同一框架。宿主仍提供不同的界面、上下文、工具和执行边界；共享框架不能证明行为一致，也不能证明某一入口编码质量更高。比较任务质量时应固定模型、推理强度、指令、工具、权限及执行环境。
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
@@ -280,7 +251,7 @@ flowchart TB
 | 脚本集成 | 适合通过聊天持续指导和查看执行结果 | `codex exec` 支持标准输入输出、JSONL 事件和按 JSON Schema 约束最终结果，可用于持续集成（Continuous Integration，CI） | [Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode) |
 | 扩展与并行 | 支持技能、插件和子智能体；通过应用界面查看活动 | 同样支持技能、插件、模型上下文协议（Model Context Protocol，MCP）和子智能体；交互会话可用 `/subagents` 查看 | [Skills & Plugins](https://learn.chatgpt.com/docs/skills-and-plugins)、[Projects and chats](https://learn.chatgpt.com/docs/projects)、[Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) |
 
-注意：当前 CLI 已支持图片输入和联网搜索，不能概括为只能处理纯文本。桌面端还可通过 Computer Use 插件操作图形界面：官方说明支持地区内的 macOS、Windows 可在 ChatGPT Work 和 Codex 中使用，Windows 使用活动桌面前台；未核实 CLI 有等价的原生集成。
+注意：当前 CLI 已支持图片输入和联网搜索，不能概括为只能处理纯文本或无法获取网页信息。[一手：CLI 概览](https://learn.chatgpt.com/docs/cli) 桌面端还可通过 Computer Use 插件操作图形界面：官方说明支持地区内的 macOS、Windows 可在 ChatGPT Work 和 Codex 中使用，Windows 使用活动桌面前台；未核实 CLI 有等价的原生集成。
 
 登录与计费：两者本地工作均支持 ChatGPT 登录与 API key 登录。ChatGPT 登录使用适用订阅权益；API key 按 API 用量计费，部分依赖 ChatGPT 工作区或云端服务的能力受限。「CLI 必须另买 API」与「桌面端只能用订阅」都不成立。
 
@@ -288,19 +259,28 @@ flowchart TB
 
 信源（一手）：[Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform)、[ChatGPT desktop app](https://learn.chatgpt.com/docs/app)、[Codex CLI](https://learn.chatgpt.com/docs/cli)、[Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode)、[Browser](https://learn.chatgpt.com/docs/browser)、[Authentication](https://learn.chatgpt.com/docs/auth)。
 
-### 比较范围与核心判断
-
-现行官方桌面入口称为 ChatGPT desktop app，应用内可以选择 ChatGPT 或 Codex。本文比较其中的 Codex 与命令行界面（Command-Line Interface，CLI），不把普通 Chat 模式的能力代入本地 Codex。[一手：桌面应用](https://learn.chatgpt.com/docs/app)
-
-### 实际差异
-
-当前 CLI 已支持图片输入和联网搜索，因此不能把 CLI 概括为只能处理纯文本或无法获取网页信息。[一手：CLI 概览](https://learn.chatgpt.com/docs/cli)
-
 ### 证据与时效 · q-20261029-006
 
 - **信源**：[一手] [OpenAI：Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform)；[一手] [ChatGPT desktop app](https://learn.chatgpt.com/docs/app)；[一手] [Codex CLI](https://learn.chatgpt.com/docs/cli)；各维度的具体依据见正文。
 - **核实**：2026-10-29；查看 OpenAI 官方现行文档及其 Markdown 正文。范围为 ChatGPT desktop app 中的 Codex 与 Codex CLI；不把 ChatGPT 普通 Chat、Work 云端与本地 Codex 混成同一种执行方式。没有核验用户当前安装的版本、账户功能或同模型实测成绩。
 - 原记录资料（未在迁移时复核）：[一手：Computer Use](https://learn.chatgpt.com/docs/computer-use)
+
+## Codex 的完整访问权限设置
+
+Codex 的 Full access 对应两个配置：`approval_policy = "never"` 与 `sandbox_mode = "danger-full-access"`。
+
+- 终端启动：`codex --yolo`（即 `--dangerously-bypass-approvals-and-sandbox`）。
+- 桌面/IDE：在输入框下方权限菜单选择 Full access。
+- CLI 会话内：`/permissions`。
+- 默认值写入用户 `~/.codex/config.toml` 顶层。
+
+限制：`never` 仅关闭审批；必须同时取消沙箱才是完整访问。命令行参数、项目配置及组织强制要求仍可能影响结果。产品变更快，具体配置按问题日期（2026-10-25）重新核实。
+
+信源（一手）：[Sandbox](https://learn.chatgpt.com/docs/sandboxing)、[Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)、[Config basics](https://learn.chatgpt.com/docs/config-file/config-basic)。
+
+### 证据与时效 · q-20261025-001
+
+- **信源**：[一手] [OpenAI 官方文档：Sandbox](https://learn.chatgpt.com/docs/sandboxing)；[一手] [OpenAI 官方文档：Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)；[一手] [OpenAI 官方文档：Config basics](https://learn.chatgpt.com/docs/config-file/config-basic)
 
 ## 跨智能体共享技能：项目 .agents/skills
 
@@ -333,43 +313,33 @@ flowchart LR
 | GitHub Copilot CLI | 官方创建／安装指南列出 `.github/skills`、`.claude/skills`、`.agents/skills` | 模型按任务与描述决定使用，新增后可用 `/skills reload`；本结论仅核实 CLI，不自动外推所有编辑器入口 |
 | Claude Code | 官方默认项目位置为 `.claude/skills/<name>/SKILL.md`；整页未检索到 `.agents/skills` | 原生直接扫描 `.agents/skills` 未核实；官方支持 `.claude/skills` 内的技能目录是指向别处的符号链接 |
 
+ZCode 桌面 Skill 页只突出用户级 `~/.zcode/skills` 与外部技能导入，不能据此断言 `.agents/skills` 不支持；该路径的正向依据来自官方仓库的 CLI 指南，桌面设置中的技能列表可作为实际版本的可见性核对入口。[一手：ZCode 桌面 Skill 文档](https://zcode.z.ai/cn/docs/skill)、[一手：CLI 指南适用范围](https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/README.md)
+
 「自动读取」分三个层次：
 
 1. **发现**：工具扫描支持的目录，检查格式与启用状态，把技能放入可用清单。
-2. **选择**：模型按名称、描述与当前任务判断是否使用，或用户显式指定；不能保证每次触发。
-3. **加载**：选用后才读取正文及所需资源；不等于执行技能内所有脚本。
-
-因此自动发现不等于正文常驻，也不等于每个相关请求必然调用。`AGENTS.md` 是项目指令文件，`.agents/skills/` 是技能发现目录；某工具会读 `AGENTS.md` 不能证明它也扫描 `.agents/skills`。长期共用方案：以 `.agents/skills` 为主存放位置，为缺少该默认发现入口的宿主增加其支持的技能目录链接。
-
-信源（一手）：[OpenAI：Build skills](https://learn.chatgpt.com/docs/build-skills)、[ZCode：Skills 使用指南](https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/08-skills.md)、[ZCode：桌面 Skill 管理](https://zcode.z.ai/cn/docs/skill)、[Cursor：Agent Skills](https://cursor.com/docs/skills)、[OpenCode：Agent Skills](https://docs.opencode.ai/docs/skills/)、[Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)、[GitHub Copilot CLI：添加技能](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)、[Claude Code：加载位置与链接](https://code.claude.com/docs/en/skills#choose-where-skills-load)。
-
-### 已核实的项目路径支持
-
-上表依据见本节来源记录。ZCode 桌面 Skill 页只突出用户级 `~/.zcode/skills` 与外部技能导入，不能据此断言 `.agents/skills` 不支持；该路径的正向依据来自官方仓库的 CLI 指南。桌面设置中的技能列表可作为实际版本的可见性核对入口。[一手：ZCode 桌面 Skill 文档](https://zcode.z.ai/cn/docs/skill)、[一手：CLI 指南适用范围](https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/README.md)
-
-### “自动读取”的三个层次
-
-1. **发现**：工具扫描支持的目录，检查格式与启用状态，把技能放入可用清单。
-2. **选择**：模型根据名称、描述与当前任务判断是否使用，或者用户显式指定。匹配依赖描述与宿主策略，不能保证每次触发。
+2. **选择**：模型按名称、描述与当前任务判断是否使用，或用户显式指定；匹配依赖描述与宿主策略，不能保证每次触发。
 3. **加载**：选用后才读取正文及所需资源；这不等于执行技能内所有脚本，也不自动保证它们在当前 Windows／WSL 环境都能运行。
 
 Codex 官方明确使用渐进披露；ZCode 官方说明每轮注入启用技能的元数据、正文按需加载；OpenCode 和 Copilot CLI 也区分清单与实际加载。[一手：OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills)、[一手：ZCode Skill](https://zcode.z.ai/cn/docs/skill)、[一手：OpenCode Skills](https://docs.opencode.ai/docs/skills/)、[一手：Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)
 
-`AGENTS.md` 是项目指令文件，`.agents/skills/` 是技能发现目录；某工具会读 `AGENTS.md` 不能证明它也扫描 `.agents/skills/`。需要长期共用时，可把 `.agents/skills` 作为主存放位置，为缺少该默认发现入口的宿主增加其支持的技能目录链接；本次仅给方案，没有创建或改动项目技能文件。[一手：Claude Code 技能目录与链接规则](https://code.claude.com/docs/en/skills#choose-where-skills-load)
+因此自动发现不等于正文常驻，也不等于每个相关请求必然调用。`AGENTS.md` 是项目指令文件，`.agents/skills/` 是技能发现目录；某工具会读 `AGENTS.md` 不能证明它也扫描 `.agents/skills`。需要长期共用时，可把 `.agents/skills` 作为主存放位置，为缺少该默认发现入口的宿主增加其支持的技能目录链接；本次仅给方案，没有创建或改动项目技能文件。[一手：Claude Code 技能目录与链接规则](https://code.claude.com/docs/en/skills#choose-where-skills-load)
+
+信源（一手）：[OpenAI：Build skills](https://learn.chatgpt.com/docs/build-skills)、[ZCode：Skills 使用指南](https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/08-skills.md)、[ZCode：桌面 Skill 管理](https://zcode.z.ai/cn/docs/skill)、[Cursor：Agent Skills](https://cursor.com/docs/skills)、[OpenCode：Agent Skills](https://docs.opencode.ai/docs/skills/)、[Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)、[GitHub Copilot CLI：添加技能](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)、[Claude Code：加载位置与链接](https://code.claude.com/docs/en/skills#choose-where-skills-load)。
 
 ### 证据与时效 · q-20261029-005
 
 - **信源**：[一手] [OpenAI：Build skills](https://learn.chatgpt.com/docs/build-skills)；[一手] [ZCode 官方仓库：Skills 使用指南](https://github.com/zai-org/ZCode/blob/main/apps/zcode-cli/docs/usage/08-skills.md)；[一手] [Cursor：Agent Skills](https://cursor.com/docs/skills)；[一手] [OpenCode：Agent Skills](https://docs.opencode.ai/docs/skills/)；[一手] [Gemini CLI 官方仓库：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)；[一手] [GitHub Copilot CLI：添加技能](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)；[一手] [Claude Code：Skill 加载位置](https://code.claude.com/docs/en/skills#choose-where-skills-load)
 - **核实**：2026-10-29；逐项查看上述官方文档，Codex 依据 OpenAI Docs，ZCode 依据官方仓库随源码维护的 CLI 指南及桌面 Skill 文档。没有在用户当前安装的各工具中实际测试；清单不是所有智能体的完整名单，也不保证旧构建、技能被停用、目录不可访问或格式不合法时仍会发现。ZCode 指南明确当前源码行为不等于所有旧二进制行为。
 
-## 将 WebAssembly 封装为 MCP 工具
+## WebAssembly 的 MCP 工具封装
 
-可以，三种形态均已落地。可行性根据：MCP 规范只定义 JSON-RPC 消息与传输绑定，明确与传输无关（transport-agnostic），不约束服务器实现技术。
+三种封装形态均已落地。可行性根据：MCP 规范只定义 JSON-RPC 消息与传输绑定，明确与传输无关（transport-agnostic），不约束服务器实现技术。
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: 将 WebAssembly 封装为 MCP 工具
+    accTitle: WebAssembly 的 MCP 工具封装
     client["MCP 客户端：智能体"]:::input -->|JSON-RPC 消息| routes{"宿主形态"}:::decision
     routes --> own["形态一：MCP SDK 自建服务器"]
     own --> handler["handler 内调用 Wasmtime / Extism"]:::process
@@ -515,7 +485,7 @@ C++ 替代的取舍：
 - **领域**：AI 编程
 - **首次**：2026-10-20
 - **更新**：2026-10-25
-- **正文**：[将 WebAssembly 封装为 MCP 工具](#将-webassembly-封装为-mcp-工具)
+- **正文**：[WebAssembly 的 MCP 工具封装](#webassembly-的-mcp-工具封装)
 - **关联**：[2026-09-21 · 系统学习 Claude Code 与 Agent 原理的学习地图](Claude%20Code.md#q-20260921-006)；[2026-10-13 · AutoCAD 自动化操作 MCP 的官方与社区现状](../工具与设计/AutoCAD.md#q-20261013-004)；[2026-10-25 · 系统学习 MCP 的完整路线与知识点](MCP.md#q-20261025-003)
 
 ### q-20261020-002

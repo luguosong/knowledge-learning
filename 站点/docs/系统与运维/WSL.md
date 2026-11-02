@@ -2,69 +2,6 @@
 
 本篇收录适用于 Linux 的 Windows 子系统（Windows Subsystem for Linux，WSL）在本机使用中的实际问题：完整 Linux 桌面、内存占用与开发容器按需启动、与 Windows 的文件互通、Zone.Identifier 文件处理。WSL 是 Windows 的子系统，属本机环境问题而非 Linux 系统管理；Linux 系统管理知识另见《Linux》。
 
-## 在 Windows 本机打开 WSL 完整 Linux 桌面
-
-**结论**：沿用现有发行版补装桌面组件——Xfce 加 xrdp、xorgxrdp，配置本机回环端口供 mstsc 连接；不另装发行版。
-
-本机基础（2026-10-27 实测）：
-
-- 已运行 Ubuntu 26.04.1 LTS（WSL 2），systemd、WSLg 与镜像网络的基础已具备。
-- 未安装 Xfce、xrdp、xorgxrdp；只读依赖模拟成功，计划新增 348 个软件包且无卸载。
-- 实际安装与桌面登录尚未验证。
-
-方案取舍：
-
-- WSLg 官方支持图形应用集成；应用窗口与完整 Linux 桌面分开理解。
-- Kali 的 Win-KeX 仍是特定发行版备选。
-
-版本口径——三个版本分别理解：
-
-- WSL 软件包版本：本机 3.0.3.0。
-- 发行版运行架构：WSL 1／WSL 2。微软当前文档列出的架构仍为这两种，没有对应的 WSL 3 发行版。
-- Linux 发行版版本：Ubuntu 26.04.1 LTS。
-
-附带变更：`.wslconfig` 中 `autoMemoryReclaim=gradual` 原放在 `[wsl2]`，已按用户要求于 2026-10-27 移入 `[experimental]` 并核对文件，其他配置已保留且已备份；尚未重启 WSL 或验证实际回收行为。
-
-信源：
-
-- [微软：WSL 图形应用支持及完整桌面限制（一手）](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
-- [Xfce 官方功能说明（一手）](https://xfce.org/about/)
-- [xrdp 官方项目（一手）](https://github.com/neutrinolabs/xrdp)
-- [微软：WSL 高级配置与 autoMemoryReclaim 所属配置段（一手）](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
-- [微软：WSL 1 与 WSL 2 架构比较（一手）](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)
-- [微软：WSL 软件包 3.0.3 发布记录（一手）](https://github.com/microsoft/WSL/releases/tag/3.0.3)
-- [Kali：Win-KeX（一手）](https://www.kali.org/docs/wsl/win-kex/)
-- 本机实测（一手，2026-10-27）：`wsl --version`、`wsl --list --verbose`、`/etc/os-release`、`ps -p 1`、`apt-get -s install` 等命令输出
-
-### 证据与时效 · q-20261027-001
-
-- **信源**：[一手·本机实测，2026-10-27] `wsl --version`：WSL 3.0.3.0、WSLg 1.0.79、内核 6.18.54.1-1；`wsl --list --verbose`：唯一 Ubuntu 发行版，Running、版本 2；`/etc/os-release`：Ubuntu 26.04.1 LTS、amd64；`ps -p 1`：systemd；`dpkg-query` 与桌面会话目录检查：无 Xfce、xrdp、xorgxrdp 和桌面会话；`apt-cache policy`：xfce4 4.20.1、xrdp 0.10.1-4.1ubuntu0.1、xorgxrdp 1:0.10.2-1build1；`apt-get -s install xfce4 xfce4-goodies xrdp xorgxrdp`：退出码 0，新增 348、卸载 0；`wslinfo --networking-mode`：mirrored；`free -h`：WSL 总内存约 15 GiB、可用约 9.3 GiB；Windows CIM：Windows 11 家庭版中文版、构建 26300.9711、物理内存约 31.5 GiB、16 个逻辑处理器；Ubuntu 虚拟磁盘在 D 盘，宿主卷剩余约 404.2 GiB；Windows 与 Linux 均未监听检查时的 3389、3390、5900、5901 端口；[一手] [微软：WSL 图形应用支持及完整桌面限制](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)；[一手] [Xfce 官方功能说明](https://xfce.org/about/)；[一手] [xrdp 官方项目](https://github.com/neutrinolabs/xrdp)；[一手] [微软：WSL 网络与 localhost 访问](https://learn.microsoft.com/en-us/windows/wsl/networking)；[一手] [微软：WSL 高级配置与 autoMemoryReclaim 所属配置段](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)；[一手] [微软：WSL 命令及版本参数含义](https://learn.microsoft.com/en-us/windows/wsl/basic-commands)；[一手] [微软：WSL 1 与 WSL 2 架构比较](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)；[一手] [微软：WSL 软件包 3.0.3 发布记录](https://github.com/microsoft/WSL/releases/tag/3.0.3)；[一手] [微软：WSL systemd 支持](https://learn.microsoft.com/en-us/windows/wsl/systemd)；[一手] [Kali：Win-KeX](https://www.kali.org/docs/wsl/win-kex/)；[一手] [微软：WSL 常见问题及家庭版支持](https://learn.microsoft.com/en-us/windows/wsl/faq)；[一手] [微软：远程桌面客户端与主机的版本条件](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop)
-
-## WSL 内存占用与开发容器按需启动
-
-**结论**：`autoMemoryReclaim=gradual` 只针对缓存回收，不能替代停止不需要的应用；配置修改也须等 WSL 重启生效。应用内存、缓存和宿主工作集分别诊断。
-
-背景：本机 WSL 同时运行七个开发容器与多个 AI 进程，并保留文件缓存。
-
-处置（2026-10-27，只代表当时状态）：
-
-- 将 SQL Server、MySQL、Nacos、RabbitMQ、Redis、Qdrant、Ollama 的容器及对应 Compose 的重启策略设为 `"no"` 并正常停止，数据保留。
-- WSL 内部已用由约 7.1 GiB 降至约 3.0 GiB。
-- 剩余约 4.3 GiB 文件缓存及仍在活动的 AI 进程，使宿主占用不会立即降至同一数字。
-- gradual 回收仍待 WSL 重启验证。
-
-信源：
-
-- [微软 WSL 配置（一手）](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
-- [Docker restart 策略（一手）](https://docs.docker.com/reference/compose-file/services/#restart)
-- [Docker 容器内存限制（一手）](https://docs.docker.com/engine/containers/resource_constraints/)
-- [Linux 内核关于缓存回收的说明（一手）](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches)
-- 本机实测（一手，2026-10-27）：`Get-Process`、Windows 性能内存计数器、`/proc/meminfo`、`free`、`docker stats`、`docker inspect`
-
-### 证据与时效 · q-20261027-002
-
-- **信源**：[一手·本机实测，2026-10-27] `Get-Process`、Windows 性能内存计数器、WSL `/proc/meminfo`、`free`、`docker stats`、`docker inspect` 与 Compose 校验；详细测量、限制及变更记录见关联的 Windows 条目；[一手] [微软 WSL 配置](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)；[一手] [Docker restart 策略](https://docs.docker.com/reference/compose-file/services/#restart)；[一手] [Docker 容器内存限制](https://docs.docker.com/engine/containers/resource_constraints/)；[一手] [Linux 内核关于缓存回收的说明](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches)
-
 ## Windows 与 WSL 的文件互通
 
 **结论**：不需要同步技术——两侧访问的是同一份存储，即写即见，不是两份拷贝。
@@ -130,6 +67,69 @@
 
 - **信源**：[一手·本机实测，2026-10-30] 仓库内 72 个该类文件的 `cat` 内容；[一手] [microsoft/WSL #4609](https://github.com/microsoft/WSL/issues/4609)；[一手] [URLZONE enumeration（Urlmon.h，MS Learn 归档）](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537175(v=vs.85))；[二手·仅定位] [WSL #7456](https://github.com/microsoft/WSL/issues/7456)
 
+## WSL 内存占用与开发容器按需启动
+
+**结论**：`autoMemoryReclaim=gradual` 只针对缓存回收，不能替代停止不需要的应用；配置修改也须等 WSL 重启生效。应用内存、缓存和宿主工作集分别诊断。
+
+背景：本机 WSL 同时运行七个开发容器与多个 AI 进程，并保留文件缓存。
+
+处置（2026-10-27，只代表当时状态）：
+
+- 将 SQL Server、MySQL、Nacos、RabbitMQ、Redis、Qdrant、Ollama 的容器及对应 Compose 的重启策略设为 `"no"` 并正常停止，数据保留。
+- WSL 内部已用由约 7.1 GiB 降至约 3.0 GiB。
+- 剩余约 4.3 GiB 文件缓存及仍在活动的 AI 进程，使宿主占用不会立即降至同一数字。
+- gradual 回收仍待 WSL 重启验证。
+
+信源：
+
+- [微软 WSL 配置（一手）](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+- [Docker restart 策略（一手）](https://docs.docker.com/reference/compose-file/services/#restart)
+- [Docker 容器内存限制（一手）](https://docs.docker.com/engine/containers/resource_constraints/)
+- [Linux 内核关于缓存回收的说明（一手）](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches)
+- 本机实测（一手，2026-10-27）：`Get-Process`、Windows 性能内存计数器、`/proc/meminfo`、`free`、`docker stats`、`docker inspect`
+
+### 证据与时效 · q-20261027-002
+
+- **信源**：[一手·本机实测，2026-10-27] `Get-Process`、Windows 性能内存计数器、WSL `/proc/meminfo`、`free`、`docker stats`、`docker inspect` 与 Compose 校验；详细测量、限制及变更记录见关联的 Windows 条目；[一手] [微软 WSL 配置](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)；[一手] [Docker restart 策略](https://docs.docker.com/reference/compose-file/services/#restart)；[一手] [Docker 容器内存限制](https://docs.docker.com/engine/containers/resource_constraints/)；[一手] [Linux 内核关于缓存回收的说明](https://docs.kernel.org/admin-guide/sysctl/vm.html#drop-caches)
+
+## WSL 完整 Linux 桌面方案
+
+**结论**：沿用现有发行版补装桌面组件——Xfce 加 xrdp、xorgxrdp，配置本机回环端口供 mstsc 连接；不另装发行版。
+
+本机基础（2026-10-27 实测）：
+
+- 已运行 Ubuntu 26.04.1 LTS（WSL 2），systemd、WSLg 与镜像网络的基础已具备。
+- 未安装 Xfce、xrdp、xorgxrdp；只读依赖模拟成功，计划新增 348 个软件包且无卸载。
+- 实际安装与桌面登录尚未验证。
+
+方案取舍：
+
+- WSLg 官方支持图形应用集成；应用窗口与完整 Linux 桌面分开理解。
+- Kali 的 Win-KeX 仍是特定发行版备选。
+
+版本口径——三个版本分别理解：
+
+- WSL 软件包版本：本机 3.0.3.0。
+- 发行版运行架构：WSL 1／WSL 2。微软当前文档列出的架构仍为这两种，没有对应的 WSL 3 发行版。
+- Linux 发行版版本：Ubuntu 26.04.1 LTS。
+
+附带变更：`.wslconfig` 中 `autoMemoryReclaim=gradual` 原放在 `[wsl2]`，已按用户要求于 2026-10-27 移入 `[experimental]` 并核对文件，其他配置已保留且已备份；尚未重启 WSL 或验证实际回收行为。
+
+信源：
+
+- [微软：WSL 图形应用支持及完整桌面限制（一手）](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
+- [Xfce 官方功能说明（一手）](https://xfce.org/about/)
+- [xrdp 官方项目（一手）](https://github.com/neutrinolabs/xrdp)
+- [微软：WSL 高级配置与 autoMemoryReclaim 所属配置段（一手）](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+- [微软：WSL 1 与 WSL 2 架构比较（一手）](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)
+- [微软：WSL 软件包 3.0.3 发布记录（一手）](https://github.com/microsoft/WSL/releases/tag/3.0.3)
+- [Kali：Win-KeX（一手）](https://www.kali.org/docs/wsl/win-kex/)
+- 本机实测（一手，2026-10-27）：`wsl --version`、`wsl --list --verbose`、`/etc/os-release`、`ps -p 1`、`apt-get -s install` 等命令输出
+
+### 证据与时效 · q-20261027-001
+
+- **信源**：[一手·本机实测，2026-10-27] `wsl --version`：WSL 3.0.3.0、WSLg 1.0.79、内核 6.18.54.1-1；`wsl --list --verbose`：唯一 Ubuntu 发行版，Running、版本 2；`/etc/os-release`：Ubuntu 26.04.1 LTS、amd64；`ps -p 1`：systemd；`dpkg-query` 与桌面会话目录检查：无 Xfce、xrdp、xorgxrdp 和桌面会话；`apt-cache policy`：xfce4 4.20.1、xrdp 0.10.1-4.1ubuntu0.1、xorgxrdp 1:0.10.2-1build1；`apt-get -s install xfce4 xfce4-goodies xrdp xorgxrdp`：退出码 0，新增 348、卸载 0；`wslinfo --networking-mode`：mirrored；`free -h`：WSL 总内存约 15 GiB、可用约 9.3 GiB；Windows CIM：Windows 11 家庭版中文版、构建 26300.9711、物理内存约 31.5 GiB、16 个逻辑处理器；Ubuntu 虚拟磁盘在 D 盘，宿主卷剩余约 404.2 GiB；Windows 与 Linux 均未监听检查时的 3389、3390、5900、5901 端口；[一手] [微软：WSL 图形应用支持及完整桌面限制](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)；[一手] [Xfce 官方功能说明](https://xfce.org/about/)；[一手] [xrdp 官方项目](https://github.com/neutrinolabs/xrdp)；[一手] [微软：WSL 网络与 localhost 访问](https://learn.microsoft.com/en-us/windows/wsl/networking)；[一手] [微软：WSL 高级配置与 autoMemoryReclaim 所属配置段](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)；[一手] [微软：WSL 命令及版本参数含义](https://learn.microsoft.com/en-us/windows/wsl/basic-commands)；[一手] [微软：WSL 1 与 WSL 2 架构比较](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)；[一手] [微软：WSL 软件包 3.0.3 发布记录](https://github.com/microsoft/WSL/releases/tag/3.0.3)；[一手] [微软：WSL systemd 支持](https://learn.microsoft.com/en-us/windows/wsl/systemd)；[一手] [Kali：Win-KeX](https://www.kali.org/docs/wsl/win-kex/)；[一手] [微软：WSL 常见问题及家庭版支持](https://learn.microsoft.com/en-us/windows/wsl/faq)；[一手] [微软：远程桌面客户端与主机的版本条件](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop)
+
 
 ## 提问记录
 
@@ -140,7 +140,7 @@
 - **领域**：Linux
 - **首次**：2026-10-27
 - **更新**：2026-10-27
-- **正文**：[在 Windows 本机打开 WSL 完整 Linux 桌面](#在-windows-本机打开-wsl-完整-linux-桌面)
+- **正文**：[WSL 完整 Linux 桌面方案](#wsl-完整-linux-桌面方案)
 - **关联**：[2026-10-26 · Windows 11 专业版与家庭版的主要区别及选型](Windows.md#q-20261026-009)；[2026-10-23 · 零基础学习 Linux 的学习计划与资源组合](Linux.md#q-20261023-001)
 
 ### q-20261027-002

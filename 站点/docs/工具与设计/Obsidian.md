@@ -28,7 +28,7 @@ Obsidian 插件使用记录。主线有四条：Tasks 任务管理、Remotely Sa
 
 ## 手机查阅：Windows 库经 OneDrive 供 iPhone 只读
 
-需求：Windows 上的 Obsidian 库（vault）在 iPhone 上免费私有查阅；2026-10-10 追问后定为免费多端同步，电脑端编辑、iPhone 查看。
+该方案面向免费私有的跨设备同步：电脑端编辑 Windows 上的 Obsidian 库（vault），iPhone 查看。
 
 方案：两端安装同步插件 Remotely Save，连接同一个 OneDrive 个人版应用文件夹。
 

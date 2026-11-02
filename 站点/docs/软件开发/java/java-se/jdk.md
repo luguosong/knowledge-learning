@@ -2,14 +2,14 @@
 
 JDK 从 8 到 25 的三层换代，与公开类库体系的宏观地图。
 
-## JDK 8 与 JDK 25 差别有多大
+## JDK 8 到 JDK 25 的版本演化
 
 跨 11 年、17 个版本，三层换代：语言写法（`var`、`record`、密封类、模式匹配、文本块、模块导入、实例 `main`）、平台结构与默认行为（模块系统与强封装、移出 EE／CORBA／Nashorn／CMS、UTF-8 默认字符集、标准 HttpClient）、运行时（G1 起步到新一代 GC、虚拟线程、Scoped Values、紧凑对象头与 AOT）。向后兼容成立：8 的代码大多可在 25 编译运行；主体知识结构不变，但 8 基线资料需按 25 翻译语法与默认行为。
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: JDK 8 与 JDK 25 差别有多大
+    accTitle: JDK 8 到 JDK 25 的版本演化
     j8["2014 JDK 8：Lambda + Stream、默认方法、java.time"]
     j8 --> j9["2017 JDK 9：JPMS、jshell、G1 成为默认 GC"]
     j9 --> j11["2018 JDK 10-11：var、标准 HttpClient、单文件直接运行；移出 Java EE 与 CORBA"]
@@ -98,7 +98,7 @@ flowchart LR
 - **领域**：Java SE
 - **首次**：2026-10-15
 - **更新**：2026-10-15
-- **正文**：[JDK 8 与 JDK 25 差别有多大](#jdk-8-与-jdk-25-差别有多大)
+- **正文**：[JDK 8 到 JDK 25 的版本演化](#jdk-8-到-jdk-25-的版本演化)
 - **关联**：[2026-09-23 · Java SE 的学习路线与完整知识点](语言与标准库.md#q-20260923-003)
 
 

@@ -110,7 +110,7 @@ flowchart TB
 
 - **信源**：[一手] [Red Hat：LVM 逻辑卷创建与扩容](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/basic-logical-volume-management)；[一手] [Linux 内核：dm-linear 映射机制](https://www.kernel.org/doc/html/latest/admin-guide/device-mapper/linear.html)；[一手] [Red Hat：RAID 与线性存储的容量、性能和冗余](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/configuring-raid-logical-volumes)；[一手] [Red Hat：LVM 物理卷初始化](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/managing-lvm-physical-volumes)；[一手] [Docker：守护进程存储目录配置](https://docs.docker.com/engine/daemon/)
 
-## rg 不可用是什么意思
+## rg 命令的用途与不可用判断
 
 **结论**：`rg` 是文本搜索工具 ripgrep 的命令名。"rg 不可用"表示当前环境找不到或无法运行该命令；搜索没有匹配不表示命令不可用。
 
@@ -201,4 +201,4 @@ rg --version
 - **领域**：Linux
 - **首次**：2026-11-01
 - **更新**：2026-11-01
-- **正文**：[rg 不可用是什么意思](#rg-不可用是什么意思)
+- **正文**：[rg 命令的用途与不可用判断](#rg-命令的用途与不可用判断)

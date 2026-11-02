@@ -8,7 +8,7 @@
 
 Zotero API 是程序访问文献库的接口。主线：Web API v3 与本地 API（Local API）的分工、认证与写入授权。边界：Translate for Zotero 插件的 DeepLX 是翻译服务选项，与 Zotero 自身 API 分属不同用途。
 
-## Zotero API 是什么：两套接口的选用
+## Web API 与本地 API 的选用
 
 **结论**：Zotero API 让程序以 HTTP 请求读取或修改文献条目、分类与标签等资料。接口分两套：
 
@@ -18,7 +18,7 @@ Zotero API 是程序访问文献库的接口。主线：Web API v3 与本地 API
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: Zotero API 是什么：两套接口的选用
+    accTitle: Web API 与本地 API 的选用
     program["程序要访问 Zotero"]:::input
     program -->|程序联网，数据在云端| web["Web API v3"]
     web --> cloud["在线个人库 / 群组库"]:::storage
@@ -57,5 +57,5 @@ flowchart TB
 - **领域**：Zotero
 - **首次**：2026-09-26
 - **更新**：2026-09-26
-- **正文**：[Zotero API 是什么：两套接口的选用](#zotero-api-是什么两套接口的选用)
+- **正文**：[Web API 与本地 API 的选用](#web-api-与本地-api-的选用)
 - **关联**：[2026-09-26 · 目前免费的翻译 API 接入方案](../AI%20与模型/机器翻译.md#q-20260926-002)

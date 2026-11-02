@@ -8,9 +8,9 @@
 
 本领域核实 AI 模型对比与选型的证据。主线有四条：对比图与榜单的可信度、翻译选型的评测条件、Jev 与 Laya 的部署和能力差异、智谱研发动向。结论按各问题的核实日期理解；未核实项保持未核实，不升级为事实。
 
-## 对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna
+## GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna 对比图
 
-结论：按用户提供的对比图数据，Claude Haiku 5.5 在多数项目领先；图本身不能当作定论，因为原始发布者与链接未核实，且图注提醒各评测环境可能不同。
+结论：对比图中 Claude Haiku 5.5 在多数项目领先；图本身不能当作定论，因为原始发布者与链接未核实，且图注提醒各评测环境可能不同。
 
 图中关键数值：
 
@@ -32,7 +32,7 @@
 
 - **信源**：用户提供的对比图（原始发布者与链接未核实）；[一手] [Anthropic：Introducing Claude Haiku 5.5](https://www.anthropic.com/claude-haiku-5-5)（已核实图中 Haiku、Luna 数值）；[一手] [Z.ai：GLM-5.3-Flash 模型卡](https://huggingface.co/zai-org/GLM-5.3-Flash)（已核实官方模型卡存在并说明 HLE 使用工具的评测设置，数值位于图表，未逐项核实）；[一手] [Artificial Analysis：GLM 5.3 Flash](https://artificialanalysis.ai/models/glm-5-3-flash)（已核实评测页面及基准版本，当前提取的页面未展示各项数值）。
 
-## 英译中选型要保留哪些评测条件
+## 英译中选型的评测条件
 
 结论：现有资料不足以给截图中十款翻译服务排出英译中第一名。要比较，必须先固定四项条件：翻译方向（英译中还是中译英）、内容类型、模型版本、评测日期与质量指标。
 
@@ -55,7 +55,7 @@
 
 - **信源**：[一手] [HardMTBench 原始论文](https://arxiv.org/html/2605.28315v1)；[一手] [DeepL：Understanding Model Types](https://developers.deepl.com/docs/translate/understanding-model-types)；[一手] [DeepL 发布商说明](https://www.deepl.com/zh/publisher)；[一手] [DeepL 2024 年模型与盲测发布页](https://www.deepl.com/en/blog/next-gen-language-model)。
 
-## Jev 不能本地部署，开源复刻 Laya 可以
+## Jev 与 Laya 的部署差异
 
 结论：Jev 本体闭源、仅提供 API、未发布权重，不能本地部署。可本地部署的是开源复刻 Laya，许可证 Apache 2.0。
 
@@ -159,7 +159,7 @@ flowchart TB
 - **领域**：AI 模型
 - **首次**：2026-10-08
 - **更新**：2026-10-08
-- **正文**：[对比图怎么看：GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna](#对比图怎么看glm-53-flashhaiku-55-与-gpt-6-luna)
+- **正文**：[GLM 5.3 Flash、Haiku 5.5 与 GPT-6 Luna 对比图](#glm-53-flashhaiku-55-与-gpt-6-luna-对比图)
 
 ### q-20261008-004
 
@@ -168,7 +168,7 @@ flowchart TB
 - **领域**：AI 模型
 - **首次**：2026-10-08
 - **更新**：2026-10-08
-- **正文**：[英译中选型要保留哪些评测条件](#英译中选型要保留哪些评测条件)
+- **正文**：[英译中选型的评测条件](#英译中选型的评测条件)
 - **关联**：[2026-10-08 · 截图中的翻译模型哪款英译中表现最好](机器翻译.md#q-20261008-001)
 
 ### q-20261015-006
@@ -178,7 +178,7 @@ flowchart TB
 - **领域**：AI 模型
 - **首次**：2026-10-15
 - **更新**：2026-10-15
-- **正文**：[Jev 不能本地部署，开源复刻 Laya 可以](#jev-不能本地部署开源复刻-laya-可以)
+- **正文**：[Jev 与 Laya 的部署差异](#jev-与-laya-的部署差异)
 
 ### q-20261015-007
 

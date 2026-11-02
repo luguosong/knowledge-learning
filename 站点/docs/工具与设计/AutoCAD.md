@@ -49,7 +49,28 @@ flowchart TB
 
 - **信源**：[一手] [AutoCAD 官方教程中心（CAD 基础 + 六部分项目 + 初学者必修）](https://www.autodesk.com/solutions/aec/autocad-tutorials)；[一手] [AutoCAD Quick Start Guide（15 讲入门学习路径）](https://www.autodesk.com/learn/ondemand/curated/autocad-quick-start-guide)；[一手] [AutoCAD 免费试用页（桌面版 15 天）](https://www.autodesk.com/products/autocad/free-trial)；[一手] [Autodesk 教育访问总览（一年免费、可年续）](https://www.autodesk.com/support/account/education/students-educators/overview)；[一手] [教育软件清单（含 AutoCAD）](https://www.autodesk.com/education/edu-software/overview)；[一手] [AutoCAD Web 官网（浏览器版）](https://web.autocad.com)
 
-## 新建图形选样板：DWT 的作用与自带样板的区别
+## 试用申请的手机验证阻断与出路（中国大陆实测）
+
+2026-10-14 实测：全球站 trial-intake 表单可以完整填写并提交。但最后一步手机验证的短信网关向 +86 号码（实测电信号）发送失败，报"无法向该号码发送验证码"。重试无效，试用不开通。中国区站点的试用组件持续卡在加载。
+
+限制：以上为当日实测，不能据此推定当前服务状态。
+
+三条出路：
+
+- 联系 Autodesk 支持人工处理。
+- 改用可接收国际短信的号码。
+- 学生或教育者改走教育访问：SheerID 验证，无需手机短信。
+
+信源：
+
+- [一手] 2026-10-14 本机实测 Autodesk trial-intake 流程与 manage.autodesk.com 账户页（浏览器操作记录）
+- [一手] [Autodesk 教育访问（无手机验证的替代路径）](https://www.autodesk.com/education/home)
+
+### 证据与时效 · q-20261014-005
+
+- **信源**：[一手] 2026-10-14 实测 Autodesk trial-intake 流程与 manage.autodesk.com 账户页（本机浏览器操作记录）；[一手] [Autodesk 教育访问（无手机验证的替代路径）](https://www.autodesk.com/education/home)
+
+## 图形样板（DWT）的作用与自带样板的区别
 
 新建图形时选择的"样板"是图形样板文件（Drawing Template，DWT）。新图形从它复制单位、图层、标注与文字样式、布局及打印设置。样板本身不被改动。
 
@@ -76,27 +97,6 @@ flowchart TB
 ### 证据与时效 · q-20261014-003
 
 - **信源**：[一手] [About Drawings and Templates（AutoCAD 2026 帮助，样板保存的设置清单）](https://help.autodesk.com/view/ACD/2026/ENU/?caas=caas/documentation/ACDLT/2014/ENU/files/GUID-02979F86-385F-4A53-A3FB-7202F1225CDA-htm.html)；[一手] [AutoCAD 样板（Autodesk 支持文章，当前版自带样板清单，中文）](https://www.autodesk.com.cn/support/technical/article/caas/tsarticles/ts/a2FplfQ1RO2AiFuw1aeHn.html)；[一手] [AutoCAD 2022 Templates（acadiso.dwt 属性确认）](https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3jQpr3507YTptqWwl5ct8a.html)；[一手] [To Start a New Drawing（AutoCAD LT 2026 帮助）](https://help.autodesk.com/view/ACDLT/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-9836C645-44B4-4EF8-B05A-66EFB2FE0DD2-htm.html)；[一手] [To Change Template Settings（QNEW 默认样板设置）](https://help.autodesk.com/view/ACDLTM/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-BB840055-4B21-4E4A-9DFC-187D63B44F6D-htm.html)；[一手] [To Create a Drawing Template（自建样板）](https://help.autodesk.com/view/ACDLTM/2026/ENU/?caas=caas/documentation/ACD/2014/ENU/files/GUID-009D9EB3-DE3E-4107-BE48-56D907A7E9B7-htm.html)
-
-## 中国大陆手机号申请试用：验证阻断与出路（实测）
-
-2026-10-14 实测：全球站 trial-intake 表单可以完整填写并提交。但最后一步手机验证的短信网关向 +86 号码（实测电信号）发送失败，报"无法向该号码发送验证码"。重试无效，试用不开通。中国区站点的试用组件持续卡在加载。
-
-限制：以上为当日实测，不能据此推定当前服务状态。
-
-三条出路：
-
-- 联系 Autodesk 支持人工处理。
-- 改用可接收国际短信的号码。
-- 学生或教育者改走教育访问：SheerID 验证，无需手机短信。
-
-信源：
-
-- [一手] 2026-10-14 本机实测 Autodesk trial-intake 流程与 manage.autodesk.com 账户页（浏览器操作记录）
-- [一手] [Autodesk 教育访问（无手机验证的替代路径）](https://www.autodesk.com/education/home)
-
-### 证据与时效 · q-20261014-005
-
-- **信源**：[一手] 2026-10-14 实测 Autodesk trial-intake 流程与 manage.autodesk.com 账户页（本机浏览器操作记录）；[一手] [Autodesk 教育访问（无手机验证的替代路径）](https://www.autodesk.com/education/home)
 
 ## 自动化操作 MCP：官方与社区两条线
 
@@ -198,7 +198,7 @@ flowchart TB
 - **领域**：AutoCAD
 - **首次**：2026-10-14
 - **更新**：2026-10-14
-- **正文**：[新建图形选样板：DWT 的作用与自带样板的区别](#新建图形选样板dwt-的作用与自带样板的区别)
+- **正文**：[图形样板（DWT）的作用与自带样板的区别](#图形样板dwt的作用与自带样板的区别)
 
 ### q-20261014-004
 
@@ -216,7 +216,7 @@ flowchart TB
 - **领域**：AutoCAD
 - **首次**：2026-10-14
 - **更新**：2026-10-14
-- **正文**：[中国大陆手机号申请试用：验证阻断与出路（实测）](#中国大陆手机号申请试用验证阻断与出路实测)
+- **正文**：[试用申请的手机验证阻断与出路（中国大陆实测）](#试用申请的手机验证阻断与出路中国大陆实测)
 
 ### q-20261020-004
 

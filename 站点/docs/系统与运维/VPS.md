@@ -8,7 +8,7 @@
 
 虚拟专用服务器（Virtual Private Server，VPS）把一台物理服务器切分成多台虚拟机出租。本领域记录 VPS 的原理与形态、与阿里云云服务器的异同、按用途选提供商，以及家庭服务器内网穿透与动态域名方案。
 
-## VPS 是什么，与云服务器有何区别
+## VPS 的定义与云服务器的区别
 
 **结论**：VPS 是把一台物理服务器经虚拟机监控器（Hypervisor）切分成多台虚拟机后出租的形态。每台份额专用、租户隔离，有独立操作系统与 root 权限，可独立重启。它定位介于共享主机与独立服务器之间；阿里云弹性计算服务（Elastic Compute Service，ECS）等云服务器是它的云时代形态。
 
@@ -20,7 +20,7 @@ VPS 与 ECS 本质同类：都是 Hypervisor 切出的虚拟机加 root 权限�
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: VPS 是什么，与云服务器有何区别
+    accTitle: VPS 的定义与云服务器的区别
     subgraph vps["传统 VPS：单机虚拟化，磁盘绑定宿主机"]
         host["物理服务器：宿主机是单点"]:::input
         host --> vm1["虚拟机 1 + 本地磁盘"]
@@ -59,7 +59,7 @@ flowchart TB
 
 - **信源**：[一手] [阿里云 ECS 文档中心](https://help.aliyun.com/product/25365.html)；[一手] [阿里云块存储 Block Storage 产品页](https://www.alibabacloud.com/product/block-storage)；[一手] [IBM – What is a VPS?](https://www.ibm.com/topics/vps)
 
-## 按用途选 VPS 提供商
+## VPS 提供商与线路选择
 
 **结论**：按用途分流。通用建站可优先比较 DigitalOcean 与 Akamai（Linode）。苏州电信翻墙场景应优先筛选中国方向优化线路：可考察搬瓦工（BandwagonHost）的香港、日本 CN2 GIA/CTGNet 节点；洛杉矶节点作为预算折中。
 
@@ -77,7 +77,7 @@ flowchart TB
 - **信源**：[一手] [DigitalOcean CPU Droplet SLA](https://www.digitalocean.com/sla/cpu-droplets)；[一手] [DigitalOcean Droplet Features](https://docs.digitalocean.com/products/droplets/details/features/)；[一手] [DigitalOcean Status](https://status.digitalocean.com/)；[一手] [Akamai Compute Service Level Addenda](https://www.akamai.com/legal/sla-compute)；[一手] [Akamai CPU 产品与选型](https://www.akamai.com/products/cpu)；[一手] [Linode Status](https://status.linode.com/)；[一手] [Hetzner Cloud and vServer Service Agreement](https://www.hetzner.com/legal/cloud-server/)；[一手] [Hetzner Cloud 产品与地区](https://www.hetzner.com/cloud/)；[一手] [Hetzner Price Adjustment 15 June 2026](https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/)；[一手] [Hetzner 实例供应受限通知](https://status.hetzner.com/incident/0a75c7ae-3377-41dc-aabe-601063724d24)；[一手] [Vultr Server Status 与节点](https://status.vultr.com/)；[一手] [OVHcloud VPS 产品](https://www.ovhcloud.com/en/vps/)；[一手] [Amazon Lightsail Instance and Block Storage SLA](https://aws.amazon.com/lightsail/sla-lightsail-instances-and-block-storage/)；[一手] [Lightsail instance bundles](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html)；[一手] [BandwagonHost CN2 GIA/CTGNet 线路说明](https://bandwagonhost.com/cn2gia-vps.php)；[一手] [BandwagonHost 官方套餐目录](https://bandwagonhost.com/cart.php)；[一手] [BandwagonHost Service Level Agreement](https://bandwagonhost.com/service-level-agreement.php)；[一手] [BandwagonHost Terms of Service](https://bandwagonhost.com/tos-frame.php)；[一手] [BandwagonHost 官方镜像链接说明](https://bandwagonhost.com/kb.php?action=displayarticle&id=28)；[一手] [BandwagonHost 网络排障与双向路由说明](https://bandwagonhost.com/kb.php?action=displayarticle&id=26)；[一手] [BandwagonHost Status](https://bwhstatus.com/)
 - 原记录资料（未在迁移时复核）：[资料](https://bwh89.net/index.php)
 
-## 家庭服务器内网穿透：先测直连，再选中转
+## 家庭服务器内网穿透的直连与中转
 
 **适用条件**：苏州；只供自己和家人使用；允许安装客户端；只需中转流量。家宽运营商与上行带宽尚未确认，不能沿用「苏州电信翻墙」问题的网络条件。
 
@@ -86,7 +86,7 @@ flowchart TB
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"fontFamily":"LXGW WenKai, sans-serif","fontSize":"16px","textColor":"#1b1f24","lineColor":"#64748b","primaryColor":"#e7f5ff","primaryTextColor":"#0f4d7a","primaryBorderColor":"#1971c2","clusterBkg":"#f8f9fa","clusterBorder":"#cbd5e1","titleColor":"#1b1f24","edgeLabelBackground":"#ffffff"},"flowchart":{"useMaxWidth":false,"htmlLabels":false,"curve":"linear","nodeSpacing":24,"rankSpacing":36},"sequence":{"useMaxWidth":false,"wrap":true,"width":180,"actorMargin":50}}}%%
 flowchart TB
-    accTitle: 家庭服务器内网穿透：先测直连，再选中转
+    accTitle: 家庭服务器内网穿透的直连与中转
     home["家庭互访需求"]:::input --> test["先测试点对点直连"]:::action
     test --> stable{"直连可用且稳定？"}:::decision
     stable -->|是| direct["直连即可"]:::result
@@ -125,7 +125,7 @@ flowchart TB
 - **标准协议**：RFC 2136 的 DNS UPDATE（1997 年）。客户端向权威服务器原子增删资源记录。
 - **商用 HTTP API**：如 Cloudflare 的 `PUT /zones/{zone_id}/dns_records/{record_id}`。客户端定时检测，变化即调用。
 
-**前提与例外**：设备必须有公网 IP，动态亦可。运营商 NAT（Carrier-Grade NAT，CGNAT）后无公网 IP 时 DDNS 无效；此时需改用内网穿透或私有组网（见上文「家庭服务器内网穿透」）。
+**前提与例外**：设备必须有公网 IP，动态亦可。运营商 NAT（Carrier-Grade NAT，CGNAT）后无公网 IP 时 DDNS 无效；此时需改用内网穿透或私有组网（见上文「家庭服务器内网穿透的直连与中转」）。
 
 信源：
 
@@ -146,7 +146,7 @@ flowchart TB
 - **领域**：VPS
 - **首次**：2026-10-10
 - **更新**：2026-10-10
-- **正文**：[按用途选 VPS 提供商](#按用途选-vps-提供商)
+- **正文**：[VPS 提供商与线路选择](#vps-提供商与线路选择)
 
 ### q-20261010-004
 
@@ -155,7 +155,7 @@ flowchart TB
 - **领域**：VPS
 - **首次**：2026-10-10
 - **更新**：2026-10-10
-- **正文**：[VPS 是什么，与云服务器有何区别](#vps-是什么与云服务器有何区别)
+- **正文**：[VPS 的定义与云服务器的区别](#vps-的定义与云服务器的区别)
 - **关联**：[2026-09-29 · Windows Server 更换 Linux 时用云盘快照恢复数据](云存储.md#q-20260929-001)；[2026-09-23 · 美国住宅 IP 远程电脑如何订阅与选择](远程办公.md#q-20260923-007)
 
 ### q-20261010-005
@@ -165,7 +165,7 @@ flowchart TB
 - **领域**：VPS
 - **首次**：2026-10-10
 - **更新**：2026-10-10
-- **正文**：[VPS 是什么，与云服务器有何区别](#vps-是什么与云服务器有何区别)
+- **正文**：[VPS 的定义与云服务器的区别](#vps-的定义与云服务器的区别)
 
 ### q-20261013-001
 
@@ -174,7 +174,7 @@ flowchart TB
 - **领域**：VPS
 - **首次**：2026-10-13
 - **更新**：2026-10-13
-- **正文**：[家庭服务器内网穿透：先测直连，再选中转](#家庭服务器内网穿透先测直连再选中转)
+- **正文**：[家庭服务器内网穿透的直连与中转](#家庭服务器内网穿透的直连与中转)
 
 ### q-20261101-001
 

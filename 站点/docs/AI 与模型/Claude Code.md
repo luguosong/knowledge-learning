@@ -137,7 +137,7 @@ flowchart TB
 
 - **信源**：[一手] [Subagent 配置、执行与上下文](https://code.claude.com/docs/en/sub-agents)；[一手] [命令参考](https://code.claude.com/docs/en/commands)；[一手] [CLI 参数](https://code.claude.com/docs/en/cli-reference)；[一手] [环境变量](https://code.claude.com/docs/en/env-vars)；[一手] [费用与子代理用量](https://code.claude.com/docs/en/costs)；[一手] [Skill 隔离执行](https://code.claude.com/docs/en/skills#run-skills-in-a-subagent)；[一手] [Worktree](https://code.claude.com/docs/en/worktrees)；[一手] [独立审查与验收](https://code.claude.com/docs/en/best-practices#add-an-adversarial-review-step)；[一手] [Agent teams 与 subagent 的区别](https://code.claude.com/docs/en/agent-teams#compare-with-subagents)；[一手] [自动记忆](https://code.claude.com/docs/en/memory)
 
-## 插件与 skill：没有通用必装
+## 插件与 skill 的选型与成本
 
 结论：没有通用必装插件或外部 skill，也没有证据支持“不装任何扩展永远最佳”。先用原生能力、简短项目约定和可执行验收建立基线，再按反复出现的缺口增加扩展。保留标准：减少返工，且总耗时／用量可接受。
 
@@ -381,7 +381,7 @@ claude
 
 - **信源**：[一手] [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview)；[一手] [Python SDK](https://github.com/anthropics/claude-agent-sdk-python)；[一手] [Claude Code Skills](https://code.claude.com/docs/en/skills)；[一手] [translate-book](https://github.com/deusyu/translate-book)；[一手] [BabelDOC 接口说明](https://github.com/funstory-ai/BabelDOC)
 
-## 源码泄露相关项目：三种类别必须区分
+## 源码泄露相关项目的三种类别
 
 指 2026 年 3 月 31 日的泄露。源码存档、第三方架构研究、独立实现必须区分；公开可见不代表获得开源许可。
 
@@ -416,9 +416,9 @@ claude
 - **信源**：[一手] [Claude Code 官方仓库](https://github.com/anthropics/claude-code)；[一手] [官方文档索引](https://code.claude.com/docs/llms.txt)；[一手] [英文正文合集](https://code.claude.com/docs/llms-full.txt)；[一手] [简体中文索引](https://code.claude.com/docs/_llms/zh-cn.txt)；[一手] [单页 Markdown 示例](https://code.claude.com/docs/zh-CN/overview.md)；[一手] [网站地图](https://code.claude.com/docs/sitemap.xml)；[一手] [Mintlify 索引、递归索引与合集规则](https://www.mintlify.com/docs/ai/llmstxt)；[一手] [Mintlify Markdown 导出规则](https://www.mintlify.com/docs/ai/markdown-export)
 - 原记录资料（未在迁移时复核）：[资料](https://code.claude.com/docs/)
 
-## VPS 防封号：信号与规则两层
+## VPS 直跑的地区合规与风险
 
-问：租新加坡或日本 VPS（Virtual Private Server）跑 Claude Code 防封号，是否靠谱？答分两层。
+VPS（Virtual Private Server，虚拟专用服务器）直跑 Claude Code 的封号风险分信号与规则两层评估：信号层面相对靠谱，规则层面不靠谱。
 
 **信号层面相对靠谱**：远程环境是官方支持的形态（devcontainer、cloud environments、SSH 远程会话）；VPS 直跑提供单一稳定 IP 与一致时区，优于本地代理——本地代理常见 IP 地区跳变与代理段被标记。
 
@@ -493,7 +493,7 @@ claude
 - **领域**：Claude Code
 - **首次**：2026-10-12
 - **更新**：2026-10-29
-- **正文**：[插件与 skill：没有通用必装](#插件与-skill没有通用必装)
+- **正文**：[插件与 skill 的选型与成本](#插件与-skill-的选型与成本)
 
 ### q-20261015-001
 
@@ -512,7 +512,7 @@ claude
 - **领域**：Claude Code
 - **首次**：2026-10-18
 - **更新**：2026-10-18
-- **正文**：[源码泄露相关项目：三种类别必须区分](#源码泄露相关项目三种类别必须区分)
+- **正文**：[源码泄露相关项目的三种类别](#源码泄露相关项目的三种类别)
 
 ### q-20261018-002
 
@@ -542,5 +542,5 @@ claude
 - **领域**：Claude Code
 - **首次**：2026-10-30
 - **更新**：2026-10-30
-- **正文**：[VPS 防封号：信号与规则两层](#vps-防封号信号与规则两层)
+- **正文**：[VPS 直跑的地区合规与风险](#vps-直跑的地区合规与风险)
 - **关联**：[2026-09-23 · 美国住宅 IP 远程电脑如何订阅与选择](../系统与运维/远程办公.md#q-20260923-007)
